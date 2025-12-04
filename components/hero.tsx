@@ -66,8 +66,7 @@ export default function Hero() {
             NEXT GENERATION CREATIVITY
           </motion.p>
           <motion.h1
-            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6"
-            style={{ color: "#ffffff" }}
+            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6 brand-gradient-text bg-clip-text text-transparent"
             variants={itemVariants}
           >
             ART + AMPLITUDE

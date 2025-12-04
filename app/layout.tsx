@@ -4,6 +4,7 @@ import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import FloatingNavbar from "@/components/floating-navbar"
+import PageTransition from "@/components/page-transition"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 const inter = Inter({ subsets: ["latin"] })
@@ -41,9 +42,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
       </head>
       <body className={`${inter.className} antialiased bg-[#0a0a0a]`}>
-        {children}
+        <PageTransition>{children}</PageTransition>
         <FloatingNavbar />
         <Analytics />
       </body>

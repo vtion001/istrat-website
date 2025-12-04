@@ -1,8 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 export default function ConnectWithUsPage() {
+  const [form, setForm] = useState({ name: "", email: "", company: "", service: "", subject: "", message: "" })
+  const [errors, setErrors] = useState<{ [k: string]: string }>({})
+  const [sent, setSent] = useState(false)
+
+  function onChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    const { name, value } = e.target
+    setForm((f) => ({ ...f, [name]: value }))
+  }
+
+  function validate() {
+    const next: { [k: string]: string } = {}
+    if (!form.name.trim()) next.name = "Required"
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = "Valid email required"
+    if (!form.subject.trim()) next.subject = "Required"
+    if (!form.message.trim()) next.message = "Required"
+    setErrors(next)
+    return Object.keys(next).length === 0
+  }
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (!validate()) return
+    setSent(true)
+  }
+
   return (
     <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
@@ -32,11 +58,11 @@ export default function ConnectWithUsPage() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Name" />
-            <input className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Email Address" />
-            <input className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Company Name" />
-            <select className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white" defaultValue="">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={onSubmit}>
+            <input name="name" value={form.name} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Name" />
+            <input name="email" value={form.email} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Email Address" />
+            <input name="company" value={form.company} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Company Name" />
+            <select name="service" value={form.service} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white">
               <option value="" disabled className="text-[#a0a0a0]">What services do you want to know?</option>
               <option>Integrated Marketing Campaigns</option>
               <option>Brand Development and Strategy</option>
@@ -48,11 +74,26 @@ export default function ConnectWithUsPage() {
               <option>Video and Stage Production</option>
               <option>Information Technology</option>
             </select>
-            <input className="w-full md:col-span-2 px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Subject" />
-            <textarea className="w-full md:col-span-2 px-4 py-3 h-40 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Message" />
-            <div className="md:col-span-2 flex items-center gap-3">
-              <a href="mailto:info@istratmc.com" className="inline-block px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Send Email</a>
-              <span className="text-[#a0a0a0]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
+            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Subject" />
+            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 h-40 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Message" />
+            <div className="md:col-span-2 space-y-3">
+              {Object.keys(errors).length > 0 && (
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm text-[#ff6b6b]">
+                  {Object.entries(errors).map(([k, v]) => (
+                    <div key={k}>{k}: {v}</div>
+                  ))}
+                </motion.div>
+              )}
+              {sent ? (
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-white/10 bg-[#00c2ff]/20 text-white">
+                  Thank you. We’ll get back to you shortly.
+                </motion.div>
+              ) : (
+                <div className="flex items-center gap-3">
+                  <button type="submit" className="inline-block px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Send</button>
+                  <span className="text-[#a0a0a0]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
+                </div>
+              )}
             </div>
           </form>
         </motion.div>
