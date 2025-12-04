@@ -6,6 +6,7 @@ import ClientTicker from "@/components/client-ticker"
 import Footer from "@/components/footer"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 const HERO_VIDEO_URL = "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
 
@@ -90,6 +91,8 @@ export default function Home() {
             <video
               className="w-full h-full object-cover"
               src={HERO_VIDEO_URL}
+              title="iStrat hero video"
+              preload="metadata"
               controls
               autoPlay
               muted
@@ -98,9 +101,12 @@ export default function Home() {
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ccff00]/10 to-[#00c2ff]/10" />
           </div>
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+            <a href="#highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+          </motion.div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
+        <motion.div id="highlights" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
           <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             Highlights
           </motion.h3>
@@ -110,47 +116,64 @@ export default function Home() {
                 title: "MAERSK Pride Fiesta",
                 image: "https://www.istratmc.com/wp-content/uploads/2022/05/Video-and-Stage-Production.png",
                 video: "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4",
+                href: "/case-study/maersk",
               },
               {
                 title: "BANAUE Composition Competition",
                 image: "https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png",
                 video: "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4",
+                href: "/case-study/banaue",
               },
               {
                 title: "SGV Got Talent",
                 image: "https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png",
                 video: "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4",
+                href: "/case-study/sgv",
               },
-            ].map((h, i) => (
-              <motion.div key={h.title} className="group relative border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="relative w-full h-48">
-                  {h.video ? (
-                    <video
-                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                      src={h.video}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      onMouseEnter={(e) => { e.currentTarget.muted = false; e.currentTarget.play() }}
-                      onMouseLeave={(e) => { e.currentTarget.muted = true; e.currentTarget.play() }}
-                    />
-                  ) : (
-                    <Image src={h.image} alt={h.title} fill className="object-cover opacity-90 group-hover:opacity-100 transition-opacity" sizes="(max-width: 768px) 100vw, 33vw" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/15 group-hover:to-[#00c2ff]/15 transition-all" />
-                </div>
+            ].map((h, i) => {
+              const card = (
+                <motion.div key={h.title} className="group relative border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative w-full h-48">
+                    {h.video ? (
+                      <video
+                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                        src={h.video}
+                        poster={h.image}
+                        preload="metadata"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        onMouseEnter={(e) => { e.currentTarget.muted = false; e.currentTarget.play() }}
+                        onMouseLeave={(e) => { e.currentTarget.muted = true; e.currentTarget.play() }}
+                      />
+                    ) : (
+                      <Image src={h.image} alt={h.title} fill className="object-cover opacity-90 group-hover:opacity-100 transition-opacity" sizes="(max-width: 768px) 100vw, 33vw" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/15 group-hover:to-[#00c2ff]/15 transition-all" />
+                  </div>
                 <div className="p-6 flex items-center justify-between">
                   <p className="text-white text-lg font-semibold">{h.title}</p>
                   <span className="text-xs tracking-widest text-[#ccff00]">VIEW</span>
                 </div>
-              </motion.div>
-            ))}
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="px-4 py-2 text-xs tracking-widest text-white border border-white/20 bg-black/30 backdrop-blur-xl">VIEW CASE STUDY</span>
+                </div>
+                </motion.div>
+              )
+              return h.href ? (
+                <Link key={h.title} href={h.href} aria-label={`View case study: ${h.title}`} className="block">
+                  {card}
+                </Link>
+              ) : (
+                card
+              )
+            })}
           </div>
           <div className="w-full">
             <div className="max-w-7xl mx-auto">
@@ -207,9 +230,9 @@ export default function Home() {
             { name: "araLabs", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Market-Research.png" },
             { name: "CP Fresh Shop", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Public-Relations.png" },
           ].map((c) => (
-            <div key={c.name} className="flex items-center justify-center p-6 border border-white/10 bg-white/5">
+            <div key={c.name} className="group flex items-center justify-center p-6 border border-white/10 bg-white/5">
               <div className="relative w-full h-12">
-                <Image src={c.image} alt={c.name} fill className="object-contain grayscale opacity-80" sizes="(max-width: 768px) 100vw, 16vw" />
+                <Image src={c.image} alt={c.name} fill className="object-contain grayscale opacity-80 transition-all group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 16vw" loading="lazy" />
               </div>
             </div>
           ))}

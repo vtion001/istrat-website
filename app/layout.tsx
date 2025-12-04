@@ -13,6 +13,36 @@ export const metadata: Metadata = {
   title: "ART + AMPLITUDE | Creative & Production Agency",
   description: "Award-winning luxury creative and production agency for visionary brands",
   generator: "v0.app",
+  metadataBase: new URL("https://www.istratmc.com"),
+  keywords: [
+    "iStrat",
+    "Creative Agency",
+    "Event Production",
+    "Digital Marketing",
+    "Public Relations",
+    "Brand Strategy",
+  ],
+  openGraph: {
+    title: "ART + AMPLITUDE | Creative & Production Agency",
+    description: "Award-winning luxury creative and production agency for visionary brands",
+    url: "https://www.istratmc.com",
+    siteName: "ART + AMPLITUDE",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+        width: 1200,
+        height: 630,
+        alt: "ISTRAT Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ART + AMPLITUDE | Creative & Production Agency",
+    description: "Award-winning luxury creative and production agency for visionary brands",
+    images: ["https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"],
+  },
   icons: {
     icon: [
       {
@@ -43,6 +73,27 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://res.cloudinary.com" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'ART + AMPLITUDE',
+            url: 'https://www.istratmc.com',
+            logo: 'https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png',
+            sameAs: [
+              'https://www.instagram.com',
+              'https://www.twitter.com',
+              'https://www.linkedin.com',
+            ],
+            contactPoint: [{
+              '@type': 'ContactPoint',
+              telephone: '+63-961-609-6008',
+              contactType: 'customer service',
+              areaServed: 'PH',
+              availableLanguage: ['en'],
+            }],
+          }),
+        }} />
       </head>
       <body className={`${inter.className} antialiased bg-[#0a0a0a]`}>
         <PageTransition>{children}</PageTransition>
