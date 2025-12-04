@@ -1,0 +1,10 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_global-error/page.js")
+R.c("server/chunks/ssr/23f8d__pnpm_772bb507._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__c40e8ccc._.js")
+R.c("server/chunks/ssr/21186_next_dist_5dd0ef0e._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__bbdbdef0._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__c648c9b2._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__e6f69400._.js")
+R.c("server/chunks/ssr/5dd9d_istrat-website__next-internal_server_app__global-error_page_actions_16f08afa.js")
+R.m(18148)
+module.exports=R.m(18148).exports

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import FloatingNavbar from "@/components/floating-navbar"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 const inter = Inter({ subsets: ["latin"] })
@@ -43,6 +44,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased bg-[#0a0a0a]`}>
         {children}
+        <FloatingNavbar />
         <Analytics />
       </body>
     </html>

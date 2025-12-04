@@ -32,6 +32,13 @@ const itemVariants = {
 export default function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
+      <a href="/" className="absolute top-6 left-6 z-30" aria-label="Go to Home">
+        <img
+          src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
+          alt="ISTRAT logo"
+          className="h-10 w-auto opacity-90 drop-shadow"
+        />
+      </a>
       {/* Three.js Liquid Chrome Background */}
       <div className="absolute inset-0 z-0">
         <LiquidChrome />

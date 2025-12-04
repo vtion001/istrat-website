@@ -1,0 +1,3 @@
+module.exports=[12047,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(69708);a.n(d("[project]/Desktop/REPOSITORY/IStrat Website/istrat-website/node_modules/.pnpm/next@16.0.7_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},44376,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(69708);a.n(d("[project]/Desktop/REPOSITORY/IStrat Website/istrat-website/node_modules/.pnpm/next@16.0.7_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/client/components/builtin/global-error.js"))},31724,a=>{"use strict";a.i(12047);var b=a.i(44376);a.n(b)}];
+
+//# sourceMappingURL=21186_next_dist_client_components_builtin_global-error_196a2681.js.map

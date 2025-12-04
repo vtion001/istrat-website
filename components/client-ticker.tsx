@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Star } from "lucide-react"
 
-const clients = ["VOGUE", "TESLA", "LVMH", "NIKE", "DIOR", "PORSCHE", "GUCCI", "APPLE"]
+const clients = ["Maersk", "SGV", "eRase", "V.Ships", "araLabs", "CP Fresh Shop"]
 
 export default function ClientTicker() {
   return (

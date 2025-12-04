@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/Desktop_REPOSITORY_IStrat Website_istrat-website_06466518._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__c40e8ccc._.js")
+R.c("server/chunks/ssr/21186_next_dist_esm_build_templates_app-page_faf0bfeb.js")
+R.c("server/chunks/ssr/[root-of-the-server]__bbdbdef0._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__c648c9b2._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__e6f69400._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__2ef1f638._.js")
+R.c("server/chunks/ssr/21186_next_dist_client_components_826ac503._.js")
+R.c("server/chunks/ssr/21186_next_dist_client_components_builtin_forbidden_303b70be.js")
+R.c("server/chunks/ssr/5dd9d_istrat-website__next-internal_server_app__not-found_page_actions_98c57e8e.js")
+R.m(71787)
+module.exports=R.m(71787).exports
