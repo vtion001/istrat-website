@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/archerterminez/Desktop/REPOSITORY/IStrat%20Website/istrat-website/app/about-us/page.tsx"],"sourcesContent":["export default function AboutUsPage() {\n  return (\n    <main className=\"w-full overflow-x-hidden bg-[#0a0a0a]\">\n      <section className=\"max-w-5xl mx-auto px-6 py-24\">\n        <h1 className=\"text-5xl md:text-6xl font-display font-bold tracking-tighter mb-6 text-white\">About Us</h1>\n        <p className=\"text-lg text-[#a0a0a0] max-w-2xl\">\n          Learn about ISTRAT’s vision, team, and approach. Content coming soon.\n        </p>\n      </section>\n    </main>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8aAAC;QAAK,WAAU;kBACd,cAAA,8aAAC;YAAQ,WAAU;;8BACjB,8aAAC;oBAAG,WAAU;8BAA+E;;;;;;8BAC7F,8aAAC;oBAAE,WAAU;8BAAmC;;;;;;;;;;;;;;;;;AAMxD"}}]
-}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -37,10 +38,13 @@ export default function FloatingNavbar() {
             aria-label="Go to Home"
             className="flex items-center"
           >
-            <img
+            <Image
               src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
               alt="ISTRAT logo"
+              width={100}
+              height={28}
               className="h-7 w-auto opacity-90"
+              priority
             />
           </motion.a>
           {navItems.map((item) => (

@@ -1,9 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/about-us/page": "app/about-us/page.js",
-  "/be-part-of-istrat/page": "app/be-part-of-istrat/page.js",
-  "/connect-with-us/page": "app/connect-with-us/page.js",
-  "/our-works/page": "app/our-works/page.js",
-  "/page": "app/page.js",
-  "/products-and-services/page": "app/products-and-services/page.js"
-}

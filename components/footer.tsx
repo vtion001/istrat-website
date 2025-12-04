@@ -13,7 +13,15 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Main CTA */}
+          <div className="mb-8">
+            <a href="/" aria-label="Go to Home" className="inline-block">
+              <img
+                src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
+                alt="ISTRAT logo"
+                className="h-8 w-auto opacity-90"
+              />
+            </a>
+          </div>
           <motion.h2
             className="text-7xl md:text-8xl lg:text-9xl font-display font-bold mb-16 tracking-tighter leading-none"
             initial={{ opacity: 0, y: 20 }}
@@ -26,25 +34,30 @@ export default function Footer() {
 
           {/* Contact Info Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-            {[
-              { icon: Mail, label: "Email", value: "hello@amplitude.studio" },
-              { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-              { icon: MapPin, label: "Location", value: "New York, NY" },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center gap-4 mb-2">
-                  <item.icon className="w-5 h-5 text-[#ccff00]" />
-                  <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">{item.label}</span>
-                </div>
-                <p className="text-lg text-white ml-9">{item.value}</p>
-              </motion.div>
-            ))}
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+              <div className="flex items-center gap-4 mb-2">
+                <Mail className="w-5 h-5 text-[#ccff00]" />
+                <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Email</span>
+              </div>
+              <p className="text-lg text-white ml-9"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
+              <p className="text-lg text-white ml-9"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }}>
+              <div className="flex items-center gap-4 mb-2">
+                <Phone className="w-5 h-5 text-[#ccff00]" />
+                <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Phone</span>
+              </div>
+              <p className="text-lg text-white ml-9">09616096008</p>
+              <p className="text-lg text-white ml-9">09561324918</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
+              <div className="flex items-center gap-4 mb-2">
+                <MapPin className="w-5 h-5 text-[#ccff00]" />
+                <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Address</span>
+              </div>
+              <p className="text-lg text-white ml-9">161 Kamias Road, Sikatuna Village</p>
+              <p className="text-lg text-white ml-9">Quezon City, Philippines</p>
+            </motion.div>
           </div>
 
           {/* Bottom Info */}
