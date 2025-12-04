@@ -53,7 +53,7 @@ export default function BentoGrid() {
         className="max-w-7xl mx-auto"
       >
         <motion.h2
-          className="text-6xl md:text-7xl font-display font-bold mb-16 tracking-tighter"
+          className="text-6xl md:text-7xl font-display font-bold mb-16 tracking-tighter brand-gradient-text bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -74,7 +74,7 @@ export default function BentoGrid() {
             >
               <div className="relative h-full p-8 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none overflow-hidden">
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#b700ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#b700ff]/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/15 group-hover:to-[#00c2ff]/15 transition-all duration-500" />
 
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
@@ -89,15 +89,15 @@ export default function BentoGrid() {
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <span className="text-xs tracking-widest text-[#ccff00]">EXPLORE</span>
-                    <ArrowRight className="w-5 h-5 text-[#ccff00] transform group-hover:translate-x-1 transition-transform" />
-                  </motion.div>
-                </div>
+                    <span className="text-xs tracking-widest text-[#00c2ff]">EXPLORE</span>
+                    <ArrowRight className="w-5 h-5 text-[#00c2ff] transform group-hover:translate-x-1 transition-transform" />
+                </motion.div>
               </div>
+            </div>
 
               {/* Border glow on hover */}
               <motion.div
-                className="absolute inset-0 border border-[#ccff00] rounded-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 border border-[#00c2ff] rounded-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={false}
               />
             </motion.div>

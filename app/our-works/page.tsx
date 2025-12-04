@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const socialMedia = [
   { name: "General Eleazar", stat: "1M Followers" },
@@ -79,8 +80,15 @@ export default function OurWorksPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {externalServices.map((s) => (
-            <div key={s.title} className="group relative p-0 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden">
-              <img src={s.image} alt={s.title} className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+            <div key={s.title} className="group relative p-0 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden hover:border-[#00c2ff]/30">
+              <Image
+                src={s.image}
+                alt={s.title}
+                width={640}
+                height={192}
+                className="w-full h-48 object-contain p-4 opacity-90 group-hover:opacity-100 transition-opacity"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
               <div className="p-6">
                 <p className="text-white text-lg font-semibold">{s.title}</p>
               </div>

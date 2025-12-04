@@ -51,7 +51,7 @@ export default function ConnectWithUsPage() {
             <input className="w-full md:col-span-2 px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Subject" />
             <textarea className="w-full md:col-span-2 px-4 py-3 h-40 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Message" />
             <div className="md:col-span-2 flex items-center gap-3">
-              <a href="mailto:info@istratmc.com" className="inline-block px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Send Email</a>
+              <a href="mailto:info@istratmc.com" className="inline-block px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Send Email</a>
               <span className="text-[#a0a0a0]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
             </div>
           </form>

@@ -36,8 +36,8 @@ export default function Hero() {
         <Image
           src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
           alt="ISTRAT logo"
-          width={300}
-          height={180}
+          width={600}
+          height={240}
           className="h-10 w-auto opacity-90 drop-shadow"
           priority
         />

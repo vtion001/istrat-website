@@ -93,7 +93,7 @@ export default function ProductsAndServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service) => (
               <div key={service.title} className="group relative p-8 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#b700ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#b700ff]/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#00c2ff]/10 transition-all duration-500" />
                 <h3 className="text-2xl font-display font-semibold text-white mb-4">{service.title}</h3>
                 <p className="text-[#a0a0a0]">{service.description}</p>
               </div>

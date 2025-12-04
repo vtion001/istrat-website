@@ -6,6 +6,8 @@ import ClientTicker from "@/components/client-ticker"
 import Footer from "@/components/footer"
 import { motion } from "framer-motion"
 
+const HERO_VIDEO_URL = "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
+
 const specializations = [
   "Advertising",
   "Event Management and Staging",
@@ -77,16 +79,28 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#a0a0a0] mb-4">Imagine • Live • Soar</p>
-          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-white">iStrat COMMS INC</h2>
+          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">iStrat COMMS INC</h2>
           <p className="text-lg md:text-xl text-[#a0a0a0] max-w-3xl mb-12">
             We are a one-stop creative marketing communications and IT agency delivering PR, marketing and advertising campaigns anchored by data-driven strategies to help you build your brand today and succeed tomorrow.
           </p>
+          <div className="relative w-full aspect-video border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden mb-12">
+            <video
+              className="w-full h-full object-cover"
+              src={HERO_VIDEO_URL}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ccff00]/10 to-[#00c2ff]/10" />
+          </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {specializations.map((item) => (
-              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl">
+              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl hover:border-[#ccff00]/30 transition-colors">
                 <p className="text-white font-medium">{item}</p>
               </div>
             ))}
@@ -99,11 +113,14 @@ export default function Home() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service) => (
-              <div key={service.title} className="group relative p-8 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden">
+              <motion.div key={service.title} className="group relative p-8 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#b700ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#b700ff]/10 transition-all duration-500" />
                 <h4 className="text-2xl font-display font-semibold text-white mb-4">{service.title}</h4>
                 <p className="text-[#a0a0a0]">{service.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -129,9 +146,9 @@ export default function Home() {
         </motion.h3>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {audioVisual.map((name) => (
-            <div key={name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl">
+            <motion.div key={name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl hover:border-[#00c2ff]/30" whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
               <p className="text-white">{name}</p>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
@@ -140,9 +157,9 @@ export default function Home() {
         </motion.h3>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {events.map((name) => (
-            <div key={name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl">
+            <motion.div key={name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl hover:border-[#ccff00]/30" whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
               <p className="text-white">{name}</p>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
@@ -167,9 +184,15 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <a href="mailto:info@istratmc.com" className="inline-block px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Email Us</a>
+          <a href="mailto:info@istratmc.com" className="inline-block px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Email Us</a>
         </motion.div>
       </section>
+
+      <div className="w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="h-px w-full bg-gradient-to-r from-[#ccff00]/60 via-[#00c2ff]/60 to-transparent" />
+        </div>
+      </div>
 
       <ClientTicker />
       <Footer />

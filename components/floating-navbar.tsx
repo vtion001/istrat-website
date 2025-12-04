@@ -26,7 +26,7 @@ export default function FloatingNavbar() {
       transition={{ duration: 0.8, delay: 0.5 }}
     >
       <motion.div
-        className="px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl rounded-full"
+        className="px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl rounded-full bg-gradient-to-r from-[#ccff00]/30 via-[#00c2ff]/20 to-transparent"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >

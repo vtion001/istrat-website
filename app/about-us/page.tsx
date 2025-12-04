@@ -71,7 +71,7 @@ export default function AboutUsPage() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {specializations.map((item) => (
-              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none">
+              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none hover:border-[#ccff00]/30 transition-colors">
                 <p className="text-white font-medium">{item}</p>
               </div>
             ))}
