@@ -1,0 +1,70 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Mail, Phone, MapPin } from "lucide-react"
+
+export default function Footer() {
+  return (
+    <footer className="w-full bg-[#0a0a0a] border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {/* Main CTA */}
+          <motion.h2
+            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold mb-16 tracking-tighter leading-none"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            LET'S CREATE
+          </motion.h2>
+
+          {/* Contact Info Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            {[
+              { icon: Mail, label: "Email", value: "hello@amplitude.studio" },
+              { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
+              { icon: MapPin, label: "Location", value: "New York, NY" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-2">
+                  <item.icon className="w-5 h-5 text-[#ccff00]" />
+                  <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">{item.label}</span>
+                </div>
+                <p className="text-lg text-white ml-9">{item.value}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom Info */}
+          <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <p className="text-sm text-[#a0a0a0]">© 2025 ART + AMPLITUDE. All rights reserved.</p>
+            <div className="flex gap-8">
+              {["Instagram", "Twitter", "LinkedIn"].map((social) => (
+                <motion.a
+                  key={social}
+                  href="#"
+                  className="text-sm uppercase tracking-widest text-white hover:text-[#ccff00] transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {social}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </footer>
+  )
+}
