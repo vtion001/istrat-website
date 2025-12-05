@@ -65,16 +65,13 @@ export default function PopupDetail({ open, onClose, title, summary, points, cta
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
-                      className="relative w-full md:w-3/4 h-56 md:h-72 border border-white/10 bg-white/5"
+                      className="relative w-full md:w-3/4 border border-white/10 bg-white/5"
                     >
-                      <Image 
-                        src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764934070/xsge4gkifeyxrkdr4j3v.png" 
-                        alt={`${title} featured image`} 
-                        width={1920}
-                        height={1080}
-                        className="opacity-90" 
-                        sizes="(max-width: 768px) 100vw, 75vw" 
-                        style={{ width: '100%', height: 'auto', objectFit: 'contain' }} 
+                      <img
+                        src={images[0]}
+                        alt={`${title} featured image`}
+                        className="w-full h-auto opacity-90 object-contain"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 pointer-events-none" />
                     </motion.div>

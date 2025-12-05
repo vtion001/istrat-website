@@ -26,17 +26,17 @@ export default function FloatingNavbar() {
       transition={{ duration: 0.8, delay: 0.5 }}
     >
       <motion.div
-        className="px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl rounded-full bg-gradient-to-r from-[#c59f43]/30 via-[#0d71a3]/20 to-transparent"
+        className="px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl rounded-full bg-gradient-to-r from-[#c59f43]/30 via-[#0d71a3]/20 to-transparent max-w-[90vw] overflow-x-auto"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-8 flex-nowrap whitespace-nowrap">
           <motion.a
             href="/"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Go to Home"
-            className="flex items-center"
+            className="flex items-center flex-shrink-0"
           >
             <Image
               src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
@@ -51,7 +51,7 @@ export default function FloatingNavbar() {
             <motion.a
               key={item.label}
               href={item.href}
-              className={`text-sm uppercase tracking-widest transition-colors ${pathname === item.href ? "text-[#c59f43]" : "text-white hover:text-[#c59f43]"}`}
+              className={`text-sm uppercase tracking-widest transition-colors flex-shrink-0 ${pathname === item.href ? "text-[#c59f43]" : "text-white hover:text-[#c59f43]"}`}
               aria-current={pathname === item.href ? "page" : undefined}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
