@@ -77,8 +77,21 @@ const events = [
 export default function Home() {
   const { scrollYProgress } = useScroll()
   const ribbonY = useTransform(scrollYProgress, [0, 1], [0, -30])
+  function toYouTubeEmbed(u: string) {
+    try {
+      const url = new URL(u)
+      const isWatch = url.hostname.includes("youtube.com") && url.pathname === "/watch"
+      const isShort = url.hostname.includes("youtu.be")
+      const id = isWatch ? url.searchParams.get("v") : isShort ? url.pathname.slice(1) : null
+      if (!id) return null
+      const params = new URLSearchParams({ autoplay: "1", mute: "1", loop: "1", controls: "0", rel: "0", playlist: id })
+      return `https://www.youtube.com/embed/${id}?${params.toString()}`
+    } catch {
+      return null
+    }
+  }
   return (
-    <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main id="main" className="w-full overflow-x-hidden bg-[#0a0a0a]">
       <Hero />
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -102,7 +115,7 @@ export default function Home() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ccff00]/10 to-[#00c2ff]/10" />
           </div>
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <a href="#highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+            <a href="#highlights" aria-label="Explore Highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
           </motion.div>
         </motion.div>
 
@@ -113,21 +126,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
               {
-                title: "MAERSK Pride Fiesta",
-                image: "https://www.istratmc.com/wp-content/uploads/2022/05/Video-and-Stage-Production.png",
-                video: "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4",
-                href: "/case-study/maersk",
+                title: "ALAB FOR LOVE Pride PH Festival",
+                video: "https://www.youtube.com/watch?v=s_DFhmMFmU8",
+                href: "/case-study/alab-for-love",
               },
               {
-                title: "BANAUE Composition Competition",
-                image: "https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png",
-                video: "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4",
+                title: "My heart beats for Banaue",
+                video: "https://www.youtube.com/watch?v=hHO25dAiGk4",
                 href: "/case-study/banaue",
               },
               {
-                title: "SGV Got Talent",
-                image: "https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png",
-                video: "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4",
+                title: "GAWAD PARANGAL 2022 HIGHLIGHTS",
+                video: "https://www.youtube.com/watch?v=pU09VaTZXRM",
                 href: "/case-study/sgv",
               },
             ].map((h, i) => {
@@ -139,22 +149,37 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   <div className="relative w-full h-48">
-                    {h.video ? (
-                      <video
-                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                        src={h.video}
-                        poster={h.image}
-                        preload="metadata"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        onMouseEnter={(e) => { e.currentTarget.muted = false; e.currentTarget.play() }}
-                        onMouseLeave={(e) => { e.currentTarget.muted = true; e.currentTarget.play() }}
-                      />
-                    ) : (
-                      <Image src={h.image} alt={h.title} fill className="object-cover opacity-90 group-hover:opacity-100 transition-opacity" sizes="(max-width: 768px) 100vw, 33vw" />
-                    )}
+                    {(() => {
+                      const embed = h.video ? toYouTubeEmbed(h.video) : null
+                      if (embed) {
+                        return (
+                          <iframe
+                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                            src={embed}
+                            title={h.title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
+                        )
+                      }
+                      if (h.video) {
+                        return (
+                          <video
+                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                            src={h.video}
+                            preload="metadata"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            onMouseEnter={(e) => { e.currentTarget.muted = false; e.currentTarget.play() }}
+                            onMouseLeave={(e) => { e.currentTarget.muted = true; e.currentTarget.play() }}
+                          />
+                        )
+                      }
+                      return <div className="w-full h-full bg-gradient-to-br from-[#0a0a0a] to-black" />
+                    })()}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/15 group-hover:to-[#00c2ff]/15 transition-all" />
                   </div>
                 <div className="p-6 flex items-center justify-between">
@@ -167,7 +192,12 @@ export default function Home() {
                 </motion.div>
               )
               return h.href ? (
-                <Link key={h.title} href={h.href} aria-label={`View case study: ${h.title}`} className="block">
+                <Link
+                  key={h.title}
+                  href={h.href}
+                  aria-label={`View case study: ${h.title}`}
+                  className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ccff00]/40"
+                >
                   {card}
                 </Link>
               ) : (

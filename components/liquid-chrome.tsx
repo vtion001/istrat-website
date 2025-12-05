@@ -5,8 +5,8 @@ import * as THREE from "three"
 
 export default function LiquidChrome() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const sceneRef = useRef<any>(null)
-  const rendererRef = useRef<any>(null)
+  const sceneRef = useRef<THREE.Scene | null>(null)
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null)
 
   useEffect(() => {
     if (!containerRef.current) return

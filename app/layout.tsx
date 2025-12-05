@@ -96,6 +96,8 @@ export default function RootLayout({
         }} />
       </head>
       <body className={`${inter.className} antialiased bg-[#0a0a0a]`}>
+        <a href="#main" className="skip-link">Skip to content</a>
+        <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
         <PageTransition>{children}</PageTransition>
         <FloatingNavbar />
         <Analytics />

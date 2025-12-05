@@ -8,8 +8,9 @@ const HERO_VIDEO = "https://res.cloudinary.com/dbviya1rj/video/upload/v176483749
 
 export default function CaseStudyBanaue() {
   return (
-    <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main id="main" className="w-full overflow-x-hidden bg-[#0a0a0a]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
+        <div id="top" />
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div className="mb-4">
             <Link href="/" className="text-xs uppercase tracking-widest text-[#a0a0a0] hover:text-white">← Back to Home</Link>
@@ -92,7 +93,7 @@ export default function CaseStudyBanaue() {
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="relative w-full aspect-square border border-white/10 bg-white/5">
-                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" alt="Production still" fill className="object-cover opacity-90" />
+                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" alt="Production still" fill className="object-cover opacity-90" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0" />
               </div>
             ))}
@@ -103,6 +104,7 @@ export default function CaseStudyBanaue() {
           <a href="mailto:info@istratmc.com" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Discuss a project<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
           <Link href="/#highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Back to Highlights</Link>
         </motion.div>
+        <Link href="#top" className="fixed bottom-6 right-6 px-4 py-3 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Back to Top</Link>
       </section>
     </main>
   )

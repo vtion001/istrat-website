@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   turbopack: {
-    root: "/Users/archerterminez/Desktop/REPOSITORY/IStrat Website/istrat-website",
+    root: __dirname,
   },
   typescript: {
     ignoreBuildErrors: true,
