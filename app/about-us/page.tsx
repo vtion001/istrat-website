@@ -97,6 +97,12 @@ export default function AboutUsPage() {
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {team.map((member) => (
             <div key={member.name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl">
+              <img
+                src={`https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=0d71a3&color=ffffff&size=256&bold=true&rounded=false`}
+                alt={`${member.name} avatar`}
+                className="w-24 h-24 border border-white/10 object-cover mb-4"
+                loading="lazy"
+              />
               <p className="text-white text-xl font-semibold">{member.name}</p>
               <p className="text-[#c59f43] text-sm uppercase tracking-widest mb-3">{member.title}</p>
               <p className="text-[#a0a0a0]">{member.bio}</p>

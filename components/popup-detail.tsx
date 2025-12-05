@@ -1,6 +1,7 @@
 "use client"
 
 import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
 
 type PopupDetailProps = {
   open: boolean
@@ -10,9 +11,10 @@ type PopupDetailProps = {
   points: string[]
   ctaLabel?: string
   ctaHref?: string
+  images?: string[]
 }
 
-export default function PopupDetail({ open, onClose, title, summary, points, ctaLabel = "Contact Us", ctaHref = "/connect-with-us" }: PopupDetailProps) {
+export default function PopupDetail({ open, onClose, title, summary, points, ctaLabel = "Contact Us", ctaHref = "/connect-with-us", images = [] }: PopupDetailProps) {
   return (
     <AnimatePresence>
       {open && (
@@ -37,7 +39,7 @@ export default function PopupDetail({ open, onClose, title, summary, points, cta
             exit={{ opacity: 0, y: 16, scale: 0.98 }}
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
           >
-            <div className="relative p-6 md:p-8">
+            <div className="relative p-6 md:p-8 max-h-[70vh] overflow-y-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0" />
               <motion.div
                 className="absolute -inset-px rounded-none pointer-events-none"
@@ -57,8 +59,29 @@ export default function PopupDetail({ open, onClose, title, summary, points, cta
                     </li>
                   ))}
                 </ul>
+                {images.length > 0 && (
+                  <div className="flex justify-center mb-6">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="relative w-full md:w-3/4 h-56 md:h-72 border border-white/10 bg-white/5"
+                    >
+                      <Image 
+                        src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764934070/xsge4gkifeyxrkdr4j3v.png" 
+                        alt={`${title} featured image`} 
+                        width={1920}
+                        height={1080}
+                        className="opacity-90" 
+                        sizes="(max-width: 768px) 100vw, 75vw" 
+                        style={{ width: '100%', height: 'auto', objectFit: 'contain' }} 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 pointer-events-none" />
+                    </motion.div>
+                  </div>
+                )}
                 <div className="flex items-center justify-between gap-3">
-                  <button onClick={onClose} className="px-4 py-3 border border-white/10 bg-white/10 text-white hover:bg-white/20 transition-colors">Close</button>
+                  <button onClick={onClose} className="px-4 py-3 border border-white/10 bg-white/10 text-white hover:bg_WHITE/20 transition-colors">Close</button>
                   <a href={ctaHref} className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-[#c59f43]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#c59f43] transition-colors">
                     {ctaLabel}
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -72,4 +95,3 @@ export default function PopupDetail({ open, onClose, title, summary, points, cta
     </AnimatePresence>
   )
 }
-
