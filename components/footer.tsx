@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
-                <Mail className="w-5 h-5 text-[#ccff00]" />
+                <Mail className="w-5 h-5 text-[#c59f43]" />
                 <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Email</span>
               </div>
               <p className="text-lg text-white ml-9"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
@@ -44,7 +44,7 @@ export default function Footer() {
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
-                <Phone className="w-5 h-5 text-[#ccff00]" />
+                <Phone className="w-5 h-5 text-[#c59f43]" />
                 <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Phone</span>
               </div>
               <p className="text-lg text-white ml-9">09616096008</p>
@@ -52,7 +52,7 @@ export default function Footer() {
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
-                <MapPin className="w-5 h-5 text-[#ccff00]" />
+                <MapPin className="w-5 h-5 text-[#c59f43]" />
                 <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Address</span>
               </div>
               <p className="text-lg text-white ml-9">161 Kamias Road, Sikatuna Village</p>
@@ -68,7 +68,7 @@ export default function Footer() {
                 <motion.a
                   key={social}
                   href="#"
-                  className="text-sm uppercase tracking-widest text-white hover:text-[#ccff00] transition-colors"
+                  className="text-sm uppercase tracking-widest text-white hover:text-[#c59f43] transition-colors"
                   whileHover={{ scale: 1.05 }}
                 >
                   {social}

@@ -11,7 +11,7 @@ export default function NotFound() {
           <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">Page Not Found</h1>
           <p className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-2xl mb-8">The page you’re looking for does not exist. Explore our latest highlights and case studies.</p>
           <div className="flex items-center gap-4">
-            <Link href="/" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Go Home</Link>
+            <Link href="/" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-[#c59f43]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#c59f43] transition-colors">Go Home</Link>
             <Link href="/#highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">View Highlights</Link>
           </div>
         </motion.div>

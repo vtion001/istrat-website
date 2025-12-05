@@ -71,7 +71,7 @@ export default function AboutUsPage() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {specializations.map((item) => (
-              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none hover:border-[#ccff00]/30 transition-colors">
+              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none hover:border-[#c59f43]/30 transition-colors">
                 <p className="text-white font-medium">{item}</p>
               </div>
             ))}
@@ -98,7 +98,7 @@ export default function AboutUsPage() {
           {team.map((member) => (
             <div key={member.name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl">
               <p className="text-white text-xl font-semibold">{member.name}</p>
-              <p className="text-[#ccff00] text-sm uppercase tracking-widest mb-3">{member.title}</p>
+              <p className="text-[#c59f43] text-sm uppercase tracking-widest mb-3">{member.title}</p>
               <p className="text-[#a0a0a0]">{member.bio}</p>
             </div>
           ))}

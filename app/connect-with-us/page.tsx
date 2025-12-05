@@ -41,17 +41,17 @@ export default function ConnectWithUsPage() {
 
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#ccff00] uppercase tracking-widest text-sm mb-2">Phone</p>
+            <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Phone</p>
             <p className="text-white">09616096008</p>
             <p className="text-white">09561324918</p>
           </div>
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#ccff00] uppercase tracking-widest text-sm mb-2">Email</p>
+            <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Email</p>
             <p className="text-white"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
             <p className="text-white"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
           </div>
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#ccff00] uppercase tracking-widest text-sm mb-2">Address</p>
+            <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Address</p>
             <p className="text-white">161 Kamias Road, Sikatuna Village</p>
             <p className="text-white">Quezon City, Philippines</p>
           </div>
@@ -85,12 +85,12 @@ export default function ConnectWithUsPage() {
                 </motion.div>
               )}
               {sent ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-white/10 bg-[#00c2ff]/20 text-white" role="status" aria-live="polite">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-white/10 bg-[#0d71a3]/20 text-white" role="status" aria-live="polite">
                   Thank you. We’ll get back to you shortly.
                 </motion.div>
               ) : (
                 <div className="flex items-center gap-3">
-                  <button type="submit" className="inline-block px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors" aria-label="Send">Send</button>
+                  <button type="submit" className="inline-block px-6 py-4 border border-white/10 bg-[#c59f43]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#c59f43] transition-colors" aria-label="Send">Send</button>
                   <span className="text-[#a0a0a0]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
                 </div>
               )}

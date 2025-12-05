@@ -14,7 +14,7 @@ export default function ClientTicker() {
         transition={{ duration: 30, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
       >
         {[...clients, ...clients].map((client, index) => {
-          const color = index % 2 === 0 ? "#ccff00" : "#00c2ff"
+          const color = index % 2 === 0 ? "#c59f43" : "#0d71a3"
           return (
             <div key={index} className="flex items-center gap-12 flex-shrink-0">
               <span className="text-2xl font-display font-bold text-white tracking-widest">{client}</span>

@@ -112,7 +112,7 @@ export default function Home() {
               loop
               playsInline
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ccff00]/10 to-[#00c2ff]/10" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c59f43]/10 to-[#0d71a3]/10" />
           </div>
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             <a href="#highlights" aria-label="Explore Highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
@@ -180,11 +180,11 @@ export default function Home() {
                       }
                       return <div className="w-full h-full bg-gradient-to-br from-[#0a0a0a] to-black" />
                     })()}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/15 group-hover:to-[#00c2ff]/15 transition-all" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/15 group-hover:to-[#0d71a3]/15 transition-all" />
                   </div>
                 <div className="p-6 flex items-center justify-between">
                   <p className="text-white text-lg font-semibold">{h.title}</p>
-                  <span className="text-xs tracking-widest text-[#ccff00]">VIEW</span>
+                  <span className="text-xs tracking-widest text-[#c59f43]">VIEW</span>
                 </div>
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="px-4 py-2 text-xs tracking-widest text-white border border-white/20 bg-black/30 backdrop-blur-xl">VIEW CASE STUDY</span>
@@ -196,7 +196,7 @@ export default function Home() {
                   key={h.title}
                   href={h.href}
                   aria-label={`View case study: ${h.title}`}
-                  className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ccff00]/40"
+                  className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c59f43]/40"
                 >
                   {card}
                 </Link>
@@ -207,16 +207,10 @@ export default function Home() {
           </div>
           <div className="w-full">
             <div className="max-w-7xl mx-auto">
-              <motion.div style={{ y: ribbonY }} className="h-px w-full bg-gradient-to-r from-[#ccff00]/50 via-[#00c2ff]/50 to-transparent" />
+              <motion.div style={{ y: ribbonY }} className="h-px w-full bg-gradient-to-r from-[#c59f43]/50 via-[#0d71a3]/50 to-transparent" />
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {specializations.map((item) => (
-              <div key={item} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl hover:border-[#ccff00]/30 transition-colors">
-                <p className="text-white font-medium">{item}</p>
-              </div>
-            ))}
-          </div>
+          
         </motion.div>
 
         <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -229,14 +223,14 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#b700ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#b700ff]/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#b700ff]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#b700ff]/10 transition-all duration-500" />
                 <h4 className="text-2xl font-display font-semibold text-white mb-4">{service.title}</h4>
                 <p className="text-[#a0a0a0]">{service.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
-        <motion.div className="flex flex-wrap gap-3 mb-2" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.div className="flex flex-wrap gap-3 mt-6 mb-2" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {["Best Staging 2024", "Top PR Campaign", "Innovation in AV", "Community Impact Award"].map((a) => (
             <span key={a} className="px-4 py-2 text-xs tracking-widest text-white border border-white/10 bg-white/5">
               {a}
@@ -276,69 +270,11 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Social Media Management
-        </motion.h3>
-        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {socialMedia.map((item) => (
-            <div key={item.name} className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-              <p className="text-white text-xl font-semibold mb-2">{item.name}</p>
-              <p className="text-[#ccff00] uppercase tracking-widest text-sm">{item.stat}</p>
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Audio Visual Productions
-        </motion.h3>
-        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {audioVisual.map((name) => (
-            <motion.div key={name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl hover:border-[#00c2ff]/30" whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-              <p className="text-white">{name}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Event Management and Staging
-        </motion.h3>
-        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {events.map((name) => (
-            <motion.div key={name} className="p-6 border border-white/10 bg-white/5 backdrop-blur-xl hover:border-[#ccff00]/30" whileHover={{ scale: 1.02 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-              <p className="text-white">{name}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Get in Touch
-        </motion.h3>
-        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#ccff00] uppercase tracking-widest text-sm mb-2">Phone</p>
-            <p className="text-white">09616096008</p>
-            <p className="text-white">09561324918</p>
-          </div>
-          <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#ccff00] uppercase tracking-widest text-sm mb-2">Email</p>
-            <p className="text-white"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
-            <p className="text-white"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
-          </div>
-          <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#ccff00] uppercase tracking-widest text-sm mb-2">Address</p>
-            <p className="text-white">161 Kamias Road, Sikatuna Village</p>
-            <p className="text-white">Quezon City, Philippines</p>
-          </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <a href="mailto:info@istratmc.com" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-[#ccff00]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#ccff00] transition-colors">Email Us<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-        </motion.div>
-      </section>
+      
 
       <div className="w-full">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <motion.div style={{ y: ribbonY }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="h-px w-full bg-gradient-to-r from-[#ccff00]/60 via-[#00c2ff]/60 to-transparent" />
+          <motion.div style={{ y: ribbonY }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="h-px w-full bg-gradient-to-r from-[#c59f43]/60 via-[#0d71a3]/60 to-transparent" />
         </div>
       </div>
 

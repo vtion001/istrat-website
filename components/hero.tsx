@@ -86,7 +86,7 @@ export default function Hero() {
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           variants={itemVariants}
         >
-          <ChevronDown className="w-6 h-6 text-[#ccff00]" />
+          <ChevronDown className="w-6 h-6 text-[#c59f43]" />
         </motion.div>
       </motion.div>
     </div>

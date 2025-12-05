@@ -74,7 +74,7 @@ export default function BentoGrid() {
             >
               <div className="relative h-full p-8 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none overflow-hidden">
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/15 group-hover:to-[#00c2ff]/15 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/15 group-hover:to-[#0d71a3]/15 transition-all duration-500" />
 
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
@@ -89,15 +89,15 @@ export default function BentoGrid() {
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <span className="text-xs tracking-widest text-[#00c2ff]">EXPLORE</span>
-                    <ArrowRight className="w-5 h-5 text-[#00c2ff] transform group-hover:translate-x-1 transition-transform" />
+                    <span className="text-xs tracking-widest text-[#0d71a3]">EXPLORE</span>
+                    <ArrowRight className="w-5 h-5 text-[#0d71a3] transform group-hover:translate-x-1 transition-transform" />
                 </motion.div>
               </div>
             </div>
 
               {/* Border glow on hover */}
               <motion.div
-                className="absolute inset-0 border border-[#00c2ff] rounded-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 border border-[#0d71a3] rounded-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={false}
               />
             </motion.div>

@@ -29,7 +29,7 @@ export default function LiquidChrome() {
     const material = new THREE.MeshPhongMaterial({
       color: 0x404040,
       emissive: 0x1a1a1a,
-      specular: 0xccff00,
+      specular: 0xc59f43,
       shininess: 100,
       wireframe: false,
     })
@@ -42,11 +42,11 @@ export default function LiquidChrome() {
     const originalPositions = positionAttribute.array.slice()
 
     // Lighting
-    const light1 = new THREE.PointLight(0xccff00, 0.8)
+    const light1 = new THREE.PointLight(0xc59f43, 0.8)
     light1.position.set(10, 10, 10)
     scene.add(light1)
 
-    const light2 = new THREE.PointLight(0xb700ff, 0.5)
+    const light2 = new THREE.PointLight(0x0d71a3, 0.5)
     light2.position.set(-10, -10, 10)
     scene.add(light2)
 

@@ -109,7 +109,7 @@ export default function OurWorksPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {externalServices.map((s) => (
-            <button key={s.title} className="group relative p-0 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden hover:border-[#00c2ff]/30 text-left" onClick={() => openVideo(s.title)} aria-label={`Open video for ${s.title}`}>
+            <button key={s.title} className="group relative p-0 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden hover:border-[#0d71a3]/30 text-left" onClick={() => openVideo(s.title)} aria-label={`Open video for ${s.title}`}>
               <Image
                 src={s.image}
                 alt={s.title}
@@ -131,7 +131,7 @@ export default function OurWorksPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {socialMedia.map((item) => (
-            <button key={item.name} className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#00c2ff]/30 overflow-hidden" onClick={() => openVideo(item.name)} aria-label={`Open video for ${item.name}`}>
+            <button key={item.name} className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#0d71a3]/30 overflow-hidden" onClick={() => openVideo(item.name)} aria-label={`Open video for ${item.name}`}>
               <div className="relative w-full h-40">
                 <video
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
@@ -143,11 +143,11 @@ export default function OurWorksPage() {
                   loop
                   playsInline
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#00c2ff]/10 transition-all" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all" />
               </div>
               <div className="p-8">
                 <p className="text-white text-xl font-semibold mb-2">{item.name}</p>
-                <p className="text-[#ccff00] uppercase tracking-widest text-sm">{item.stat}</p>
+                <p className="text-[#c59f43] uppercase tracking-widest text-sm">{item.stat}</p>
                 <p className="mt-3 text-xs uppercase tracking-widest text-[#a0a0a0]">Tap to view reel</p>
               </div>
             </button>
@@ -159,7 +159,7 @@ export default function OurWorksPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {audioVisual.map((name) => (
-            <button key={name} className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#00c2ff]/30 overflow-hidden" onClick={() => openVideo(name)} aria-label={`Open video for ${name}`}>
+            <button key={name} className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#0d71a3]/30 overflow-hidden" onClick={() => openVideo(name)} aria-label={`Open video for ${name}`}> 
               <div className="relative w-full h-40">
                 <video
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
@@ -171,7 +171,7 @@ export default function OurWorksPage() {
                   loop
                   playsInline
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#00c2ff]/10 transition-all" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all" />
               </div>
               <div className="p-6">
                 <p className="text-white">{name}</p>
@@ -186,7 +186,7 @@ export default function OurWorksPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {events.map((name) => (
-            <button key={name} className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#00c2ff]/30 overflow-hidden" onClick={() => openVideo(name)} aria-label={`Open video for ${name}`}>
+            <button key={name} className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#0d71a3]/30 overflow-hidden" onClick={() => openVideo(name)} aria-label={`Open video for ${name}`}> 
               <div className="relative w-full h-40">
                 <video
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
@@ -198,7 +198,7 @@ export default function OurWorksPage() {
                   loop
                   playsInline
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ccff00]/0 to-[#00c2ff]/0 group-hover:from-[#ccff00]/10 group-hover:to-[#00c2ff]/10 transition-all" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all" />
               </div>
               <div className="p-6">
                 <p className="text-white">{name}</p>
@@ -229,7 +229,7 @@ export default function OurWorksPage() {
                     loop
                     playsInline
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ccff00]/10 to-[#00c2ff]/10" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c59f43]/10 to-[#0d71a3]/10" />
                 </div>
               </motion.div>
             </motion.div>

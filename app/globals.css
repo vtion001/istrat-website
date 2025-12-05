@@ -11,7 +11,7 @@
   --card-foreground: #ffffff;
   --popover: #1a1a1a;
   --popover-foreground: #ffffff;
-  --primary: #ccff00;
+  --primary: #c59f43;
   --primary-foreground: #0a0a0a;
   --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
@@ -23,8 +23,8 @@
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.05);
-  --ring: #ccff00;
-  --brand-blue: #00c2ff;
+  --ring: #c59f43;
+  --brand-blue: #0d71a3;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -33,12 +33,12 @@
   --radius: 0rem;
   --sidebar: #0a0a0a;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #ccff00;
+  --sidebar-primary: #c59f43;
   --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: #b700ff;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #ccff00;
+  --sidebar-ring: #c59f43;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Playfair Display", serif;
 }
@@ -50,7 +50,7 @@
   --card-foreground: #ffffff;
   --popover: #1a1a1a;
   --popover-foreground: #ffffff;
-  --primary: #ccff00;
+  --primary: #c59f43;
   --primary-foreground: #0a0a0a;
   --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
@@ -62,7 +62,7 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.05);
-  --ring: #ccff00;
+  --ring: #c59f43;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -70,12 +70,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: #0a0a0a;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #ccff00;
+  --sidebar-primary: #c59f43;
   --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: #b700ff;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #ccff00;
+  --sidebar-ring: #c59f43;
 }
 
 
@@ -104,8 +104,8 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    background-image: radial-gradient(80vh 80vh at 10% 10%, rgba(204, 255, 0, 0.28), transparent 60%),
-      radial-gradient(70vh 70vh at 85% 25%, rgba(0, 194, 255, 0.2), transparent 65%);
+    background-image: radial-gradient(80vh 80vh at 10% 10%, rgba(197, 159, 67, 0.28), transparent 60%),
+      radial-gradient(70vh 70vh at 85% 25%, rgba(13, 113, 163, 0.2), transparent 65%);
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
@@ -126,11 +126,11 @@
     height: 2px;
     width: 96px;
     margin-top: 6px;
-    background-image: linear-gradient(to right, rgba(204, 255, 0, 0.6), rgba(0, 194, 255, 0.4));
+    background-image: linear-gradient(to right, rgba(197, 159, 67, 0.6), rgba(13, 113, 163, 0.4));
   }
 
 .brand-gradient-text {
-  background-image: linear-gradient(to right, #ccff00, #00c2ff);
+  background-image: linear-gradient(to right, #c59f43, #0d71a3);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
