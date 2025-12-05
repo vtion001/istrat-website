@@ -38,7 +38,7 @@ export default function Hero() {
           alt="ISTRAT logo"
           width={600}
           height={240}
-          className="h-10 w-auto opacity-90 drop-shadow"
+          className="h-40 w-auto opacity-90 drop-shadow"
           priority
         />
       </a>

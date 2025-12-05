@@ -18,7 +18,7 @@ export default function Footer() {
               <img
                 src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
                 alt="ISTRAT logo"
-                className="h-8 w-auto opacity-90"
+                className="h-30 w-auto opacity-90"
               />
             </a>
           </div>

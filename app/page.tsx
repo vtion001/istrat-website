@@ -5,6 +5,8 @@ import BentoGrid from "@/components/bento-grid"
 import ClientTicker from "@/components/client-ticker"
 import Footer from "@/components/footer"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { useState } from "react"
+import PopupDetail from "@/components/popup-detail"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -77,6 +79,8 @@ const events = [
 export default function Home() {
   const { scrollYProgress } = useScroll()
   const ribbonY = useTransform(scrollYProgress, [0, 1], [0, -30])
+  const [detailOpen, setDetailOpen] = useState(false)
+  const [detailData, setDetailData] = useState<{ title: string; summary: string; points: string[]; ctaLabel?: string; ctaHref?: string }>({ title: "", summary: "", points: [] })
   function toYouTubeEmbed(u: string) {
     try {
       const url = new URL(u)
@@ -219,14 +223,71 @@ export default function Home() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service) => (
-              <motion.div key={service.title} className="group relative p-8 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden"
+              <motion.button
+                key={service.title}
+                className="group relative p-8 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden text-left"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                onClick={() => {
+                  const details: Record<string, { summary: string; points: string[] }> = {
+                    "Integrated Marketing Communications": {
+                      summary: "Unify brand voice across channels to increase recall, trust and conversion.",
+                      points: [
+                        "Audience-first strategy coordinating paid, owned and earned media.",
+                        "Message hierarchy and creative system that scales across touchpoints.",
+                        "Measurement framework with clear KPIs and optimization loops.",
+                      ],
+                    },
+                    "Brand Development, Concept, Design and Production": {
+                      summary: "Define identity and execute production that looks premium and feels consistent.",
+                      points: [
+                        "Brand strategy, naming, narrative and visual system.",
+                        "Design guidelines applied to print, digital and video.",
+                        "End-to-end creative production and quality control.",
+                      ],
+                    },
+                    "Event Management and Staging": {
+                      summary: "Deliver seamless events that amplify brand moments with zero operational friction.",
+                      points: [
+                        "Run-of-show, logistics and vendor orchestration.",
+                        "AV integration: stage, lighting, sound and live content ops.",
+                        "Risk management and on-site control for flawless execution.",
+                      ],
+                    },
+                    "Digital Marketing, Social Media Management and Analytics": {
+                      summary: "Grow reach and conversions with data-driven content, SEO and performance ads.",
+                      points: [
+                        "Channel strategies for search, social and email.",
+                        "Content calendars, creative production and community management.",
+                        "Analytics, dashboards and iterative optimization.",
+                      ],
+                    },
+                    "Public Relations/Crisis PR Management and Advocacy": {
+                      summary: "Build credibility and protect reputation with proactive PR and decisive crisis comms.",
+                      points: [
+                        "Stakeholder mapping and narrative development.",
+                        "Media relations, spokesperson prep and message training.",
+                        "Crisis playbooks: rapid assessment, response and recovery.",
+                      ],
+                    },
+                    "Applications and IT Systems": {
+                      summary: "Operational tools that enable faster decisions and safer environments.",
+                      points: [
+                        "DataFusion360 for real-time analytics and reporting.",
+                        "InfoBlast for secure broadcast messaging.",
+                        "Anti-Drone solutions for event and facility security.",
+                      ],
+                    },
+                  }
+                  const d = details[service.title]
+                  setDetailData({ title: service.title, summary: d.summary, points: d.points, ctaLabel: "Discuss how this helps", ctaHref: "/connect-with-us" })
+                  setDetailOpen(true)
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#b700ff]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#b700ff]/10 transition-all duration-500" />
                 <h4 className="text-2xl font-display font-semibold text-white mb-4">{service.title}</h4>
                 <p className="text-[#a0a0a0]">{service.description}</p>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
         </motion.div>
@@ -240,6 +301,7 @@ export default function Home() {
       </section>
 
       <BentoGrid />
+      <PopupDetail open={detailOpen} onClose={() => setDetailOpen(false)} title={detailData.title} summary={detailData.summary} points={detailData.points} ctaLabel={detailData.ctaLabel} ctaHref={detailData.ctaHref} />
 
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>

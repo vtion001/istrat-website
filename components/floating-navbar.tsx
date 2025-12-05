@@ -43,7 +43,7 @@ export default function FloatingNavbar() {
               alt="ISTRAT logo"
               width={100}
               height={28}
-              className="h-7 w-auto opacity-90"
+              className="h-12 w-auto opacity-90"
               priority
             />
           </motion.a>
