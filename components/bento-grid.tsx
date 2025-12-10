@@ -44,7 +44,7 @@ const services = [
 
 export default function BentoGrid() {
   return (
-    <section className="w-full px-4 md:px-8 py-24 bg-[#0a0a0a]">
+    <section className="w-full px-4 md:px-8 py-24 bg-[#0d1a2b]">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

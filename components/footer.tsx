@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#0a0a0a] border-t border-white/10">
+    <footer className="w-full bg-[#0d1a2b] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-24">
         <motion.div
           initial={{ opacity: 0 }}

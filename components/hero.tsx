@@ -31,7 +31,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
+    <div className="relative w-full h-screen overflow-hidden bg-[#0d1a2b]">
       <a href="/" className="absolute top-6 left-6 z-30" aria-label="Go to Home">
         <Image
           src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
@@ -53,7 +53,7 @@ export default function Hero() {
 
       {/* Content Container */}
       <motion.div
-        className="relative z-20 h-full flex flex-col items-center justify-center px-4"
+        className="relative z-20 h-full flex flex-col items-center justify-center px-4 bg-[#0d1a2b]"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
