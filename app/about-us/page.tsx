@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const specializations = [
   "Advertising",
   "Event Management and Staging",
-  "Creative Production",
+  "Creative Design and Concepts",
   "Public Relations",
   "Digital Marketing",
   "Crisis PR Management",
@@ -22,7 +22,7 @@ const team = [
     name: "Erwyn Claudio",
     title: "Production Manager",
     bio:
-      "Expert in creative production with executive roles across major studios, ensuring seamless execution from concept to completion.",
+      "Expert in creative design and concepts with executive roles across major studios, ensuring seamless execution from concept to completion.",
   },
   {
     name: "Ric Lopez",
@@ -38,19 +38,19 @@ const team = [
   },
   {
     name: "Ferdie Aboga",
-    title: "Consultant for Content and Creatives",
+    title: "Content and Creative Consultant",
     bio:
       "Media leader with broadcast journalism expertise, previously at CNN Philippines and ABS-CBN overseeing news operations.",
   },
   {
     name: "Ela Marie Teodosio",
-    title: "Consultant for Social Media Strategy",
+    title: "Social Media Strategy Consultant",
     bio:
       "Storyteller and strategist crafting viral digital content across platforms, consultant and digital strategist for Lahi.PH.",
   },
   {
     name: "Lou Bognot",
-    title: "Account Consultant for Client Servicing",
+    title: "Accounts and Media Consultant",
     bio:
       "30 years in brand building and retail marketing, strategic thinker and CRM advocate driving impactful marketing strategies.",
   },
@@ -86,7 +86,7 @@ export default function AboutUsPage() {
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
             <p className="text-2xl md:text-3xl font-display text-white mb-4">Communication has the power to influence real change.</p>
             <p className="text-[#a0a0a0] max-w-4xl">
-              Communications can make or break a brand, help a company grow or fail, and guide a country through peaceful social change or cause anarchy. With every brief, we deliver strategies that help you put your best foot forward.
+              Communications can make or break a brand, help a company grow or fail, and guide a country through peaceful social change. With every brief, we deliver strategies that help you put your best foot forward in achieving your brand integrity and sales growth.
             </p>
           </div>
         </motion.div>

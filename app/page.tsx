@@ -100,7 +100,7 @@ export default function Home() {
           <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#a0a0a0] mb-4">Imagine • Live • Soar</p>
           <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">iStrat COMMS INC</h2>
           <p className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-3xl mb-12">
-            We are a one-stop creative marketing communications and IT agency delivering PR, marketing and advertising campaigns anchored by data-driven strategies to help you build your brand today and succeed tomorrow.
+            We are a one-stop creative marketing communications delivering advertising and PR campaigns, anchored data-driven strategies for grand building and sales growth.
           </p>
           <div className="relative w-full aspect-video border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden mb-12">
             <video
