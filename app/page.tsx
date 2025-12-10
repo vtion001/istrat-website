@@ -93,11 +93,11 @@ export default function Home() {
     }
   }
   return (
-    <main id="main" className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main id="main" className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <Hero />
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#a0a0a0] mb-4">Imagine • Live • Soar</p>
+          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#c59f43] mb-4">Imagine • Live • Soar</p>
           <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">iStrat COMMS INC</h2>
           <p className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-3xl mb-12">
             We are a one-stop creative marketing communications delivering advertising and PR campaigns, anchored data-driven strategies for grand building and sales growth.
@@ -122,7 +122,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div id="highlights" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
-          <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             Highlights
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -185,7 +185,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/15 group-hover:to-[#0d71a3]/15 transition-all" />
                   </div>
                 <div className="p-6 flex items-center justify-between">
-                  <p className="text-white text-lg font-semibold">{h.title}</p>
+                  <p className="text-[#c59f43] text-lg font-semibold">{h.title}</p>
                   <span className="text-xs tracking-widest text-[#c59f43]">VIEW</span>
                 </div>
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -215,17 +215,17 @@ export default function Home() {
           
         </motion.div>
 
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           What We Do
         </motion.h3>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
             <p className="text-[#a0a0a0] mb-6">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, events and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate.</p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-white">Unified brand systems that increase recognition and recall.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-white">Data-driven content and social that grow reach and conversions.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-white">Seamless events and live production that elevate brand moments.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-white">PR and crisis comms that protect reputation and build credibility.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Unified brand systems that increase recognition and recall.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Data-driven content and social that grow reach and conversions.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Seamless events and live production that elevate brand moments.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">PR and crisis comms that protect reputation and build credibility.</span></li>
             </ul>
             <div className="relative w-full aspect-video border border-white/10 bg-white/5 overflow-hidden">
               {(() => {
@@ -269,7 +269,7 @@ export default function Home() {
       <BentoGrid />
 
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Clients & Recognition
         </motion.h3>
         <motion.div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>

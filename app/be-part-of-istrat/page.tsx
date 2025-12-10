@@ -5,12 +5,12 @@ import { ArrowRight } from "lucide-react"
 
 export default function BePartOfIstratPage() {
   return (
-    <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#a0a0a0] mb-4">Imagine • Live • Soar</p>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-white">Be Part of ISTRAT</h1>
-          <p className="text-lg md:text-xl text-[#a0a0a0] max-w-3xl mb-12">
+          <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#c59f43] mb-4">Imagine • Live • Soar</p>
+          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Be Part of ISTRAT</h1>
+          <p className="text-lg md:text-xl text-[#c59f43] max-w-3xl mb-12">
             Join a multidisciplinary team shaping communications, creative production, and digital experiences for visionary brands.
           </p>
         </motion.div>
@@ -21,14 +21,14 @@ export default function BePartOfIstratPage() {
             { title: "Production", desc: "From set to screen with technical mastery." },
             { title: "Digital", desc: "Strategy, content, growth and analytics." },
           ].map((item) => (
-            <div key={item.title} className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-              <p className="text-white text-2xl font-display mb-2">{item.title}</p>
-              <p className="text-[#a0a0a0]">{item.desc}</p>
+            <div key={item.title} className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
+              <p className="text-[#c59f43] text-2xl font-display mb-2">{item.title}</p>
+              <p className="text-[#c59f43]">{item.desc}</p>
             </div>
           ))}
         </motion.div>
 
-        <motion.h2 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Rally Highlights
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>

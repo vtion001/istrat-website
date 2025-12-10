@@ -30,39 +30,39 @@ export default function ConnectWithUsPage() {
   }
 
   return (
-    <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-white">Connect With Us</h1>
-          <p className="text-lg md:text-xl text-[#a0a0a0] max-w-4xl mb-12">
+          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Connect With Us</h1>
+          <p className="text-lg md:text-xl text-[#c59f43] max-w-4xl mb-12">
             Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
           </p>
         </motion.div>
 
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
+          <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Phone</p>
-            <p className="text-white">09616096008</p>
-            <p className="text-white">09561324918</p>
+            <p className="text-[#c59f43]">09616096008</p>
+            <p className="text-[#c59f43]">09561324918</p>
           </div>
-          <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
+          <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Email</p>
-            <p className="text-white"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
-            <p className="text-white"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
+            <p className="text-[#c59f43]"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
+            <p className="text-[#c59f43]"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
           </div>
-          <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
+          <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Address</p>
-            <p className="text-white">161 Kamias Road, Sikatuna Village</p>
-            <p className="text-white">Quezon City, Philippines</p>
+            <p className="text-[#c59f43]">161 Kamias Road, Sikatuna Village</p>
+            <p className="text-[#c59f43]">Quezon City, Philippines</p>
           </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={onSubmit}>
-            <input name="name" value={form.name} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Name" aria-label="Name" aria-invalid={!!errors.name} />
-            <input name="email" value={form.email} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Email Address" aria-label="Email Address" aria-invalid={!!errors.email} />
-            <input name="company" value={form.company} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Company Name" aria-label="Company Name" />
-            <select name="service" value={form.service} onChange={onChange} className="w-full px-4 py-3 border border-white/10 bg-white/5 text-white" aria-label="Service">
+            <input name="name" value={form.name} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Name" aria-label="Name" aria-invalid={!!errors.name} />
+            <input name="email" value={form.email} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Email Address" aria-label="Email Address" aria-invalid={!!errors.email} />
+            <input name="company" value={form.company} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Company Name" aria-label="Company Name" />
+            <select name="service" value={form.service} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43]" aria-label="Service">
               <option value="" disabled className="text-[#a0a0a0]">What services do you want to know?</option>
               <option>Integrated Marketing Campaigns</option>
               <option>Brand Development and Strategy</option>
@@ -74,8 +74,8 @@ export default function ConnectWithUsPage() {
               <option>Video and Stage Production</option>
               <option>Information Technology</option>
             </select>
-            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />
-            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 h-40 border border-white/10 bg-white/5 text-white placeholder-[#a0a0a0]" placeholder="Message" aria-label="Message" aria-invalid={!!errors.message} />
+            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />
+            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 h-40 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Message" aria-label="Message" aria-invalid={!!errors.message} />
             <div className="md:col-span-2 space-y-3">
               {Object.keys(errors).length > 0 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm text-[#ff6b6b]" role="alert" aria-live="polite">
@@ -85,13 +85,13 @@ export default function ConnectWithUsPage() {
                 </motion.div>
               )}
               {sent ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-white/10 bg-[#0d71a3]/20 text-white" role="status" aria-live="polite">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/20 text-[#c59f43]" role="status" aria-live="polite">
                   Thank you. We’ll get back to you shortly.
                 </motion.div>
               ) : (
                 <div className="flex items-center gap-3">
-                  <button type="submit" className="inline-block px-6 py-4 border border-white/10 bg-[#c59f43]/30 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-[#c59f43] transition-colors" aria-label="Send">Send</button>
-                  <span className="text-[#a0a0a0]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
+                  <button type="submit" className="inline-block px-6 py-4 border border-[#0d71a3]/30 bg-[#c59f43]/30 backdrop-blur-xl text-[#c59f43] hover:text-[#0a0a0a] hover:bg-[#c59f43] transition-colors" aria-label="Send">Send</button>
+                  <span className="text-[#c59f43]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
                 </div>
               )}
             </div>

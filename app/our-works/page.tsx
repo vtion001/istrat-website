@@ -288,17 +288,17 @@ export default function OurWorksPage() {
     )
   }
   return (
-    <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24" role="region" aria-labelledby="our-works-heading">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 id="our-works-heading" className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 text-white">Our Works</h1>
+          <h1 id="our-works-heading" className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 text-[#c59f43]">Our Works</h1>
           
         </motion.div>
 
         
         
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Social Media Management
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -340,14 +340,14 @@ export default function OurWorksPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all" />
               </div>
               <div className="p-8">
-                <p className="text-white text-xl font-semibold mb-2">{item.name}</p>
+                <p className="text-[#c59f43] text-xl font-semibold mb-2">{item.name}</p>
                 <p className="text-[#c59f43] uppercase tracking-widest text-sm">{item.stat}</p>
               </div>
             </motion.a>
           ))}
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Audio Visual Productions
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -357,7 +357,7 @@ export default function OurWorksPage() {
         </motion.div>
 
         
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Event Management
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -366,7 +366,7 @@ export default function OurWorksPage() {
           ))}
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Our Services
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>

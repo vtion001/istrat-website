@@ -16,7 +16,7 @@ const services = [
       "In-depth analysis, identity definition, visual systems and end-to-end creative production across print, digital and video.",
   },
   {
-    title: "Event Management and Staging",
+    title: "Event Management",
     description:
       "Comprehensive planning, logistics and technical execution using state-of-the-art AV to deliver memorable experiences.",
   },
@@ -26,24 +26,14 @@ const services = [
       "Data-driven strategies, content creation, social management, SEO, PPC, email and community building to drive growth.",
   },
   {
-    title: "Public Relations/Crisis PR Management and Advocacy",
+    title: "Public Relations/Crisis PR Management",
     description:
       "Rapid assessment, strategic planning, stakeholder engagement, key messaging and media coordination for decisive action.",
   },
   {
-    title: "Public Relations",
+    title: "Advocacy Relations",
     description:
       "Media relations, press office, stakeholder comms, message development and reputation building.",
-  },
-  {
-    title: "Video and Stage Production",
-    description:
-      "End-to-end production across live events and video content with creative direction and technical execution.",
-  },
-  {
-    title: "Applications and IT Systems",
-    description:
-      "Bespoke tech solutions including DataFusion360, real-time analytics, InfoBlast and Anti-Drone systems.",
   },
 ]
 
@@ -84,11 +74,11 @@ export default function ProductsAndServicesPage() {
   const [detailOpen, setDetailOpen] = useState(false)
   const [detailData, setDetailData] = useState<{ title: string; summary: string; points: string[]; images?: string[]; ctaLabel?: string; ctaHref?: string }>({ title: "", summary: "", points: [] })
   return (
-    <main className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-white">Products and Services</h1>
-          <p className="text-lg md:text-xl text-[#a0a0a0] max-w-3xl mb-12">
+          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Products and Services</h1>
+          <p className="text-lg md:text-xl text-[#c59f43] max-w-3xl mb-12">
             A full suite of communications solutions designed to elevate your brand and deliver measurable impact.
           </p>
         </motion.div>
@@ -120,7 +110,7 @@ export default function ProductsAndServicesPage() {
                         "https://image.pollinations.ai/prompt=Unified%20brand%20messaging%20across%20paid%2C%20owned%20and%20earned%20channels%20clean%20grid%20system%20data-driven&seed=3&width=800&height=600",
                       ],
                     },
-                    "Brand Development, Concept, Design and Production": {
+                    "Brand Development, Concept, and Design": {
                       summary:
                         "We define the core of your brand—strategy, story and system—and bring it to life across every artifact. From identity and guidelines to high-quality production, we ensure consistency and premium execution that builds memorability and equity over time. We codify behaviors and voice so teams express the brand consistently, benchmark perception pre/post launch, and refresh on structured cycles to stay current without drift.",
                       points: [
@@ -137,7 +127,7 @@ export default function ProductsAndServicesPage() {
                         "https://image.pollinations.ai/prompt=High-quality%20creative%20production%20storyboards%20print%20digital%20video%20assets%20studio%20setup&seed=13&width=800&height=600",
                       ],
                     },
-                    "Event Management and Staging": {
+                    "Event Management": {
                       summary:
                         "We deliver seamless end-to-end events—planning, staging and live operations—so your brand moment lands flawlessly. Our team integrates AV, content ops and talent flow to create experiences that feel premium and run on schedule. We design audience flow and tactile moments to create an emotional arc, with post-show data, NPS and content reuse plans extending value well beyond the day.",
                       points: [
@@ -202,38 +192,6 @@ export default function ProductsAndServicesPage() {
                         "https://image.pollinations.ai/prompt=Public%20relations%20press%20office%20media%20relations%20newsroom%20briefing%20materials%20modern%20design&seed=51&width=800&height=600",
                         "https://image.pollinations.ai/prompt=Editorial%20calendar%20pitching%20target%20outlets%20PR%20strategy%20documents&seed=52&width=800&height=600",
                         "https://image.pollinations.ai/prompt=Media%20coverage%20monitoring%20dashboard%20owned%20channel%20amplification%20UI&seed=53&width=800&height=600",
-                      ],
-                    },
-                    "Video and Stage Production": {
-                      summary:
-                        "We produce compelling live and video content that communicates clearly and looks premium. Creative direction, strong story craft and meticulous technical execution combine for results your audiences remember. We design for clarity at a distance, on camera and online, with pipelines enabling fast reversioning across formats and campaigns.",
-                      points: [
-                        "Creative development, scripting and storyboards aligned to objectives.",
-                        "Stage design, lighting and sound for presence and clarity.",
-                        "Filming, editing, motion graphics and color finishing.",
-                        "Playback, capture and streaming setups for hybrid formats.",
-                        "Post-production asset delivery and content repurposing.",
-                      ],
-                      images: [
-                        "https://image.pollinations.ai/prompt=Video%20production%20studio%20cinematic%20lighting%20camera%20storyboards%20editing%20motion%20graphics%20color%20grading&seed=61&width=800&height=600",
-                        "https://image.pollinations.ai/prompt=Stage%20production%20lighting%20and%20sound%20premium%20event%20setup%20hybrid%20streaming&seed=62&width=800&height=600",
-                        "https://image.pollinations.ai/prompt=Post-production%20pipeline%20asset%20delivery%20reversioning%20content%20repurposing%20timeline%20UI&seed=63&width=800&height=600",
-                      ],
-                    },
-                    "Applications and IT Systems": {
-                      summary:
-                        "We deploy operational tools that improve decisions, safety and speed. Our solutions—from analytics to broadcast to counter-drone—are designed to integrate cleanly and provide actionable visibility. We harden security, define SLAs and instrument systems for observability; change management ensures adoption without disruption.",
-                      points: [
-                        "DataFusion360 for real-time dashboards, alerts and reporting.",
-                        "InfoBlast for secure, targeted broadcast messaging at scale.",
-                        "Anti-Drone systems for event and facility security.",
-                        "Integration support with existing infra and privacy safeguards.",
-                        "Operations training and runbooks so teams adopt with confidence.",
-                      ],
-                      images: [
-                        "https://image.pollinations.ai/prompt=Real-time%20analytics%20platform%20dashboards%20alerts%20DataFusion360%20clean%20enterprise%20UI&seed=71&width=800&height=600",
-                        "https://image.pollinations.ai/prompt=Secure%20broadcast%20messaging%20system%20InfoBlast%20command%20center%20interface&seed=72&width=800&height=600",
-                        "https://image.pollinations.ai/prompt=Anti-drone%20security%20system%20event%20facility%20monitoring%20radar%20visualization&seed=73&width=800&height=600",
                       ],
                     },
                   }

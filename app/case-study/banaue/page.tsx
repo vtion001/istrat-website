@@ -8,16 +8,16 @@ const HERO_VIDEO = "https://res.cloudinary.com/dbviya1rj/video/upload/v176483749
 
 export default function CaseStudyBanaue() {
   return (
-    <main id="main" className="w-full overflow-x-hidden bg-[#0a0a0a]">
+    <main id="main" className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <div id="top" />
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div className="mb-4">
             <Link href="/" className="text-xs uppercase tracking-widest text-[#a0a0a0] hover:text-white">← Back to Home</Link>
           </div>
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#a0a0a0] mb-4">Case Study • Cultural Initiative</p>
+          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#c59f43] mb-4">Case Study • Cultural Initiative</p>
           <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">BANAUE Composition Competition</h1>
-          <p className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-3xl mb-12">A national-scale competition celebrating heritage through contemporary composition, produced with end-to-end creative, AV, and event orchestration.</p>
+          <p className="text-lg md:text-xl text-[#c59f43] leading-relaxed max-w-3xl mb-12">A national-scale competition celebrating heritage through contemporary composition, produced with end-to-end creative, AV, and event orchestration.</p>
 
           <div className="relative w-full aspect-video border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden mb-12">
             <video
@@ -71,24 +71,24 @@ export default function CaseStudyBanaue() {
             { label: "Satisfaction", value: "95%" },
           ].map((kpi) => (
             <div key={kpi.label} className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-              <p className="text-xs uppercase tracking-widest text-[#a0a0a0] mb-2">{kpi.label}</p>
-              <p className="text-3xl font-display text-white">{kpi.value}</p>
+              <p className="text-xs uppercase tracking-widest text-[#c59f43] mb-2">{kpi.label}</p>
+              <p className="text-3xl font-display text-[#c59f43]">{kpi.value}</p>
             </div>
           ))}
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <h2 className="text-2xl font-display text-white">Objectives</h2>
-            <p className="text-[#a0a0a0]">Champion Filipino culture through a contemporary lens, designing a program and production that resonates with musicians, audiences, and institutions.</p>
+            <h2 className="text-2xl font-display text-[#c59f43]">Objectives</h2>
+            <p className="text-[#c59f43]">Champion Filipino culture through a contemporary lens, designing a program and production that resonates with musicians, audiences, and institutions.</p>
           </div>
           <div className="space-y-6">
-            <h2 className="text-2xl font-display text-white">Approach</h2>
-            <p className="text-[#a0a0a0]">End-to-end: program development, staging, audio engineering, motion graphics, stage management, and content operations across semi-finals and finals.</p>
+            <h2 className="text-2xl font-display text-[#c59f43]">Approach</h2>
+            <p className="text-[#c59f43]">End-to-end: program development, staging, audio engineering, motion graphics, stage management, and content operations across semi-finals and finals.</p>
           </div>
           <div className="space-y-6">
-            <h2 className="text-2xl font-display text-white">Impact</h2>
-            <p className="text-[#a0a0a0]">Elevated awareness and institutional support for heritage initiatives, with strong community engagement and national media coverage.</p>
+            <h2 className="text-2xl font-display text-[#c59f43]">Impact</h2>
+            <p className="text-[#c59f43]">Elevated awareness and institutional support for heritage initiatives, with strong community engagement and national media coverage.</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((i) => (
