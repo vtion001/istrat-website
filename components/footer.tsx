@@ -23,7 +23,7 @@ export default function Footer() {
             </a>
           </div>
           <motion.h2
-            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold mb-16 tracking-tighter leading-none"
+            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold mb-16 tracking-tighter leading-none text-[#c59f43]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -37,38 +37,38 @@ export default function Footer() {
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
                 <Mail className="w-5 h-5 text-[#c59f43]" />
-                <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Email</span>
+                <span className="text-xs uppercase tracking-widest text-[#c59f43]">Email</span>
               </div>
-              <p className="text-lg text-white ml-9"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
-              <p className="text-lg text-white ml-9"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
+              <p className="text-lg text-[#c59f43] ml-9"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
+              <p className="text-lg text-[#c59f43] ml-9"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
                 <Phone className="w-5 h-5 text-[#c59f43]" />
-                <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Phone</span>
+                <span className="text-xs uppercase tracking-widest text-[#c59f43]">Phone</span>
               </div>
-              <p className="text-lg text-white ml-9">09616096008</p>
-              <p className="text-lg text-white ml-9">09561324918</p>
+              <p className="text-lg text-[#c59f43] ml-9">09616096008</p>
+              <p className="text-lg text-[#c59f43] ml-9">09561324918</p>
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
                 <MapPin className="w-5 h-5 text-[#c59f43]" />
-                <span className="text-xs uppercase tracking-widest text-[#a0a0a0]">Address</span>
+                <span className="text-xs uppercase tracking-widest text-[#c59f43]">Address</span>
               </div>
-              <p className="text-lg text-white ml-9">161 Kamias Road, Sikatuna Village</p>
-              <p className="text-lg text-white ml-9">Quezon City, Philippines</p>
+              <p className="text-lg text-[#c59f43] ml-9">161 Kamias Road, Sikatuna Village</p>
+              <p className="text-lg text-[#c59f43] ml-9">Quezon City, Philippines</p>
             </motion.div>
           </div>
 
           {/* Bottom Info */}
           <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <p className="text-sm text-[#a0a0a0]">© 2025 ART + AMPLITUDE. All rights reserved.</p>
+            <p className="text-sm text-[#c59f43]">© 2025 ART + AMPLITUDE. All rights reserved.</p>
             <div className="flex gap-8">
               {["Instagram", "Twitter", "LinkedIn"].map((social) => (
                 <motion.a
                   key={social}
                   href="#"
-                  className="text-sm uppercase tracking-widest text-white hover:text-[#c59f43] transition-colors"
+                  className="text-sm uppercase tracking-widest text-[#c59f43] hover:text-[#e6c066] transition-colors"
                   whileHover={{ scale: 1.05 }}
                 >
                   {social}

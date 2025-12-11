@@ -92,7 +92,7 @@
   left: 0.5rem;
   z-index: 50;
   transform: translateY(-150%);
-  background: rgba(255,255,255,0.08);
+  background: #0d1a2b;
   backdrop-filter: blur(8px);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.12);
@@ -126,11 +126,11 @@
     height: 2px;
     width: 96px;
     margin-top: 6px;
-    background-image: linear-gradient(to right, rgba(197, 159, 67, 0.6), rgba(13, 113, 163, 0.4));
+    background-image: linear-gradient(to right, rgba(197, 159, 67, 0.6), rgba(197, 159, 67, 0.2));
   }
 
 .brand-gradient-text {
-  background-image: linear-gradient(to right, #c59f43, #0d71a3);
+  background-image: linear-gradient(to right, #c59f43, #e6c066);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

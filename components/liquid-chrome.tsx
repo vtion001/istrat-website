@@ -20,16 +20,16 @@ export default function LiquidChrome() {
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setClearColor(0x0a0a0a, 1)
+    renderer.setClearColor(0x000000, 0)
     containerRef.current.appendChild(renderer.domElement)
     rendererRef.current = renderer
 
     // Create animated liquid geometry with icoSphere
     const geometry = new THREE.IcosahedronGeometry(3, 5)
     const material = new THREE.MeshPhongMaterial({
-      color: 0x404040,
-      emissive: 0x1a1a1a,
-      specular: 0xc59f43,
+      color: 0xc59f43,
+      emissive: 0x2a1f0a,
+      specular: 0xffffff,
       shininess: 100,
       wireframe: false,
     })
@@ -46,7 +46,7 @@ export default function LiquidChrome() {
     light1.position.set(10, 10, 10)
     scene.add(light1)
 
-    const light2 = new THREE.PointLight(0x0d71a3, 0.5)
+    const light2 = new THREE.PointLight(0xffffff, 0.5)
     light2.position.set(-10, -10, 10)
     scene.add(light2)
 
@@ -61,11 +61,11 @@ export default function LiquidChrome() {
       time += 0.002
 
       // Morph geometry
-      const positionArray = positionAttribute.array as Float32Array
+      const positionArray = positionAttribute.array
       for (let i = 0; i < originalPositions.length; i++) {
         const originalValue = originalPositions[i]
         const offset = Math.sin(time + i * 0.1) * Math.cos(time * 0.7 + i * 0.05) * 0.2
-        positionArray[i] = (originalValue as number) + offset
+        positionArray[i] = originalValue + offset
       }
       positionAttribute.needsUpdate = true
 
@@ -99,7 +99,7 @@ export default function LiquidChrome() {
     // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize)
-      containerRef.current?.removeChild(renderer.domElement)
+      renderer.domElement.remove()
       geometry.dispose()
       material.dispose()
       renderer.dispose()

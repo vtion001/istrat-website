@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react"
 
 const LiquidChrome = dynamic(() => import("./liquid-chrome"), {
   ssr: false,
-  loading: () => <div className="w-full h-full bg-gradient-to-b from-slate-900 to-black" />,
+  loading: () => <div className="w-full h-full bg-[#0d1a2b]" />,
 })
 
 const containerVariants = {
@@ -49,11 +49,11 @@ export default function Hero() {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d1a2b]/40 via-transparent to-[#0d1a2b]/60 z-10" />
 
       {/* Content Container */}
       <motion.div
-        className="relative z-20 h-full flex flex-col items-center justify-center px-4 bg-[#0d1a2b]"
+        className="relative z-20 h-full flex flex-col items-center justify-center px-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -61,7 +61,7 @@ export default function Hero() {
         {/* Main Headline */}
         <motion.div variants={itemVariants} className="text-center">
           <motion.p
-            className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#a0a0a0] mb-6"
+            className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#c59f43] mb-6"
             variants={itemVariants}
           >
             NEXT GENERATION CREATIVITY
@@ -73,7 +73,7 @@ export default function Hero() {
             ART + AMPLITUDE
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-[#a0a0a0] max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-[#c59f43] max-w-2xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
             Where creative vision meets production excellence. We craft experiences that resonate.

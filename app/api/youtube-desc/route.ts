@@ -16,12 +16,12 @@ export async function GET(request: Request) {
       next: { revalidate: 60 * 60 },
     })
     const html = await res.text()
-    const ogMatch = html.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["'][^>]*>/i)
-    const nameMatch = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["'][^>]*>/i)
+    const ogMatch = /<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["'][^>]*>/i.exec(html)
+    const nameMatch = /<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["'][^>]*>/i.exec(html)
     const raw = ogMatch?.[1] || nameMatch?.[1] || ""
-    const desc = raw.replace(/\s+/g, " ").trim().slice(0, 300)
+    const desc = raw.replaceAll(/\s+/g, " ").trim().slice(0, 300)
     return NextResponse.json({ desc })
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "fetch_failed" }, { status: 500 })
   }
 }

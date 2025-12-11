@@ -76,22 +76,31 @@ const events = [
   "Pista sa QC",
 ]
 
+function toYouTubeEmbed(u: string) {
+  try {
+    const url = new URL(u)
+    const isWatch = url.hostname.includes("youtube.com") && url.pathname === "/watch"
+    const isShort = url.hostname.includes("youtu.be")
+    
+    let id: string | null = null
+    if (isWatch) {
+      id = url.searchParams.get("v")
+    } else if (isShort) {
+      id = url.pathname.slice(1)
+    }
+
+    if (!id) return null
+    const params = new URLSearchParams({ autoplay: "1", mute: "1", loop: "1", controls: "0", rel: "0", playlist: id })
+    return `https://www.youtube.com/embed/${id}?${params.toString()}`
+  } catch {
+    return null
+  }
+}
+
 export default function Home() {
   const { scrollYProgress } = useScroll()
   const ribbonY = useTransform(scrollYProgress, [0, 1], [0, -30])
-  function toYouTubeEmbed(u: string) {
-    try {
-      const url = new URL(u)
-      const isWatch = url.hostname.includes("youtube.com") && url.pathname === "/watch"
-      const isShort = url.hostname.includes("youtu.be")
-      const id = isWatch ? url.searchParams.get("v") : isShort ? url.pathname.slice(1) : null
-      if (!id) return null
-      const params = new URLSearchParams({ autoplay: "1", mute: "1", loop: "1", controls: "0", rel: "0", playlist: id })
-      return `https://www.youtube.com/embed/${id}?${params.toString()}`
-    } catch {
-      return null
-    }
-  }
+
   return (
     <main id="main" className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <Hero />
@@ -156,10 +165,9 @@ export default function Home() {
                       if (embed) {
                         return (
                           <iframe
-                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                            src={embed}
                             title={h.title}
-                            frameBorder="0"
+                            src={embed}
+                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity border-none"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                           />
@@ -233,10 +241,9 @@ export default function Home() {
                 if (embed) {
                   return (
                     <iframe
-                      className="w-full h-full object-cover opacity-90"
-                      src={embed}
                       title="What We Do"
-                      frameBorder="0"
+                      src={embed}
+                      className="w-full h-full object-cover opacity-90 border-none"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     />
