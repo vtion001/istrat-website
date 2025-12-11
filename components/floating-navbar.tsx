@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 
@@ -15,7 +14,6 @@ const navItems = [
 ]
 
 export default function FloatingNavbar() {
-  const [isHovered, setIsHovered] = useState(false)
   const pathname = usePathname()
 
   return (
@@ -27,8 +25,6 @@ export default function FloatingNavbar() {
     >
       <motion.div
         className="px-2 py-2 border border-[#c59f43]/20 bg-[#0d1a2b]/80 backdrop-blur-2xl rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-w-[95vw] overflow-x-auto no-scrollbar"
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
       >
         <div className="flex items-center gap-2 flex-nowrap whitespace-nowrap px-2">
           <motion.a
