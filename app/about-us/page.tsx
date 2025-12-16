@@ -20,21 +20,21 @@ const team = [
   },
   {
     name: "Erwyn Claudio",
-    title: "Production Manager",
+    title: "PR Consultant",
     bio:
-      "Expert in creative design and concepts with executive roles across major studios, ensuring seamless execution from concept to completion.",
+      "Award-winning communications specialist with Anvil and IABC Quill Awards for global automotive brands.",
   },
   {
     name: "Ric Lopez",
-    title: "Admin Head",
+    title: "Operations Head",
     bio:
-      "17+ years in administration and HR across government and private sectors, ensuring efficient operations and compliance.",
+      "20 years in creative production producing radio and TV commercials for private and government institutions, including international advertising productions.",
   },
   {
     name: "Eugenio S. Aguilar",
-    title: "PR Consultant",
+    title: "Social Media Strategy Consultant",
     bio:
-      "Award-winning communications specialist with honors including Anvil and IABC Quill Awards, leadership across global automotive brands.",
+      "Storyteller and strategist crafting viral digital content, consultant and digital strategist for Lahi.PH.",
   },
   {
     name: "Ferdie Aboga",
@@ -44,9 +44,9 @@ const team = [
   },
   {
     name: "Ela Marie Teodosio",
-    title: "Social Media Strategy Consultant",
+    title: "Admin Head",
     bio:
-      "Storyteller and strategist crafting viral digital content across platforms, consultant and digital strategist for Lahi.PH.",
+      "17+ years in administration and HR in government and private sectors, ensuring efficient operations and compliance.",
   },
   {
     name: "Lou Bognot",
@@ -64,7 +64,7 @@ export default function AboutUsPage() {
           <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#c59f43] mb-4">Imagine • Live • Soar</p>
           <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">iStrat COMMS INC</h1>
           <p className="text-lg md:text-xl text-[#c59f43] max-w-3xl mb-12">
-            We are a one-stop creative marketing communications and IT agency. We deliver PR, marketing, and advertising campaigns anchored by data-driven strategies to help you build your brand today and set you up for success tomorrow.
+            We are a one-stop creative marketing communications delivering advertising, PR campaigns, and data-driven strategies for brand building towards sales growth.
           </p>
         </motion.div>
 
@@ -84,9 +84,11 @@ export default function AboutUsPage() {
 
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-20">
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
-            <p className="text-2xl md:text-3xl font-display text-[#c59f43] mb-4">Communication has the power to influence real change.</p>
+            <p className="text-4xl md:text-5xl font-display text-[#c59f43] mb-4">Communication has the power to influence real change.</p>
             <p className="text-[#c59f43] max-w-4xl">
-              Communications can make or break a brand, help a company grow or fail, and guide a country through peaceful social change. With every brief, we deliver strategies that help you put your best foot forward in achieving your brand integrity and sales growth.
+              Communications can make or break a brand, help a company grow or fail, and guide a country through peaceful social change. With every brief, we deliver communication strategies that help you put your best foot forward in achieving your brand integrity and sales growth.
+              <br />
+              <span className="font-bold mt-4 block">— Ric Lopez</span>
             </p>
           </div>
         </motion.div>

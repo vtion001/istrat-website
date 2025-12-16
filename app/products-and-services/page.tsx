@@ -11,7 +11,7 @@ const services = [
       "Unified brand identity across channels with cohesive strategy, content, media planning and performance optimization.",
   },
   {
-    title: "Brand Development, Concept, Design and Production",
+    title: "Brand Development, Concept, and Design",
     description:
       "In-depth analysis, identity definition, visual systems and end-to-end creative production across print, digital and video.",
   },
@@ -77,7 +77,7 @@ export default function ProductsAndServicesPage() {
     <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Products and Services</h1>
+          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Services</h1>
           <p className="text-lg md:text-xl text-[#c59f43] max-w-3xl mb-12">
             A full suite of communications solutions designed to elevate your brand and deliver measurable impact.
           </p>

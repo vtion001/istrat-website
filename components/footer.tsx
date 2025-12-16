@@ -22,15 +22,9 @@ export default function Footer() {
               />
             </a>
           </div>
-          <motion.h2
-            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold mb-16 tracking-tighter leading-none text-[#c59f43]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            LET'S CREATE
-          </motion.h2>
+          <div className="mb-16">
+            {/* Headline removed */}
+          </div>
 
           {/* Contact Info Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
@@ -47,8 +41,7 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-[#c59f43]" />
                 <span className="text-xs uppercase tracking-widest text-[#c59f43]">Phone</span>
               </div>
-              <p className="text-lg text-[#c59f43] ml-9">09616096008</p>
-              <p className="text-lg text-[#c59f43] ml-9">09561324918</p>
+              <p className="text-lg text-[#c59f43] ml-9">(02) 7119 4130</p>
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
               <div className="flex items-center gap-4 mb-2">
@@ -56,13 +49,13 @@ export default function Footer() {
                 <span className="text-xs uppercase tracking-widest text-[#c59f43]">Address</span>
               </div>
               <p className="text-lg text-[#c59f43] ml-9">161 Kamias Road, Sikatuna Village</p>
-              <p className="text-lg text-[#c59f43] ml-9">Quezon City, Philippines</p>
+              <p className="text-lg text-[#c59f43] ml-9">Quezon City, Philippines 1101</p>
             </motion.div>
           </div>
 
           {/* Bottom Info */}
           <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <p className="text-sm text-[#c59f43]">© 2025 ART + AMPLITUDE. All rights reserved.</p>
+            <p className="text-sm text-[#c59f43]">© 2025 iStrat COMMS INC. All rights reserved.</p>
             <div className="flex gap-8">
               {["Instagram", "Twitter", "LinkedIn"].map((social) => (
                 <motion.a

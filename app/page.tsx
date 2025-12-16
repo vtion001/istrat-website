@@ -81,7 +81,7 @@ function toYouTubeEmbed(u: string) {
     const url = new URL(u)
     const isWatch = url.hostname.includes("youtube.com") && url.pathname === "/watch"
     const isShort = url.hostname.includes("youtu.be")
-    
+
     let id: string | null = null
     if (isWatch) {
       id = url.searchParams.get("v")
@@ -108,9 +108,6 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#c59f43] mb-4">Imagine • Live • Soar</p>
           <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">iStrat COMMS INC</h2>
-          <p className="text-lg md:text-xl text-[#a0a0a0] leading-relaxed max-w-3xl mb-12">
-            We are a one-stop creative marketing communications delivering advertising and PR campaigns, anchored data-driven strategies for grand building and sales growth.
-          </p>
           <div className="relative w-full aspect-video border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden mb-12">
             <video
               className="w-full h-full object-cover"
@@ -136,6 +133,11 @@ export default function Home() {
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
+              {
+                title: "QC Anti-Terrorism Campaign",
+                video: "https://www.youtube.com/watch?v=zGVRrnbo3-8",
+                href: "/our-works",
+              },
               {
                 title: "ALAB FOR LOVE Pride PH Festival",
                 video: "https://www.youtube.com/watch?v=s_DFhmMFmU8",
@@ -192,13 +194,13 @@ export default function Home() {
                     })()}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/15 group-hover:to-[#0d71a3]/15 transition-all" />
                   </div>
-                <div className="p-6 flex items-center justify-between">
-                  <p className="text-[#c59f43] text-lg font-semibold">{h.title}</p>
-                  <span className="text-xs tracking-widest text-[#c59f43]">VIEW</span>
-                </div>
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="px-4 py-2 text-xs tracking-widest text-white border border-white/20 bg-black/30 backdrop-blur-xl">VIEW CASE STUDY</span>
-                </div>
+                  <div className="p-6 flex items-center justify-between">
+                    <p className="text-[#c59f43] text-lg font-semibold">{h.title}</p>
+                    <span className="text-xs tracking-widest text-[#c59f43]">VIEW</span>
+                  </div>
+                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="px-4 py-2 text-xs tracking-widest text-white border border-white/20 bg-black/30 backdrop-blur-xl">VIEW CASE STUDY</span>
+                  </div>
                 </motion.div>
               )
               return h.href ? (
@@ -220,7 +222,7 @@ export default function Home() {
               <motion.div style={{ y: ribbonY }} className="h-px w-full bg-gradient-to-r from-[#c59f43]/50 via-[#0d71a3]/50 to-transparent" />
             </div>
           </div>
-          
+
         </motion.div>
 
         <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -228,12 +230,12 @@ export default function Home() {
         </motion.h3>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#a0a0a0] mb-6">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, events and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate.</p>
+            <p className="text-[#a0a0a0] mb-6">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, event management and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate with your desired target audience.</p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Unified brand systems that increase recognition and recall.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Data-driven content and social that grow reach and conversions.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Seamless events and live production that elevate brand moments.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">PR and crisis comms that protect reputation and build credibility.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Unified brand development for reputation, integrity, and trust growth resulting in stronger brand recognition and recall</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Data-driven content and strategies that grow reach and conversions</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Seamless event management for better brand experiences and moments</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">PR and crisis communications for reputation management and credibility building</span></li>
             </ul>
             <div className="relative w-full aspect-video border border-white/10 bg-white/5 overflow-hidden">
               {(() => {
@@ -277,7 +279,7 @@ export default function Home() {
 
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Clients & Recognition
+          Clients Only
         </motion.h3>
         <motion.div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {[
@@ -285,7 +287,7 @@ export default function Home() {
             { name: "SGV", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png" },
             { name: "V.Ships", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" },
             { name: "eRase", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Graphic-Design-and-Animation.png" },
-            { name: "araLabs", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Market-Research.png" },
+            { name: "MaraLabs", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Market-Research.png" },
             { name: "CP Fresh Shop", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Public-Relations.png" },
           ].map((c) => (
             <div key={c.name} className="group flex items-center justify-center p-6 border border-white/10 bg-white/5">
@@ -294,17 +296,11 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </motion.div>
-        <motion.div className="flex flex-wrap gap-3 mb-2" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {["Best Staging 2024", "Top PR Campaign", "Innovation in AV", "Community Impact Award"].map((a) => (
-            <span key={a} className="px-4 py-2 text-xs tracking-widest text-white border border-white/10 bg-white/5">
-              {a}
-            </span>
-          ))}
+
         </motion.div>
       </section>
 
-      
+
 
       <div className="w-full">
         <div className="max-w-7xl mx-auto px-6 md:px-8">

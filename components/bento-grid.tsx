@@ -17,15 +17,9 @@ const services = [
     gridClass: "md:col-span-1 md:row-span-3",
   },
   {
-    id: 3,
-    title: "Production",
-    description: "From concept to completion with technical mastery",
-    gridClass: "md:col-span-3 md:row-span-1",
-  },
-  {
     id: 4,
-    title: "Online Media",
-    description: "Digital presence optimization",
+    title: "Digital Media",
+    description: "Online presence strategy optimization",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
@@ -37,7 +31,7 @@ const services = [
   {
     id: 6,
     title: "Social Marketing",
-    description: "Community building and engagement",
+    description: "Community building, engagement, and advocacy",
     gridClass: "md:col-span-2 md:row-span-1",
   },
 ]
@@ -91,9 +85,9 @@ export default function BentoGrid() {
                   >
                     <span className="text-xs tracking-widest text-[#c59f43]">EXPLORE</span>
                     <ArrowRight className="w-5 h-5 text-[#c59f43] transform group-hover:translate-x-1 transition-transform" />
-                </motion.div>
+                  </motion.div>
+                </div>
               </div>
-            </div>
 
               {/* Border glow on hover */}
               <motion.div

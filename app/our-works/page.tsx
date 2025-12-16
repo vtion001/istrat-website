@@ -12,11 +12,11 @@ const socialMedia = [
 
 const audioVisual = [
   "Quezon City Anti-Terrorism Campaign",
-  "Senator Guillermo Eleazar Social Media Ad",
+  "Mayor Joy Belmonte Campaign",
   "Sen. Guillermo Eleazar Election 2022 TVC",
   "NCRPO Journal",
   "Sama-Sama at Tulong-Tulong",
-  "V. Group crew guide animation",
+  "V.Group Crew Guide Animation",
   "My heart beats for Banaue",
   "NEW GREENLAND Urban Farming in Quezon City",
 ]
@@ -44,10 +44,6 @@ const externalServices = [
     image: "https://www.istratmc.com/wp-content/uploads/2022/05/Market-Research.png",
   },
   {
-    title: "Graphic Design and Animation",
-    image: "https://www.istratmc.com/wp-content/uploads/2022/05/Graphic-Design-and-Animation.png",
-  },
-  {
     title: "Brand Development and Strategy",
     image: "https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png",
   },
@@ -63,14 +59,6 @@ const externalServices = [
     title: "Public Relations",
     image: "https://www.istratmc.com/wp-content/uploads/2022/05/Public-Relations.png",
   },
-  {
-    title: "Video and Stage Production",
-    image: "https://www.istratmc.com/wp-content/uploads/2022/05/Video-and-Stage-Production.png",
-  },
-  {
-    title: "Information Technology",
-    image: "https://www.istratmc.com/wp-content/uploads/2022/05/Information-Technology.png",
-  },
 ]
 
 const HERO_VIDEO = "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
@@ -83,7 +71,7 @@ const ytThumb = (url: string) => {
       const v = u.searchParams.get("v") || u.pathname.split("/").pop()
       return v ? `https://img.youtube.com/vi/${v}/maxresdefault.jpg` : ""
     }
-  } catch {}
+  } catch { }
   return ""
 }
 
@@ -153,10 +141,10 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
     poster: ytThumb("https://www.youtube.com/watch?v=PuOxa_VdvJk"),
     title: "SBP MAYOR JOY BELMONTE GRAND RALLY",
   },
-  "Senator Guillermo Eleazar Social Media Ad": {
+  "Mayor Joy Belmonte Campaign": {
     src: "https://www.youtube.com/watch?v=t9ubqUXS-GI",
     poster: ytThumb("https://www.youtube.com/watch?v=t9ubqUXS-GI"),
-    title: "Senator Guillermo Eleazar Social Media Ad",
+    title: "Mayor Joy Belmonte Campaign",
   },
   "Sen. Guillermo Eleazar Election 2022 TVC": {
     src: "https://www.youtube.com/watch?v=DGQV3hIIMs0",
@@ -171,33 +159,33 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
   "NCRPO Journal": {
     src: "https://www.youtube.com/watch?v=h-OALbbQZLg",
     poster: ytThumb("https://www.youtube.com/watch?v=h-OALbbQZLg"),
-    title: "NCRPO Journal", 
+    title: "NCRPO Journal",
   },
   "Quezon City Virtual Countdown to 2021": {
     src: "https://www.youtube.com/watch?v=b9hQQ5w9Uhs",
-    poster: ytThumb("https://www.youtube.com/watch?v=b9hQQ5w9Uhs"), 
-    title: "Quezon City Virtual Countdown to 2021", 
+    poster: ytThumb("https://www.youtube.com/watch?v=b9hQQ5w9Uhs"),
+    title: "Quezon City Virtual Countdown to 2021",
   },
   "Sama-Sama at Tulong-Tulong": {
     src: "https://www.youtube.com/watch?v=k1zeOtcO7j0",
-    poster: ytThumb("https://www.youtube.com/watch?v=k1zeOtcO7j0"), 
-    title: "Sama-Sama at Tulong-Tulong", 
+    poster: ytThumb("https://www.youtube.com/watch?v=k1zeOtcO7j0"),
+    title: "Sama-Sama at Tulong-Tulong",
   },
-  "V. Group crew guide animation": {
+  "V.Group Crew Guide Animation": {
     src: "https://www.youtube.com/watch?v=b9hQQ5w9Uhs",
-    poster: ytThumb("https://www.youtube.com/watch?v=b9hQQ5w9Uhs"), 
-    title: "V. Group crew guide animation", 
-  },  
+    poster: ytThumb("https://www.youtube.com/watch?v=b9hQQ5w9Uhs"),
+    title: "V.Group Crew Guide Animation",
+  },
   "My heart beats for Banaue": {
     src: "https://www.youtube.com/watch?v=hHO25dAiGk4&feature=youtu.be",
-    poster: ytThumb("https://www.youtube.com/watch?v=hHO25dAiGk4&feature=youtu.be"), 
-    title: "My heart beats for Banaue", 
-  },  
+    poster: ytThumb("https://www.youtube.com/watch?v=hHO25dAiGk4&feature=youtu.be"),
+    title: "My heart beats for Banaue",
+  },
   "NEW GREENLAND Urban Farming in Quezon City": {
     src: "https://www.youtube.com/watch?v=35vrOJ0S1_Q&feature=youtu.be",
-    poster: ytThumb("https://www.youtube.com/watch?v=35vrOJ0S1_Q&feature=youtu.be"), 
-    title: "NEW GREENLAND Urban Farming in Quezon City", 
-  },  
+    poster: ytThumb("https://www.youtube.com/watch?v=35vrOJ0S1_Q&feature=youtu.be"),
+    title: "NEW GREENLAND Urban Farming in Quezon City",
+  },
 }
 
 function YTPreviewImage({ poster, title }: { poster?: string; title: string }) {
@@ -232,7 +220,7 @@ function VideoCard({ name }: { name: string }) {
         const q = encodeURIComponent(href)
         fetch(`/api/youtube-desc?url=${q}`).then((r) => r.json()).then((d) => {
           if (d?.desc) setDesc(d.desc)
-        }).catch(() => {})
+        }).catch(() => { })
       }
     }
   }, [desc, name])
@@ -294,7 +282,7 @@ export default function OurWorksPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24" aria-labelledby="our-works-heading">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1 id="our-works-heading" className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 text-[#c59f43]">Our Works</h1>
-          
+
         </motion.div>
 
         <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -347,7 +335,7 @@ export default function OurWorksPage() {
         </motion.div>
 
         <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Audio Visual Productions
+          Campaigns
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {audioVisual.map((name) => (
@@ -394,19 +382,19 @@ export default function OurWorksPage() {
 
         <AnimatePresence>
           {isOpen && (
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              exit={{ opacity: 0 }} 
-              className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm" 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm"
               onClick={closeVideo}
             >
-              <motion.div 
-                initial={{ opacity: 0, y: 20, scale: 0.98 }} 
-                animate={{ opacity: 1, y: 0, scale: 1 }} 
-                exit={{ opacity: 0, y: 10, scale: 0.98 }} 
-                transition={{ duration: 0.3 }} 
-                className="absolute inset-x-4 md:inset-x-24 top-20 md:top-28 border border-white/10 bg-white/5 backdrop-blur-xl p-4 md:p-6" 
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-x-4 md:inset-x-24 top-20 md:top-28 border border-white/10 bg-white/5 backdrop-blur-xl p-4 md:p-6"
                 onClick={(e) => e.stopPropagation()}
                 role="dialog"
                 aria-modal="true"

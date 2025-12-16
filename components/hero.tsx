@@ -42,10 +42,17 @@ export default function Hero() {
           priority
         />
       </a>
-      
-      {/* Three.js Liquid Chrome Background */}
+
+      {/* Background Map Image */}
       <div className="absolute inset-0 z-0">
-        <LiquidChrome />
+        <Image
+          src="https://www.istratmc.com/wp-content/uploads/2022/05/Map.jpg"
+          alt="World Map Background"
+          fill
+          className="object-cover opacity-40 mix-blend-overlay"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#0d1a2b]/60 mix-blend-multiply" />
       </div>
 
       {/* Gradient Overlay */}
@@ -60,23 +67,17 @@ export default function Hero() {
       >
         {/* Main Headline */}
         <motion.div variants={itemVariants} className="text-center">
-          <motion.p
-            className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#c59f43] mb-6"
-            variants={itemVariants}
-          >
-            NEXT GENERATION CREATIVITY
-          </motion.p>
           <motion.h1
-            className="text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6 brand-gradient-text bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6 text-white drop-shadow-2xl"
             variants={itemVariants}
           >
-            ART + AMPLITUDE
+            IMAGINE. LIVE. SOAR
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-[#c59f43] max-w-2xl mx-auto leading-relaxed"
+            className="text-2xl md:text-3xl font-display font-bold tracking-widest text-[#c59f43] mt-4"
             variants={itemVariants}
           >
-            Where creative vision meets production excellence. We craft experiences that resonate.
+            iStrat COMMS INC.
           </motion.p>
         </motion.div>
 

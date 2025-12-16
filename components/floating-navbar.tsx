@@ -9,7 +9,6 @@ const navItems = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Works", href: "/our-works" },
   { label: "Products and Services", href: "/products-and-services" },
-  { label: "Be Part of ISTRAT", href: "/be-part-of-istrat" },
   { label: "Connect With Us", href: "/connect-with-us" },
 ]
 
