@@ -16,7 +16,7 @@ export default function ThreeHero() {
         // scene.fog = new THREE.Fog(0x0d1a2b, 20, 100)
 
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-        camera.position.z = 50
+        camera.position.z = 100
 
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
         renderer.setSize(window.innerWidth, window.innerHeight)
@@ -65,8 +65,8 @@ export default function ThreeHero() {
                     if (alpha > 128 && r < 100 && g < 100 && b < 100) {
                         // Map x,y to 3D space
                         // Center the map
-                        const pX = (x - canvas.width / 2) * 0.15
-                        const pY = -(y - canvas.height / 2) * 0.15 // Invert Y
+                        const pX = (x - canvas.width / 2) * 0.12
+                        const pY = -(y - canvas.height / 2) * 0.12 // Invert Y
                         const pZ = 0
 
                         vertices.push(pX, pY, pZ)

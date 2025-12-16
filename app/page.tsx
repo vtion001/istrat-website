@@ -2,16 +2,14 @@
 
 import PartnerCarousel from "@/components/partner-carousel"
 
-// ... (keep existing imports)
+import Hero from "@/components/hero"
+import BentoGrid from "@/components/bento-grid"
+import Footer from "@/components/footer"
+import { motion, useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
 
-// ... inside Home component render
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Clients Only
-        </motion.h3>
-        
-        <PartnerCarousel />
 
-      </section >
 
 const HERO_VIDEO_URL = "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
 const WHAT_WE_DO_VIDEO_URL = ""
@@ -281,6 +279,13 @@ export default function Home() {
       </section>
 
       <BentoGrid />
+
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
+        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          Clients Only
+        </motion.h3>
+        <PartnerCarousel />
+      </section>
 
 
 
