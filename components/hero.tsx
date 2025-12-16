@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import Image from "next/image"
+import ThreeHero from "./three-hero"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -38,17 +39,8 @@ export default function Hero() {
         />
       </a>
 
-      {/* Background Map Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://www.istratmc.com/wp-content/uploads/2022/05/Map.jpg"
-          alt="World Map Background"
-          fill
-          className="object-cover opacity-40 mix-blend-overlay"
-          priority
-        />
-        <div className="absolute inset-0 bg-[#0d1a2b]/60 mix-blend-multiply" />
-      </div>
+      {/* 3D Background */}
+      <ThreeHero />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d1a2b]/40 via-transparent to-[#0d1a2b]/60 z-10" />
@@ -63,7 +55,7 @@ export default function Hero() {
         {/* Main Headline */}
         <motion.div variants={itemVariants} className="text-center">
           <motion.h1
-            className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6 text-white drop-shadow-2xl"
+            className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6 text-[#c59f43] drop-shadow-2xl"
             variants={itemVariants}
           >
             IMAGINE. LIVE. SOAR
@@ -86,7 +78,7 @@ export default function Hero() {
           <ChevronDown className="w-6 h-6 text-[#c59f43]" />
         </motion.div>
       </motion.div>
-    </div>
+    </div >
   )
 }
 

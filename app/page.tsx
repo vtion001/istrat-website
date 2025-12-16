@@ -1,12 +1,17 @@
 "use client"
 
-import Hero from "@/components/hero"
-import BentoGrid from "@/components/bento-grid"
-import ClientTicker from "@/components/client-ticker"
-import Footer from "@/components/footer"
-import { motion, useScroll, useTransform } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
+import PartnerCarousel from "@/components/partner-carousel"
+
+// ... (keep existing imports)
+
+// ... inside Home component render
+        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          Clients Only
+        </motion.h3>
+        
+        <PartnerCarousel />
+
+      </section >
 
 const HERO_VIDEO_URL = "https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
 const WHAT_WE_DO_VIDEO_URL = ""
@@ -277,28 +282,7 @@ export default function Home() {
 
       <BentoGrid />
 
-      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
-        <motion.h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Clients Only
-        </motion.h3>
-        <motion.div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {[
-            { name: "MAERSK", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Video-and-Stage-Production.png" },
-            { name: "SGV", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png" },
-            { name: "V.Ships", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" },
-            { name: "eRase", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Graphic-Design-and-Animation.png" },
-            { name: "MaraLabs", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Market-Research.png" },
-            { name: "CP Fresh Shop", image: "https://www.istratmc.com/wp-content/uploads/2022/05/Public-Relations.png" },
-          ].map((c) => (
-            <div key={c.name} className="group flex items-center justify-center p-6 border border-white/10 bg-white/5">
-              <div className="relative w-full h-12">
-                <Image src={c.image} alt={c.name} fill className="object-contain grayscale opacity-80 transition-all group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 16vw" loading="lazy" />
-              </div>
-            </div>
-          ))}
 
-        </motion.div>
-      </section>
 
 
 
@@ -308,7 +292,6 @@ export default function Home() {
         </div>
       </div>
 
-      <ClientTicker />
       <Footer />
     </main>
   )
