@@ -42,8 +42,7 @@ export default function ConnectWithUsPage() {
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Phone</p>
-            <p className="text-[#c59f43]">09616096008</p>
-            <p className="text-[#c59f43]">09561324918</p>
+            <p className="text-[#c59f43]">(02) 7119 4130</p>
           </div>
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Email</p>
@@ -53,7 +52,7 @@ export default function ConnectWithUsPage() {
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Address</p>
             <p className="text-[#c59f43]">161 Kamias Road, Sikatuna Village</p>
-            <p className="text-[#c59f43]">Quezon City, Philippines</p>
+            <p className="text-[#c59f43]">Quezon City, Philippines 1101</p>
           </div>
         </motion.div>
 

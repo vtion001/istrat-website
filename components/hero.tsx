@@ -1,13 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import dynamic from "next/dynamic"
 import { ChevronDown } from "lucide-react"
-
-const LiquidChrome = dynamic(() => import("./liquid-chrome"), {
-  ssr: false,
-  loading: () => <div className="w-full h-full bg-[#0d1a2b]" />,
-})
+import Image from "next/image"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -94,4 +89,4 @@ export default function Hero() {
     </div>
   )
 }
-import Image from "next/image"
+
