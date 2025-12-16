@@ -1,14 +1,38 @@
-export default function sitemap() {
-  const base = "https://www.istratmc.com"
-  const lastModified = new Date().toISOString()
+import { MetadataRoute } from 'next'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://istrat-website-revamp.vercel.app' // Update this when live domain is ready
+
   return [
-    { url: `${base}/`, lastModified, priority: 1.0 },
-    { url: `${base}/about-us`, lastModified, priority: 0.8 },
-    { url: `${base}/our-works`, lastModified, priority: 0.8 },
-    { url: `${base}/products-and-services`, lastModified, priority: 0.7 },
-    { url: `${base}/connect-with-us`, lastModified, priority: 0.7 },
-    { url: `${base}/case-study/maersk`, lastModified, priority: 0.9 },
-    { url: `${base}/case-study/banaue`, lastModified, priority: 0.9 },
-    { url: `${base}/case-study/sgv`, lastModified, priority: 0.9 },
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about-us`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/products-and-services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/our-works`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/connect-with-us`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ]
 }

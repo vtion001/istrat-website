@@ -233,12 +233,12 @@ export default function Home() {
         </motion.h3>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
-            <p className="text-[#a0a0a0] mb-6">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, event management and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate with your desired target audience.</p>
+            <p className="text-[#a0a0a0] mb-6">Based in **Quezon City**, we deliver integrated communications that build trust, drive engagement, and convert attention into measurable results. From **Crisis PR in the Philippines** to **large-scale event production**, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences.</p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Unified brand development for reputation, integrity, and trust growth resulting in stronger brand recognition and recall</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Data-driven content and strategies that grow reach and conversions</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">Seamless event management for better brand experiences and moments</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">PR and crisis communications for reputation management and credibility building</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">**Unified Brand Development** helping Quezon City businesses and LGUs build reputation and trust</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">**Data-driven Digital Marketing** strategies that grow reach across the Philippines</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">**Seamless Event Management** for government and corporate milestones</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#c59f43]" /><span className="text-[#c59f43]">**Strategic Public Relations & Crisis Comms** for reputation management</span></li>
             </ul>
             <div className="relative w-full aspect-video border border-white/10 bg-white/5 overflow-hidden">
               {(() => {

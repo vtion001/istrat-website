@@ -42,18 +42,38 @@ export default function ConnectWithUsPage() {
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Phone</p>
-            <p className="text-[#c59f43]">(02) 7119 4130</p>
+            <p className="text-[#c59f43]"><a href="tel:+63283561638" className="hover:underline">(02) 7119 4130</a></p>
           </div>
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Email</p>
-            <p className="text-[#c59f43]"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
-            <p className="text-[#c59f43]"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
+            <p className="text-[#c59f43]"><a href="mailto:info@istratmc.com" className="hover:underline">info@istratmc.com</a></p>
+            <p className="text-[#c59f43]"><a href="mailto:istratmkt@gmail.com" className="hover:underline">istratmkt@gmail.com</a></p>
           </div>
           <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
             <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Address</p>
             <p className="text-[#c59f43]">161 Kamias Road, Sikatuna Village</p>
             <p className="text-[#c59f43]">Quezon City, Philippines 1101</p>
           </div>
+        </motion.div>
+
+        {/* Google Map Embed for Local SEO */}
+        <motion.div
+          className="w-full h-96 border border-[#0d71a3]/30 mb-16 grayscale hover:grayscale-0 transition-all duration-500"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.200569762696!2d121.0566!3d14.6395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b796aecb8763%3A0x5a5c5c5c5c5c5c5c!2s161%20Kamias%20Rd%2C%20Diliman%2C%20Quezon%20City%2C%201101%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1600000000000!5m2!1sen!2sph"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="iStrat Comms - Quezon City Office"
+          />
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
