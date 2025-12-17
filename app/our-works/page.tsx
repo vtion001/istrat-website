@@ -324,7 +324,7 @@ export default function OurWorksPage() {
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="relative w-full h-40">
+              <div className="relative w-full h-92">
                 {isVideoSrc(VIDEOS[item.name]?.src) ? (
                   <video
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
