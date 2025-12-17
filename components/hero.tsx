@@ -28,16 +28,16 @@ const itemVariants = {
 export default function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-white">
-      <a href="/" className="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 md:gap-4" aria-label="Go to Home">
+      <a href="/" className="absolute top-6 w-full z-30 flex items-center justify-center gap-2 md:gap-4 px-4" aria-label="Go to Home">
         <Image
           src="https://res.cloudinary.com/dbviya1rj/image/upload/v1765954623/osachccvpb3g3v1untpi.png"
           alt="ISTRAT logo"
           width={600}
           height={240}
-          className="h-24 md:h-40 w-auto opacity-90 drop-shadow"
+          className="h-16 md:h-40 w-auto opacity-90 drop-shadow object-contain"
           priority
         />
-        <span className="text-[#555555] text-3xl md:text-5xl font-semibold drop-shadow-md mt-6 md:mt-14 -ml-3 md:-ml-6" style={{ fontFamily: 'var(--font-comfortaa)' }}>COMMS</span>
+        <span className="text-[#555555] text-2xl md:text-5xl font-semibold drop-shadow-md mt-4 md:mt-14 -ml-2 md:-ml-6" style={{ fontFamily: 'var(--font-comfortaa)' }}>COMMS</span>
       </a>
 
       {/* 3D Background */}
