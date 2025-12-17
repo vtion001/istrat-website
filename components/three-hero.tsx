@@ -76,7 +76,7 @@ export default function ThreeHero() {
                         // Let's use a brand color for the dots, e.g., Gold or specialized Blue.
                         // User asked for "high-performance".
                         // Let's us #c59f43 (Gold) for a premium look against the dark background.
-                        const color = new THREE.Color("#0d71a3") // Using the blue accent from about-us
+                        const color = new THREE.Color("#808080") // Grayscale color
                         colors.push(color.r, color.g, color.b)
 
                         sizes.push(1.0)
@@ -196,5 +196,5 @@ export default function ThreeHero() {
         }
     }, [])
 
-    return <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none" />
+    return <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none opacity-50" />
 }

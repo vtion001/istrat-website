@@ -30,35 +30,35 @@ export default function ConnectWithUsPage() {
   }
 
   return (
-    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
+    <main className="w-full overflow-x-hidden bg-white">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Connect With Us</h1>
-          <p className="text-lg md:text-xl text-[#c59f43] max-w-4xl mb-12">
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>Connect With Us</h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-4xl mb-12">
             Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
           </p>
         </motion.div>
 
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
-            <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Phone</p>
-            <p className="text-[#c59f43]"><a href="tel:+63283561638" className="hover:underline">(02) 7119 4130</a></p>
+          <div className="p-8 border border-gray-200 bg-gray-50">
+            <p className="text-[#DC7026] uppercase tracking-widest text-sm mb-2">Phone</p>
+            <p className="text-gray-700"><a href="tel:+63283561638" className="hover:underline hover:text-[#DC7026] text-lg font-medium transition-colors">(02) 7119 4130</a></p>
           </div>
-          <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
-            <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Email</p>
-            <p className="text-[#c59f43]"><a href="mailto:info@istratmc.com" className="hover:underline">info@istratmc.com</a></p>
-            <p className="text-[#c59f43]"><a href="mailto:istratmkt@gmail.com" className="hover:underline">istratmkt@gmail.com</a></p>
+          <div className="p-8 border border-gray-200 bg-gray-50">
+            <p className="text-[#DC7026] uppercase tracking-widest text-sm mb-2">Email</p>
+            <p className="text-gray-700 mb-1"><a href="mailto:info@istratmc.com" className="hover:underline hover:text-[#DC7026] text-lg font-medium transition-colors">info@istratmc.com</a></p>
+            <p className="text-gray-500 text-sm"><a href="mailto:istratmkt@gmail.com" className="hover:underline hover:text-[#DC7026] transition-colors">istratmkt@gmail.com</a></p>
           </div>
-          <div className="p-8 border border-[#0d71a3]/30 bg-[#0d71a3]/10 backdrop-blur-xl">
-            <p className="text-[#c59f43] uppercase tracking-widest text-sm mb-2">Address</p>
-            <p className="text-[#c59f43]">161 Kamias Road, Sikatuna Village</p>
-            <p className="text-[#c59f43]">Quezon City, Philippines 1101</p>
+          <div className="p-8 border border-gray-200 bg-gray-50">
+            <p className="text-[#DC7026] uppercase tracking-widest text-sm mb-2">Address</p>
+            <p className="text-gray-700 font-medium">161 Kamias Road, Sikatuna Village</p>
+            <p className="text-gray-500">Quezon City, Philippines 1101</p>
           </div>
         </motion.div>
 
         {/* Google Map Embed for Local SEO */}
         <motion.div
-          className="w-full h-96 border border-[#0d71a3]/30 mb-16 grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full h-96 border border-gray-200 mb-16 grayscale hover:grayscale-0 transition-all duration-500"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -78,11 +78,11 @@ export default function ConnectWithUsPage() {
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={onSubmit}>
-            <input name="name" value={form.name} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Name" aria-label="Name" aria-invalid={!!errors.name} />
-            <input name="email" value={form.email} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Email Address" aria-label="Email Address" aria-invalid={!!errors.email} />
-            <input name="company" value={form.company} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Company Name" aria-label="Company Name" />
-            <select name="service" value={form.service} onChange={onChange} className="w-full px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43]" aria-label="Service">
-              <option value="" disabled className="text-[#a0a0a0]">What services do you want to know?</option>
+            <input name="name" value={form.name} onChange={onChange} className="w-full px-4 py-3 border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Name" aria-label="Name" aria-invalid={!!errors.name} />
+            <input name="email" value={form.email} onChange={onChange} className="w-full px-4 py-3 border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Email Address" aria-label="Email Address" aria-invalid={!!errors.email} />
+            <input name="company" value={form.company} onChange={onChange} className="w-full px-4 py-3 border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Company Name" aria-label="Company Name" />
+            <select name="service" value={form.service} onChange={onChange} className="w-full px-4 py-3 border border-gray-300 bg-gray-50 text-gray-900 focus:outline-none focus:border-[#DC7026] transition-colors" aria-label="Service">
+              <option value="" disabled className="text-gray-400">What services do you want to know?</option>
               <option>Integrated Marketing Campaigns</option>
               <option>Brand Development and Strategy</option>
               <option>Graphic Design and Animation</option>
@@ -93,24 +93,24 @@ export default function ConnectWithUsPage() {
               <option>Video and Stage Production</option>
               <option>Information Technology</option>
             </select>
-            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />
-            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 h-40 border border-[#0d71a3]/30 bg-[#0d71a3]/10 text-[#c59f43] placeholder-[#a0a0a0]" placeholder="Message" aria-label="Message" aria-invalid={!!errors.message} />
+            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />
+            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 h-40 border border-gray-300 bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Message" aria-label="Message" aria-invalid={!!errors.message} />
             <div className="md:col-span-2 space-y-3">
               {Object.keys(errors).length > 0 && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm text-[#ff6b6b]" role="alert" aria-live="polite">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm text-red-500" role="alert" aria-live="polite">
                   {Object.entries(errors).map(([k, v]) => (
                     <div key={k}>{k}: {v}</div>
                   ))}
                 </motion.div>
               )}
               {sent ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-[#0d71a3]/30 bg-[#0d71a3]/20 text-[#c59f43]" role="status" aria-live="polite">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-3 border border-[#DC7026]/30 bg-[#DC7026]/10 text-[#DC7026]" role="status" aria-live="polite">
                   Thank you. We’ll get back to you shortly.
                 </motion.div>
               ) : (
                 <div className="flex items-center gap-3">
-                  <button type="submit" className="inline-block px-6 py-4 border border-[#0d71a3]/30 bg-[#c59f43]/30 backdrop-blur-xl text-[#c59f43] hover:text-[#0a0a0a] hover:bg-[#c59f43] transition-colors" aria-label="Send">Send</button>
-                  <span className="text-[#c59f43]">or email us at info@istratmc.com, istratmkt@gmail.com</span>
+                  <button type="submit" className="inline-block px-8 py-4 bg-[#DC7026] text-white hover:bg-[#c5621e] transition-colors font-medium tracking-wide shadow-lg hover:shadow-xl" aria-label="Send">Send Message</button>
+                  <span className="text-gray-500 text-sm">or email us at info@istratmc.com</span>
                 </div>
               )}
             </div>

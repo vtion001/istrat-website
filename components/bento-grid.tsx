@@ -38,7 +38,7 @@ const services = [
 
 export default function BentoGrid() {
   return (
-    <section className="w-full px-4 md:px-8 py-24 bg-[#0d1a2b]">
+    <section className="w-full px-4 md:px-8 py-24 bg-white">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -47,7 +47,8 @@ export default function BentoGrid() {
         className="max-w-7xl mx-auto"
       >
         <motion.h2
-          className="text-6xl md:text-7xl font-display font-bold mb-16 tracking-tighter brand-gradient-text bg-clip-text text-transparent"
+          className="text-6xl md:text-7xl font-semibold mb-16 tracking-widest text-[#DC7026]"
+          style={{ fontFamily: 'var(--font-label)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -66,14 +67,14 @@ export default function BentoGrid() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-full p-8 border border-white/10 bg-white/5 backdrop-blur-xl rounded-none overflow-hidden">
+              <div className="relative h-full p-8 border border-gray-200 bg-gray-50 rounded-none overflow-hidden">
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#c59f43]/0 group-hover:from-[#c59f43]/15 group-hover:to-[#c59f43]/15 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#DC7026]/0 group-hover:from-[#DC7026]/15 group-hover:to-[#DC7026]/15 transition-all duration-500" />
 
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">{service.title}</h3>
-                    <p className="text-sm md:text-base text-[#c59f43]">{service.description}</p>
+                    <h3 className="text-2xl md:text-3xl font-semibold mb-3 tracking-widest text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>{service.title}</h3>
+                    <p className="text-sm md:text-base text-[#3C4699]">{service.description}</p>
                   </div>
 
                   {/* Arrow icon - appears on hover */}
@@ -83,15 +84,15 @@ export default function BentoGrid() {
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <span className="text-xs tracking-widest text-[#c59f43]">EXPLORE</span>
-                    <ArrowRight className="w-5 h-5 text-[#c59f43] transform group-hover:translate-x-1 transition-transform" />
+                    <span className="text-xs tracking-widest text-[#E8A351]">EXPLORE</span>
+                    <ArrowRight className="w-5 h-5 text-[#DC7026] transform group-hover:translate-x-1 transition-transform" />
                   </motion.div>
                 </div>
               </div>
 
               {/* Border glow on hover */}
               <motion.div
-                className="absolute inset-0 border border-[#c59f43] rounded-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 border border-[#DC7026] rounded-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={false}
               />
             </motion.div>

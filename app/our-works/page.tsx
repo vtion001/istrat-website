@@ -252,7 +252,7 @@ function VideoCard({ name }: { name: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#c59f43]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c59f43] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+      className="group p-0 border border-gray-200 bg-gray-50 text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
       aria-label={`Visit video for ${name}`}
       title={title}
       initial={{ y: 0 }}
@@ -275,11 +275,11 @@ function VideoCard({ name }: { name: string }) {
         ) : (
           <YTPreviewImage poster={VIDEOS[name]?.poster} title={title} />
         )}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/10 group-hover:to-[#3C4699]/10 transition-all" />
       </div>
       <div className="p-6">
-        <p className="text-white">{name}</p>
-        <p className="mt-2 text-sm text-[#a0a0a0]">{desc || "Event highlight"}</p>
+        <p className="text-gray-900 font-semibold group-hover:text-[#DC7026] transition-colors">{name}</p>
+        <p className="mt-2 text-sm text-gray-600">{desc || "Event highlight"}</p>
       </div>
     </motion.a>
   )
@@ -299,14 +299,14 @@ export default function OurWorksPage() {
   }
 
   return (
-    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
+    <main className="w-full overflow-x-hidden bg-white">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24" aria-labelledby="our-works-heading">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 id="our-works-heading" className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 text-[#c59f43]">Our Works</h1>
+          <h1 id="our-works-heading" className="text-5xl md:text-7xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>Our Works</h1>
 
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Social Media Management
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -316,7 +316,7 @@ export default function OurWorksPage() {
               href={VIDEOS[item.name]?.href || VIDEOS[item.name]?.src || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-0 border border-white/10 bg-white/5 backdrop-blur-xl text-left hover:border-[#c59f43]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c59f43] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+              className="group p-0 border border-gray-200 bg-gray-50 text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               aria-label={`Visit video for ${item.name}`}
               title={VIDEOS[item.name]?.title || item.name}
               initial={{ y: 0 }}
@@ -345,17 +345,17 @@ export default function OurWorksPage() {
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/10 group-hover:to-[#3C4699]/10 transition-all" />
               </div>
               <div className="p-8">
-                <p className="text-[#c59f43] text-xl font-semibold mb-2">{item.name}</p>
-                <p className="text-[#c59f43] uppercase tracking-widest text-sm">{item.stat}</p>
+                <p className="text-[#DC7026] text-xl font-semibold mb-2">{item.name}</p>
+                <p className="text-gray-600 uppercase tracking-widest text-sm">{item.stat}</p>
               </div>
             </motion.a>
           ))}
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Campaigns
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -364,7 +364,7 @@ export default function OurWorksPage() {
           ))}
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Event Management
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -373,14 +373,14 @@ export default function OurWorksPage() {
           ))}
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-display font-semibold tracking-tight mb-4 text-[#c59f43]" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Our Services
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {externalServices.map((s) => (
             <motion.div
               key={s.title}
-              className="group relative p-0 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden text-left transition-transform transform-gpu"
+              className="group relative p-0 border border-gray-200 bg-gray-50 overflow-hidden text-left transition-transform transform-gpu"
               initial={{ y: 0 }}
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -395,7 +395,7 @@ export default function OurWorksPage() {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="p-6">
-                <p className="text-white text-lg font-semibold">{s.title}</p>
+                <p className="text-gray-900 group-hover:text-[#DC7026] transition-colors text-lg font-semibold">{s.title}</p>
               </div>
             </motion.div>
           ))}
@@ -415,14 +415,14 @@ export default function OurWorksPage() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-x-4 md:inset-x-24 top-20 md:top-28 border border-white/10 bg-white/5 backdrop-blur-xl p-4 md:p-6"
+                className="absolute inset-x-4 md:inset-x-24 top-20 md:top-28 border border-gray-200 bg-white p-4 md:p-6 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
                 role="dialog"
                 aria-modal="true"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <p className="text-white text-sm md:text-base">{currentVideo?.title || "Video Reel"}</p>
-                  <button onClick={closeVideo} className="px-3 py-2 border border-white/10 bg-white/10 text-white hover:bg-white/20 transition-colors" aria-label="Close video">Close</button>
+                  <p className="text-gray-900 text-sm md:text-base font-medium">{currentVideo?.title || "Video Reel"}</p>
+                  <button onClick={closeVideo} className="px-3 py-2 border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors" aria-label="Close video">Close</button>
                 </div>
                 <div className="relative w-full aspect-video">
                   <video
@@ -437,7 +437,7 @@ export default function OurWorksPage() {
                     loop
                     playsInline
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c59f43]/10 to-[#0d71a3]/10" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/10 to-[#3C4699]/10" />
                 </div>
               </motion.div>
             </motion.div>

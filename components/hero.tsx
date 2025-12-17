@@ -27,23 +27,24 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#0d1a2b]">
-      <a href="/" className="absolute top-6 left-6 z-30" aria-label="Go to Home">
+    <div className="relative w-full h-screen overflow-hidden bg-white">
+      <a href="/" className="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-4" aria-label="Go to Home">
         <Image
-          src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"
+          src="https://res.cloudinary.com/dbviya1rj/image/upload/v1765954623/osachccvpb3g3v1untpi.png"
           alt="ISTRAT logo"
           width={600}
           height={240}
           className="h-40 w-auto opacity-90 drop-shadow"
           priority
         />
+        <span className="text-[#555555] text-5xl font-semibold tracking-widest drop-shadow-md mt-14 -ml-6" style={{ fontFamily: 'var(--font-comfortaa)' }}>COMMS</span>
       </a>
 
       {/* 3D Background */}
       <ThreeHero />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d1a2b]/40 via-transparent to-[#0d1a2b]/60 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/50 z-10" />
 
       {/* Content Container */}
       <motion.div
@@ -52,20 +53,15 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Main Headline */}
+        {/* Main Headline - Change fontSize value below (e.g., 48px, 64px, 80px) */}
         <motion.div variants={itemVariants} className="text-center">
           <motion.h1
-            className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none mb-6 text-[#c59f43] drop-shadow-2xl"
+            className="font-semibold tracking-widest leading-none mb-6 text-[#DC7026] drop-shadow-2xl"
+            style={{ fontFamily: 'var(--font-label)', fontSize: '95px' }}
             variants={itemVariants}
           >
-            IMAGINE. LIVE. SOAR
+            IMAGINE. LIVE. SOAR.
           </motion.h1>
-          <motion.p
-            className="text-2xl md:text-3xl font-display font-bold tracking-widest text-[#c59f43] mt-4"
-            variants={itemVariants}
-          >
-            iStrat COMMS INC.
-          </motion.p>
         </motion.div>
 
         {/* Scroll Indicator */}
@@ -75,7 +71,7 @@ export default function Hero() {
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           variants={itemVariants}
         >
-          <ChevronDown className="w-6 h-6 text-[#c59f43]" />
+          <ChevronDown className="w-6 h-6 text-[#DC7026]" />
         </motion.div>
       </motion.div>
     </div >

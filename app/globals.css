@@ -4,78 +4,75 @@
 
 
 :root {
-  /* Override with Quiet Luxury colors while preserving shadcn structure */
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --card: rgba(255, 255, 255, 0.05);
-  --card-foreground: #ffffff;
-  --popover: #1a1a1a;
-  --popover-foreground: #ffffff;
-  --primary: #c59f43;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #ffffff;
-  --muted: #404040;
-  --muted-foreground: #a0a0a0;
-  --accent: #b700ff;
+  /* New Light Theme Colors */
+  --background: #ffffff;
+  --foreground: #0d1a2b;
+  --card: #f9fafb;
+  /* gray-50 */
+  --card-foreground: #0d1a2b;
+  --popover: #ffffff;
+  --popover-foreground: #0d1a2b;
+  --primary: #DC7026;
+  --primary-foreground: #ffffff;
+  --secondary: #E8A351;
+  --secondary-foreground: #0d1a2b;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #3C4699;
   --accent-foreground: #ffffff;
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.05);
-  --ring: #c59f43;
-  --brand-blue: #0d71a3;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  /* gray-200 */
+  --input: #e5e7eb;
+  --ring: #DC7026;
+  --brand-blue: #3C4699;
   --radius: 0rem;
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #c59f43;
-  --sidebar-primary-foreground: #0a0a0a;
-  --sidebar-accent: #b700ff;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #c59f43;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Playfair Display", serif;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0d1a2b;
+  --sidebar-primary: #DC7026;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #0d1a2b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #DC7026;
+  --font-sans: var(--font-ibm-plex), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-ibm-plex), sans-serif;
+  --font-label: var(--font-archivo), sans-serif;
+  --font-comfortaa: var(--font-comfortaa), sans-serif;
+  --text-primary: #0d1a2b;
+  --accent-orange: #DC7026;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --card: rgba(255, 255, 255, 0.05);
-  --card-foreground: #ffffff;
-  --popover: #1a1a1a;
-  --popover-foreground: #ffffff;
-  --primary: #c59f43;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #ffffff;
-  --muted: #404040;
-  --muted-foreground: #a0a0a0;
-  --accent: #b700ff;
+  /* Using same light theme for now as requested to apply "white background" everywhere */
+  --background: #ffffff;
+  --foreground: #0d1a2b;
+  --card: #f9fafb;
+  --card-foreground: #0d1a2b;
+  --popover: #ffffff;
+  --popover-foreground: #0d1a2b;
+  --primary: #DC7026;
+  --primary-foreground: #ffffff;
+  --secondary: #E8A351;
+  --secondary-foreground: #0d1a2b;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #3C4699;
   --accent-foreground: #ffffff;
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.05);
-  --ring: #c59f43;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #c59f43;
-  --sidebar-primary-foreground: #0a0a0a;
-  --sidebar-accent: #b700ff;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #c59f43;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #DC7026;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0d1a2b;
+  --sidebar-primary: #DC7026;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #0d1a2b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #DC7026;
 }
 
 
@@ -92,42 +89,58 @@
   left: 0.5rem;
   z-index: 50;
   transform: translateY(-150%);
-  background: #0d1a2b;
+  background: #ffffff;
   backdrop-filter: blur(8px);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.12);
+  color: #0d1a2b;
+  border: 1px solid #e5e7eb;
   padding: 0.5rem 0.75rem;
 }
+
 .skip-link:focus {
   transform: translateY(0);
 }
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-    background-image: radial-gradient(80vh 80vh at 10% 10%, rgba(197, 159, 67, 0.28), transparent 60%),
-      radial-gradient(70vh 70vh at 85% 25%, rgba(13, 113, 163, 0.2), transparent 65%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  }
 
-  /* Typography system for quiet luxury */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-display);
-  }
-  h2::after,
-  h3::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 96px;
-    margin-top: 6px;
-    background-image: linear-gradient(to right, rgba(197, 159, 67, 0.6), rgba(197, 159, 67, 0.2));
-  }
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  /* Removed dark gradients */
+}
+
+/* Typography system - Brand Guidelines */
+
+/* H1 Headings: IBM Plex Sans Condensed, Medium (500), tight line-height */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* Other headings */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+/* Body text: IBM Plex Sans Condensed, Regular (400), 1.5 line-height */
+p,
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h2::after,
+h3::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 96px;
+  margin-top: 6px;
+  background-image: linear-gradient(to right, rgba(197, 159, 67, 0.6), rgba(197, 159, 67, 0.2));
+}
 
 .brand-gradient-text {
   background-image: linear-gradient(to right, #c59f43, #e6c066);
@@ -138,6 +151,21 @@
 
 .font-display {
   font-family: var(--font-display);
+}
+
+/* Secondary labels / Eyebrow text: Archivo Narrow, Semi-Bold (600), Uppercase */
+.eyebrow-text,
+.label-text {
+  font-family: var(--font-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Content blocks with orange vertical accent border */
+.content-block-accent {
+  border-left: 2px solid var(--accent-orange, #ff6b35);
+  padding-left: 1.5rem;
 }
 
 .no-scrollbar::-webkit-scrollbar {

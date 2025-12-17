@@ -74,11 +74,11 @@ export default function ProductsAndServicesPage() {
   const [detailOpen, setDetailOpen] = useState(false)
   const [detailData, setDetailData] = useState<{ title: string; summary: string; points: string[]; images?: string[]; ctaLabel?: string; ctaHref?: string }>({ title: "", summary: "", points: [] })
   return (
-    <main className="w-full overflow-x-hidden bg-[#0d1a2b]">
+    <main className="w-full overflow-x-hidden bg-white">
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 text-[#c59f43]">Services</h1>
-          <p className="text-lg md:text-xl text-[#c59f43] max-w-3xl mb-12">
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>Services</h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mb-12">
             A full suite of communications solutions designed to elevate your brand and deliver measurable impact.
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ export default function ProductsAndServicesPage() {
             {services.map((service) => (
               <motion.button
                 key={service.title}
-                className="group relative p-8 border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden text-left"
+                className="group relative p-8 border border-gray-200 bg-gray-50 overflow-hidden text-left hover:bg-white transition-colors"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 onClick={() => {
@@ -200,23 +200,23 @@ export default function ProductsAndServicesPage() {
                   setDetailOpen(true)
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0 group-hover:from-[#c59f43]/10 group-hover:to-[#0d71a3]/10 transition-all duration-500" />
-                <h3 className="text-2xl font-display font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-[#a0a0a0]">{service.description}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/10 group-hover:to-[#3C4699]/10 transition-all duration-500" />
+                <h3 className="text-2xl font-semibold text-[#DC7026] mb-4 tracking-widest" style={{ fontFamily: 'var(--font-label)' }}>{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
               </motion.button>
             ))}
           </div>
         </motion.div>
 
-        <motion.h2 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-6 mt-16 text-white" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+        <motion.h2 className="text-3xl md:text-4xl font-semibold tracking-widest mb-6 mt-16 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Highlights
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {videoHighlights.map((v) => (
-            <a key={v.title} href={v.url} target="_blank" rel="noreferrer" className="group block border border-white/10 bg-white/5 backdrop-blur-xl">
+            <a key={v.title} href={v.url} target="_blank" rel="noreferrer" className="group block border border-gray-200 bg-gray-50 backdrop-blur-xl hover:bg-white transition-colors">
               <img src={v.thumb} alt={v.title} className="w-full h-40 object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="p-4">
-                <p className="text-white text-sm font-medium">{v.title}</p>
+                <p className="text-gray-900 text-sm font-medium group-hover:text-[#DC7026] transition-colors">{v.title}</p>
               </div>
             </a>
           ))}
