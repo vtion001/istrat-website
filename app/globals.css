@@ -4,74 +4,73 @@
 
 
 :root {
-  /* New Light Theme Colors */
-  --background: #ffffff;
-  --foreground: #0d1a2b;
-  --card: #f9fafb;
-  /* gray-50 */
-  --card-foreground: #0d1a2b;
-  --popover: #ffffff;
-  --popover-foreground: #0d1a2b;
+  /* New Dark Theme Colors */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  /* dark gray */
+  --card-foreground: #ffffff;
+  --popover: #000000;
+  --popover-foreground: #ffffff;
   --primary: #DC7026;
   --primary-foreground: #ffffff;
   --secondary: #E8A351;
-  --secondary-foreground: #0d1a2b;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --secondary-foreground: #ffffff;
+  --muted: #111111;
+  --muted-foreground: #a1a1aa;
   --accent: #3C4699;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  /* gray-200 */
-  --input: #e5e7eb;
+  --border: rgba(255, 255, 255, 0.1);
+  /* white/10 */
+  --input: rgba(255, 255, 255, 0.1);
   --ring: #DC7026;
   --brand-blue: #3C4699;
   --radius: 0rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #0d1a2b;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
   --sidebar-primary: #DC7026;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f3f4f6;
-  --sidebar-accent-foreground: #0d1a2b;
-  --sidebar-border: #e5e7eb;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: #DC7026;
   --font-sans: var(--font-ibm-plex), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-ibm-plex), sans-serif;
   --font-label: var(--font-archivo), sans-serif;
   --font-comfortaa: var(--font-comfortaa), sans-serif;
-  --text-primary: #0d1a2b;
+  --text-primary: #ffffff;
   --accent-orange: #DC7026;
 }
 
 .dark {
-  /* Using same light theme for now as requested to apply "white background" everywhere */
-  --background: #ffffff;
-  --foreground: #0d1a2b;
-  --card: #f9fafb;
-  --card-foreground: #0d1a2b;
-  --popover: #ffffff;
-  --popover-foreground: #0d1a2b;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #000000;
+  --popover-foreground: #ffffff;
   --primary: #DC7026;
   --primary-foreground: #ffffff;
   --secondary: #E8A351;
-  --secondary-foreground: #0d1a2b;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --secondary-foreground: #ffffff;
+  --muted: #111111;
+  --muted-foreground: #a1a1aa;
   --accent: #3C4699;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
   --ring: #DC7026;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #0d1a2b;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
   --sidebar-primary: #DC7026;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f3f4f6;
-  --sidebar-accent-foreground: #0d1a2b;
-  --sidebar-border: #e5e7eb;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: #DC7026;
 }
 
@@ -139,11 +138,11 @@ h3::after {
   height: 2px;
   width: 96px;
   margin-top: 6px;
-  background-image: linear-gradient(to right, rgba(197, 159, 67, 0.6), rgba(197, 159, 67, 0.2));
+  background-image: linear-gradient(to right, rgba(220, 112, 38, 0.6), rgba(220, 112, 38, 0.2));
 }
 
 .brand-gradient-text {
-  background-image: linear-gradient(to right, #c59f43, #e6c066);
+  background-image: linear-gradient(to right, #DC7026, #E8A351);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

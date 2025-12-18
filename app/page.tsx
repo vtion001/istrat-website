@@ -105,13 +105,13 @@ export default function Home() {
   const ribbonY = useTransform(scrollYProgress, [0, 1], [0, -30])
 
   return (
-    <main id="main" className="w-full overflow-x-hidden bg-white">
+    <main id="main" className="w-full overflow-x-hidden bg-black text-white">
       <Hero />
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <p className="text-xs md:text-sm uppercase tracking-[0.20em] text-[#DC7026] mb-4">Imagine • Live • Soar •</p>
           <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent"></h2>
-          <div className="relative w-full aspect-video border border-gray-200 bg-gray-50 overflow-hidden mb-12">
+          <div className="relative w-full aspect-video border border-white/10 bg-black overflow-hidden mb-12">
             <video
               className="w-full h-full object-cover"
               src={HERO_VIDEO_URL}
@@ -123,10 +123,10 @@ export default function Home() {
               loop
               playsInline
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/10 to-[#3C4699]/10" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/15 to-[#3C4699]/15" />
           </div>
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <a href="#highlights" aria-label="Explore Highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-[#DC7026] hover:text-white hover:border-[#DC7026] transition-colors">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+            <a href="#highlights" aria-label="Explore Highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/20 bg-white/5 text-white hover:bg-[#DC7026] hover:text-white hover:border-[#DC7026] transition-colors">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
           </motion.div>
         </motion.div>
 
@@ -158,7 +158,7 @@ export default function Home() {
               },
             ].map((h, i) => {
               const card = (
-                <motion.div key={h.title} className="group relative border border-gray-200 bg-gray-50 overflow-hidden"
+                <motion.div key={h.title} className="group relative border border-white/10 bg-black overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
@@ -232,15 +232,15 @@ export default function Home() {
           What We Do
         </motion.h3>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="p-8 border border-gray-200 bg-gray-50">
-            <p className="text-gray-700 mb-6">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, event management and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate to your desired target audience.</p>
+          <div className="p-8 border border-white/10 bg-black">
+            <p className="text-gray-300 mb-6">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, event management and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate to your desired target audience.</p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-[#3C4699]">Unified brand development for reputation, integrity and trust growth resulting for better brand recognition and recall.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-[#3C4699]">Data-driven content and strategies that grow reach and conversions.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-[#3C4699]">Seamless events management for better brand experiences and moments.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-[#3C4699]">PR and crisis comms for reputation management and credibility building.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-white">Unified brand development for reputation, integrity and trust growth resulting for better brand recognition and recall.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-white">Data-driven content and strategies that grow reach and conversions.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-white">Seamless events management for better brand experiences and moments.</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" /><span className="text-white">PR and crisis comms for reputation management and credibility building.</span></li>
             </ul>
-            <div className="relative w-full aspect-video border border-gray-200 bg-gray-50 overflow-hidden">
+            <div className="relative w-full aspect-video border border-white/10 bg-black overflow-hidden">
               {(() => {
                 const embed = WHAT_WE_DO_VIDEO_URL ? toYouTubeEmbed(WHAT_WE_DO_VIDEO_URL) : null
                 if (embed) {
@@ -265,13 +265,13 @@ export default function Home() {
                   />
                 )
               })()}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/15 to-[#3C4699]/15" />
             </div>
           </div>
         </motion.div>
         <motion.div className="flex flex-wrap gap-3 mt-6 mb-2" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {["Best Staging 2024", "Top PR Campaign", "Innovation in AV", "Community Impact Award"].map((a) => (
-            <span key={a} className="px-4 py-2 text-xs tracking-widest text-gray-900 border border-gray-300 bg-gray-100">
+            <span key={a} className="px-4 py-2 text-xs tracking-widest text-white border border-white/20 bg-white/5">
               {a}
             </span>
           ))}

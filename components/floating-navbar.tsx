@@ -28,7 +28,7 @@ export default function FloatingNavbar() {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="fixed bottom-24 left-4 right-4 z-50 md:hidden"
           >
-            <div className="bg-white/95 backdrop-blur-3xl border border-gray-200 rounded-2xl p-4 shadow-2xl flex flex-col gap-2">
+            <div className="bg-black/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -38,7 +38,7 @@ export default function FloatingNavbar() {
                     onClick={() => setIsOpen(false)}
                     className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive
                       ? "bg-[#DC7026]/10 text-[#DC7026] border border-[#DC7026]/20"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-[#DC7026]"
+                      : "text-white/80 hover:bg-white/10 hover:text-[#DC7026]"
                       }`}
                   >
                     {item.label}
@@ -56,7 +56,7 @@ export default function FloatingNavbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="px-4 py-3 border border-gray-200 bg-white/80 backdrop-blur-2xl rounded-full shadow-lg flex items-center justify-between md:justify-center">
+        <div className="px-4 py-3 border border-white/10 bg-black/80 backdrop-blur-2xl rounded-full shadow-lg flex items-center justify-between md:justify-center">
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
@@ -66,7 +66,7 @@ export default function FloatingNavbar() {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  className={`relative px-4 py-2 text-sm uppercase tracking-widest transition-colors flex-shrink-0 rounded-full ${isActive ? "text-[#DC7026]" : "text-gray-700 hover:text-[#DC7026]"
+                  className={`relative px-4 py-2 text-sm uppercase tracking-widest transition-colors flex-shrink-0 rounded-full ${isActive ? "text-[#DC7026]" : "text-white/80 hover:text-[#DC7026]"
                     }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

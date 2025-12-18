@@ -38,7 +38,7 @@ const services = [
 
 export default function BentoGrid() {
   return (
-    <section className="w-full px-4 md:px-8 py-24 bg-white">
+    <section className="w-full px-4 md:px-8 py-24 bg-black">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -67,14 +67,14 @@ export default function BentoGrid() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-full p-8 border border-gray-200 bg-gray-50 rounded-none overflow-hidden">
+              <div className="relative h-full p-8 border border-white/10 bg-black rounded-none overflow-hidden">
                 {/* Hover glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#DC7026]/0 group-hover:from-[#DC7026]/15 group-hover:to-[#DC7026]/15 transition-all duration-500" />
 
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
                     <h3 className="text-2xl md:text-3xl font-semibold mb-3 tracking-widest text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>{service.title}</h3>
-                    <p className="text-sm md:text-base text-[#3C4699]">{service.description}</p>
+                    <p className="text-sm md:text-base text-white">{service.description}</p>
                   </div>
 
                   {/* Arrow icon - appears on hover */}

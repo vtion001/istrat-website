@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-gray-200">
+    <footer className="w-full bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-24">
         <motion.div
           initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Info */}
-          <div className="border-t border-gray-200 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <p className="text-sm text-[#DC7026]">© 2025 iStrat COMMS INC. All rights reserved.</p>
             <div className="flex gap-8">
               {["Instagram", "Twitter", "LinkedIn"].map((social) => (

@@ -27,7 +27,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white">
+    <div className="relative w-full h-screen overflow-hidden bg-black">
       <a href="/" className="absolute top-6 w-full z-30 flex items-center justify-center gap-2 md:gap-4 px-4" aria-label="Go to Home">
         <Image
           src="https://res.cloudinary.com/dbviya1rj/image/upload/v1765954623/osachccvpb3g3v1untpi.png"
@@ -37,14 +37,14 @@ export default function Hero() {
           className="h-16 md:h-40 w-auto opacity-90 drop-shadow object-contain"
           priority
         />
-        <span className="text-[#555555] text-2xl md:text-5xl font-semibold drop-shadow-md mt-4 md:mt-14 -ml-2 md:-ml-6" style={{ fontFamily: 'var(--font-comfortaa)' }}>COMMS</span>
+        <span className="text-gray-400 text-2xl md:text-5xl font-semibold drop-shadow-md mt-4 md:mt-14 -ml-2 md:-ml-6" style={{ fontFamily: 'var(--font-comfortaa)' }}>COMMS</span>
       </a>
 
       {/* 3D Background */}
       <ThreeHero />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/50 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-10" />
 
       {/* Content Container */}
       <motion.div

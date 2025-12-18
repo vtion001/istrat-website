@@ -27,8 +27,8 @@ export default function LiquidChrome() {
     // Create animated liquid geometry with icoSphere
     const geometry = new THREE.IcosahedronGeometry(3, 5)
     const material = new THREE.MeshPhongMaterial({
-      color: 0xc59f43,
-      emissive: 0x2a1f0a,
+      color: 0xDC7026,
+      emissive: 0x2a1a0d,
       specular: 0xffffff,
       shininess: 100,
       wireframe: false,
@@ -42,7 +42,7 @@ export default function LiquidChrome() {
     const originalPositions = positionAttribute.array.slice()
 
     // Lighting
-    const light1 = new THREE.PointLight(0xc59f43, 0.8)
+    const light1 = new THREE.PointLight(0xDC7026, 0.8)
     light1.position.set(10, 10, 10)
     scene.add(light1)
 

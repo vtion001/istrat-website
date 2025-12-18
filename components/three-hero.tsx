@@ -109,7 +109,7 @@ export default function ThreeHero() {
         const logoCount = 15
         const logoGeom = new THREE.PlaneGeometry(3, 3)
         const logoMat = new THREE.MeshBasicMaterial({
-            color: 0xc59f43,
+            color: 0xDC7026,
             transparent: true,
             opacity: 0.4,
             side: THREE.DoubleSide
