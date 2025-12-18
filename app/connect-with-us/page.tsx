@@ -90,7 +90,7 @@ export default function ConnectWithUsPage() {
               <option>Public Relations</option>
               <option>Advocacy and Social Marketing</option>
               <option>Crisis Management</option>
-              <option>Video and Stage Production</option>
+              <option>Video and Stage Management</option>
               <option>Information Technology</option>
             </select>
             <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-white/20 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />

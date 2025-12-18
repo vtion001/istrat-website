@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     default: "iStrat Comms | Marketing & PR Agency in Quezon City",
     template: "%s | iStrat Comms - Quezon City",
   },
-  description: "Leading integrated marketing and communications agency in Quezon City, Philippines. Specializing in Crisis PR, Event Production, and Digital Strategy for government and corporate brands.",
+  description: "Leading integrated marketing and communications agency in Quezon City, Philippines. Specializing in Crisis PR, Event Management, and Digital Strategy for government and corporate brands.",
   generator: "Next.js",
   metadataBase: new URL("https://istrat-website-revamp.vercel.app"),
   alternates: {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "Marketing Agency Quezon City",
     "PR Agency Philippines",
     "Crisis Management QC",
-    "Event Production Philippines",
+    "Event Management Philippines",
     "Digital Marketing Agency QC",
     "Government PR Services",
     "Integrated Marketing Communications",

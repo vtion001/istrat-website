@@ -84,7 +84,7 @@ export default function CaseStudySGV() {
           </div>
           <div className="space-y-6">
             <h2 className="text-2xl font-display text-[#DC7026]">Approach</h2>
-            <p className="text-gray-300">Comprehensive production: stage and set design, lighting, sound, motion graphics, and live content operations with precise stage management.</p>
+            <p className="text-gray-300">Comprehensive execution: stage and set design, lighting, sound, motion graphics, and live content operations with precise stage management.</p>
           </div>
           <div className="space-y-6">
             <h2 className="text-2xl font-display text-[#DC7026]">Impact</h2>
@@ -93,7 +93,7 @@ export default function CaseStudySGV() {
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="relative w-full aspect-square border border-white/10 bg-white/5">
-                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png" alt="Production still" fill className="object-cover opacity-90" loading="lazy" />
+                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png" alt="Project still" fill className="object-cover opacity-90" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0" />
               </div>
             ))}

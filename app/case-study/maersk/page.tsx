@@ -15,9 +15,9 @@ export default function CaseStudyMaersk() {
           <div className="mb-4">
             <Link href="/" className="text-xs uppercase tracking-widest text-[#a0a0a0] hover:text-white">← Back to Home</Link>
           </div>
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#DC7026] mb-4">Case Study • Event Production</p>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">MAERSK Pride Fiesta</h1>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-12">A full-spectrum production integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.</p>
+          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#DC7026] mb-4">Case Study • Event Management</p>
+          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">MNL GSC Pride Fiesta</h1>
+          <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-12">A full-spectrum execution integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.</p>
 
           <div className="relative w-full aspect-video border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden mb-12">
             <video
@@ -43,7 +43,7 @@ export default function CaseStudyMaersk() {
               '@type': 'CreativeWork',
               name: 'MAERSK Pride Fiesta',
               description:
-                'A full-spectrum production integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.',
+                'A full-spectrum execution integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.',
               url: 'https://www.istratmc.com/case-study/maersk',
               inLanguage: 'en',
               isPartOf: {
@@ -84,7 +84,7 @@ export default function CaseStudyMaersk() {
           </div>
           <div className="space-y-6">
             <h2 className="text-2xl font-display text-[#DC7026]">Approach</h2>
-            <p className="text-gray-300">We orchestrated end-to-end production: stage and set design, lighting, sound engineering, motion graphics, and live content operations. The team coordinated talent flow and audience engagement.</p>
+            <p className="text-gray-300">We orchestrated end-to-end management: stage and set design, lighting, sound engineering, motion graphics, and live content operations. The team coordinated talent flow and audience engagement.</p>
           </div>
           <div className="space-y-6">
             <h2 className="text-2xl font-display text-[#DC7026]">Impact</h2>
@@ -92,9 +92,9 @@ export default function CaseStudyMaersk() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="relative w-full aspect-square border border-white/10 bg-white/5">
-                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Video-and-Stage-Production.png" alt="Production still" fill className="object-cover opacity-90" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0" />
+              <div key={i} className="relative w-full aspect-video border border-white/10 bg-black overflow-hidden hover:border-[#DC7026]/30 transition-colors">
+                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Video-and-Stage-Production.png" alt="Event still" fill className="object-cover opacity-90" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/15 group-hover:to-[#3C4699]/15 transition-all" />
               </div>
             ))}
           </div>

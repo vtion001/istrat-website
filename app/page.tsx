@@ -18,7 +18,7 @@ const WHAT_WE_DO_IMAGE_URL = "https://www.istratmc.com/wp-content/uploads/2022/0
 const specializations = [
   "Advertising",
   "Event Management and Staging",
-  "Creative Production",
+  "Creative Execution",
   "Public Relations",
   "Digital Marketing",
   "Crisis PR Management",
@@ -31,9 +31,9 @@ const services = [
       "Unified brand identity across channels with cohesive strategy and optimization.",
   },
   {
-    title: "Brand Development, Concept, Design and Production",
+    title: "Brand Development, Concept, Design and Management",
     description:
-      "Identity definition, visual systems, and end-to-end creative production.",
+      "Identity definition, visual systems, and end-to-end creative execution.",
   },
   {
     title: "Event Management and Staging",

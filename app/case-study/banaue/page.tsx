@@ -80,7 +80,7 @@ export default function CaseStudyBanaue() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <h2 className="text-2xl font-display text-[#DC7026]">Objectives</h2>
-            <p className="text-gray-300">Champion Filipino culture through a contemporary lens, designing a program and production that resonates with musicians, audiences, and institutions.</p>
+            <p className="text-gray-300">Champion Filipino culture through a contemporary lens, designing a program and execution that resonates with musicians, audiences, and institutions.</p>
           </div>
           <div className="space-y-6">
             <h2 className="text-2xl font-display text-[#DC7026]">Approach</h2>
@@ -93,7 +93,7 @@ export default function CaseStudyBanaue() {
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="relative w-full aspect-square border border-white/10 bg-white/5">
-                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" alt="Production still" fill className="object-cover opacity-90" loading="lazy" />
+                <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" alt="Project still" fill className="object-cover opacity-90" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0" />
               </div>
             ))}

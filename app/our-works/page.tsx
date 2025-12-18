@@ -103,13 +103,13 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
     src: "https://www.youtube.com/watch?v=pU09VaTZXRM",
     poster: ytThumb("https://www.youtube.com/watch?v=pU09VaTZXRM"),
     title: "GAWAD PARANGAL 2022 HIGHLIGHTS",
-    desc: "Event production for the prestigious Gawad Parangal awards honoring Quezon City's top achievers.",
+    desc: "Event management for the prestigious Gawad Parangal awards honoring Quezon City's top achievers.",
   },
   "Mr & Ms Quezon City Employee": {
     src: "https://www.youtube.com/watch?v=CvJflQ2gu3g&t=5s",
     poster: ytThumb("https://www.youtube.com/watch?v=CvJflQ2gu3g&t=5s"),
     title: "Mr & Ms Quezon City Employee",
-    desc: "Talent and pageant production showcasing the dedicated workforce of the Quezon City Government.",
+    desc: "Talent and pageant management showcasing the dedicated workforce of the Quezon City Government.",
   },
   "Pista sa QC": {
     src: "https://www.youtube.com/watch?v=ys7EulEQAhU&t=15s",
@@ -127,19 +127,19 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
     src: "https://www.youtube.com/watch?v=eQrgT0wrJjY",
     poster: ytThumb("https://www.youtube.com/watch?v=eQrgT0wrJjY"),
     title: "QUEZON CITY OFFICIALS INAUGURATION 2022",
-    desc: "Official inauguration ceremony production for newly elected Quezon City officials.",
+    desc: "Official inauguration ceremony management for newly elected Quezon City officials.",
   },
   "Quezon City Anti-Terrorism Campaign": {
     src: "https://www.youtube.com/watch?v=zGVRrnbo3-8",
     poster: ytThumb("https://www.youtube.com/watch?v=zGVRrnbo3-8"),
     title: "Quezon City Anti-Terrorism Campaign",
-    desc: "Public safety awareness video campaign produced for the Quezon City Government.",
+    desc: "Public safety awareness video campaign developed for the Quezon City Government.",
   },
   "19TH GAWAD PARANGAL": {
     src: "https://www.youtube.com/watch?v=ZTIDAD_--O8",
     poster: ytThumb("https://www.youtube.com/watch?v=ZTIDAD_--O8"),
     title: "19TH GAWAD PARANGAL",
-    desc: "Event staging and technical production for the 19th Gawad Parangal in QC.",
+    desc: "Event staging and technical execution for the 19th Gawad Parangal in QC.",
   },
   "18TH GAWAD PARANGAL": {
     src: "https://www.youtube.com/watch?v=Lx2tYZO5JeM",
@@ -163,13 +163,13 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
     src: "https://www.youtube.com/watch?v=DGQV3hIIMs0",
     poster: ytThumb("https://www.youtube.com/watch?v=DGQV3hIIMs0"),
     title: "Sen. Guillermo Eleazar Election 2022 TVC",
-    desc: "Television commercial production for Senator Guillermo Eleazar's national campaign.",
+    desc: "Television commercial management for Senator Guillermo Eleazar's national campaign.",
   },
   "QC NEW YEAR’S COUNTDOWN 2022": {
     src: "https://www.youtube.com/watch?v=EdkKgTfsxiQ",
     poster: ytThumb("https://www.youtube.com/watch?v=EdkKgTfsxiQ"),
     title: "QC NEW YEAR’S COUNTDOWN 2022",
-    desc: "Virtual New Year's Countdown event production for Quezon City.",
+    desc: "Virtual New Year's Countdown event management for Quezon City.",
   },
   "NCRPO Journal": {
     src: "https://www.youtube.com/watch?v=h-OALbbQZLg",
@@ -181,7 +181,7 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
     src: "https://www.youtube.com/watch?v=b9hQQ5w9Uhs",
     poster: ytThumb("https://www.youtube.com/watch?v=b9hQQ5w9Uhs"),
     title: "Quezon City Virtual Countdown to 2021",
-    desc: "Pioneering virtual event production for QC's 2021 New Year celebration.",
+    desc: "Pioneering virtual event management for QC's 2021 New Year celebration.",
   },
   "Sama-Sama at Tulong-Tulong": {
     src: "https://www.youtube.com/watch?v=k1zeOtcO7j0",
@@ -193,7 +193,7 @@ const VIDEOS: Record<string, { src: string; href?: string; poster?: string; titl
     src: "https://www.youtube.com/watch?v=b9hQQ5w9Uhs",
     poster: ytThumb("https://www.youtube.com/watch?v=b9hQQ5w9Uhs"),
     title: "V.Group Crew Guide Animation",
-    desc: "Educational animation produced for V.Group's maritime crew training.",
+    desc: "Educational animation developed for V.Group's maritime crew training.",
   },
   "My heart beats for Banaue": {
     src: "https://www.youtube.com/watch?v=hHO25dAiGk4&feature=youtu.be",
@@ -278,7 +278,7 @@ function VideoCard({ name }: { name: string }) {
         <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/10 group-hover:to-[#3C4699]/10 transition-all" />
       </div>
       <div className="p-6">
-        <p className="text-white font-semibold group-hover:text-[#DC7026] transition-colors">{name}</p>
+        <p className="text-[#DC7026] font-semibold transition-colors">{name}</p>
         <p className="mt-2 text-sm text-gray-400">{desc || "Event highlight"}</p>
       </div>
     </motion.a>
@@ -395,7 +395,7 @@ export default function OurWorksPage() {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="p-6">
-                <p className="text-white group-hover:text-[#DC7026] transition-colors text-lg font-semibold">{s.title}</p>
+                <p className="text-[#DC7026] transition-colors text-lg font-semibold">{s.title}</p>
               </div>
             </motion.div>
           ))}

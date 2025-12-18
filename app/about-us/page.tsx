@@ -16,7 +16,7 @@ const team = [
     name: "Arnold Santos Argano",
     title: "Chief Executive Officer",
     bio:
-      "Creative powerhouse and leader across writing, directing, events, social media strategy, and production with three decades of experience.",
+      "Creative powerhouse and leader across writing, directing, events, social media strategy, and management with three decades of experience.",
   },
   {
     name: "Erwyn Claudio",
@@ -28,7 +28,7 @@ const team = [
     name: "Ric Lopez",
     title: "Operations Head",
     bio:
-      "20 years in creative production producing radio and TV commercials for private and government institutions, including international advertising productions.",
+      "20 years in creative execution producing radio and TV commercials for private and government institutions, including international advertising projects.",
   },
   {
     name: "Eugenio S. Aguilar",
