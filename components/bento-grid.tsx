@@ -152,18 +152,21 @@ export default function BentoGrid() {
               )}
 
               {/* Stacked Images Effect */}
-              {item.variant === "stacked" && item.bgImages && item.bgImages.length >= 2 && (
-                <div className="absolute bottom-0 right-0 w-3/5 h-4/5 pointer-events-none pr-4 pb-4">
-                  <div className="relative w-full h-full">
-                    <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-30 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
-                      <Image src={item.bgImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover rounded-2xl border border-white/10 shadow-2xl" alt="" />
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-50 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700">
-                      <Image src={item.bgImages[1]} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover rounded-2xl border border-white/10 shadow-2xl" alt="" />
+              {item.variant === "stacked" && item.bgImages && item.bgImages.length >= 2 && (() => {
+                const images = item.bgImages;
+                return (
+                  <div className="absolute bottom-0 right-0 w-3/5 h-4/5 pointer-events-none pr-4 pb-4">
+                    <div className="relative w-full h-full">
+                      <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-30 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
+                        <Image src={images[0]} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover rounded-2xl border border-white/10 shadow-2xl" alt="" />
+                      </div>
+                      <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-50 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700">
+                        <Image src={images[1]} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover rounded-2xl border border-white/10 shadow-2xl" alt="" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                );
+              })()}
 
               <div className="relative z-10 h-full p-8 flex flex-col justify-between">
                 <div>
