@@ -1,75 +1,85 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-24">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="mb-8">
-            <a href="/" aria-label="Go to Home" className="inline-block">
-              <img
-                src="/images/istrat-comms-logo-transparent.png"
-                alt="iStrat Comms Logo"
-                className="h-24 w-auto opacity-100 mix-blend-screen"
-              />
-            </a>
-          </div>
-          <div className="mb-16">
-            {/* Headline removed */}
+    <footer className="w-full bg-black border-t border-white/5 selection:bg-[#DC7026]/30">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-24">
+
+          {/* Left Column - CTA & Brand */}
+          <div className="md:col-span-2 flex flex-col">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[0.9]" style={{ fontFamily: 'var(--font-display)' }}>
+              LET'S WORK <br /> TOGETHER
+            </h2>
+            <div className="w-20 h-1 bg-[#DC7026] mb-12 shadow-[0_0_15px_rgba(220,112,38,0.3)]" />
+
+            <p className="max-w-md text-gray-400 text-lg md:text-xl leading-relaxed font-medium mb-16 italic">
+              "Imagine. Live. Soar. iStrat Comms is your dynamic partner in building legacy brands through cinematic storytelling and data-driven innovation."
+            </p>
+
+            <div className="mt-auto">
+              <a href="/" aria-label="Go to Home" className="inline-block mb-6 group">
+                <Image
+                  src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
+                  alt="iStrat Comms Logo"
+                  width={200}
+                  height={80}
+                  className="h-16 w-auto opacity-100 mix-blend-screen group-hover:scale-105 transition-transform"
+                />
+              </a>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">
+                © 2011 — 2025 ISTRAT COMMS INC. ALL RIGHTS RESERVED.
+              </p>
+            </div>
           </div>
 
-          {/* Contact Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-              <div className="flex items-center gap-4 mb-2">
-                <Mail className="w-5 h-5 text-[#DC7026]" />
-                <span className="text-xs uppercase tracking-widest text-[#DC7026]">Email</span>
-              </div>
-              <p className="text-lg text-[#DC7026] ml-9"><a href="mailto:info@istratmc.com">info@istratmc.com</a></p>
-              <p className="text-lg text-[#DC7026] ml-9"><a href="mailto:istratmkt@gmail.com">istratmkt@gmail.com</a></p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }}>
-              <div className="flex items-center gap-4 mb-2">
-                <Phone className="w-5 h-5 text-[#DC7026]" />
-                <span className="text-xs uppercase tracking-widest text-[#DC7026]">Phone</span>
-              </div>
-              <p className="text-lg text-[#DC7026] ml-9">(02) 7119 4130</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}>
-              <div className="flex items-center gap-4 mb-2">
-                <MapPin className="w-5 h-5 text-[#DC7026]" />
-                <span className="text-xs uppercase tracking-widest text-[#DC7026]">Address</span>
-              </div>
-              <p className="text-lg text-[#DC7026] ml-9">161 Kamias Road, Sikatuna Village</p>
-              <p className="text-lg text-[#DC7026] ml-9">Quezon City, Philippines 1101</p>
-            </motion.div>
-          </div>
+          {/* Right Columns - Details */}
+          <div className="flex flex-col gap-12 md:gap-20">
+            <div>
+              <h4 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.4em] mb-6">Main Office</h4>
+              <p className="text-white text-base md:text-lg leading-relaxed font-medium">
+                161 Kamias Road, <br />
+                Sikatuna Village, <br />
+                Quezon City, PH 1101
+              </p>
+            </div>
 
-          {/* Bottom Info */}
-          <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <p className="text-sm text-[#DC7026]">© 2025 iStrat COMMS INC. All rights reserved.</p>
-            <div className="flex gap-8">
-              {["Instagram", "Twitter", "LinkedIn"].map((social) => (
+            <div className="flex gap-6 mt-auto">
+              {[
+                { icon: Instagram, href: "#" },
+                { icon: Twitter, href: "#" },
+                { icon: Linkedin, href: "#" },
+                { icon: Facebook, href: "#" }
+              ].map((social, i) => (
                 <motion.a
-                  key={social}
-                  href="#"
-                  className="text-sm uppercase tracking-widest text-[#DC7026] hover:text-[#E8A351] transition-colors"
-                  whileHover={{ scale: 1.05 }}
+                  key={i}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#DC7026] hover:border-[#DC7026] transition-all"
+                  whileHover={{ y: -4 }}
                 >
-                  {social}
+                  <social.icon size={18} />
                 </motion.a>
               ))}
             </div>
           </div>
-        </motion.div>
+
+          <div className="flex flex-col gap-12 md:gap-20">
+            <div>
+              <h4 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.4em] mb-6">Drop a Line</h4>
+              <a href="mailto:info@istratmc.com" className="block text-white text-base md:text-lg hover:text-[#DC7026] transition-colors font-medium underline underline-offset-8 decoration-white/10 hover:decoration-[#DC7026]">
+                info@istratmc.com
+              </a>
+              <a href="tel:+63271194130" className="block text-white text-base md:text-lg mt-4 hover:text-[#DC7026] transition-colors font-medium">
+                (02) 7119 4130
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </footer>
   )

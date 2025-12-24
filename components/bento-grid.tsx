@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Play, Download, ArrowRight, ExternalLink } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const pillars = [
   {
@@ -193,17 +194,19 @@ export default function BentoGrid() {
                 </div>
 
                 {item.showPlay && (
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <Link href="/connect-with-us" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="w-16 h-16 rounded-full bg-[#DC7026]/90 flex items-center justify-center text-[#06241f] backdrop-blur-md shadow-[0_0_30px_rgba(179,240,236,0.4)] group-hover:scale-110 transition-transform duration-500">
                       <Play className="w-7 h-7 fill-current ml-1" />
                     </div>
-                  </div>
+                  </Link>
                 )}
 
                 {item.buttonText && (
-                  <button className="self-start mt-8 px-6 py-2.5 rounded-full border border-white/15 text-xs font-bold text-white hover:bg-[#DC7026] hover:text-[#06241f] hover:border-[#DC7026] transition-all duration-300">
-                    {item.buttonText}
-                  </button>
+                  <Link href="/connect-with-us">
+                    <button className="self-start mt-8 px-6 py-2.5 rounded-full border border-white/15 text-xs font-bold text-white hover:bg-[#DC7026] hover:text-[#06241f] hover:border-[#DC7026] transition-all duration-300">
+                      {item.buttonText}
+                    </button>
+                  </Link>
                 )}
               </div>
             </motion.div>

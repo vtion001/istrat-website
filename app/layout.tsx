@@ -97,13 +97,15 @@ export const metadata: Metadata = {
   },
 }
 
+import Footer from "@/components/footer"
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -127,17 +129,7 @@ export default function RootLayout({
             },
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: 14.633, // Approx QC center, refine if specific coordinates are known, defaulting to General QC area or the specific Intramuros address if known (Intramuros is Manila, but user said "Quezon City" consistently). 
-              // Wait, previous edits said "Intramuros Corporate Plaza". Intramuros is in Manila (1002).
-              // BUT the user insists on "Quezon City" focus.
-              // If the address is literally "Intramuros Corporate Plaza", that's Manila. 
-              // However, the phone number update had "Quezon City" in the mindset.
-              // I will use the address I *saw* in the Footer earlier.
-              // Checking Footer again from memory: "Unit 301, Intramuros Corporate Plaza" was in the previous footer edit for visual.
-              // But the user STRONGLY requested "Quezon City" dominance. 
-              // I will set the address locality to "Manila" if that's where the building is, but optimize the `areaServed` for QC.
-              // actually, let's just stick to what the footer has. The footer had "1109" which is Intramuros.
-              // I will add "areaServed": "Quezon City" to bridge the gap.
+              latitude: 14.633,
               longitude: 120.97
             },
             areaServed: [
@@ -167,7 +159,10 @@ export default function RootLayout({
       <body className={`${ibmPlexSansCondensed.variable} ${archivoNarrow.variable} ${comfortaa.variable} ${ibmPlexSansCondensed.className} antialiased`}>
         <a href="#main" className="skip-link">Skip to content</a>
         <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          {children}
+          <Footer />
+        </PageTransition>
         <FloatingNavbar />
         <Analytics />
       </body>

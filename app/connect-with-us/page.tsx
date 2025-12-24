@@ -28,7 +28,32 @@ export default function ConnectWithUsPage() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!validate()) return
+
+    const recipient = "info@istratmc.com"
+    const subject = `[Website Inquiry] ${form.subject}`
+    const body = `
+Name: ${form.name}
+Email: ${form.email}
+Company: ${form.company}
+Service: ${form.service || "General Inquiry"}
+
+Message:
+${form.message}
+    `.trim()
+
+    // Construct the Gmail Web URL for direct browser navigation
+    const encodedSubject = encodeURIComponent(subject)
+    const encodedBody = encodeURIComponent(body)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodedSubject}&body=${encodedBody}`
+
+    // Redirect the current browser window/tab to the Gmail compose screen
+    window.location.href = gmailUrl
+
     setSent(true)
+    setTimeout(() => {
+      setSent(false)
+      setForm({ name: "", email: "", company: "", service: "", subject: "", message: "" })
+    }, 3000)
   }
 
   return (
@@ -70,8 +95,51 @@ export default function ConnectWithUsPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-start">
+      <section className="relative max-w-7xl mx-auto px-6 md:px-8 py-24 overflow-visible">
+        {/* Cinematic Spotlight Projection (Correlating with visual on the right) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          {/* Main Throw Light */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute -top-[20%] -right-[10%] w-[150%] h-[150%] bg-[radial-gradient(circle_at_85%_35%,rgba(255,255,255,0.08)_0%,transparent_60%)] blur-[100px]"
+          />
+
+          {/* Subtle Projector Beam lines */}
+          <div className="absolute top-0 right-0 w-full h-full opacity-20"
+            style={{
+              background: 'conic-gradient(from 240deg at 85% 35%, transparent 0deg, rgba(255,255,255,0.05) 15deg, transparent 30deg)'
+            }}
+          />
+
+          {/* Micro-Dust Particles Drift */}
+          <div className="absolute inset-0">
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white/20 rounded-full"
+                initial={{
+                  x: Math.random() * 100 + "%",
+                  y: Math.random() * 100 + "%",
+                  opacity: 0
+                }}
+                animate={{
+                  y: [null, "-20%"],
+                  x: [null, "-10%"],
+                  opacity: [0, 0.4, 0]
+                }}
+                transition={{
+                  duration: 10 + Math.random() * 20,
+                  repeat: Infinity,
+                  delay: Math.random() * 10
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-start">
           <div className="flex flex-col gap-12 md:gap-20">
             {/* Story & Context */}
             <motion.div
@@ -83,7 +151,7 @@ export default function ConnectWithUsPage() {
               <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.25em] mb-6 flex items-center gap-3">
                 LET'S BUILD TOGETHER <div className="h-[1px] w-12 bg-[#DC7026]/40"></div>
               </h3>
-              <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-medium mb-12">
+              <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold mb-12 tracking-tight">
                 Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
               </p>
 
@@ -175,10 +243,10 @@ export default function ConnectWithUsPage() {
               transition={{ duration: 0.8 }}
             >
               <Image
-                src="/images/services/crew.png"
-                alt="Connect With iStrat"
+                src="/images/services/arnold-cinematic.png"
+                alt="iStrat Creative Hub"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-10 left-10 right-10">

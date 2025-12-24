@@ -27,30 +27,37 @@ const itemVariants = {
 export default function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
-      <a href="/" className="absolute top-6 w-full z-30 flex items-center justify-center px-4" aria-label="Go to Home">
+      <a href="/" className="absolute top-[-2rem] md:top-[-15rem] w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
         <Image
-          src="/images/istrat-comms-logo-transparent.png"
+          src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
           alt="iStrat Comms Logo"
-          width={1000}
-          height={400}
-          className="h-24 md:h-56 w-auto opacity-100 object-contain lg:-mb-14 mix-blend-screen"
+          width={1200}
+          height={480}
+          className="h-[168px] md:h-[640px] w-auto opacity-100 object-contain object-top lg:-mb-52 mix-blend-screen"
           priority
         />
       </a>
 
-      {/* Ultra HD Cinematic Video Background - Cropped to hide watermark */}
+      {/* Cinematic High-Definition Video Background with Enhanced Color Pop */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover scale-110 origin-top"
+        className="absolute inset-0 w-full h-full object-cover object-top mix-blend-screen opacity-90 filter contrast-[1.4] brightness-[1.1] saturate-[1.3]"
       >
-        <source src="https://res.cloudinary.com/dbviya1rj/video/upload/q_auto:best/v1766593270/floxsf1ztkxyxgtdjhcw.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dbviya1rj/video/upload/q_auto:best,e_vibrance:50,e_contrast:30/v1766593270/floxsf1ztkxyxgtdjhcw.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 z-10" />
+      {/* Aesthetic Overlays (To mask pixelation and deepen blacks) */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        {/* Layer 1: Micro-Grain (Masks compression artifacts) */}
+        <div className="absolute inset-0 opacity-[0.2] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+        {/* Layer 2: Black Depth Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
       {/* Content Container */}
       <motion.div
@@ -59,33 +66,48 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Main Headline with Rhythmic Floating Animation */}
+        {/* Main Headline - Synced to 8s Video Loop */}
         <motion.div
           variants={itemVariants}
           className="text-center w-full max-w-[90vw]"
           animate={{
-            y: [0, -12, 0],
-            rotate: [-0.5, 0.5, -0.5],
+            y: [0, -10, 0],
+            x: [-3, 3, -3],
+            scale: [1, 1.015, 1],
           }}
           transition={{
-            duration: 8,
+            duration: 8, // Exact sync with the 8s video duration
             repeat: Infinity,
             ease: "easeInOut"
           }}
         >
           <h1
-            className="font-semibold tracking-[0.2em] leading-none mb-6 text-[#DC7026] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-4xl md:text-7xl lg:text-[90px] flex flex-wrap justify-center gap-x-4 md:gap-x-8"
+            className="font-semibold leading-none mb-6 text-[#DC7026] text-4xl md:text-7xl lg:text-[90px] flex flex-wrap justify-center gap-x-6 md:gap-x-12"
             style={{ fontFamily: 'var(--font-label)' }}
           >
             {"IMAGINE. LIVE. SOAR.".split(" ").map((word, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 40, filter: "blur(20px)", letterSpacing: "0.5em" }}
+                animate={{
+                  opacity: [0, 1, 1, 0.9, 1],
+                  y: [40, 0, 0, 0, 0],
+                  filter: ["blur(20px)", "blur(0px)", "blur(0px)", "blur(1px)", "blur(0px)"],
+                  letterSpacing: ["0.5em", "0.15em", "0.15em", "0.2em", "0.15em"],
+                  textShadow: [
+                    "0 0 0px rgba(220,112,38,0)",
+                    "0 0 40px rgba(220,112,38,0.4)",
+                    "0 0 20px rgba(220,112,38,0.2)",
+                    "0 0 60px rgba(220,112,38,0.6)",
+                    "0 0 40px rgba(220,112,38,0.4)"
+                  ]
+                }}
                 transition={{
-                  duration: 2,
-                  delay: 0.8 + (i * 0.4),
-                  ease: [0.16, 1, 0.3, 1]
+                  duration: 8, // Exact sync with the 8s video duration
+                  repeat: Infinity,
+                  delay: i * 0.15,
+                  times: [0, 0.15, 0.4, 0.7, 1], // Entrance + Rhythmic pulse
+                  ease: "easeInOut"
                 }}
                 className="inline-block"
               >
