@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png",
         width: 1200,
         height: 630,
         alt: "iStrat Comms Logo",
@@ -65,24 +65,24 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "iStrat Comms | Marketing & PR Agency in Quezon City",
     description: "Premium integrated marketing agency in Quezon City. Crisis PR, Events, and Digital Comms.",
-    images: ["https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png"],
+    images: ["https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"],
   },
   icons: {
     icon: [
       {
-        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+        url: "https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png",
         type: "image/png",
       },
     ],
-    apple: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+    apple: "https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png",
   },
   robots: {
     index: true,
@@ -115,7 +115,7 @@ export default function RootLayout({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             name: 'iStrat Comms Inc.',
-            image: "https://res.cloudinary.com/dbviya1rj/image/upload/v1764835951/yte8v4vubwe6cdvfncas.png",
+            image: "https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png",
             '@id': 'https://istrat-website-revamp.vercel.app',
             url: 'https://istrat-website-revamp.vercel.app',
             telephone: '+63283561638',
