@@ -228,7 +228,7 @@ function YTPreviewImage({ poster, title }: { poster?: string; title: string }) {
   )
 }
 
-function VideoCard({ name }: { name: string }) {
+function VideoCard({ name, className }: { name: string, className?: string }) {
   const [desc, setDesc] = useState<string | undefined>(VIDEOS[name]?.desc)
   useEffect(() => {
     setDesc(VIDEOS[name]?.desc)
@@ -245,41 +245,80 @@ function VideoCard({ name }: { name: string }) {
       }
     }
   }, [desc, name])
+
   const href = VIDEOS[name]?.href || VIDEOS[name]?.src || "#"
   const title = VIDEOS[name]?.title || name
+  const isVideo = isVideoSrc(VIDEOS[name]?.src)
+  const poster = VIDEOS[name]?.poster
+
   return (
     <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group p-0 border border-white/5 bg-black rounded-[32px] text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-      aria-label={`Visit video for ${name}`}
-      title={title}
-      initial={{ y: 0 }}
-      whileHover={{ scale: 1.02, y: -2 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className={`group relative rounded-[32px] overflow-hidden bg-black border border-white/5 flex flex-col h-[400px] hover:border-[#DC7026]/30 transition-all duration-300 transform-gpu ${className || ""}`}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -2 }}
     >
-      <div className="relative w-full h-40">
-        {isVideoSrc(VIDEOS[name]?.src) ? (
-          <video
-            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-            src={VIDEOS[name]?.src}
-            poster={VIDEOS[name]?.poster}
-            preload="metadata"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        ) : (
-          <YTPreviewImage poster={VIDEOS[name]?.poster} title={title} />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/10 group-hover:to-[#3C4699]/10 transition-all" />
+      {/* Stacked Image Visuals (Right Side) */}
+      <div className="absolute bottom-0 right-0 w-3/5 h-4/5 pointer-events-none pr-4 pb-4">
+        <div className="relative w-full h-full">
+          {/* Background Image (Rotated) */}
+          <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-20 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
+            {isVideo ? (
+              <video src={VIDEOS[name]?.src} className="object-cover w-full h-full rounded-2xl border border-white/10 shadow-2xl grayscale" muted />
+            ) : (
+              <Image src={poster || "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"} alt="" fill className="object-cover rounded-2xl border border-white/10 shadow-2xl grayscale" />
+            )}
+          </div>
+          {/* Foreground Image (Rotated) */}
+          <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-60 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+            {isVideo ? (
+              <video
+                src={VIDEOS[name]?.src}
+                className="object-cover w-full h-full"
+                muted
+                autoPlay
+                loop
+                playsInline
+              />
+            ) : (
+              <YTPreviewImage poster={poster} title={title} />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+            {/* Play Button Overlay on the Small Thumb */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-75 group-hover:scale-100">
+              <div className="w-10 h-10 rounded-full bg-[#DC7026]/90 flex items-center justify-center text-[#06241f] backdrop-blur-md shadow-[0_0_20px_rgba(220,112,38,0.4)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-play w-4 h-4 fill-current ml-0.5"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="p-6">
-        <p className="text-[#DC7026] font-semibold transition-colors">{name}</p>
-        <p className="mt-2 text-sm text-gray-400">{desc || "Event highlight"}</p>
+
+      {/* Text Content */}
+      <div className="relative z-10 h-full p-8 flex flex-col justify-between">
+        <div className="max-w-[70%]">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#DC7026]/80 uppercase">
+              {isVideo ? "VIDEO" : "YOUTUBE"}
+            </span>
+          </div>
+          <h3 className="text-xl md:text-2xl font-semibold mb-4 tracking-tight text-white leading-[1.2]">{name}</h3>
+          <p className="text-sm text-gray-400 leading-relaxed line-clamp-3">
+            {desc || "Event highlight and production excellence."}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3 mt-8">
+          <span className="px-6 py-2.5 rounded-full border border-white/15 text-[10px] font-bold text-white uppercase group-hover:bg-[#DC7026] group-hover:text-black group-hover:border-[#DC7026] transition-all duration-300">
+            View Project
+          </span>
+        </div>
       </div>
     </motion.a>
   )
@@ -300,76 +339,136 @@ export default function OurWorksPage() {
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
-      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24" aria-labelledby="our-works-heading">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 id="our-works-heading" className="text-5xl md:text-7xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>Our Works</h1>
+      {/* 1. Cinematic Hero Section */}
+      <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <video
+          src="/images/services/works-hero.png" // Fallback to hero image
+          className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale scale-105"
+        />
+        <Image
+          src="/images/services/works-hero.png"
+          alt="Our Works"
+          fill
+          className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale scale-105"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
+        <div className="relative z-10 text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">Our / Works</p>
+            <h1 id="our-works-heading" className="text-5xl md:text-8xl font-bold tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)' }}>Our Works</h1>
+          </motion.div>
+        </div>
+      </section>
 
-        </motion.div>
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24" aria-labelledby="our-works-heading">
 
         <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Social Media Management
         </motion.h2>
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {socialMedia.map((item) => (
-            <motion.a
-              key={item.name}
-              href={VIDEOS[item.name]?.href || VIDEOS[item.name]?.src || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-0 border border-white/5 bg-black rounded-[32px] text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-              aria-label={`Visit video for ${item.name}`}
-              title={VIDEOS[item.name]?.title || item.name}
-              initial={{ y: 0 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <div className="relative w-full h-92">
-                {isVideoSrc(VIDEOS[item.name]?.src) ? (
-                  <video
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                    src={VIDEOS[item.name]?.src}
-                    poster={VIDEOS[item.name]?.poster}
-                    preload="metadata"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
-                ) : (
-                  <Image
-                    src={VIDEOS[item.name]?.poster || "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"}
-                    alt={VIDEOS[item.name]?.title || item.name}
-                    width={640}
-                    height={160}
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/10 group-hover:to-[#3C4699]/10 transition-all" />
-              </div>
-              <div className="p-8">
-                <p className="text-[#DC7026] text-xl font-semibold mb-2">{item.name}</p>
-                <p className="text-gray-400 uppercase tracking-widest text-sm">{item.stat}</p>
-              </div>
-            </motion.a>
-          ))}
+        <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          {socialMedia.map((item, index) => {
+            const isVideo = isVideoSrc(VIDEOS[item.name]?.src)
+            const poster = VIDEOS[item.name]?.poster || `https://graph.facebook.com/${item.name.replace(/\s+/g, '')}/picture?type=large`
+            const href = VIDEOS[item.name]?.href || VIDEOS[item.name]?.src || "#"
+
+            return (
+              <motion.a
+                key={item.name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-[32px] overflow-hidden bg-[#080808] border border-white/5 flex flex-col h-[400px] hover:border-[#DC7026]/30 transition-all duration-300 transform-gpu"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -2 }}
+              >
+                {/* Stacked Visuals (Bottom Right) */}
+                <div className="absolute bottom-0 right-0 w-3/5 h-4/5 pointer-events-none pr-4 pb-4">
+                  <div className="relative w-full h-full">
+                    {/* Background Visual */}
+                    <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-20 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
+                      <Image src={poster} alt="" fill className="object-cover rounded-2xl border border-white/10 shadow-2xl grayscale" />
+                    </div>
+                    {/* Primary Visual */}
+                    <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-60 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+                      {isVideo ? (
+                        <video src={VIDEOS[item.name]?.src} className="object-cover w-full h-full" muted autoPlay loop playsInline />
+                      ) : (
+                        <Image src={poster} alt={item.name} fill className="object-cover" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Content */}
+                <div className="relative z-10 h-full p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#DC7026]/80 uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/5">
+                        FOLLOW
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 tracking-tight text-white leading-[1.2]">{item.name}</h3>
+                    <p className="text-[#DC7026] text-[10px] font-extrabold tracking-[0.2em] uppercase">{item.stat}</p>
+                    <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-[200px] line-clamp-2">
+                      {VIDEOS[item.name]?.desc || "Active community engagement and digital strategy."}
+                    </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <span className="px-6 py-2.5 rounded-full border border-white/15 text-[10px] font-bold text-white uppercase group-hover:bg-[#DC7026] group-hover:text-black group-hover:border-[#DC7026] transition-all duration-300">
+                      View Profile
+                    </span>
+                  </div>
+                </div>
+              </motion.a>
+            )
+          })}
         </motion.div>
 
         <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Campaigns
         </motion.h2>
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {audioVisual.map((name) => (
-            <VideoCard key={name} name={name} />
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {audioVisual.map((name, idx) => (
+            <VideoCard
+              key={name}
+              name={name}
+              className={(idx === 0 || idx === 3 || idx === 6) ? "md:col-span-2" : "md:col-span-1"}
+            />
           ))}
         </motion.div>
 
         <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           Event Management
         </motion.h2>
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {events.map((name) => (
-            <VideoCard key={name} name={name} />
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {events.map((name, idx) => (
+            <VideoCard
+              key={name}
+              name={name}
+              className={(idx === 1 || idx === 4 || idx === 7) ? "md:col-span-2" : "md:col-span-1"}
+            />
           ))}
         </motion.div>
 

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function ConnectWithUsPage() {
   const [form, setForm] = useState({ name: "", email: "", company: "", service: "", subject: "", message: "" })
@@ -31,9 +32,30 @@ export default function ConnectWithUsPage() {
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
+      {/* 1. Cinematic Hero Section */}
+      <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/services/connect-hero.png"
+          alt="Connect With Us"
+          fill
+          className="object-cover opacity-60 grayscale scale-105"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
+        <div className="relative z-10 text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">Connect / Us</p>
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)' }}>Connect With Us</h1>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>Connect With Us</h1>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <p className="text-lg md:text-xl text-gray-300 max-w-4xl mb-12">
             Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
           </p>

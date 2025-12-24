@@ -123,7 +123,7 @@ export default function Home() {
               loop
               playsInline
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/15 to-[#3C4699]/15" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
           </div>
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             <a href="#highlights" aria-label="Explore Highlights" className="inline-flex items-center gap-3 px-8 py-5 border border-white/5 bg-black rounded-2xl text-white hover:bg-[#DC7026] hover:text-white hover:border-[#DC7026] transition-all duration-300">Explore Highlights<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down w-5 h-5"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
@@ -134,37 +134,52 @@ export default function Home() {
           <motion.h3 className="text-3xl md:text-4xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             Highlights
           </motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 auto-rows-fr">
             {[
               {
                 title: "QC Anti-Terrorism Campaign",
                 video: "https://www.youtube.com/watch?v=zGVRrnbo3-8",
                 href: "/our-works",
+                gridClass: "md:col-span-2 md:row-span-2",
+                tag: "CAMPAIGN"
               },
               {
                 title: "ALAB FOR LOVE Pride PH Festival",
                 video: "https://www.youtube.com/watch?v=s_DFhmMFmU8",
                 href: "/case-study/alab-for-love",
+                gridClass: "md:col-span-2 md:row-span-1",
+                tag: "EVENT"
               },
               {
                 title: "My heart beats for Banaue",
                 video: "https://www.youtube.com/watch?v=hHO25dAiGk4",
                 href: "/case-study/banaue",
+                gridClass: "md:col-span-1 md:row-span-1",
+                tag: "TOURISM"
               },
               {
                 title: "GAWAD PARANGAL 2022 HIGHLIGHTS",
                 video: "https://www.youtube.com/watch?v=pU09VaTZXRM",
                 href: "/case-study/sgv",
+                gridClass: "md:col-span-1 md:row-span-1",
+                tag: "AWARDS"
               },
             ].map((h, i) => {
               const card = (
-                <motion.div key={h.title} className="group relative border border-white/5 bg-black rounded-[32px] overflow-hidden"
+                <motion.div key={h.title} className="group relative border border-white/5 bg-black rounded-[32px] overflow-hidden flex flex-col h-full"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="relative w-full h-48">
+                  <div className="relative w-full flex-grow overflow-hidden min-h-[160px]">
+                    {/* Tag Style from Bento */}
+                    <div className="absolute top-6 left-6 z-20">
+                      <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#DC7026]/80 uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/5">
+                        {h.tag}
+                      </span>
+                    </div>
+
                     {(() => {
                       const embed = h.video ? toYouTubeEmbed(h.video) : null
                       if (embed) {
@@ -172,37 +187,31 @@ export default function Home() {
                           <iframe
                             title={h.title}
                             src={embed}
-                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity border-none"
+                            className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity border-none scale-105 group-hover:scale-110 duration-1000"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                           />
                         )
                       }
-                      if (h.video) {
-                        return (
-                          <video
-                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                            src={h.video}
-                            preload="metadata"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            onMouseEnter={(e) => { e.currentTarget.muted = false; e.currentTarget.play() }}
-                            onMouseLeave={(e) => { e.currentTarget.muted = true; e.currentTarget.play() }}
-                          />
-                        )
-                      }
                       return <div className="w-full h-full bg-gradient-to-br from-[#0a0a0a] to-black" />
                     })()}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/0 to-[#3C4699]/0 group-hover:from-[#DC7026]/15 group-hover:to-[#3C4699]/15 transition-all" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+
+                    {/* Play Button Overlay */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100 pointer-events-none z-20">
+                      <div className="w-16 h-16 rounded-full bg-[#DC7026]/90 flex items-center justify-center text-[#06241f] backdrop-blur-md shadow-[0_0_30px_rgba(220,112,38,0.4)]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-play w-7 h-7 fill-current ml-1"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-6 flex items-center justify-between">
-                    <p className="text-[#DC7026] text-lg font-semibold">{h.title}</p>
-                    <span className="text-xs tracking-widest text-[#E8A351]">VIEW</span>
-                  </div>
-                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="px-4 py-2 text-xs tracking-widest text-white border border-[#DC7026] bg-[#DC7026]/90">VIEW CASE STUDY</span>
+
+                  <div className="relative z-10 p-8 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-white text-lg md:text-xl font-semibold mb-6 tracking-tight leading-tight">{h.title}</h3>
+                    </div>
+                    <button className="self-start px-6 py-2.5 rounded-full border border-white/15 text-[10px] font-extrabold tracking-widest text-white uppercase hover:bg-[#DC7026] hover:text-[#06241f] hover:border-[#DC7026] transition-all duration-300">
+                      Explore Case
+                    </button>
                   </div>
                 </motion.div>
               )
@@ -211,12 +220,12 @@ export default function Home() {
                   key={h.title}
                   href={h.href}
                   aria-label={`View case study: ${h.title}`}
-                  className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026]/40"
+                  className={`${h.gridClass} block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026]/40 h-full`}
                 >
                   {card}
                 </Link>
               ) : (
-                card
+                <div key={h.title} className={h.gridClass}>{card}</div>
               )
             })}
           </div>
@@ -232,40 +241,64 @@ export default function Home() {
           What We Do
         </motion.h3>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="p-8 border border-white/5 bg-black rounded-[32px] overflow-hidden">
-            <p className="text-gray-300 mb-6 font-medium leading-relaxed">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, event management and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate to your desired target audience.</p>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <li className="flex items-start gap-3"><span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-[#DC7026]" /><span className="text-white/90 text-sm">Unified brand development for reputation, integrity and trust growth resulting for better brand recognition and recall.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-[#DC7026]" /><span className="text-white/90 text-sm">Data-driven content and strategies that grow reach and conversions.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-[#DC7026]" /><span className="text-white/90 text-sm">Seamless events management for better brand experiences and moments.</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-[#DC7026]" /><span className="text-white/90 text-sm">PR and crisis comms for reputation management and credibility building.</span></li>
-            </ul>
-            <div className="relative w-full aspect-video border border-white/5 bg-black rounded-2xl overflow-hidden">
-              {(() => {
-                const embed = WHAT_WE_DO_VIDEO_URL ? toYouTubeEmbed(WHAT_WE_DO_VIDEO_URL) : null
-                if (embed) {
+          <div className="p-8 border border-white/5 bg-black rounded-[32px] overflow-hidden relative">
+            <div className="flex items-center gap-3 mb-6 relative z-10">
+              <div className="w-10 h-10 rounded-xl bg-[#DC7026]/20 flex items-center justify-center text-[#DC7026] backdrop-blur-sm">
+                <div className="w-5 h-5 border-2 border-current rounded-sm rotate-45" />
+              </div>
+              <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#DC7026]/80 uppercase">
+                CORE SERVICES
+              </span>
+            </div>
+
+            <div className="relative z-10">
+              <p className="text-gray-300 mb-8 font-medium leading-relaxed max-w-4xl text-lg md:text-xl">We deliver integrated communications that build trust, drive engagement and convert attention into measurable results. From strategy and identity to content, event management and performance marketing, our team orchestrates every touchpoint so your brand speaks with one voice and creates premium experiences that resonate to your desired target audience.</p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <li className="flex items-start gap-4">
+                  <span className="mt-2.5 inline-block w-2 h-2 rounded-full bg-[#DC7026] flex-shrink-0" />
+                  <span className="text-white/90 text-sm md:text-base leading-relaxed font-medium">Unified brand development for reputation, integrity and trust growth resulting for better brand recognition and recall.</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="mt-2.5 inline-block w-2 h-2 rounded-full bg-[#DC7026] flex-shrink-0" />
+                  <span className="text-white/90 text-sm md:text-base leading-relaxed font-medium">Data-driven content and strategies that grow reach and conversions.</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="mt-2.5 inline-block w-2 h-2 rounded-full bg-[#DC7026] flex-shrink-0" />
+                  <span className="text-white/90 text-sm md:text-base leading-relaxed font-medium">Seamless events management for better brand experiences and moments.</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="mt-2.5 inline-block w-2 h-2 rounded-full bg-[#DC7026] flex-shrink-0" />
+                  <span className="text-white/90 text-sm md:text-base leading-relaxed font-medium">PR and crisis comms for reputation management and credibility building.</span>
+                </li>
+              </ul>
+
+              <div className="relative w-full aspect-video border border-white/5 bg-black rounded-2xl overflow-hidden shadow-2xl">
+                {(() => {
+                  const embed = WHAT_WE_DO_VIDEO_URL ? toYouTubeEmbed(WHAT_WE_DO_VIDEO_URL) : null
+                  if (embed) {
+                    return (
+                      <iframe
+                        title="What We Do"
+                        src={embed}
+                        className="w-full h-full object-cover opacity-90 border-none"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    )
+                  }
                   return (
-                    <iframe
-                      title="What We Do"
-                      src={embed}
-                      className="w-full h-full object-cover opacity-90 border-none"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
+                    <Image
+                      src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764932011/vhpnfsvtvp8b77bwz1rg.png"
+                      alt="What We Do"
+                      fill
+                      className="object-cover opacity-80"
+                      sizes="(max-width: 768px) 100vw, 75vw"
+                      priority
                     />
                   )
-                }
-                return (
-                  <Image
-                    src="https://res.cloudinary.com/dbviya1rj/image/upload/v1764932011/vhpnfsvtvp8b77bwz1rg.png"
-                    alt="What We Do"
-                    fill
-                    className="object-cover opacity-90"
-                    sizes="(max-width: 768px) 100vw, 75vw"
-                    priority
-                  />
-                )
-              })()}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/15 to-[#3C4699]/15" />
+                })()}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              </div>
             </div>
           </div>
         </motion.div>

@@ -29,57 +29,65 @@ const row2 = partners.slice(9)
 
 export default function PartnerCarousel() {
     return (
-        <div className="w-full flex flex-col gap-16 overflow-hidden py-12">
-            {/* Row 1: Left to Right */}
-            <div className="flex w-full">
-                <motion.div
-                    className="flex flex-shrink-0 gap-16 min-w-full"
-                    initial={{ x: 0 }}
-                    animate={{ x: "-50%" }}
-                    transition={{
-                        duration: 30,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "linear",
-                    }}
-                >
-                    {[...row1, ...row1, ...row1].map((partner, i) => (
-                        <div key={`${partner.name}-${i}`} className="relative h-24 w-40 flex-shrink-0 flex items-center justify-center">
-                            <Image
-                                src={partner.image || "/placeholder.svg"}
-                                alt={partner.name}
-                                fill
-                                className="object-contain"
-                                sizes="160px"
-                            />
-                        </div>
-                    ))}
-                </motion.div>
-            </div>
+        <div className="relative p-8 border border-white/5 bg-black rounded-[32px] overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/5 to-transparent opacity-50 transition-opacity duration-500" />
 
-            {/* Row 2: Right to Left */}
-            <div className="flex w-full">
-                <motion.div
-                    className="flex flex-shrink-0 gap-16 min-w-full"
-                    initial={{ x: "-50%" }}
-                    animate={{ x: 0 }}
-                    transition={{
-                        duration: 35,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "linear",
-                    }}
-                >
-                    {[...row2, ...row2, ...row2].map((partner, i) => (
-                        <div key={`${partner.name}-${i}`} className="relative h-24 w-40 flex-shrink-0 flex items-center justify-center">
-                            <Image
-                                src={partner.image || "/placeholder.svg"}
-                                alt={partner.name}
-                                fill
-                                className="object-contain"
-                                sizes="160px"
-                            />
-                        </div>
-                    ))}
-                </motion.div>
+            <div className="relative z-10 w-full flex flex-col gap-12 overflow-hidden py-4">
+                {/* Fade Edges */}
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
+
+                {/* Row 1: Left to Right */}
+                <div className="flex w-full">
+                    <motion.div
+                        className="flex flex-shrink-0 gap-20 min-w-full"
+                        initial={{ x: 0 }}
+                        animate={{ x: "-50%" }}
+                        transition={{
+                            duration: 40,
+                            repeat: Number.POSITIVE_INFINITY,
+                            ease: "linear",
+                        }}
+                    >
+                        {[...row1, ...row1, ...row1].map((partner, i) => (
+                            <div key={`${partner.name}-${i}`} className="relative h-16 w-32 md:h-20 md:w-40 flex-shrink-0 flex items-center justify-center filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                                <Image
+                                    src={partner.image || "/placeholder.svg"}
+                                    alt={partner.name}
+                                    fill
+                                    className="object-contain"
+                                    sizes="160px"
+                                />
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+
+                {/* Row 2: Right to Left */}
+                <div className="flex w-full">
+                    <motion.div
+                        className="flex flex-shrink-0 gap-20 min-w-full"
+                        initial={{ x: "-50%" }}
+                        animate={{ x: 0 }}
+                        transition={{
+                            duration: 45,
+                            repeat: Number.POSITIVE_INFINITY,
+                            ease: "linear",
+                        }}
+                    >
+                        {[...row2, ...row2, ...row2].map((partner, i) => (
+                            <div key={`${partner.name}-${i}`} className="relative h-16 w-32 md:h-20 md:w-40 flex-shrink-0 flex items-center justify-center filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+                                <Image
+                                    src={partner.image || "/placeholder.svg"}
+                                    alt={partner.name}
+                                    fill
+                                    className="object-contain"
+                                    sizes="160px"
+                                />
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
         </div>
     )
