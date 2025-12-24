@@ -71,7 +71,7 @@ export default function AboutUsPage() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {specializations.map((item) => (
-              <div key={item} className="p-6 border border-white/10 bg-white/5 rounded-none hover:border-[#DC7026]/30 transition-colors">
+              <div key={item} className="p-6 border border-white/5 bg-black rounded-[32px] hover:border-[#DC7026]/30 transition-colors">
                 <p className="text-[#DC7026] font-medium tracking-wide">{item}</p>
               </div>
             ))}
@@ -79,11 +79,11 @@ export default function AboutUsPage() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-20">
-          <img src="https://www.istratmc.com/wp-content/uploads/2022/05/Map.jpg" alt="iStrat Location Map" className="w-full h-96 object-cover border border-white/10" />
+          <img src="https://www.istratmc.com/wp-content/uploads/2022/05/Map.jpg" alt="iStrat Location Map" className="w-full h-96 object-cover border border-white/5 rounded-[32px]" />
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-20">
-          <div className="p-8 border border-white/10 bg-white/5">
+          <div className="p-8 border border-white/5 bg-black rounded-[32px]">
             <p className="text-4xl md:text-5xl text-[#DC7026] mb-4 font-semibold tracking-wide" style={{ fontFamily: 'var(--font-label)' }}>Communication has the power to influence real change.</p>
             <p className="text-gray-300 max-w-4xl">
               Communications can make or break a brand, help a company grow or fail, and guide a country through peaceful social change. With every brief, we deliver communication strategies that help you put your best foot forward in achieving your brand integrity and sales growth.
@@ -98,11 +98,11 @@ export default function AboutUsPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {team.map((member) => (
-            <div key={member.name} className="p-6 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+            <div key={member.name} className="p-6 border border-white/5 bg-black rounded-[32px] hover:bg-white/5 transition-colors">
               <img
                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=3C4699&color=ffffff&size=256&bold=true&rounded=false`}
                 alt={`${member.name} avatar`}
-                className="w-24 h-24 border border-white/10 object-cover mb-4"
+                className="w-24 h-24 border border-white/5 rounded-2xl object-cover mb-4"
                 loading="lazy"
               />
               <p className="text-[#DC7026] text-xl font-semibold tracking-wide">{member.name}</p>
@@ -133,7 +133,7 @@ export default function AboutUsPage() {
               thumb: "https://i.ytimg.com/vi/EdkKgTfsxiQ/maxresdefault.jpg",
             },
           ].map((v) => (
-            <a key={v.title} href={v.url} target="_blank" rel="noreferrer" className="group block border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
+            <a key={v.title} href={v.url} target="_blank" rel="noreferrer" className="group block border border-white/5 bg-black rounded-[32px] backdrop-blur-xl hover:bg-white/5 transition-colors overflow-hidden">
               <img src={v.thumb} alt={v.title} className="w-full h-40 object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="p-4">
                 <p className="text-white group-hover:text-[#DC7026] transition-colors text-sm font-medium">{v.title}</p>

@@ -19,7 +19,7 @@ export default function CaseStudyBanaue() {
           <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">BANAUE Composition Competition</h1>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-12">A national-scale competition celebrating heritage through contemporary composition, produced with end-to-end creative, AV, and event orchestration.</p>
 
-          <div className="relative w-full aspect-video border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden mb-12">
+          <div className="relative w-full aspect-video border border-white/5 bg-black rounded-[32px] overflow-hidden mb-12">
             <video
               className="w-full h-full object-cover"
               src={HERO_VIDEO}
@@ -70,7 +70,7 @@ export default function CaseStudyBanaue() {
             { label: "Reach", value: "2.3M" },
             { label: "Satisfaction", value: "95%" },
           ].map((kpi) => (
-            <div key={kpi.label} className="p-8 border border-white/10 bg-white/5 backdrop-blur-xl">
+            <div key={kpi.label} className="p-8 border border-white/5 bg-black rounded-[32px]">
               <p className="text-xs uppercase tracking-widest text-[#DC7026] mb-2">{kpi.label}</p>
               <p className="text-3xl font-display text-white">{kpi.value}</p>
             </div>
@@ -92,7 +92,7 @@ export default function CaseStudyBanaue() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="relative w-full aspect-square border border-white/10 bg-white/5">
+              <div key={i} className="relative w-full aspect-square border border-white/5 bg-black rounded-2xl overflow-hidden">
                 <Image src="https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png" alt="Project still" fill className="object-cover opacity-90" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#c59f43]/0 to-[#0d71a3]/0" />
               </div>

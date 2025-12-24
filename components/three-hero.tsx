@@ -104,33 +104,7 @@ export default function ThreeHero() {
             scene.add(points)
         }
 
-        // Midground Logos (Placeholders)
-        const logoGroup = new THREE.Group()
-        const logoCount = 15
-        const logoGeom = new THREE.PlaneGeometry(3, 3)
-        const logoMat = new THREE.MeshBasicMaterial({
-            color: 0xDC7026,
-            transparent: true,
-            opacity: 0.4,
-            side: THREE.DoubleSide
-        })
 
-        for (let i = 0; i < logoCount; i++) {
-            const mesh = new THREE.Mesh(logoGeom, logoMat.clone())
-            mesh.position.set(
-                (Math.random() - 0.5) * 100,
-                (Math.random() - 0.5) * 60,
-                10 + Math.random() * 30
-            )
-            // Store random offset for animation
-            mesh.userData = {
-                initialY: mesh.position.y,
-                offset: Math.random() * Math.PI * 2,
-                speed: 0.5 + Math.random() * 0.5
-            }
-            logoGroup.add(mesh)
-        }
-        scene.add(logoGroup)
 
 
         // Interaction Mouse Tracking
@@ -147,14 +121,7 @@ export default function ThreeHero() {
             requestAnimationFrame(animate)
             const time = clock.getElapsedTime()
 
-            // Animate Logos
-            logoGroup.children.forEach((child) => {
-                const mesh = child
-                if (mesh.isMesh) {
-                    mesh.position.y = mesh.userData.initialY + Math.sin(time * mesh.userData.speed + mesh.userData.offset) * 2
-                    mesh.rotation.z = Math.sin(time * 0.2 + mesh.userData.offset) * 0.1
-                }
-            })
+
 
             // Raycaster Interaction (Ripple)
             if (points) {

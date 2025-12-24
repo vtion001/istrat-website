@@ -40,16 +40,16 @@ export default function ConnectWithUsPage() {
         </motion.div>
 
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="p-8 border border-white/10 bg-white/5">
+          <div className="p-8 border border-white/5 bg-black rounded-[32px]">
             <p className="text-[#DC7026] uppercase tracking-widest text-sm mb-2">Phone</p>
             <p className="text-gray-300"><a href="tel:+63283561638" className="hover:underline hover:text-[#DC7026] text-lg font-medium transition-colors">(02) 7119 4130</a></p>
           </div>
-          <div className="p-8 border border-white/10 bg-white/5">
+          <div className="p-8 border border-white/5 bg-black rounded-[32px]">
             <p className="text-[#DC7026] uppercase tracking-widest text-sm mb-2">Email</p>
             <p className="text-gray-300 mb-1"><a href="mailto:info@istratmc.com" className="hover:underline hover:text-[#DC7026] text-lg font-medium transition-colors">info@istratmc.com</a></p>
             <p className="text-gray-400 text-sm"><a href="mailto:istratmkt@gmail.com" className="hover:underline hover:text-[#DC7026] transition-colors">istratmkt@gmail.com</a></p>
           </div>
-          <div className="p-8 border border-white/10 bg-white/5">
+          <div className="p-8 border border-white/5 bg-black rounded-[32px]">
             <p className="text-[#DC7026] uppercase tracking-widest text-sm mb-2">Address</p>
             <p className="text-gray-300 font-medium">161 Kamias Road, Sikatuna Village</p>
             <p className="text-gray-400">Quezon City, Philippines 1101</p>
@@ -58,7 +58,7 @@ export default function ConnectWithUsPage() {
 
         {/* Google Map Embed for Local SEO */}
         <motion.div
-          className="w-full h-96 border border-white/10 mb-16 grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full h-96 border border-white/5 rounded-[32px] mb-16 grayscale hover:grayscale-0 transition-all duration-500 overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -78,10 +78,10 @@ export default function ConnectWithUsPage() {
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={onSubmit}>
-            <input name="name" value={form.name} onChange={onChange} className="w-full px-4 py-3 border border-white/20 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Name" aria-label="Name" aria-invalid={!!errors.name} />
-            <input name="email" value={form.email} onChange={onChange} className="w-full px-4 py-3 border border-white/20 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Email Address" aria-label="Email Address" aria-invalid={!!errors.email} />
-            <input name="company" value={form.company} onChange={onChange} className="w-full px-4 py-3 border border-white/20 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Company Name" aria-label="Company Name" />
-            <select name="service" value={form.service} onChange={onChange} className="w-full px-4 py-3 border border-white/20 bg-white/5 text-white focus:outline-none focus:border-[#DC7026] transition-colors" aria-label="Service">
+            <input name="name" value={form.name} onChange={onChange} className="w-full px-6 py-4 border border-white/10 bg-black rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Name" aria-label="Name" aria-invalid={!!errors.name} />
+            <input name="email" value={form.email} onChange={onChange} className="w-full px-6 py-4 border border-white/10 bg-black rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Email Address" aria-label="Email Address" aria-invalid={!!errors.email} />
+            <input name="company" value={form.company} onChange={onChange} className="w-full px-6 py-4 border border-white/10 bg-black rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Company Name" aria-label="Company Name" />
+            <select name="service" value={form.service} onChange={onChange} className="w-full px-6 py-4 border border-white/10 bg-black rounded-2xl text-white focus:outline-none focus:border-[#DC7026] transition-colors appearance-none" aria-label="Service">
               <option value="" disabled className="text-gray-500 bg-black">What services do you want to know?</option>
               <option>Integrated Marketing Campaigns</option>
               <option>Brand Development and Strategy</option>
@@ -93,8 +93,8 @@ export default function ConnectWithUsPage() {
               <option>Video and Stage Management</option>
               <option>Information Technology</option>
             </select>
-            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 border border-white/20 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />
-            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-4 py-3 h-40 border border-white/20 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Message" aria-label="Message" aria-invalid={!!errors.message} />
+            <input name="subject" value={form.subject} onChange={onChange} className="w-full md:col-span-2 px-6 py-4 border border-white/10 bg-black rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Subject" aria-label="Subject" aria-invalid={!!errors.subject} />
+            <textarea name="message" value={form.message} onChange={onChange} className="w-full md:col-span-2 px-6 py-4 h-40 border border-white/10 bg-black rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#DC7026] transition-colors" placeholder="Message" aria-label="Message" aria-invalid={!!errors.message} />
             <div className="md:col-span-2 space-y-3">
               {Object.keys(errors).length > 0 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm text-red-500" role="alert" aria-live="polite">

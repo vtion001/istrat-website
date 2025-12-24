@@ -252,7 +252,7 @@ function VideoCard({ name }: { name: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group p-0 border border-white/10 bg-white/5 text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      className="group p-0 border border-white/5 bg-black rounded-[32px] text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
       aria-label={`Visit video for ${name}`}
       title={title}
       initial={{ y: 0 }}
@@ -316,7 +316,7 @@ export default function OurWorksPage() {
               href={VIDEOS[item.name]?.href || VIDEOS[item.name]?.src || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-0 border border-white/10 bg-white/5 text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              className="group p-0 border border-white/5 bg-black rounded-[32px] text-left hover:border-[#DC7026]/30 overflow-hidden transition-transform transform-gpu focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DC7026] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               aria-label={`Visit video for ${item.name}`}
               title={VIDEOS[item.name]?.title || item.name}
               initial={{ y: 0 }}
@@ -380,7 +380,7 @@ export default function OurWorksPage() {
           {externalServices.map((s) => (
             <motion.div
               key={s.title}
-              className="group relative p-0 border border-white/10 bg-white/5 overflow-hidden text-left transition-transform transform-gpu"
+              className="group relative p-0 border border-white/5 bg-black rounded-[32px] overflow-hidden text-left transition-transform transform-gpu"
               initial={{ y: 0 }}
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -415,7 +415,7 @@ export default function OurWorksPage() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-x-4 md:inset-x-24 top-20 md:top-28 border border-white/10 bg-black p-4 md:p-6 shadow-2xl"
+                className="absolute inset-x-4 md:inset-x-24 top-20 md:top-28 border border-white/5 bg-black rounded-[32px] p-4 md:p-6 shadow-2xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
                 role="dialog"
                 aria-modal="true"

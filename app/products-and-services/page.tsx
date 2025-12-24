@@ -166,7 +166,7 @@ export default function ProductsAndServicesPage() {
               return (
                 <motion.button
                   key={service.title}
-                  className={`group relative p-8 border border-white/10 bg-white/5 overflow-hidden text-left hover:bg-white/10 transition-colors ${!hasPopup ? "cursor-default" : ""}`}
+                  className={`group relative p-8 border border-white/5 bg-black rounded-[32px] overflow-hidden text-left hover:bg-white/5 transition-colors ${!hasPopup ? "cursor-default" : ""}`}
                   whileHover={hasPopup ? { scale: 1.02 } : {}}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   onClick={() => {
@@ -189,7 +189,7 @@ export default function ProductsAndServicesPage() {
         </motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {videoHighlights.map((v) => (
-            <a key={v.title} href={v.url} target="_blank" rel="noreferrer" className="group block border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
+            <a key={v.title} href={v.url} target="_blank" rel="noreferrer" className="group block border border-white/5 bg-black rounded-[32px] backdrop-blur-xl hover:bg-white/5 transition-colors overflow-hidden">
               <img src={v.thumb} alt={v.title} className="w-full h-40 object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="p-4">
                 <p className="text-white text-sm font-medium group-hover:text-[#DC7026] transition-colors">{v.title}</p>
