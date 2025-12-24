@@ -360,15 +360,40 @@ export default function OurWorksPage() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">Our / Works</p>
-            <h1 id="our-works-heading" className="text-5xl md:text-8xl font-bold tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)' }}>Our Works</h1>
+            <h1 id="our-works-heading" className="text-5xl md:text-8xl font-bold tracking-tight mb-2 flex flex-wrap justify-center gap-x-4 md:gap-x-8" style={{ fontFamily: 'var(--font-display)' }}>
+              {"Our Works".split(" ").map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.3 + (i * 0.2),
+                    ease: [0.2, 0.65, 0.3, 0.9]
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </h1>
           </motion.div>
         </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24" aria-labelledby="our-works-heading">
 
-        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Social Media Management
+        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] mb-4 text-[#DC7026] flex flex-wrap gap-x-4" style={{ fontFamily: 'var(--font-label)' }}>
+          {"Social Media Management".split(" ").map((word, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.1 }}
+            >
+              {word}
+            </motion.span>
+          ))}
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           {socialMedia.map((item, index) => {
@@ -472,32 +497,77 @@ export default function OurWorksPage() {
           ))}
         </motion.div>
 
-        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-widest mb-4 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          Our Services
+        <motion.h2 className="text-2xl md:text-3xl font-semibold tracking-[0.2em] mb-4 text-[#DC7026] flex flex-wrap gap-x-4" style={{ fontFamily: 'var(--font-label)' }}>
+          {"Our Services".split(" ").map((word, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.1 }}
+            >
+              {word}
+            </motion.span>
+          ))}
         </motion.h2>
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          {externalServices.map((s) => (
-            <motion.div
-              key={s.title}
-              className="group relative p-0 border border-white/5 bg-black rounded-[32px] overflow-hidden text-left transition-transform transform-gpu"
-              initial={{ y: 0 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <Image
-                src={s.image}
-                alt={s.title}
-                width={640}
-                height={192}
-                className="w-full h-48 object-contain p-4 opacity-90 group-hover:opacity-100 transition-opacity"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="p-6">
-                <p className="text-[#DC7026] transition-colors text-lg font-semibold">{s.title}</p>
-              </div>
-            </motion.div>
-          ))}
+          {externalServices.map((s) => {
+            const descriptions: Record<string, string> = {
+              "Integrated Marketing Campaigns": "Unified brand identity across channels with cohesive strategy and content optimization.",
+              "Market Research": "Data-driven insights and market analysis to scale your business footprint effectively.",
+              "Brand Development and Strategy": "In-depth identity definition and end-to-end creative execution across all media.",
+              "Advocacy and Social Marketing": "Community engagement and advocacy driven by authentic connections and social influence.",
+              "Crisis Management": "Rapid assessment and strategic planning for decisive brand protection and recovery.",
+              "Public Relations": "Strategic messaging and brand voice development to build long-term credibility."
+            }
+            return (
+              <motion.div
+                key={s.title}
+                className="group relative rounded-[32px] overflow-hidden bg-[#080808] border border-white/5 flex flex-col h-[400px] hover:border-[#DC7026]/30 transition-all duration-300 transform-gpu"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ y: -2 }}
+              >
+                {/* Stacked Visuals (Bottom Right) */}
+                <div className="absolute bottom-0 right-0 w-3/5 h-4/5 pointer-events-none pr-4 pb-4">
+                  <div className="relative w-full h-full">
+                    {/* Background Visual */}
+                    <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-10 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
+                      <Image src={s.image} alt="" fill className="object-contain grayscale" />
+                    </div>
+                    {/* Primary Visual */}
+                    <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-40 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700 overflow-hidden">
+                      <Image src={s.image} alt={s.title} fill className="object-contain p-4 transition-transform duration-700 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Content */}
+                <div className="relative z-10 h-full p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="text-[10px] tracking-[0.25em] font-extrabold text-[#DC7026]/80 uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/5">
+                        SERVICE
+                      </span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 tracking-tight text-white leading-[1.2]">{s.title}</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed max-w-[220px] line-clamp-3">
+                      {descriptions[s.title] || "Strategic creative and management solutions tailored for results."}
+                    </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <a href="/products-and-services" className="inline-block px-6 py-2.5 rounded-full border border-white/15 text-[10px] font-bold text-white uppercase hover:bg-[#DC7026] hover:text-black hover:border-[#DC7026] transition-all duration-300">
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            )
+          })}
         </motion.div>
 
         <AnimatePresence>

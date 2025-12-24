@@ -71,7 +71,22 @@ export default function AboutUsPage() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">About / Us</p>
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)' }}>About Us</h1>
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-2 flex flex-wrap justify-center gap-x-4 md:gap-x-8" style={{ fontFamily: 'var(--font-display)' }}>
+              {"About Us".split(" ").map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.3 + (i * 0.2),
+                    ease: [0.2, 0.65, 0.3, 0.9]
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </h1>
           </motion.div>
         </div>
       </section>
@@ -130,7 +145,17 @@ export default function AboutUsPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
-                Behind the Lens, <br /> Ahead of the Curve
+                {["Behind the Lens,", "Ahead of the Curve"].map((line, i) => (
+                  <motion.span
+                    key={i}
+                    className="block"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: i * 0.2 }}
+                  >
+                    {line}
+                  </motion.span>
+                ))}
               </h2>
               <p className="text-gray-400 leading-relaxed max-w-lg text-sm md:text-base">
                 Imagine. Live. Soar. Our team focuses on results-driven work while ensuring the highest level of creative and strategic thinking.

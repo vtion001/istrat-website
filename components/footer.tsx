@@ -16,9 +16,9 @@ export default function Footer() {
           <div className="mb-8">
             <a href="/" aria-label="Go to Home" className="inline-block">
               <img
-                src="https://res.cloudinary.com/dbviya1rj/image/upload/v1765954623/osachccvpb3g3v1untpi.png"
-                alt="ISTRAT logo"
-                className="h-30 w-auto opacity-90"
+                src="/images/istrat-comms-logo-transparent.png"
+                alt="iStrat Comms Logo"
+                className="h-24 w-auto opacity-100 mix-blend-screen"
               />
             </a>
           </div>

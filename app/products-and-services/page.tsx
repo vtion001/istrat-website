@@ -143,7 +143,22 @@ export default function ProductsAndServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">What / We Do</p>
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-2" style={{ fontFamily: 'var(--font-display)' }}>My Services</h1>
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-2 flex flex-wrap justify-center gap-x-4 md:gap-x-8" style={{ fontFamily: 'var(--font-display)' }}>
+              {"My Services".split(" ").map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.3 + (i * 0.2),
+                    ease: [0.2, 0.65, 0.3, 0.9]
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </h1>
           </motion.div>
         </div>
       </section>
@@ -218,10 +233,10 @@ export default function ProductsAndServicesPage() {
       {/* 2. Portrait Testimonial / Profile Section */}
       <section className="relative min-h-screen flex items-end overflow-hidden border-t border-white/5">
         <Image
-          src="/images/services/leader.png"
-          alt="Creative Direction"
+          src="/images/services/arnold-cinematic.png"
+          alt="Arnold Santos Argano"
           fill
-          className="object-cover opacity-50 grayscale"
+          className="object-cover object-top opacity-60 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
 
@@ -250,7 +265,16 @@ export default function ProductsAndServicesPage() {
       {/* 3. Highlights Section */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-32">
         <div className="flex items-center justify-between mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>Recent Work</h2>
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold tracking-tight"
+            style={{ fontFamily: 'var(--font-display)' }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            Recent Work
+          </motion.h2>
           <div className="h-[1px] flex-grow mx-8 bg-white/5" />
         </div>
 
