@@ -152,7 +152,7 @@ export default function BentoGrid() {
               )}
 
               {/* Stacked Images Effect */}
-              {item.variant === "stacked" && (
+              {item.variant === "stacked" && item.bgImages && item.bgImages.length >= 2 && (
                 <div className="absolute bottom-0 right-0 w-3/5 h-4/5 pointer-events-none pr-4 pb-4">
                   <div className="relative w-full h-full">
                     <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-30 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
