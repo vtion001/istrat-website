@@ -4,92 +4,21 @@ import { motion } from "framer-motion"
 import { Check, Play, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
-const specializations = [
-  "Advertising",
-  "Event Management and Staging",
-  "Creative Design and Concepts",
-  "Public Relations",
-  "Digital Marketing",
-  "Crisis PR Management",
-]
+// Data imports
+import { specializations, team, getTeamMemberAvatar, HERO_VIDEO } from "@/data"
 
-const team = [
-  {
-    name: "Arnold Santos Argano",
-    role: "Chief Executive Officer",
-    bio: "Creative powerhouse and leader across writing, directing, events, social media strategy, and management with three decades of experience.",
-  },
-  {
-    name: "Erwyn Claudio",
-    role: "PR Consultant",
-    bio: "Award-winning communications specialist with Anvil and IABC Quill Awards for global automotive brands.",
-  },
-  {
-    name: "Ric Lopez",
-    role: "Operations Head",
-    bio: "20 years in creative execution producing radio and TV commercials for private and government institutions, including international advertising projects.",
-  },
-  {
-    name: "Eugenio S. Aguilar",
-    role: "Social Media Strategy Consultant",
-    bio: "Storyteller and strategist crafting viral digital content, consultant and digital strategist for Lahi.PH.",
-  },
-  {
-    name: "Ferdie Aboga",
-    role: "Content and Creative Consultant",
-    bio: "Media leader with broadcast journalism expertise, previously at CNN Philippines and ABS-CBN overseeing news operations.",
-  },
-  {
-    name: "Ela Marie Teodosio",
-    role: "Admin Head",
-    bio: "17+ years in administration and HR in government and private sectors, ensuring efficient operations and compliance.",
-  },
-  {
-    name: "Lou Bognot",
-    role: "Accounts and Media Consultant",
-    bio: "30 years in brand building and retail marketing, strategic thinker and CRM advocate driving impactful marketing strategies.",
-  },
-]
+// Component imports
+import HeroSection from "@/components/sections/hero-section"
 
 export default function AboutUsPage() {
   return (
     <main className="w-full overflow-x-hidden bg-black text-white selection:bg-[#DC7026]/30">
       {/* 1. Cinematic Hero Section */}
-      <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/services/banner.png"
-          alt="iStrat Production Studio"
-          fill
-          className="object-cover opacity-60 grayscale scale-105"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
-        <div className="relative z-10 text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">About / Us</p>
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-2 flex flex-wrap justify-center gap-x-4 md:gap-x-8" style={{ fontFamily: 'var(--font-display)' }}>
-              {"About Us".split(" ").map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0.3 + (i * 0.2),
-                    ease: [0.2, 0.65, 0.3, 0.9]
-                  }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </h1>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        title="About Us"
+        breadcrumb="About / Us"
+        backgroundImage="/images/services/banner.png"
+      />
 
       {/* 2. Main Experience & Story Section */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
@@ -103,7 +32,7 @@ export default function AboutUsPage() {
             >
               <div className="relative w-32 h-32 md:w-48 md:h-40 rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl">
                 <video
-                  src="https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
+                  src={HERO_VIDEO}
                   autoPlay
                   muted
                   loop
@@ -253,7 +182,7 @@ export default function AboutUsPage() {
             </p>
             <div className="flex flex-col justify-end">
               <p className="text-gray-400 italic text-lg mb-6">
-                "Our team focuses on achieving your brand integrity and sales growth through strategic narratives."
+                &quot;Our team focuses on achieving your brand integrity and sales growth through strategic narratives.&quot;
               </p>
               <div className="flex items-center gap-4">
                 <div className="h-[2px] w-12 bg-[#DC7026]"></div>
@@ -282,7 +211,7 @@ export default function AboutUsPage() {
             >
               <div className="relative w-20 h-20 mb-8">
                 <img
-                  src={`https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=111111&color=DC7026&size=256&bold=true`}
+                  src={getTeamMemberAvatar(member.name)}
                   alt={member.name}
                   className="w-full h-full border border-white/10 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all"
                 />
