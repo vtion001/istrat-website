@@ -28,14 +28,19 @@ export default function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <a href="/" className="absolute top-[-2rem] md:top-[-10rem] w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
-        <Image
-          src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
-          alt="iStrat Comms Logo"
-          width={1200}
-          height={480}
-          className="h-[168px] md:h-[640px] w-auto opacity-100 object-contain object-top lg:-mb-52 mix-blend-screen"
-          priority
-        />
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Image
+            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
+            alt="iStrat Comms Logo"
+            width={1200}
+            height={480}
+            className="h-[168px] md:h-[640px] w-auto opacity-100 object-contain object-top lg:-mb-52 mix-blend-screen"
+            priority
+          />
+        </motion.div>
       </a>
 
       {/* Cinematic High-Definition Video Background with Enhanced Color Pop */}
