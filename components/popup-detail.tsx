@@ -11,6 +11,7 @@ type PopupDetailProps = {
   ctaLabel?: string
   ctaHref?: string
   images?: string[]
+  metrics?: string
 }
 
 export default function PopupDetail({
@@ -21,6 +22,7 @@ export default function PopupDetail({
   points,
   ctaLabel = "Contact Us",
   ctaHref = "/connect-with-us",
+  metrics,
 }: PopupDetailProps) {
   return (
     <AnimatePresence>
@@ -51,7 +53,7 @@ export default function PopupDetail({
               <div className="relative">
                 <h3 className="text-2xl md:text-3xl font-semibold tracking-widest text-[#DC7026] mb-3" style={{ fontFamily: 'var(--font-label)' }}>{title}</h3>
                 <p className="text-gray-300 mb-6">{summary}</p>
-                <ul className="space-y-3 mb-10">
+                <ul className="space-y-3 mb-6">
                   {points.map((p, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="mt-1 inline-block w-2 h-2 rounded-full bg-[#DC7026]" />
@@ -59,7 +61,12 @@ export default function PopupDetail({
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center justify-between gap-3">
+                {metrics && (
+                  <div className="mb-8 p-4 border-l-2 border-[#DC7026] bg-[#DC7026]/5">
+                    <p className="text-[#DC7026] text-xs uppercase tracking-wider font-black mb-1">Proof of Impact</p>
+                    <p className="text-gray-300 text-sm font-medium">{metrics}</p>
+                  </div>
+                )}\n                <div className="flex items-center justify-between gap-3">
                   <button onClick={onClose} className="px-4 py-3 border border-white/20 text-white hover:bg-white/10 transition-colors">Close</button>
                   <a href={ctaHref} className="inline-flex items-center gap-3 px-6 py-4 bg-[#DC7026] text-white hover:bg-[#c5621e] transition-colors">
                     {ctaLabel}
@@ -70,7 +77,8 @@ export default function PopupDetail({
             </div>
           </motion.div>
         </motion.div>
-      )}
-    </AnimatePresence>
+      )
+      }
+    </AnimatePresence >
   )
 }

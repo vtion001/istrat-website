@@ -7,11 +7,11 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Our Works", href: "/our-works" },
-  { label: "Services", href: "/products-and-services" },
-  { label: "Connect", href: "/connect-with-us" },
+  { label: "Our Vision", href: "/" },
+  { label: "Who We Are", href: "/about-us" },
+  { label: "Our Work", href: "/our-works" },
+  { label: "Our Services", href: "/products-and-services" },
+  { label: "Contact Us", href: "/connect-with-us" },
 ]
 
 export default function FloatingNavbar() {
@@ -26,7 +26,7 @@ export default function FloatingNavbar() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed bottom-24 left-4 right-4 z-50 md:hidden"
+            className="fixed top-24 left-4 right-4 z-50 md:hidden"
           >
             <div className="bg-black/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2">
               {navItems.map((item) => {
@@ -51,8 +51,8 @@ export default function FloatingNavbar() {
       </AnimatePresence>
 
       <motion.nav
-        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[95vw] md:max-w-fit"
-        initial={{ opacity: 0, y: 20 }}
+        className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[95vw] md:max-w-fit"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >

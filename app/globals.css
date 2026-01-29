@@ -39,7 +39,6 @@
   --font-sans: var(--font-ibm-plex), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-ibm-plex), sans-serif;
   --font-label: var(--font-archivo), sans-serif;
-  --font-comfortaa: var(--font-comfortaa), sans-serif;
   --text-primary: #ffffff;
   --accent-orange: #DC7026;
 }
@@ -174,4 +173,18 @@ h3::after {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* GSAP Panel Scroll Styles */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.section-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
