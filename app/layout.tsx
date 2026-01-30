@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Archivo_Narrow, IBM_Plex_Sans_Condensed, Comfortaa } from "next/font/google"
+import { Archivo_Narrow, IBM_Plex_Sans_Condensed } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import FloatingNavbar from "@/components/floating-navbar"
@@ -16,12 +16,6 @@ const ibmPlexSansCondensed = IBM_Plex_Sans_Condensed({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-ibm-plex"
-})
-
-const comfortaa = Comfortaa({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-comfortaa"
 })
 
 export const metadata: Metadata = {
@@ -156,7 +150,7 @@ export default function RootLayout({
           }),
         }} />
       </head>
-      <body className={`${ibmPlexSansCondensed.variable} ${archivoNarrow.variable} ${comfortaa.variable} ${ibmPlexSansCondensed.className} antialiased`}>
+      <body className={`${ibmPlexSansCondensed.variable} ${archivoNarrow.variable} ${ibmPlexSansCondensed.className} antialiased`}>
         <a href="#main" className="skip-link">Skip to content</a>
         <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
         <PageTransition>

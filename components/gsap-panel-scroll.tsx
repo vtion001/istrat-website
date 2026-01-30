@@ -50,11 +50,12 @@ export default function GSAPPanelScroll({ children, className = "" }: GSAPPanelS
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: panel,
-                    start: "bottom bottom",
+                    start: "top top",
                     end: () => (fakeScrollRatio ? `+=${innerpanel.offsetHeight}` : "bottom top"),
                     pinSpacing: false,
                     pin: true,
                     scrub: true,
+                    anticipatePin: 1,
                 },
             })
 
@@ -68,10 +69,13 @@ export default function GSAPPanelScroll({ children, className = "" }: GSAPPanelS
                 })
             }
 
-            tl.fromTo(panel, { scale: 1, opacity: 1 }, { scale: 0.7, opacity: 0.5, duration: 0.9 }).to(panel, {
-                opacity: 0,
-                duration: 0.1,
-            })
+            // Add a pause to let content be fully visible before animating out
+            tl.to({}, { duration: 0.3 })
+                .fromTo(panel, { scale: 1, opacity: 1 }, { scale: 0.9, opacity: 0.6, duration: 0.6 })
+                .to(panel, {
+                    opacity: 0,
+                    duration: 0.1,
+                })
         })
 
         // Cleanup

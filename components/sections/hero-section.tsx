@@ -22,12 +22,12 @@ export default function HeroSection({
     const formattedBreadcrumb = breadcrumb || title.split(" ").join(" / ")
 
     return (
-        <section className={`relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden ${className}`}>
+        <section className={`relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden ${className}`}>
             {/* Background Media */}
             {backgroundVideo && (
                 <video
                     src={backgroundVideo}
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale scale-105"
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale contrast-110 scale-105"
                     autoPlay
                     muted
                     loop
@@ -39,37 +39,40 @@ export default function HeroSection({
                     src={backgroundImage}
                     alt={title}
                     fill
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale scale-105"
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale contrast-110 scale-105"
                     priority
                 />
             )}
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
+            {/* Enhanced Overlays - Hero Brand Standard */}
+            <div className="absolute inset-0 bg-black/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
 
-            {/* Content */}
-            <div className="relative z-10 text-center px-4">
+            {/* Content - Left Aligned */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    className="text-left max-w-5xl"
                 >
-                    <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">
+                    <p className="text-[#DC7026] text-xs md:text-sm tracking-[0.3em] font-bold mb-8 uppercase">
                         {formattedBreadcrumb}
                     </p>
                     <h1
                         id={`${title.toLowerCase().replace(/\s+/g, '-')}-heading`}
-                        className="text-5xl md:text-8xl font-bold tracking-tight mb-2 flex flex-wrap justify-center gap-x-4 md:gap-x-8"
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]"
                         style={{ fontFamily: 'var(--font-display)' }}
                     >
                         {words.map((word, i) => (
                             <motion.span
                                 key={i}
-                                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                className="inline-block mr-4 md:mr-6"
+                                initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                                 transition={{
-                                    duration: 1.2,
-                                    delay: 0.3 + (i * 0.2),
+                                    duration: 0.8,
+                                    delay: 0.2 + (i * 0.15),
                                     ease: [0.2, 0.65, 0.3, 0.9]
                                 }}
                             >

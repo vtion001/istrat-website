@@ -260,35 +260,47 @@ export default function AboutUsPage() {
         <div className="section">
           <div className="section-inner">
             <section className="max-w-7xl mx-auto px-6 md:px-8 pb-24">
-              <div className="flex items-center justify-between mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>Leadership</h2>
-                <div className="hidden md:block h-[1px] flex-grow mx-8 bg-white/5"></div>
+              <div className="mb-20">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>The Experts Behind iStrat</h2>
+                <p className="text-gray-400 text-lg md:text-xl">Meet the minds behind the work.</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
                 {team.map((member, i) => (
                   <motion.div
                     key={member.name}
-                    className="p-8 border border-white/5 bg-[#080808] rounded-[32px] hover:bg-white/[0.02] transition-colors group flex flex-col h-full"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="group flex flex-col h-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ duration: 0.8, delay: i * 0.1 }}
                   >
-                    <div className="relative w-20 h-20 mb-8">
+                    <div className="relative w-full aspect-[3/4] mb-6 overflow-hidden">
                       <img
-                        src={getTeamMemberAvatar(member.name)}
+                        src={member.image || getTeamMemberAvatar(member.name)}
                         alt={member.name}
-                        className="w-full h-full border border-white/10 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all"
+                        className="w-full h-full object-cover grayscale contrast-125 brightness-110"
                       />
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-[#DC7026] text-2xl font-bold tracking-tight mb-1">{member.name}</h4>
-                      <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6">{member.role}</p>
+                      <h4 className="text-white text-xl md:text-2xl font-semibold tracking-tight mb-2 uppercase" style={{ fontFamily: 'var(--font-display)' }}>{member.name}</h4>
+                      <p className="text-gray-500 text-xs font-light tracking-wide mb-4">{member.role}</p>
+                      <div className="h-[1px] w-12 bg-white/10 mb-4"></div>
                       <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
+              
+              {/* Closing Statement */}
+              <motion.div
+                className="mt-32 text-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <p className="text-gray-500 text-sm tracking-[0.3em] font-light uppercase">32 Years of Strategic Influence</p>
+              </motion.div>
             </section>
           </div>
         </div>

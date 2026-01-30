@@ -1,7 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
+/*
+ * iStrat Hero Brand Design System
+ * ================================
+ * Typography: Maximum 2 fonts
+ *   - IBM Plex Sans Condensed (Display & Body)
+ *   - Archivo Narrow (Labels & Tags)
+ * 
+ * Colors: Dark charcoal base with strategic accents
+ *   - Primary: #DC7026 (Orange)
+ *   - Accent: #3C4699 (Blue)
+ *   - Base: #000000 (Black)
+ * 
+ * Visual Principles:
+ *   - 70% dark overlays on all videos/images
+ *   - High contrast, cinematic lighting
+ *   - Left-aligned major headings (not centered)
+ *   - Slow, deliberate animations (0.8s typical)
+ *   - Generous negative space
+ *   - Frame, don't box (no unnecessary borders/shadows)
+ */
 
 :root {
   /* New Dark Theme Colors */
@@ -173,18 +192,4 @@ h3::after {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-/* GSAP Panel Scroll Styles */
-.section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.section-inner {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
 }

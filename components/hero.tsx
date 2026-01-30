@@ -29,8 +29,15 @@ export default function Hero() {
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <a href="/" className="absolute top-[-2rem] md:top-[-10rem] w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
         <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 6,
+            times: [0, 0.5, 1],
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         >
           <Image
             src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
@@ -61,7 +68,7 @@ export default function Hero() {
 
         {/* Layer 2: 70% Dark Overlay for Premium Cinematic Feel */}
         <div className="absolute inset-0 bg-black/70" />
-
+        
         {/* Layer 3: Black Depth Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
       </div>
@@ -92,54 +99,35 @@ export default function Hero() {
             className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px] flex flex-wrap justify-center gap-x-6 md:gap-x-12"
             style={{ fontFamily: 'var(--font-label)' }}
           >
-            {["LEAD.", "INFLUENCE.", "WIN."].map((word, i) => {
-              // Function to replace 'I' with custom icon
-              const renderWord = (text: string) => {
-                return text.split('').map((char, charIndex) => {
-                  if (char === 'I') {
-                    return (
-                      <span key={charIndex} className="inline-flex items-center justify-center mx-[-0.02em]" style={{ width: '0.4em', height: '1em' }}>
-                        <svg viewBox="0 0 120 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                          <circle cx="60" cy="35" r="28" fill="currentColor" />
-                          <path d="M 40 85 Q 40 75, 50 75 L 70 75 Q 80 75, 80 85 L 80 250 Q 80 270, 60 270 L 50 270 Q 30 270, 30 250 Q 30 230, 50 230 L 60 230 L 60 85 Q 60 75, 50 75 Z" fill="currentColor" />
-                        </svg>
-                      </span>
-                    )
-                  }
-                  return <span key={charIndex}>{char}</span>
-                })
-              }
-
-              return (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 40, filter: "blur(20px)", letterSpacing: "0.5em" }}
-                  animate={{
-                    opacity: [0, 1, 1, 0.9, 1],
-                    y: [40, 0, 0, 0, 0],
-                    filter: ["blur(20px)", "blur(0px)", "blur(0px)", "blur(1px)", "blur(0px)"],
-                    letterSpacing: ["0.5em", "0.15em", "0.15em", "0.2em", "0.15em"],
-                    textShadow: [
-                      "0 0 0px rgba(220,112,38,0)",
-                      "0 0 40px rgba(220,112,38,0.4)",
-                      "0 0 20px rgba(220,112,38,0.2)",
-                      "0 0 60px rgba(220,112,38,0.6)",
-                      "0 0 40px rgba(220,112,38,0.4)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    delay: i * 0.15,
-                    times: [0, 0.15, 0.4, 0.7, 1],
-                    ease: "easeInOut"
-                  }}
-                  className="inline-flex items-center"
-                >
-                  {renderWord(word)}
-                </motion.span>
-              )
-            })}
+            {"LEAD. INFLUENCE. WIN.".split(" ").map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 40, filter: "blur(20px)", letterSpacing: "0.5em" }}
+                animate={{
+                  opacity: [0, 1, 1, 0.9, 1],
+                  y: [40, 0, 0, 0, 0],
+                  filter: ["blur(20px)", "blur(0px)", "blur(0px)", "blur(1px)", "blur(0px)"],
+                  letterSpacing: ["0.5em", "0.15em", "0.15em", "0.2em", "0.15em"],
+                  textShadow: [
+                    "0 0 0px rgba(220,112,38,0)",
+                    "0 0 40px rgba(220,112,38,0.4)",
+                    "0 0 20px rgba(220,112,38,0.2)",
+                    "0 0 60px rgba(220,112,38,0.6)",
+                    "0 0 40px rgba(220,112,38,0.4)"
+                  ]
+                }}
+                transition={{
+                  duration: 8, // Exact sync with the 8s video duration
+                  repeat: Infinity,
+                  delay: i * 0.15,
+                  times: [0, 0.15, 0.4, 0.7, 1], // Entrance + Rhythmic pulse
+                  ease: "easeInOut"
+                }}
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
           </h1>
         </motion.div>
 

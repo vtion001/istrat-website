@@ -1,12 +1,17 @@
 "use client"
 
+import { useRef, useLayoutEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { useState } from "react"
 import Image from "next/image"
 import { ArrowRight, ChevronRight, ChevronLeft, Play } from "lucide-react"
-import { useRef } from "react"
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PopupDetail from "@/components/popup-detail"
 import GSAPPanelScroll from "@/components/gsap-panel-scroll"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const services = [
   {
@@ -133,16 +138,44 @@ export default function ProductsAndServicesPage() {
   const [detailData, setDetailData] = useState({ title: "", summary: "", points: [] as string[], metrics: undefined as string | undefined })
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current
-      const scrollTo = direction === 'left'
-        ? scrollLeft - clientWidth * 0.8
-        : scrollLeft + clientWidth * 0.8
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const horizontalSections = gsap.utils.toArray(".horiz-gallery-wrapper");
 
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
-    }
-  }
+      horizontalSections.forEach(function (sec: any) {
+        const wrapper = sec;
+        const pinWrap = sec.querySelector(".horiz-gallery-strip");
+
+        let pinWrapWidth = pinWrap.scrollWidth;
+        let wrapperWidth = wrapper.clientWidth;
+
+        // Calculate the distance to scroll horizontally
+        let horizontalScrollLength = pinWrapWidth - wrapperWidth;
+
+        // Create a timeline to allow for a 'hold' at the end
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            scrub: true,
+            trigger: sec,
+            pin: sec,
+            start: "center center",
+            // End point: scroll distance + 200px buffer for the pause/hold
+            end: () => `+=${horizontalScrollLength + 200}`,
+            invalidateOnRefresh: true
+          }
+        });
+
+        tl.to(pinWrap, {
+          x: -horizontalScrollLength,
+          ease: "none",
+          duration: horizontalScrollLength // Use duration proportional to distance for 1:1 feel
+        })
+          .to({}, { duration: 200 }); // Dummy tween to hold the view for 200px worth of scroll
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
@@ -150,40 +183,51 @@ export default function ProductsAndServicesPage() {
         {/* Panel 1: Hero Section */}
         <div className="section">
           <div className="section-inner">
-            <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden">
               <Image
                 src="/images/services/services-hero.png"
                 alt="My Services"
                 fill
-                className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale scale-105"
+                className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
-              <div className="relative z-10 text-center px-4">
+              <div className="absolute inset-0 bg-black/70"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80"></div>
+              
+              <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
+                  className="text-left max-w-5xl"
                 >
-                  <p className="text-[#DC7026] text-[10px] md:text-sm tracking-[0.4em] font-extrabold mb-6 uppercase">Our Services</p>
-                  <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] text-center max-w-5xl" style={{ fontFamily: 'var(--font-display)' }}>
+                  <p className="text-[#DC7026] text-xs md:text-sm tracking-[0.3em] font-bold mb-8 uppercase">How We Help You Win</p>
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
                     <motion.span
-                      className="block"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      className="block text-white"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8, delay: 0.2 }}
                     >
                       We Don't Follow Conversations.
                     </motion.span>
                     <motion.span
                       className="block text-[#DC7026] mt-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8, delay: 0.4 }}
                     >
                       We Shape Them.
                     </motion.span>
                   </h1>
+                  <motion.p
+                    className="text-gray-400 text-lg md:text-xl mt-8 max-w-3xl leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                  >
+                    For 32 years, we've delivered strategic communications that build influence, shape narratives, and drive measurable results for government and corporate leaders.
+                  </motion.p>
                 </motion.div>
               </div>
             </section>
@@ -193,59 +237,45 @@ export default function ProductsAndServicesPage() {
         {/* Panel 2: Services Carousel */}
         <div className="section">
           <div className="section-inner">
-            <section className="max-w-[1400px] mx-auto px-6 md:px-8 py-32">
-              <div className="flex items-center justify-end mb-16">
-                <div className="flex items-center gap-4">
-                  <button
-                    onClick={() => scroll('left')}
-                    className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#DC7026] hover:text-black transition-all group active:scale-95"
-                    aria-label="Scroll left"
-                  >
-                    <ChevronLeft size={24} className="group-hover:-translate-x-0.5 transition-transform" />
-                  </button>
-                  <button
-                    onClick={() => scroll('right')}
-                    className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#DC7026] hover:text-black transition-all group active:scale-95"
-                    aria-label="Scroll right"
-                  >
-                    <ChevronRight size={24} className="group-hover:translate-x-0.5 transition-transform" />
-                  </button>
-                </div>
+            <section className="max-w-[1400px] mx-auto px-6 md:px-8 py-32" id="portfolio">
+              <div className="flex items-center justify-between mb-16">
+                {/* Header is here implicitly or explicitly? Checking context... 
+                     Wait, button removal was handled previously.
+                 */}
               </div>
 
-              <div
-                ref={scrollRef}
-                className="flex gap-6 lg:gap-8 overflow-x-auto no-scrollbar items-end pb-12 snap-x snap-mandatory"
-              >
-                {services.map((service) => (
-                  <motion.div
-                    key={service.title}
-                    className={`relative flex-shrink-0 ${service.height} w-[85%] sm:w-[350px] lg:w-[400px] rounded-2xl overflow-hidden group cursor-pointer border border-white/5 shadow-2xl transition-all duration-500 snap-start`}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: service.delay }}
-                    onClick={() => {
-                      const d = serviceDetails[service.title]
-                      if (d) {
-                        setDetailData({ title: service.title, summary: d.summary, points: d.points, metrics: d.metrics })
-                        setDetailOpen(true)
-                      }
-                    }}
-                  >
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 p-8 text-center bg-gradient-to-t from-black via-black/60 to-transparent">
-                      <div className="w-10 h-[1px] bg-[#DC7026] mx-auto mb-6" />
-                      <p className="text-[10px] uppercase font-black tracking-[0.4em] text-[#DC7026] mb-2" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
-                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
+              <div className="horiz-gallery-wrapper w-full overflow-hidden">
+                <div
+                  ref={scrollRef}
+                  className="horiz-gallery-strip flex gap-6 lg:gap-8 w-fit items-end pb-12 pr-12"
+                >
+                  {services.map((service) => (
+                    <div
+                      key={service.title}
+                      className={`relative flex-shrink-0 ${service.height} w-[85%] sm:w-[350px] lg:w-[400px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}
+                      onClick={() => {
+                        const d = serviceDetails[service.title]
+                        if (d) {
+                          setDetailData({ title: service.title, summary: d.summary, points: d.points, metrics: d.metrics })
+                          setDetailOpen(true)
+                        }
+                      }}
+                    >
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover opacity-50 grayscale contrast-110 group-hover:opacity-70 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 p-8 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
+                        <div className="w-12 h-[2px] bg-[#DC7026] mb-6" />
+                        <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-3" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
+                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">{service.description}</p>
+                      </div>
                     </div>
-                  </motion.div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               <motion.div
