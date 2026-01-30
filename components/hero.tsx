@@ -63,12 +63,12 @@ export default function Hero() {
       <a href="/" className="absolute top-[-2rem] md:top-[-10rem] w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
         <motion.div
           animate={{
-            scale: [1, 1.15, 1],
+            scale: [1, 1.15, 1.15],
           }}
           transition={{
             duration: 6,
             times: [0, 0.5, 1],
-            repeat: Infinity,
+            repeat: 0,
             ease: "easeInOut"
           }}
         >

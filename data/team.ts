@@ -15,7 +15,7 @@ export const team: TeamMember[] = [
         name: "Arnold Santos Argano",
         role: "Chief Executive Officer",
         bio: "Creative powerhouse and leader across writing, directing, events, social media strategy, and management with three decades of experience.",
-        image: "/images/team/arnold_argano_bw.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/v1769735836/wegddz1xfc1kdwbjbm0e.webp",
     },
     {
         name: "Erwyn Claudio",

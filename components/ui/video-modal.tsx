@@ -12,8 +12,32 @@ interface VideoModalProps {
     } | null
 }
 
+// Convert YouTube watch URL to embed URL
+function toYouTubeEmbed(url: string): string {
+    try {
+        const youtubeUrl = new URL(url)
+        if (youtubeUrl.hostname.includes("youtube.com") && youtubeUrl.pathname === "/watch") {
+            const id = youtubeUrl.searchParams.get("v")
+            return id ? `https://www.youtube.com/embed/${id}` : url
+        }
+        if (youtubeUrl.hostname === "youtu.be") {
+            const id = youtubeUrl.pathname.slice(1)
+            return id ? `https://www.youtube.com/embed/${id}` : url
+        }
+    } catch { }
+    return url
+}
+
+// Check if URL is YouTube
+function isYouTubeUrl(url: string): boolean {
+    return url.includes("youtube.com") || url.includes("youtu.be")
+}
+
 export default function VideoModal({ isOpen, onClose, video }: VideoModalProps) {
     if (!video) return null
+
+    const isYouTube = isYouTubeUrl(video.src)
+    const embedUrl = isYouTube ? toYouTubeEmbed(video.src) : video.src
 
     return (
         <AnimatePresence>
@@ -48,18 +72,28 @@ export default function VideoModal({ isOpen, onClose, video }: VideoModalProps) 
                             </button>
                         </div>
                         <div className="relative w-full aspect-video">
-                            <video
-                                className="w-full h-full object-cover rounded-2xl"
-                                src={video.src}
-                                poster={video.poster}
-                                title={video.title || "Video Reel"}
-                                preload="metadata"
-                                controls
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                            />
+                            {isYouTube ? (
+                                <iframe
+                                    className="w-full h-full object-cover rounded-2xl"
+                                    src={embedUrl}
+                                    title={video.title || "Video Reel"}
+                                    allowFullScreen
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                />
+                            ) : (
+                                <video
+                                    className="w-full h-full object-cover rounded-2xl"
+                                    src={video.src}
+                                    poster={video.poster}
+                                    title={video.title || "Video Reel"}
+                                    preload="metadata"
+                                    controls
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                />
+                            )}
                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#DC7026]/10 to-[#3C4699]/10 rounded-2xl" />
                         </div>
                     </motion.div>

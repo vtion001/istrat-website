@@ -1,15 +1,35 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Check } from "lucide-react"
 import GSAPPanelScroll from "@/components/gsap-panel-scroll"
 
+interface Particle {
+  x: number
+  y: number
+  duration: number
+  delay: number
+}
+
 export default function ConnectWithUsPage() {
+  const [particles, setParticles] = useState<Particle[]>([])
   const [form, setForm] = useState({ name: "", email: "", company: "", service: "", subject: "", message: "" })
   const [errors, setErrors] = useState<{ [k: string]: string }>({})
   const [sent, setSent] = useState(false)
+
+  // Generate random particles only on client side
+  useEffect(() => {
+    setParticles(
+      [...Array(6)].map(() => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        duration: 10 + Math.random() * 20,
+        delay: Math.random() * 10
+      }))
+    )
+  }, [])
 
   function onChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     const { name, value } = e.target
@@ -128,13 +148,13 @@ ${form.message}
 
                 {/* Micro-Dust Particles Drift */}
                 <div className="absolute inset-0">
-                  {[...Array(6)].map((_, i) => (
+                  {particles.map((particle, i) => (
                     <motion.div
                       key={i}
                       className="absolute w-1 h-1 bg-white/20 rounded-full"
                       initial={{
-                        x: Math.random() * 100 + "%",
-                        y: Math.random() * 100 + "%",
+                        x: particle.x + "%",
+                        y: particle.y + "%",
                         opacity: 0
                       }}
                       animate={{
@@ -143,9 +163,9 @@ ${form.message}
                         opacity: [0, 0.4, 0]
                       }}
                       transition={{
-                        duration: 10 + Math.random() * 20,
+                        duration: particle.duration,
                         repeat: Infinity,
-                        delay: Math.random() * 10
+                        delay: particle.delay
                       }}
                     />
                   ))}
