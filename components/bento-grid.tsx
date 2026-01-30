@@ -22,7 +22,7 @@ const pillars = [
     description: "",
     gridClass: "md:col-span-2 md:row-span-1",
     tag: "ALTAROC TV",
-    bgImage: "https://res.cloudinary.com/dbviya1rj/image/upload/w_1200,h_800,c_fill,q_auto/istrat/creative-bg",
+    bgImage: "/creative-bg.svg",
     buttonText: "Découvrir",
     variant: "wide"
   },
@@ -32,7 +32,7 @@ const pillars = [
     description: "",
     gridClass: "md:col-span-1 md:row-span-1",
     tag: "",
-    bgImage: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_400,c_fill,q_auto/istrat/video-thumb",
+    bgImage: "/video-thumb.svg",
     showPlay: true,
     variant: "video"
   },
@@ -42,7 +42,7 @@ const pillars = [
     description: "",
     gridClass: "md:col-span-2 md:row-span-1",
     tag: "INSIGHTS",
-    bgImages: ["https://res.cloudinary.com/dbviya1rj/image/upload/w_1200,h_800,c_fill,q_auto/istrat/creative-bg", "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_400,c_fill,q_auto/istrat/video-thumb"],
+    bgImages: ["/creative-bg.svg", "/video-thumb.svg"],
     buttonText: "Découvrir",
     variant: "stacked"
   },

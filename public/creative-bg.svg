@@ -1,0 +1,17 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DC7026;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#DC7026" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#DC7026" stroke-width="2" opacity="0.2"/>
+  <circle cx="1000" cy="600" r="180" fill="none" stroke="#DC7026" stroke-width="2" opacity="0.2"/>
+  <polygon points="600,150 750,300 450,300" fill="none" stroke="#DC7026" stroke-width="2" opacity="0.15"/>
+</svg>

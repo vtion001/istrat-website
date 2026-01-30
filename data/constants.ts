@@ -50,27 +50,27 @@ export const specializations = [
 export const externalServices = [
     {
         title: "Integrated Marketing Campaigns",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/marketing",
+        image: "/images/services/marketing.svg",
     },
     {
         title: "Market Research",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/brand",
+        image: "/images/services/brand.svg",
     },
     {
         title: "Brand Development and Strategy",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/brand",
+        image: "/images/services/brand.svg",
     },
     {
         title: "Advocacy and Social Marketing",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/advocacy",
+        image: "/images/services/advocacy.svg",
     },
     {
         title: "Crisis Management",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/digital",
+        image: "/images/services/digital.svg",
     },
     {
         title: "Public Relations",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/advocacy",
+        image: "/images/services/advocacy.svg",
     },
 ]
 

@@ -1,0 +1,18 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="500" fill="#1a1a1a"/>
+  <rect x="0" y="0" width="600" height="500" fill="url(#grad4)" opacity="0.3"/>
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC7026;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#DC7026;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <text x="50%" y="45%" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#DC7026">
+    AUDIO-VISUAL
+  </text>
+  <text x="50%" y="55%" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#DC7026">
+    PRODUCTION
+  </text>
+  <polygon points="270,180 330,210 270,240" fill="#DC7026" opacity="0.5"/>
+  <rect x="240" y="160" width="120" height="100" fill="none" stroke="#DC7026" stroke-width="2" opacity="0.4"/>
+</svg>

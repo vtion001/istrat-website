@@ -1,0 +1,19 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="500" fill="#1a1a1a"/>
+  <rect x="0" y="0" width="600" height="500" fill="url(#grad3)" opacity="0.3"/>
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC7026;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#DC7026;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  <text x="50%" y="45%" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#DC7026">
+    EVENT
+  </text>
+  <text x="50%" y="55%" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#DC7026">
+    MANAGEMENT
+  </text>
+  <circle cx="250" cy="180" r="20" fill="#DC7026" opacity="0.5"/>
+  <circle cx="300" cy="160" r="25" fill="#DC7026" opacity="0.5"/>
+  <circle cx="350" cy="180" r="20" fill="#DC7026" opacity="0.5"/>
+</svg>

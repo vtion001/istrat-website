@@ -21,37 +21,37 @@ export const team: TeamMember[] = [
         name: "Erwyn Claudio",
         role: "PR Consultant",
         bio: "Award-winning communications specialist with Anvil and IABC Quill Awards for global automotive brands.",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_400,h_400,c_fill,q_auto/istrat/team/erwyn_claudio_bw",
+        image: "/images/team/erwyn_claudio_bw.png",
     },
     {
         name: "Ric Lopez",
         role: "Operations Head",
         bio: "20 years in creative execution producing radio and TV commercials for private and government institutions, including international advertising projects.",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_400,h_400,c_fill,q_auto/istrat/team/ric_lopez_bw",
+        image: "/images/team/ric_lopez_bw.png",
     },
     {
         name: "Eugenio S. Aguilar",
         role: "Social Media Strategy Consultant",
         bio: "Storyteller and strategist crafting viral digital content, consultant and digital strategist for Lahi.PH.",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_400,h_400,c_fill,q_auto/istrat/team/eugenio_aguilar_bw",
+        image: "/images/team/eugenio_aguilar_bw.png",
     },
     {
         name: "Ferdie Aboga",
         role: "Content and Creative Consultant",
         bio: "Media leader with broadcast journalism expertise, previously at CNN Philippines and ABS-CBN overseeing news operations.",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_400,h_400,c_fill,q_auto/istrat/team/ferdie_aboga_bw",
+        image: "/images/team/ferdie_aboga_bw.png",
     },
     {
         name: "Ela Marie Teodosio",
         role: "Admin Head",
         bio: "17+ years in administration and HR in government and private sectors, ensuring efficient operations and compliance.",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_400,h_400,c_fill,q_auto/istrat/team/ela_teodosio_bw",
+        image: "/images/team/ela_teodosio_bw.png",
     },
     {
         name: "Lou Bognot",
         role: "Accounts and Media Consultant",
         bio: "30 years in brand building and retail marketing, strategic thinker and CRM advocate driving impactful marketing strategies.",
-        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_400,h_400,c_fill,q_auto/istrat/team/lou_bognot_bw",
+        image: "/images/team/lou_bognot_bw.png",
     },
 ]
 
