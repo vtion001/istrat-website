@@ -48,22 +48,22 @@ export default function AboutUsPage() {
                     WE DON'T JUST RUN CAMPAIGNS.
                   </motion.span>
                   <motion.span
-                    className="block text-[#DC7026] mt-4"
+                    className="block text-white mt-4"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                   >
-                    We build influence.
+                    We build <span className="text-[#DC7026]">influence.</span>
                   </motion.span>
                   <motion.span
-                    className="block text-gray-500 text-2xl md:text-3xl lg:text-4xl mt-8 font-light tracking-wider"
+                    className="block text-white text-2xl md:text-3xl lg:text-4xl mt-8 font-bold tracking-wider"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.5 }}
                   >
-                    FOR 32 YEARS
+                    FOR <span className="text-[#DC7026]">32</span> YEARS
                   </motion.span>
                 </h2>
               </motion.div>
@@ -278,7 +278,7 @@ export default function AboutUsPage() {
                       <img
                         src={member.image || getTeamMemberAvatar(member.name)}
                         alt={member.name}
-                        className="w-full h-full object-cover grayscale contrast-125 brightness-110"
+                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
                       />
                     </div>
                     <div className="flex-grow">

@@ -138,44 +138,7 @@ export default function ProductsAndServicesPage() {
   const [detailData, setDetailData] = useState({ title: "", summary: "", points: [] as string[], metrics: undefined as string | undefined })
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      const horizontalSections = gsap.utils.toArray(".horiz-gallery-wrapper");
-
-      horizontalSections.forEach(function (sec: any) {
-        const wrapper = sec;
-        const pinWrap = sec.querySelector(".horiz-gallery-strip");
-
-        let pinWrapWidth = pinWrap.scrollWidth;
-        let wrapperWidth = wrapper.clientWidth;
-
-        // Calculate the distance to scroll horizontally
-        let horizontalScrollLength = pinWrapWidth - wrapperWidth;
-
-        // Create a timeline to allow for a 'hold' at the end
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            scrub: true,
-            trigger: sec,
-            pin: sec,
-            start: "center center",
-            // End point: scroll distance + 200px buffer for the pause/hold
-            end: () => `+=${horizontalScrollLength + 200}`,
-            invalidateOnRefresh: true
-          }
-        });
-
-        tl.to(pinWrap, {
-          x: -horizontalScrollLength,
-          ease: "none",
-          duration: horizontalScrollLength // Use duration proportional to distance for 1:1 feel
-        })
-          .to({}, { duration: 200 }); // Dummy tween to hold the view for 200px worth of scroll
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
+  // Removed GSAP scroll animation - using simple grid layout instead
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
@@ -237,19 +200,9 @@ export default function ProductsAndServicesPage() {
         {/* Panel 2: Services Carousel */}
         <div className="section">
           <div className="section-inner">
-            <section className="max-w-[1400px] mx-auto px-6 md:px-8 py-32" id="portfolio">
-              <div className="flex items-center justify-between mb-16">
-                {/* Header is here implicitly or explicitly? Checking context... 
-                     Wait, button removal was handled previously.
-                 */}
-              </div>
-
-              <div className="horiz-gallery-wrapper w-full overflow-hidden">
-                <div
-                  ref={scrollRef}
-                  className="horiz-gallery-strip flex gap-6 lg:gap-8 w-fit items-end pb-12 pr-12"
-                >
-                  {services.map((service) => (
+            <section className="min-h-screen flex flex-col justify-center max-w-7xl mx-auto px-6 md:px-8 py-32" id="portfolio">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {services.map((service) => (
                     <div
                       key={service.title}
                       className={`relative flex-shrink-0 ${service.height} w-[85%] sm:w-[350px] lg:w-[400px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}
@@ -275,17 +228,15 @@ export default function ProductsAndServicesPage() {
                       </div>
                     </div>
                   ))}
-                </div>
               </div>
 
               <motion.div
-                className="flex justify-center md:justify-end mt-12"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                className="flex items-center justify-center gap-3 text-[#DC7026]"
+                animate={{ x: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
               >
-                <a href="/our-works" className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-[#DC7026] transition-colors group">
-                  View All Work <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                <p className="text-sm font-bold uppercase tracking-[0.2em]">Scroll to view all</p>
+                <ChevronRight size={18} />
               </motion.div>
             </section>
           </div>

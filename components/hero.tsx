@@ -3,6 +3,15 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import Image from "next/image"
+import AnimatedI from "./animated-i"
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
+import { SplitText } from "gsap/dist/SplitText"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(SplitText, ScrollTrigger)
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,6 +34,30 @@ const itemVariants = {
 }
 
 export default function Hero() {
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    if (!textRef.current) return
+
+    // Create split text for the headline
+    const split = SplitText.create(textRef.current, { type: "chars" })
+
+    // Animate each character in with a staggered effect
+    gsap.from(split.chars, {
+      duration: 0.8,
+      yPercent: (i: number) => Math.random() * 400 - 200,
+      rotation: (i: number) => Math.random() * 40 - 20,
+      opacity: 0,
+      stagger: 0.05,
+      ease: "back.out(1.2)",
+      delay: 0.2
+    })
+
+    return () => {
+      split.revert()
+    }
+  }, [])
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <a href="/" className="absolute top-[-2rem] md:top-[-10rem] w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
@@ -58,7 +91,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover object-top mix-blend-screen opacity-90 filter contrast-[1.4] brightness-[1.1] saturate-[1.3]"
       >
-        <source src="https://res.cloudinary.com/dbviya1rj/video/upload/q_auto:best,e_vibrance:50,e_contrast:30/v1766593270/floxsf1ztkxyxgtdjhcw.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dbviya1rj/video/upload/v1769732555/apjuunxsxqx1wlwwgqqj.mp4" type="video/mp4" />
       </video>
 
       {/* Aesthetic Overlays (To mask pixelation and deepen blacks) */}
@@ -80,56 +113,26 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Main Headline - Synced to 8s Video Loop */}
-        <motion.div
-          variants={itemVariants}
-          className="text-center w-full max-w-[90vw]"
-          animate={{
-            y: [0, -10, 0],
-            x: [-3, 3, -3],
-            scale: [1, 1.015, 1],
-          }}
-          transition={{
-            duration: 8, // Exact sync with the 8s video duration
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+        {/* Main Headline - GSAP Animated with SVG "i" */}
+        <div
+          ref={wrapperRef}
+          className="Horizontal text-center w-full max-w-[90vw]"
         >
           <h1
-            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px] flex flex-wrap justify-center gap-x-6 md:gap-x-12"
+            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px]"
             style={{ fontFamily: 'var(--font-label)' }}
           >
-            {"LEAD. INFLUENCE. WIN.".split(" ").map((word, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: 40, filter: "blur(20px)", letterSpacing: "0.5em" }}
-                animate={{
-                  opacity: [0, 1, 1, 0.9, 1],
-                  y: [40, 0, 0, 0, 0],
-                  filter: ["blur(20px)", "blur(0px)", "blur(0px)", "blur(1px)", "blur(0px)"],
-                  letterSpacing: ["0.5em", "0.15em", "0.15em", "0.2em", "0.15em"],
-                  textShadow: [
-                    "0 0 0px rgba(220,112,38,0)",
-                    "0 0 40px rgba(220,112,38,0.4)",
-                    "0 0 20px rgba(220,112,38,0.2)",
-                    "0 0 60px rgba(220,112,38,0.6)",
-                    "0 0 40px rgba(220,112,38,0.4)"
-                  ]
-                }}
-                transition={{
-                  duration: 8, // Exact sync with the 8s video duration
-                  repeat: Infinity,
-                  delay: i * 0.15,
-                  times: [0, 0.15, 0.4, 0.7, 1], // Entrance + Rhythmic pulse
-                  ease: "easeInOut"
-                }}
-                className="inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
+            <span className="inline-block">LEAD.</span>
+            {" "}
+            <span className="inline-block">
+              <span>INFL</span>
+              <AnimatedI />
+              <span>ENCE.</span>
+            </span>
+            {" "}
+            <span ref={textRef} className="Horizontal__text inline-block">WIN.</span>
           </h1>
-        </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
