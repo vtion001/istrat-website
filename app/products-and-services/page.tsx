@@ -18,7 +18,7 @@ const services = [
     title: "Strategic Communications & Advisory",
     category: "Strategic Counsel",
     description: "We don't just advise—we architect communication strategies that shape narratives, influence stakeholders, and drive measurable business outcomes for government and private sector leaders.",
-    image: "/images/services/marketing.png",
+    image: "/images/services/marketing.svg",
     height: "h-[500px]",
     delay: 0.1
   },
@@ -26,7 +26,7 @@ const services = [
     title: "Public Relations & Media Influence",
     category: "Media Relations",
     description: "32 years of building credibility through earned media. We secure coverage that matters, manage reputations proactively, and turn media relationships into strategic assets.",
-    image: "/images/services/pr.png",
+    image: "/images/services/pr.svg",
     height: "h-[550px]",
     delay: 0.2
   },
@@ -34,7 +34,7 @@ const services = [
     title: "Brand Strategy & Positioning",
     category: "Brand Development",
     description: "From identity creation to market positioning—we build brands that command attention, earn trust, and deliver sustainable competitive advantage across all touchpoints.",
-    image: "/images/services/design.png",
+    image: "/images/services/design.svg",
     height: "h-[480px]",
     delay: 0.3
   },
@@ -42,7 +42,7 @@ const services = [
     title: "Integrated Marketing Communications",
     category: "Full-Spectrum Marketing",
     description: "Unified campaigns that convert attention into results. We orchestrate paid, owned, and earned channels to deliver cohesive brand experiences that drive growth.",
-    image: "/images/services/digital.png",
+    image: "/images/services/digital.svg",
     height: "h-[450px]",
     delay: 0.4
   },
@@ -50,7 +50,7 @@ const services = [
     title: "Advocacy & Stakeholder Engagement",
     category: "Government Relations",
     description: "Trusted by government and advocacy organizations to build coalitions, influence policy dialogue, and engage communities for meaningful social impact.",
-    image: "/images/services/advocacy.png",
+    image: "/images/services/advocacy.svg",
     height: "h-[520px]",
     delay: 0.5
   },
@@ -58,7 +58,7 @@ const services = [
     title: "Measurement, Analytics & Insights",
     category: "Data Intelligence",
     description: "DataFusion360 and proprietary analytics turn campaign performance into strategic intelligence. Real-time insights that inform decisions and optimize ROI.",
-    image: "/images/services/marketing.png",
+    image: "/images/services/marketing.svg",
     height: "h-[450px]",
     delay: 0.6
   },
@@ -66,7 +66,7 @@ const services = [
     title: "Corporate & Brand Events Management",
     category: "Event Production",
     description: "Award-winning event execution using state-of-the-art AV technology. From concept to completion—we create brand moments that resonate and deliver impact.",
-    image: "/images/services/events.png",
+    image: "/images/services/events.svg",
     height: "h-[500px]",
     delay: 0.7
   },
@@ -148,7 +148,7 @@ export default function ProductsAndServicesPage() {
           <div className="section-inner">
             <section className="relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden">
               <Image
-                src="/images/services/services-hero.png"
+                src="/images/services/services-hero.svg"
                 alt="My Services"
                 fill
                 className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale scale-105"
@@ -247,7 +247,7 @@ export default function ProductsAndServicesPage() {
           <div className="section-inner">
             <section className="relative min-h-screen flex items-end overflow-hidden border-t border-white/5">
               <Image
-                src="/images/services/arnold-cinematic.png"
+                src="/images/services/arnold-cinematic.svg"
                 alt="Arnold Santos Argano"
                 fill
                 className="object-cover object-top opacity-60 grayscale"

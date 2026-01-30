@@ -85,7 +85,7 @@ ${form.message}
           <div className="section-inner">
             <section className="relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden">
               <Image
-                src="/images/services/connect-hero.png"
+                src="/images/services/connect-hero.svg"
                 alt="Connect With Us"
                 fill
                 className="object-cover opacity-40 grayscale contrast-110 scale-105"
@@ -276,7 +276,7 @@ ${form.message}
                     transition={{ duration: 0.8 }}
                   >
                     <Image
-                      src="/images/services/arnold-cinematic.png"
+                      src="/images/services/arnold-cinematic.svg"
                       alt="iStrat Creative Hub"
                       fill
                       className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"

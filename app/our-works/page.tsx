@@ -139,7 +139,7 @@ export default function OurWorksPage() {
             <HeroSection
               title="Our Works"
               breadcrumb="Our / Works"
-              backgroundImage="/images/services/works-hero.png"
+              backgroundImage="/images/services/works-hero.svg"
             />
           </div>
         </div>

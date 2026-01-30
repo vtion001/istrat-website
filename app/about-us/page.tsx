@@ -21,7 +21,7 @@ export default function AboutUsPage() {
             <HeroSection
               title="About Us"
               breadcrumb="About / Us"
-              backgroundImage="/images/services/banner.png"
+              backgroundImage="/images/services/banner.svg"
             />
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function AboutUsPage() {
                   transition={{ duration: 1 }}
                 >
                   <Image
-                    src="/images/services/crew.png"
+                    src="/images/services/crew.svg"
                     alt="Production technician"
                     fill
                     className="object-cover"
