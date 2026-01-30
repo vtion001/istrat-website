@@ -50,27 +50,27 @@ export const specializations = [
 export const externalServices = [
     {
         title: "Integrated Marketing Campaigns",
-        image: "https://www.istratmc.com/wp-content/uploads/2022/05/Integrated-Marketing-Campaigns.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/marketing",
     },
     {
         title: "Market Research",
-        image: "https://www.istratmc.com/wp-content/uploads/2022/05/Market-Research.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/brand",
     },
     {
         title: "Brand Development and Strategy",
-        image: "https://www.istratmc.com/wp-content/uploads/2022/05/Brand-Development-and-Strategy.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/brand",
     },
     {
         title: "Advocacy and Social Marketing",
-        image: "https://www.istratmc.com/wp-content/uploads/2022/05/Advocacy-and-Social-Marketing.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/advocacy",
     },
     {
         title: "Crisis Management",
-        image: "https://www.istratmc.com/wp-content/uploads/2022/05/Crisis-Management.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/digital",
     },
     {
         title: "Public Relations",
-        image: "https://www.istratmc.com/wp-content/uploads/2022/05/Public-Relations.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/w_600,h_500,c_fill,q_auto/istrat/services/advocacy",
     },
 ]
 
