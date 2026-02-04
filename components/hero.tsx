@@ -101,7 +101,7 @@ export default function Hero() {
 
         {/* Layer 2: 70% Dark Overlay for Premium Cinematic Feel */}
         <div className="absolute inset-0 bg-black/70" />
-        
+
         {/* Layer 3: Black Depth Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
       </div>
@@ -113,24 +113,28 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Main Headline - GSAP Animated with SVG "i" */}
+        {/* Main Headline - Matches exactly the provided photo */}
         <div
           ref={wrapperRef}
-          className="Horizontal text-center w-full max-w-[90vw]"
+          className="Horizontal text-center w-full max-w-[95vw]"
         >
           <h1
-            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px]"
+            ref={textRef}
+            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px] flex flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-4"
             style={{ fontFamily: 'var(--font-label)' }}
           >
-            <span className="inline-block">LEAD.</span>
-            {" "}
-            <span className="inline-block">
-              <span>INFL</span>
-              <AnimatedI />
-              <span>ENCE.</span>
+            <span className="inline-block uppercase tracking-tighter">LEAD</span>
+            <span className="inline-block text-[#DC7026] scale-150">.</span>
+            <span className="inline-flex items-center">
+              <AnimatedI color="#DC7026" className="mr-[-0.25em]" />
+              <span className="uppercase tracking-tighter">NFLUENCE</span>
             </span>
-            {" "}
-            <span ref={textRef} className="Horizontal__text inline-block">WIN.</span>
+            <span className="inline-block text-[#DC7026] scale-150">.</span>
+            <span className="inline-flex items-center">
+              <span className="uppercase tracking-tighter">W</span>
+              <AnimatedI color="#3C4699" className="mx-[-0.15em]" />
+              <span className="uppercase tracking-tighter">N</span>
+            </span>
           </h1>
         </div>
 
