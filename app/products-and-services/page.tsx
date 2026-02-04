@@ -1,9 +1,9 @@
 "use client"
 
 import { useRef, useLayoutEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import { ArrowRight, ChevronRight, ChevronLeft, Play } from "lucide-react"
+import { ArrowRight, ChevronRight, ChevronLeft, Play, ChevronDown } from "lucide-react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PopupDetail from "@/components/popup-detail"
@@ -136,6 +136,8 @@ const videoHighlights = [
 export default function ProductsAndServicesPage() {
   const [detailOpen, setDetailOpen] = useState(false)
   const [detailData, setDetailData] = useState({ title: "", summary: "", points: [] as string[], metrics: undefined as string | undefined })
+  const [activeTab, setActiveTab] = useState(0)
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   // Removed GSAP scroll animation - using simple grid layout instead
@@ -146,15 +148,7 @@ export default function ProductsAndServicesPage() {
         {/* Panel 1: Hero Section */}
         <div className="section">
           <div className="section-inner">
-            <section className="relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden">
-              <Image
-                src="/images/services/services-hero.svg"
-                alt="My Services"
-                fill
-                className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-black/70"></div>
+            <section className="relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden bg-black">
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80"></div>
               
               <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
@@ -197,135 +191,115 @@ export default function ProductsAndServicesPage() {
           </div>
         </div>
 
-        {/* Panel 2: Services Carousel */}
+        {/* Panel 2: Services Tabs/Accordion */}
         <div className="section">
           <div className="section-inner">
             <section className="min-h-screen flex flex-col justify-center max-w-7xl mx-auto px-6 md:px-8 py-32" id="portfolio">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                {services.map((service) => (
-                    <div
+              
+              {/* Desktop Tabs */}
+              <div className="hidden lg:block">
+                {/* Tab Navigation */}
+                <div className="flex flex-wrap gap-3 justify-center items-center mb-16 max-w-5xl mx-auto">
+                  {services.map((service, index) => (
+                    <button
                       key={service.title}
-                      className={`relative flex-shrink-0 ${service.height} w-[85%] sm:w-[350px] lg:w-[400px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}
-                      onClick={() => {
-                        const d = serviceDetails[service.title]
-                        if (d) {
-                          setDetailData({ title: service.title, summary: d.summary, points: d.points, metrics: d.metrics })
-                          setDetailOpen(true)
-                        }
-                      }}
+                      onClick={() => setActiveTab(index)}
+                      className={`px-6 py-2.5 text-xs font-bold uppercase tracking-[0.15em] rounded-full transition-all duration-300 ${
+                        activeTab === index
+                          ? 'text-white bg-[#DC7026]/10'
+                          : 'text-gray-300 hover:text-white'
+                      }`}
+                      style={{ fontFamily: 'var(--font-label)' }}
                     >
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover opacity-50 grayscale contrast-110 group-hover:opacity-70 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                      />
-                      <div className="absolute inset-x-0 bottom-0 p-8 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <div className="w-12 h-[2px] bg-[#DC7026] mb-6" />
-                        <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-3" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
-                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">{service.description}</p>
-                      </div>
-                    </div>
+                      {service.title}
+                    </button>
                   ))}
-              </div>
+                </div>
 
-              <motion.div
-                className="flex items-center justify-center gap-3 text-[#DC7026]"
-                animate={{ x: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <p className="text-sm font-bold uppercase tracking-[0.2em]">Scroll to view all</p>
-                <ChevronRight size={18} />
-              </motion.div>
-            </section>
-          </div>
-        </div>
-
-        {/* Panel 3: Testimonial */}
-        <div className="section">
-          <div className="section-inner">
-            <section className="relative min-h-screen flex items-end overflow-hidden border-t border-white/5">
-              <Image
-                src="/images/services/arnold-cinematic.svg"
-                alt="Arnold Santos Argano"
-                fill
-                className="object-cover object-top opacity-60 grayscale"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
-
-              <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 pb-24 text-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-[#DC7026] text-[10px] font-black tracking-[0.5em] uppercase mb-4" style={{ fontFamily: 'var(--font-label)' }}>Creative Lead</p>
-                  <h2 className="text-5xl md:text-8xl font-bold text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>Arnold Santos Argano</h2>
-                  <div className="max-w-2xl mx-auto">
-                    <p className="text-gray-400 text-lg md:text-2xl leading-relaxed font-medium mb-12 italic">
-                      "I am a storyteller and communication strategist who believes that great design is not just what it looks like, but how it works for the brand's long-term legacy."
-                    </p>
-                    <div className="flex justify-center gap-6">
-                      <button className="px-10 py-4 bg-[#DC7026] text-black font-black text-[10px] uppercase tracking-[0.3em] rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(220,112,38,0.4)]">
-                        Start Journey
-                      </button>
+                {/* Tab Content */}
+                <div className="flex justify-center">
+                  <div
+                    className={`relative ${services[activeTab].height} w-full max-w-[500px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}
+                    onClick={() => {
+                      const d = serviceDetails[services[activeTab].title]
+                      if (d) {
+                        setDetailData({ title: services[activeTab].title, summary: d.summary, points: d.points, metrics: d.metrics })
+                        setDetailOpen(true)
+                      }
+                    }}
+                  >
+                    <Image
+                      src={services[activeTab].image}
+                      alt={services[activeTab].title}
+                      fill
+                      className="object-cover opacity-50 grayscale contrast-110 group-hover:opacity-70 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 p-8 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
+                      <div className="w-12 h-[2px] bg-[#DC7026] mb-6" />
+                      <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-3" style={{ fontFamily: 'var(--font-label)' }}>{services[activeTab].category}</p>
+                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>{services[activeTab].title}</h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">{services[activeTab].description}</p>
                     </div>
                   </div>
-                </motion.div>
-              </div>
-            </section>
-          </div>
-        </div>
-
-        {/* Panel 4: Highlights (no animation) */}
-        <div className="section">
-          <div className="section-inner">
-            <section className="max-w-7xl mx-auto px-6 md:px-8 py-32">
-              <div className="flex items-center justify-between mb-20">
-                <motion.h2
-                  className="text-4xl md:text-5xl font-bold tracking-tight"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  Recent Work
-                </motion.h2>
-                <div className="h-[1px] flex-grow mx-8 bg-white/5" />
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {videoHighlights.map((v, i) => (
-                  <motion.a
-                    key={v.title}
-                    href={v.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group border border-white/5 bg-[#0a0a0a] rounded-[32px] overflow-hidden flex flex-col h-full hover:border-[#DC7026]/30 transition-all duration-500"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.1 }}
+              {/* Mobile Accordion */}
+              <div className="lg:hidden space-y-4">
+                {services.map((service, index) => (
+                  <div
+                    key={service.title}
+                    className="border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
                   >
-                    <div className="relative h-48 overflow-hidden">
-                      <Image src={v.thumb} alt={v.title} fill className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="w-12 h-12 rounded-full bg-[#DC7026] flex items-center justify-center text-black">
-                          <Play fill="currentColor" size={20} className="ml-1" />
+                    {/* Accordion Header */}
+                    <button
+                      onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
+                      className="w-full flex items-center justify-between p-6 text-left bg-black/20 hover:bg-black/40 transition-colors"
+                    >
+                      <div className="flex-1">
+                        <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-2" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
+                        <h3 className="text-lg font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
+                      </div>
+                      <ChevronRight
+                        size={20}
+                        className={`text-[#DC7026] transition-transform duration-300 flex-shrink-0 ml-4 ${
+                          openAccordion === index ? 'rotate-90' : ''
+                        }`}
+                      />
+                    </button>
+
+                    {/* Accordion Content */}
+                    <div
+                      className={`transition-all duration-300 overflow-hidden ${
+                        openAccordion === index ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div
+                        className={`relative ${service.height} w-full cursor-pointer`}
+                        onClick={() => {
+                          const d = serviceDetails[service.title]
+                          if (d) {
+                            setDetailData({ title: service.title, summary: d.summary, points: d.points, metrics: d.metrics })
+                            setDetailOpen(true)
+                          }
+                        }}
+                      >
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover opacity-50 grayscale contrast-110"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 p-6 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
+                          <div className="w-12 h-[2px] bg-[#DC7026] mb-4" />
+                          <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
                         </div>
                       </div>
                     </div>
-                    <div className="p-8 pb-10">
-                      <h4 className="text-white font-bold tracking-tight mb-4 line-clamp-2 min-h-[3rem]">{v.title}</h4>
-                      <div className="flex items-center gap-3 text-[9px] font-black uppercase tracking-[0.2em] text-[#DC7026]">
-                        WATCH PROJECT <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </motion.a>
+                  </div>
                 ))}
               </div>
+
             </section>
 
             <PopupDetail

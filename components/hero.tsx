@@ -60,7 +60,7 @@ export default function Hero() {
   }, [])
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
-      <a href="/" className="absolute top-[-2rem] md:top-[-10rem] w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
+      <a href="/" className="absolute top-2 md:-top-8 w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
         <motion.div
           animate={{
             scale: [1, 1.15, 1.15],
@@ -77,7 +77,7 @@ export default function Hero() {
             alt="iStrat Comms Logo"
             width={1200}
             height={480}
-            className="h-[168px] md:h-[640px] w-auto opacity-100 object-contain object-top lg:-mb-52 mix-blend-screen"
+            className="h-[120px] md:h-[400px] w-auto opacity-100 object-contain object-top lg:mb-0 mix-blend-screen"
             priority
           />
         </motion.div>

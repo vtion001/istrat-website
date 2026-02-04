@@ -9,8 +9,8 @@ import { Menu, X } from "lucide-react"
 const navItems = [
   { label: "Our Vision", href: "/" },
   { label: "Who We Are", href: "/about-us" },
-  { label: "Our Work", href: "/our-works" },
   { label: "Our Services", href: "/products-and-services" },
+  { label: "Our Work", href: "/our-works" },
   { label: "Contact Us", href: "/connect-with-us" },
 ]
 
@@ -28,7 +28,7 @@ export default function FloatingNavbar() {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="fixed top-24 left-4 right-4 z-50 md:hidden"
           >
-            <div className="bg-black/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2">
+            <div className="bg-black/95 backdrop-blur-3xl rounded-2xl p-4 shadow-2xl flex flex-col gap-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -56,7 +56,7 @@ export default function FloatingNavbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="px-4 py-3 border border-white/10 bg-black/80 backdrop-blur-2xl rounded-full shadow-lg flex items-center justify-between md:justify-center">
+        <div className="px-4 py-3 bg-black/80 backdrop-blur-2xl rounded-full shadow-lg flex items-center justify-between md:justify-center">
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">

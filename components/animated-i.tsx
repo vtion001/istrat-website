@@ -23,8 +23,8 @@ export default function AnimatedI() {
       }}
     >
       <motion.svg
-        viewBox="0 0 100 300"
-        width="80"
+        viewBox="0 0 120 300"
+        width="96"
         height="240"
         className="inline-block"
         animate={{
@@ -40,19 +40,15 @@ export default function AnimatedI() {
       >
         {/* Top circle */}
         <circle
-          cx="50"
-          cy="30"
-          r="25"
+          cx="60"
+          cy="35"
+          r="28"
           fill="#DC7026"
         />
         
-        {/* Body - rounded rectangle */}
-        <rect
-          x="30"
-          y="70"
-          width="40"
-          height="200"
-          rx="20"
+        {/* Body - smooth rounded shape */}
+        <path
+          d="M 40 85 Q 40 75, 50 75 L 70 75 Q 80 75, 80 85 L 80 270 Q 80 280, 70 280 L 50 280 Q 40 280, 40 270 Z"
           fill="#DC7026"
         />
       </motion.svg>

@@ -116,17 +116,6 @@ export default function BentoGrid() {
   return (
     <section className="w-full px-4 md:px-8 py-24 bg-black">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
-          className="text-6xl md:text-7xl font-semibold mb-16 tracking-widest text-[#DC7026]"
-          style={{ fontFamily: 'var(--font-label)' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          Our Core Pillars
-        </motion.h2>
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr">
           {iStratPillars.map((item, index) => (
             <motion.div
