@@ -111,41 +111,57 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window === "undefined") return
-    gsap.registerPlugin(ScrollTrigger)
 
-    const valuesScroll = valuesScrollRef.current
-    if (!valuesScroll) return
+    // Delay execution to ensure GSAPPanelScroll has initialized first
+    const timer = setTimeout(() => {
+      const valuesScroll = valuesScrollRef.current
+      if (!valuesScroll) return
 
-    const valuesSection = valuesScroll.closest(".section")
-    if (!valuesSection) return
+      const valuesSection = valuesScroll.closest(".section")
+      if (!valuesSection) return
 
-    // Kill existing ScrollTriggers
-    ScrollTrigger.getAll().forEach(trigger => {
-      if (trigger.vars.trigger === valuesSection) {
-        trigger.kill()
-      }
-    })
+      // Register plugin
+      gsap.registerPlugin(ScrollTrigger)
 
-    // Simple calculation: we have 3 panels, need to scroll 2 full widths
-    const panels = gsap.utils.toArray<HTMLElement>(".min-w-full", valuesScroll)
-    const totalWidth = panels.length * window.innerWidth
-    const distance = totalWidth - window.innerWidth
+      // Kill any existing ScrollTriggers for this section
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger === valuesSection) {
+          trigger.kill()
+        }
+      })
 
-    // Create horizontal scroll animation
-    gsap.to(panels, {
-      xPercent: -100 * (panels.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: valuesSection,
-        pin: true,
-        scrub: 1,
-        snap: 1 / (panels.length - 1),
-        end: () => `+=${distance}`,
-        invalidateOnRefresh: true,
-      }
-    })
+      // Simple calculation: we have 3 panels, need to scroll 2 full widths
+      const panels = gsap.utils.toArray<HTMLElement>(".min-w-full", valuesScroll)
+      if (panels.length === 0) return
+
+      const totalWidth = panels.length * window.innerWidth
+      const distance = totalWidth - window.innerWidth
+
+      // Create horizontal scroll animation
+      gsap.to(panels, {
+        xPercent: -100 * (panels.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: valuesSection,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (panels.length - 1),
+          start: "top top",
+          end: () => `+=${distance}`,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        }
+      })
+    }, 100) // Wait 100ms for GSAPPanelScroll to initialize
 
     return () => {
+      clearTimeout(timer)
+      const valuesScroll = valuesScrollRef.current
+      if (!valuesScroll) return
+
+      const valuesSection = valuesScroll.closest(".section")
+      if (!valuesSection) return
+
       ScrollTrigger.getAll().forEach(trigger => {
         if (trigger.vars.trigger === valuesSection) {
           trigger.kill()
@@ -228,7 +244,7 @@ export default function Home() {
                   <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-6">
                     THE VISION <div className="h-[1px] w-24 bg-[#DC7026]/30"></div>
                   </h3>
-                  
+
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                     To shape a world where brands don't just speak—<br />
                     <span className="text-[#DC7026]">they matter.</span>
@@ -290,7 +306,7 @@ export default function Home() {
                   <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-6">
                     OUR MISSION <div className="h-[1px] w-24 bg-[#DC7026]/30"></div>
                   </h3>
-                  
+
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                     To help brands <span className="text-[#DC7026]">LIVE</span> with authenticity, <span className="text-[#DC7026]">INFLUENCE</span> with intention, and <span className="text-[#DC7026]">WIN</span> through trust and relevance.
                   </h2>
@@ -305,12 +321,12 @@ export default function Home() {
         </div>
 
         {/* Panel 5: Core Values - Horizontal Scroll */}
-        <div className="section">
+        <div className="section" data-horizontal-scroll="true">
           <div className="section-inner">
             <div className="relative w-full overflow-hidden">
               {/* Header */}
               <div className="max-w-7xl mx-auto px-6 md:px-8 py-12">
-                <motion.h3 
+                <motion.h3
                   className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-6"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}

@@ -20,8 +20,9 @@ export default function GSAPPanelScroll({ children, className = "" }: GSAPPanelS
     useEffect(() => {
         if (!containerRef.current) return
 
-        // Get all panels
-        const panels = gsap.utils.toArray<HTMLElement>(".section")
+        // Get all panels, but exclude ones with custom horizontal scrolling
+        const allPanels = gsap.utils.toArray<HTMLElement>(".section")
+        const panels = allPanels.filter(panel => !panel.hasAttribute("data-horizontal-scroll"))
 
         // Remove last panel from array (so it doesn't animate out)
         panels.pop()
