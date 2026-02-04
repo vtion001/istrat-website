@@ -43,24 +43,32 @@ export default function AnimatedI({ color = "#DC7026", className = "" }: Animate
           delay: 1.5
         }}
       >
-        <path
-          d="M50,0 
-             C72.09,0 90,17.91 90,40 
-             S72.09,80 50,80 
-             c-4,0 -4,14 -4,18 
-             0,4 0,18 4,18 
-             22.09,0 40,17.91 40,40 
-             v124 
-             c0,22.09 -17.91,40 -40,40 
-             S10,302.09 10,280 
-             V156 
-             c0,-22.09 17.91,-40 40,-40 
-             4,0 4,-14 4,-18 
-             0,-4 0,-18 -4,-18 
-             C27.91,80 10,62.09 10,40 
-             10,17.91 27.91,0 50,0 
+        <motion.path
+          d="M 50 0 
+             A 45 45 0 1 1 88.97 67.5 
+             C 88.97 80 70 90 56 90 
+             C 70 90 88.97 100 88.97 112.5 
+             A 45 45 0 0 1 95 138 
+             V 275 
+             A 45 45 0 0 1 5 275 
+             V 138 
+             A 45 45 0 0 1 11.03 112.5 
+             C 11.03 100 30 90 44 90 
+             C 30 90 11.03 80 11.03 67.5 
+             A 45 45 0 0 1 50 0 
              Z"
           fill={color}
+          variants={{
+            hidden: { pathLength: 0, opacity: 0 },
+            visible: {
+              pathLength: 1,
+              opacity: 1,
+              transition: {
+                pathLength: { duration: 1.5, ease: "easeInOut" },
+                opacity: { duration: 0.5 }
+              }
+            }
+          }}
         />
       </motion.svg>
     </motion.div>
