@@ -29,7 +29,7 @@ const row2 = partners.slice(9)
 
 export default function PartnerCarousel() {
     return (
-        <div className="relative p-8 border border-white/5 bg-black rounded-[32px] overflow-hidden">
+        <div className="relative p-8 bg-black rounded-[32px] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#DC7026]/5 to-transparent opacity-50 transition-opacity duration-500" />
 
             <div className="relative z-10 w-full flex flex-col gap-12 overflow-hidden py-4">

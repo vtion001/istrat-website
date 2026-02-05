@@ -261,7 +261,7 @@ export default function Home() {
                 </div>
 
                 {/* Visual on Right */}
-                <div className="relative w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden group border border-white/10 shadow-3xl bg-[#0a0a0a]">
+                <div className="relative w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden group shadow-3xl bg-[#0a0a0a]">
                   <video
                     src="https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
                     className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-1000"
@@ -289,7 +289,7 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
               >
                 {/* Visual on Left */}
-                <div className="relative w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden group border border-white/10 shadow-3xl bg-[#0a0a0a] order-2 lg:order-1">
+                <div className="relative w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden group shadow-3xl bg-[#0a0a0a] order-2 lg:order-1">
                   <video
                     src="https://res.cloudinary.com/dbviya1rj/video/upload/v1764837494/nvjm7t7xghoxww6woyi1.mp4"
                     className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-1000"

@@ -1,15 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Archivo_Narrow, IBM_Plex_Sans_Condensed } from "next/font/google"
+import { Archivo, IBM_Plex_Sans_Condensed } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import FloatingNavbar from "@/components/floating-navbar"
 import PageTransition from "@/components/page-transition"
 
-const archivoNarrow = Archivo_Narrow({
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["600"],
-  variable: "--font-archivo"
+  variable: "--font-archivo",
+  display: "swap",
 })
 
 const ibmPlexSansCondensed = IBM_Plex_Sans_Condensed({
@@ -150,7 +150,7 @@ export default function RootLayout({
           }),
         }} />
       </head>
-      <body className={`${ibmPlexSansCondensed.variable} ${archivoNarrow.variable} ${ibmPlexSansCondensed.className} antialiased`}>
+      <body className={`${ibmPlexSansCondensed.variable} ${archivo.variable} ${ibmPlexSansCondensed.className} antialiased`}>
         <a href="#main" className="skip-link">Skip to content</a>
         <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
         <PageTransition>

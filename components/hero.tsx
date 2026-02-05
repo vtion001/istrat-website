@@ -5,13 +5,7 @@ import { ChevronDown } from "lucide-react"
 import Image from "next/image"
 import AnimatedI from "./animated-i"
 import { useEffect, useRef } from "react"
-import gsap from "gsap"
-import { SplitText } from "gsap/dist/SplitText"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(SplitText, ScrollTrigger)
-}
+import TextPressure from "./ui/text-pressure"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -38,25 +32,7 @@ export default function Hero() {
   const textRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    if (!textRef.current) return
-
-    // Create split text for the headline
-    const split = SplitText.create(textRef.current, { type: "chars" })
-
-    // Animate each character in with a staggered effect
-    gsap.from(split.chars, {
-      duration: 0.8,
-      yPercent: (i: number) => Math.random() * 400 - 200,
-      rotation: (i: number) => Math.random() * 40 - 20,
-      opacity: 0,
-      stagger: 0.05,
-      ease: "back.out(1.2)",
-      delay: 0.2
-    })
-
-    return () => {
-      split.revert()
-    }
+    // GSAP SplitText removed to avoid conflict with TextPressure
   }, [])
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
@@ -120,20 +96,76 @@ export default function Hero() {
         >
           <h1
             ref={textRef}
-            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px] flex flex-wrap items-center justify-center gap-x-5 md:gap-x-10 gap-y-4"
+            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px] flex flex-wrap items-end justify-center gap-x-5 md:gap-x-10 gap-y-4"
             style={{ fontFamily: 'var(--font-label)' }}
           >
-            <span className="inline-block uppercase tracking-tighter">LEAD</span>
-            <span className="inline-block text-[#DC7026] scale-150">.</span>
+            <div className="h-[110px] w-[200px] md:h-[135px] md:w-[280px] relative inline-block">
+              <TextPressure
+                text="LEAD"
+                fontFamily="var(--font-archivo)"
+                flex={true}
+                alpha={false}
+                stroke={false}
+                width={true}
+                weight={true}
+                italic={true}
+                textColor="#DC7026"
+                minFontSize={36}
+                charWidth={0.8}
+              />
+            </div>
+            <span className="inline-block text-[#DC7026] scale-150 relative bottom-[40px] md:bottom-[60px] mx-4">.</span>
             <span className="inline-flex items-center">
-              <AnimatedI color="#DC7026" className="mr-[-0.25em]" />
-              <span className="uppercase tracking-tighter">NFLUENCE</span>
+              <AnimatedI color="#DC7026" className="mr-5 md:mr-10 rotate-3 -translate-y-1" />
+              <div className="h-[110px] w-[400px] md:h-[135px] md:w-[560px] relative inline-block">
+                <TextPressure
+                  text="NFLUENCE"
+                  fontFamily="var(--font-archivo)"
+                  flex={true}
+                  alpha={false}
+                  stroke={false}
+                  width={true}
+                  weight={true}
+                  italic={true}
+                  textColor="#DC7026"
+                  minFontSize={36}
+                  charWidth={0.8}
+                />
+              </div>
             </span>
-            <span className="inline-block text-[#DC7026] scale-150">.</span>
+            <span className="inline-block text-[#DC7026] scale-150 relative bottom-[40px] md:bottom-[60px] mx-4">.</span>
             <span className="inline-flex items-center">
-              <span className="uppercase tracking-tighter">W</span>
-              <AnimatedI color="#3C4699" className="mx-[-0.15em]" />
-              <span className="uppercase tracking-tighter">N</span>
+              <div className="h-[110px] w-[50px] md:h-[135px] md:w-[70px] relative inline-block">
+                <TextPressure
+                  text="W"
+                  fontFamily="var(--font-archivo)"
+                  flex={false}
+                  alpha={false}
+                  stroke={false}
+                  width={true}
+                  weight={true}
+                  italic={true}
+                  textColor="#DC7026"
+                  minFontSize={36}
+                  charWidth={0.8}
+                />
+              </div>
+              <AnimatedI color="#3C4699" className="mx-5 md:mx-10 rotate-3 -translate-y-1" />
+              <div className="h-[110px] w-[50px] md:h-[135px] md:w-[70px] relative inline-block">
+                <TextPressure
+                  text="N"
+                  fontFamily="var(--font-archivo)"
+                  flex={false}
+                  alpha={false}
+                  stroke={false}
+                  width={true}
+                  weight={true}
+                  italic={true}
+                  textColor="#DC7026"
+                  minFontSize={36}
+                  charWidth={0.8}
+                />
+              </div>
             </span>
           </h1>
         </div>
