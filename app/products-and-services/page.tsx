@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useLayoutEffect, useState, useEffect } from "react"
+import { useRef, useLayoutEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { ArrowRight, ChevronRight, ChevronLeft, Play, ChevronDown } from "lucide-react"
@@ -139,26 +139,8 @@ export default function ProductsAndServicesPage() {
   const [activeTab, setActiveTab] = useState(0)
   const [openAccordion, setOpenAccordion] = useState<number | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
 
-  // Bubble animation for tabs on mount
-  useEffect(() => {
-    const tabs = tabRefs.current.filter(Boolean)
-    if (!tabs.length) return
-
-    gsap.set(tabs, { scale: 0, opacity: 0, transformOrigin: '50% 50%' })
-
-    tabs.forEach((tab, i) => {
-      const delay = i * 0.12 + gsap.utils.random(-0.05, 0.05)
-      gsap.to(tab, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.5,
-        delay,
-        ease: 'back.out(1.5)'
-      })
-    })
-  }, [])
+  // Removed GSAP scroll animation - using simple grid layout instead
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
@@ -221,7 +203,6 @@ export default function ProductsAndServicesPage() {
                   {services.map((service, index) => (
                     <button
                       key={service.title}
-                      ref={(el) => { tabRefs.current[index] = el }}
                       onClick={() => setActiveTab(index)}
                       className={`px-6 py-2.5 text-xs font-bold uppercase tracking-[0.15em] rounded-full transition-all duration-300 ${
                         activeTab === index
