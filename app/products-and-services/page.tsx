@@ -6,7 +6,8 @@ import Image from "next/image"
 import { ArrowRight, ChevronRight, ChevronLeft, Play, ChevronDown } from "lucide-react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import PopupDetail from "@/components/popup-detail"
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger } from "@/components/ui/animated-modal"
+import GooeyNav from "@/components/ui/gooey-nav"
 import GSAPPanelScroll from "@/components/gsap-panel-scroll"
 
 if (typeof window !== "undefined") {
@@ -134,8 +135,6 @@ const videoHighlights = [
 ]
 
 export default function ProductsAndServicesPage() {
-  const [detailOpen, setDetailOpen] = useState(false)
-  const [detailData, setDetailData] = useState({ title: "", summary: "", points: [] as string[], metrics: undefined as string | undefined })
   const [activeTab, setActiveTab] = useState(0)
   const [openAccordion, setOpenAccordion] = useState<number | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -198,49 +197,94 @@ export default function ProductsAndServicesPage() {
               
               {/* Desktop Tabs */}
               <div className="hidden lg:block">
+                {/* SVG Filter for Gooey Effect */}
+                <svg style={{ position: 'absolute', width: 0, height: 0, visibility: 'hidden' }}>
+                  <defs>
+                    <filter id="gooey" colorInterpolationFilters="sRGB">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                      <feColorMatrix
+                        in="blur"
+                        mode="matrix"
+                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                        result="gooey"
+                      />
+                      <feBlend in="SourceGraphic" in2="gooey" />
+                    </filter>
+                  </defs>
+                </svg>
+                
                 {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-3 justify-center items-center mb-16 max-w-5xl mx-auto">
-                  {services.map((service, index) => (
-                    <button
-                      key={service.title}
-                      onClick={() => setActiveTab(index)}
-                      className={`px-6 py-2.5 text-xs font-bold uppercase tracking-[0.15em] rounded-full transition-all duration-300 ${
-                        activeTab === index
-                          ? 'text-white bg-[#DC7026]/10'
-                          : 'text-gray-300 hover:text-white'
-                      }`}
-                      style={{ fontFamily: 'var(--font-label)' }}
-                    >
-                      {service.title}
-                    </button>
-                  ))}
+                <div className="mb-16">
+                  <GooeyNav
+                    items={services.map(service => ({ label: service.title, href: '#' }))}
+                    initialActiveIndex={activeTab}
+                    onItemClick={(index) => setActiveTab(index)}
+                    colors={[1, 2, 3, 4]}
+                    animationTime={400}
+                    particleCount={20}
+                    particleDistances={[80, 15]}
+                    particleR={120}
+                  />
                 </div>
 
                 {/* Tab Content */}
                 <div className="flex justify-center">
-                  <div
-                    className={`relative ${services[activeTab].height} w-full max-w-[500px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}
-                    onClick={() => {
-                      const d = serviceDetails[services[activeTab].title]
-                      if (d) {
-                        setDetailData({ title: services[activeTab].title, summary: d.summary, points: d.points, metrics: d.metrics })
-                        setDetailOpen(true)
-                      }
-                    }}
-                  >
-                    <Image
-                      src={services[activeTab].image}
-                      alt={services[activeTab].title}
-                      fill
-                      className="object-cover opacity-50 grayscale contrast-110 group-hover:opacity-70 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 p-8 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
-                      <div className="w-12 h-[2px] bg-[#DC7026] mb-6" />
-                      <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-3" style={{ fontFamily: 'var(--font-label)' }}>{services[activeTab].category}</p>
-                      <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>{services[activeTab].title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{services[activeTab].description}</p>
-                    </div>
-                  </div>
+                  <Modal>
+                    <ModalTrigger className="w-full flex justify-center">
+                      <div className={`relative ${services[activeTab].height} w-full max-w-[500px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}>
+                        <Image
+                          src={services[activeTab].image}
+                          alt={services[activeTab].title}
+                          fill
+                          className="object-cover opacity-50 grayscale contrast-110 group-hover:opacity-70 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 p-8 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
+                          <div className="w-12 h-[2px] bg-[#DC7026] mb-6" />
+                          <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-3" style={{ fontFamily: 'var(--font-label)' }}>{services[activeTab].category}</p>
+                          <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-4" style={{ fontFamily: 'var(--font-display)' }}>{services[activeTab].title}</h3>
+                          <p className="text-gray-400 text-sm leading-relaxed">{services[activeTab].description}</p>
+                        </div>
+                      </div>
+                    </ModalTrigger>
+                    <ModalBody>
+                      <ModalContent>
+                        <h4 className="text-3xl md:text-4xl text-white font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+                          {services[activeTab].title}
+                        </h4>
+                        <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                          {serviceDetails[services[activeTab].title]?.summary}
+                        </p>
+                        <div className="space-y-4 mb-8">
+                          {serviceDetails[services[activeTab].title]?.points.map((point, idx) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="flex items-start gap-3"
+                            >
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#DC7026] mt-2 shrink-0" />
+                              <p className="text-gray-300 text-base leading-relaxed">{point}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                        {serviceDetails[services[activeTab].title]?.metrics && (
+                          <div className="p-6 bg-[#DC7026]/10 border border-[#DC7026]/20 rounded-2xl">
+                            <p className="text-[#DC7026] font-bold text-sm uppercase tracking-wider mb-2">Key Metric</p>
+                            <p className="text-white text-lg font-medium">{serviceDetails[services[activeTab].title]?.metrics}</p>
+                          </div>
+                        )}
+                      </ModalContent>
+                      <ModalFooter className="gap-4">
+                        <a
+                          href="/connect-with-us"
+                          className="px-8 py-3 bg-[#DC7026] text-white font-bold text-sm uppercase tracking-wider rounded-full hover:bg-[#DC7026]/90 transition-all"
+                        >
+                          Discuss Project
+                        </a>
+                      </ModalFooter>
+                    </ModalBody>
+                  </Modal>
                 </div>
               </div>
 
@@ -274,44 +318,66 @@ export default function ProductsAndServicesPage() {
                         openAccordion === index ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                       }`}
                     >
-                      <div
-                        className={`relative ${service.height} w-full cursor-pointer`}
-                        onClick={() => {
-                          const d = serviceDetails[service.title]
-                          if (d) {
-                            setDetailData({ title: service.title, summary: d.summary, points: d.points, metrics: d.metrics })
-                            setDetailOpen(true)
-                          }
-                        }}
-                      >
-                        <Image
-                          src={service.image}
-                          alt={service.title}
-                          fill
-                          className="object-cover opacity-50 grayscale contrast-110"
-                        />
-                        <div className="absolute inset-x-0 bottom-0 p-6 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
-                          <div className="w-12 h-[2px] bg-[#DC7026] mb-4" />
-                          <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
-                        </div>
-                      </div>
+                      <Modal>
+                        <ModalTrigger className="w-full">
+                          <div className={`relative ${service.height} w-full cursor-pointer`}>
+                            <Image
+                              src={service.image}
+                              alt={service.title}
+                              fill
+                              className="object-cover opacity-50 grayscale contrast-110"
+                            />
+                            <div className="absolute inset-x-0 bottom-0 p-6 text-left bg-gradient-to-t from-black via-black/90 to-transparent">
+                              <div className="w-12 h-[2px] bg-[#DC7026] mb-4" />
+                              <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+                            </div>
+                          </div>
+                        </ModalTrigger>
+                        <ModalBody>
+                          <ModalContent>
+                            <h4 className="text-3xl md:text-4xl text-white font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+                              {service.title}
+                            </h4>
+                            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                              {serviceDetails[service.title]?.summary}
+                            </p>
+                            <div className="space-y-4 mb-8">
+                              {serviceDetails[service.title]?.points.map((point, idx) => (
+                                <motion.div
+                                  key={idx}
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.1 }}
+                                  className="flex items-start gap-3"
+                                >
+                                  <div className="w-1.5 h-1.5 rounded-full bg-[#DC7026] mt-2 shrink-0" />
+                                  <p className="text-gray-300 text-base leading-relaxed">{point}</p>
+                                </motion.div>
+                              ))}
+                            </div>
+                            {serviceDetails[service.title]?.metrics && (
+                              <div className="p-6 bg-[#DC7026]/10 border border-[#DC7026]/20 rounded-2xl">
+                                <p className="text-[#DC7026] font-bold text-sm uppercase tracking-wider mb-2">Key Metric</p>
+                                <p className="text-white text-lg font-medium">{serviceDetails[service.title]?.metrics}</p>
+                              </div>
+                            )}
+                          </ModalContent>
+                          <ModalFooter className="gap-4">
+                            <a
+                              href="/connect-with-us"
+                              className="px-8 py-3 bg-[#DC7026] text-white font-bold text-sm uppercase tracking-wider rounded-full hover:bg-[#DC7026]/90 transition-all"
+                            >
+                              Discuss Project
+                            </a>
+                          </ModalFooter>
+                        </ModalBody>
+                      </Modal>
                     </div>
                   </div>
                 ))}
               </div>
 
             </section>
-
-            <PopupDetail
-              open={detailOpen}
-              onClose={() => setDetailOpen(false)}
-              title={detailData.title}
-              summary={detailData.summary}
-              points={detailData.points}
-              metrics={detailData.metrics}
-              ctaLabel="Discuss Project"
-              ctaHref="/connect-with-us"
-            />
           </div>
         </div>
       </GSAPPanelScroll>
