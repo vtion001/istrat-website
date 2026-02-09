@@ -129,60 +129,39 @@ export default function Home() {
 
           <div className="space-y-16 sm:space-y-20 md:space-y-24">
             {/* Value 1: Live Authentically */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-              <div className="lg:col-span-3 flex items-center justify-center lg:justify-start">
-                <span className="text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] font-bold text-[#DC7026]/20 leading-none" style={{ fontFamily: 'var(--font-display)' }}>
-                  01
-                </span>
-              </div>
-              <div className="lg:col-span-9 space-y-4 sm:space-y-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
-                  LIVE AUTHENTICALLY
-                </h2>
-                <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
-                  We believe real influence starts with truth.
-                </p>
-                <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
-                  Every message we build is grounded in clarity, purpose, and credibility.
-                </p>
-              </div>
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
+                LIVE AUTHENTICALLY
+              </h2>
+              <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
+                We believe real influence starts with truth.
+              </p>
+              <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
+                Every message we build is grounded in clarity, purpose, and credibility.
+              </p>
             </div>
 
             {/* Value 2: Influence with Intent */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-              <div className="lg:col-span-3 flex items-center justify-center lg:justify-start">
-                <span className="text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] font-bold text-[#DC7026]/20 leading-none" style={{ fontFamily: 'var(--font-display)' }}>
-                  02
-                </span>
-              </div>
-              <div className="lg:col-span-9 space-y-4 sm:space-y-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
-                  INFLUENCE WITH INTENT
-                </h2>
-                <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
-                  Influence isn't about noise—it's about direction.
-                </p>
-                <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
-                  We shape conversations that inspire action, loyalty, and belief.
-                </p>
-              </div>
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
+                INFLUENCE WITH INTENT
+              </h2>
+              <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
+                Influence isn't about noise—it's about direction.
+              </p>
+              <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
+                We shape conversations that inspire action, loyalty, and belief.
+              </p>
             </div>
 
             {/* Value 3: Win with Meaning */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-              <div className="lg:col-span-3 flex items-center justify-center lg:justify-start">
-                <span className="text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] font-bold text-[#DC7026]/20 leading-none" style={{ fontFamily: 'var(--font-display)' }}>
-                  03
-                </span>
-              </div>
-              <div className="lg:col-span-9 space-y-4 sm:space-y-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
-                  WIN WITH MEANING
-                </h2>
-                <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
-                  Winning is not just being seen—it's about earning trust and building confidence through consistent actions.
-                </p>
-              </div>
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
+                WIN WITH MEANING
+              </h2>
+              <p className="text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl">
+                Winning is not just being seen—it's about earning trust and building confidence through consistent actions.
+              </p>
             </div>
           </div>
         </div>
