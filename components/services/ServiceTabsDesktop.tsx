@@ -57,7 +57,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
             <div className="flex justify-center">
                 <Modal>
                     <ModalTrigger className="w-full flex justify-center">
-                        <div className={`relative ${currentService.height} w-full max-w-[500px] rounded-3xl overflow-hidden group cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#DC7026]/40 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}>
+                        <div className={`relative ${currentService.height} w-full max-w-[500px] rounded-3xl overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-[0_0_40px_rgba(220,112,38,0.2)]`}>
                             <Image
                                 src={currentService.image || "/images/services/marketing.svg"}
                                 alt={currentService.title}

@@ -28,17 +28,17 @@ export default function ContactFormSection({ form, errors, sent, onChange, onSub
     ]
 
     return (
-        <div className="flex flex-col gap-8 md:gap-12">
+        <div className="flex flex-col gap-6 md:gap-8">
             {/* Story & Context */}
             <div>
-                <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.25em] mb-4">
+                <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.25em] mb-2">
                     LET'S BUILD TOGETHER
                 </h3>
-                <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold mb-6 tracking-tight">
+                <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold mb-4 tracking-tight">
                     Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
                 </p>
 
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                         <span className="block">Ready to Start</span>
                         <span className="block">Your Journey?</span>
@@ -47,7 +47,7 @@ export default function ContactFormSection({ form, errors, sent, onChange, onSub
                         Whether you have a specific project in mind or just want to explore possibilities, our team is ready to listen and innovate.
                     </p>
 
-                    <ul className="space-y-5">
+                    <ul className="space-y-3">
                         {benefits.map((text, i) => (
                             <li key={i} className="flex items-start gap-4">
                                 <div className="mt-1 w-5 h-5 rounded-full bg-[#DC7026]/20 flex items-center justify-center text-[#DC7026] border border-[#DC7026]/20">
@@ -62,7 +62,7 @@ export default function ContactFormSection({ form, errors, sent, onChange, onSub
 
             {/* The Form */}
             <div>
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={onSubmit}>
+                <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={onSubmit}>
                     <input
                         name="name"
                         value={form.name}
