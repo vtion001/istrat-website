@@ -16,7 +16,7 @@ export default function OurWorksPage() {
       {/* Hero Section */}
       <WorkHero
         heroVideo={HERO_VIDEO}
-        isOpen={isOpen && selectedVideo === HERO_VIDEO.key}
+        isOpen={isOpen && selectedVideo === HERO_VIDEO}
         onClose={closeVideo}
       />
 

@@ -6,7 +6,7 @@
 import { useState, useEffect, useRef } from "react"
 import gsap from "gsap"
 import { Flip } from "gsap/dist/Flip"
-import type { Video } from "@/data"
+import type { VideoData } from "@/data"
 import { workCategories } from "@/data"
 
 // Register GSAP plugin
@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(Flip)
 }
 
-export function useVideoFilter(videos: Record<string, Video>) {
+export function useVideoFilter(videos: Record<string, VideoData>) {
     const [activeFilter, setActiveFilter] = useState<string>("all")
     const gridRef = useRef<HTMLDivElement>(null)
 
@@ -24,8 +24,8 @@ export function useVideoFilter(videos: Record<string, Video>) {
         if (!category) return []
 
         return category.videos
-            .map(title => videos[title])
-            .filter(Boolean)
+            .map(title => ({ key: title, ...videos[title] }))
+            .filter(video => video.src)
     }
 
     // GSAP Flip animation effect
