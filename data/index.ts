@@ -28,6 +28,7 @@ export {
 export {
     homeServices,
     productsServices,
+    ourServices,
     serviceDetails,
     type Service,
     type ServiceDetail,
