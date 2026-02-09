@@ -94,7 +94,7 @@ export default function Hero() {
           className="text-center w-full max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-[75vw] flex items-center justify-center"
         >
           <Image
-            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770660543/a8f9wpf1pnrgl18hrguv.svg"
+            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770678223/z5zirztxoaw1hqlibn3o.svg"
             alt="Lead. Influence. Win."
             width={1200}
             height={200}
