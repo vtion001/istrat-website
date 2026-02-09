@@ -15,11 +15,6 @@ export default function Footer() {
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[0.9]" style={{ fontFamily: 'var(--font-display)' }}>
               LET'S WORK <br /> TOGETHER
             </h2>
-            <div className="w-20 h-1 bg-[#DC7026] mb-12 shadow-[0_0_15px_rgba(220,112,38,0.3)]" />
-
-            <p className="max-w-md text-gray-400 text-lg md:text-xl leading-relaxed font-medium mb-16 italic">
-              "Imagine. Live. Soar. iStrat Comms is your dynamic partner in building legacy brands through cinematic storytelling and data-driven innovation."
-            </p>
 
             <div className="mt-auto">
               <a href="/" aria-label="Go to Home" className="inline-block mb-6 group">

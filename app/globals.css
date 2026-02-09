@@ -149,15 +149,7 @@ body {
   line-height: 1.5;
 }
 
-h2::after,
-h3::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 96px;
-  margin-top: 6px;
-  background-image: linear-gradient(to right, rgba(220, 112, 38, 0.6), rgba(220, 112, 38, 0.2));
-}
+
 
 .brand-gradient-text {
   background-image: linear-gradient(to right, #DC7026, #E8A351);
