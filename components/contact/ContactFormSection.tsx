@@ -28,17 +28,17 @@ export default function ContactFormSection({ form, errors, sent, onChange, onSub
     ]
 
     return (
-        <div className="flex flex-col gap-12 md:gap-20">
+        <div className="flex flex-col gap-8 md:gap-12">
             {/* Story & Context */}
             <div>
-                <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.25em] mb-6">
+                <h3 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.25em] mb-4">
                     LET'S BUILD TOGETHER
                 </h3>
-                <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold mb-12 tracking-tight">
+                <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold mb-6 tracking-tight">
                     Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
                 </p>
 
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-6">
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                         <span className="block">Ready to Start</span>
                         <span className="block">Your Journey?</span>

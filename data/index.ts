@@ -41,3 +41,9 @@ export {
     getTeamByLevel,
     type TeamMember,
 } from './team'
+
+// Work categories
+export { workCategories, categoryKeys, type WorkCategory } from './work-categories'
+
+// Home page content
+export { homeContent, coreValues, type CoreValue } from './home-content'
