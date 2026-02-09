@@ -60,12 +60,15 @@ const GooeyNav = ({
     const d = particleDistances;
     const r = particleR;
     const bubbleTime = animationTime * 2 + timeVariance;
-    element.style.setProperty('--time', `${bubbleTime}ms`);
+    
+    requestAnimationFrame(() => {
+      element.style.setProperty('--time', `${bubbleTime}ms`);
+      element.classList.remove('active');
+    });
 
     for (let i = 0; i < particleCount; i++) {
       const t = animationTime * 2 + noise(timeVariance * 2);
       const p = createParticle(i, t, d, r);
-      element.classList.remove('active');
 
       setTimeout(() => {
         const particle = document.createElement('span');
@@ -83,9 +86,11 @@ const GooeyNav = ({
         point.classList.add('point');
         particle.appendChild(point);
         element.appendChild(particle);
+        
         requestAnimationFrame(() => {
           element.classList.add('active');
         });
+        
         setTimeout(() => {
           try {
             element.removeChild(particle);
@@ -99,18 +104,27 @@ const GooeyNav = ({
 
   const updateEffectPosition = (element: HTMLElement) => {
     if (!containerRef.current || !filterRef.current || !textRef.current) return;
+    
+    // Batch reads first to avoid forced reflow
     const containerRect = containerRef.current.getBoundingClientRect();
     const pos = element.getBoundingClientRect();
+    const innerText = element.innerText;
 
-    const styles = {
-      left: `${pos.x - containerRect.x}px`,
-      top: `${pos.y - containerRect.y}px`,
-      width: `${pos.width}px`,
-      height: `${pos.height}px`
-    };
-    Object.assign(filterRef.current.style, styles);
-    Object.assign(textRef.current.style, styles);
-    textRef.current.innerText = element.innerText;
+    // Then batch writes
+    requestAnimationFrame(() => {
+      if (!filterRef.current || !textRef.current) return;
+      
+      const styles = {
+        left: `${pos.x - containerRect.x}px`,
+        top: `${pos.y - containerRect.y}px`,
+        width: `${pos.width}px`,
+        height: `${pos.height}px`
+      };
+      
+      Object.assign(filterRef.current.style, styles);
+      Object.assign(textRef.current.style, styles);
+      textRef.current.innerText = innerText;
+    });
   };
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
@@ -129,8 +143,9 @@ const GooeyNav = ({
 
     if (textRef.current) {
       textRef.current.classList.remove('active');
-      void textRef.current.offsetWidth;
-      textRef.current.classList.add('active');
+      requestAnimationFrame(() => {
+        textRef.current?.classList.add('active');
+      });
     }
 
     if (filterRef.current) {

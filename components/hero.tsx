@@ -3,9 +3,7 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import Image from "next/image"
-import AnimatedI from "./animated-i"
 import { useEffect, useRef } from "react"
-import TextPressure from "./ui/text-pressure"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -35,8 +33,9 @@ export default function Hero() {
     // GSAP SplitText removed to avoid conflict with TextPressure
   }, [])
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
-      <a href="/" className="absolute top-2 md:-top-8 w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
+    <div className="relative w-full h-[100dvh] overflow-hidden bg-black">
+      {/* Logo - Responsive sizing with better mobile positioning */}
+      <a href="/" className="absolute top-4 sm:top-2 md:-top-8 w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
         <motion.div
           animate={{
             scale: [1, 1.15, 1.15],
@@ -53,7 +52,7 @@ export default function Hero() {
             alt="iStrat Comms Logo"
             width={1200}
             height={480}
-            className="h-[120px] md:h-[400px] w-auto opacity-100 object-contain object-top lg:mb-0 mix-blend-screen"
+            className="h-[80px] sm:h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] w-auto opacity-100 object-contain object-top mix-blend-screen"
             priority
           />
         </motion.div>
@@ -65,7 +64,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover object-top mix-blend-screen opacity-90 filter contrast-[1.4] brightness-[1.1] saturate-[1.3]"
+        className="absolute inset-0 w-full h-full object-cover object-center sm:object-top mix-blend-screen opacity-90 filter contrast-[1.4] brightness-[1.1] saturate-[1.3]"
       >
         <source src="https://res.cloudinary.com/dbviya1rj/video/upload/v1769732555/apjuunxsxqx1wlwwgqqj.mp4" type="video/mp4" />
       </video>
@@ -84,100 +83,34 @@ export default function Hero() {
 
       {/* Content Container */}
       <motion.div
-        className="relative z-20 h-full flex flex-col items-center justify-center px-4"
+        className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Main Headline - Matches exactly the provided photo */}
+        {/* Main Headline - Replaced with SVG - Better responsive sizing */}
         <div
           ref={wrapperRef}
-          className="Horizontal text-center w-full max-w-[95vw]"
+          className="text-center w-full max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-[75vw] flex items-center justify-center"
         >
-          <h1
-            ref={textRef}
-            className="font-bold leading-none mb-6 text-[#DC7026] text-5xl md:text-8xl lg:text-[110px] flex flex-wrap items-end justify-center gap-x-5 md:gap-x-10 gap-y-4"
-            style={{ fontFamily: 'var(--font-label)' }}
-          >
-            <div className="h-[110px] w-[200px] md:h-[135px] md:w-[280px] relative inline-block">
-              <TextPressure
-                text="LEAD"
-                fontFamily="var(--font-archivo)"
-                flex={true}
-                alpha={false}
-                stroke={false}
-                width={true}
-                weight={true}
-                italic={true}
-                textColor="#DC7026"
-                minFontSize={36}
-                charWidth={0.8}
-              />
-            </div>
-            <span className="inline-block text-[#DC7026] scale-150 relative bottom-[40px] md:bottom-[60px] mx-4">.</span>
-            <span className="inline-flex items-center">
-              <AnimatedI color="#DC7026" className="mr-5 md:mr-10 rotate-3 -translate-y-1" />
-              <div className="h-[110px] w-[400px] md:h-[135px] md:w-[560px] relative inline-block">
-                <TextPressure
-                  text="NFLUENCE"
-                  fontFamily="var(--font-archivo)"
-                  flex={true}
-                  alpha={false}
-                  stroke={false}
-                  width={true}
-                  weight={true}
-                  italic={true}
-                  textColor="#DC7026"
-                  minFontSize={36}
-                  charWidth={0.8}
-                />
-              </div>
-            </span>
-            <span className="inline-block text-[#DC7026] scale-150 relative bottom-[40px] md:bottom-[60px] mx-4">.</span>
-            <span className="inline-flex items-center">
-              <div className="h-[110px] w-[50px] md:h-[135px] md:w-[70px] relative inline-block">
-                <TextPressure
-                  text="W"
-                  fontFamily="var(--font-archivo)"
-                  flex={false}
-                  alpha={false}
-                  stroke={false}
-                  width={true}
-                  weight={true}
-                  italic={true}
-                  textColor="#DC7026"
-                  minFontSize={36}
-                  charWidth={0.8}
-                />
-              </div>
-              <AnimatedI color="#3C4699" className="mx-5 md:mx-10 rotate-3 -translate-y-1" />
-              <div className="h-[110px] w-[50px] md:h-[135px] md:w-[70px] relative inline-block">
-                <TextPressure
-                  text="N"
-                  fontFamily="var(--font-archivo)"
-                  flex={false}
-                  alpha={false}
-                  stroke={false}
-                  width={true}
-                  weight={true}
-                  italic={true}
-                  textColor="#DC7026"
-                  minFontSize={36}
-                  charWidth={0.8}
-                />
-              </div>
-            </span>
-          </h1>
+          <Image
+            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770660543/a8f9wpf1pnrgl18hrguv.svg"
+            alt="Lead. Influence. Win."
+            width={1200}
+            height={200}
+            className="w-full h-auto"
+            priority
+          />
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Better mobile positioning */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           variants={itemVariants}
         >
-          <ChevronDown className="w-6 h-6 text-[#DC7026]" />
+          <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#DC7026]" />
         </motion.div>
       </motion.div>
     </div >

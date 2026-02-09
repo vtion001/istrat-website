@@ -18,7 +18,7 @@ export default function ServiceCard({
     description,
     image,
     tag = "SERVICE",
-    href = "/products-and-services",
+    href = "/our-services",
     className,
     delay = 0,
 }: ServiceCardProps) {

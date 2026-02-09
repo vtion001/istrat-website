@@ -37,5 +37,6 @@ export {
 export {
     team,
     getTeamMemberAvatar,
+    getTeamByLevel,
     type TeamMember,
 } from './team'

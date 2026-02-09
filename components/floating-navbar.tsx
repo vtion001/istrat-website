@@ -9,9 +9,9 @@ import { Menu, X } from "lucide-react"
 const navItems = [
   { label: "Our Vision", href: "/" },
   { label: "Who We Are", href: "/about-us" },
-  { label: "Our Services", href: "/products-and-services" },
-  { label: "Our Work", href: "/our-works" },
-  { label: "Contact Us", href: "/connect-with-us" },
+  { label: "Our Services", href: "/our-services" },
+  { label: "Our Work", href: "/our-work" },
+  { label: "Contact Us", href: "/contact-us" },
 ]
 
 export default function FloatingNavbar() {

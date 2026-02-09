@@ -4,6 +4,7 @@ import { Archivo, IBM_Plex_Sans_Condensed } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import FloatingNavbar from "@/components/floating-navbar"
+import Footer from "@/components/footer"
 import PageTransition from "@/components/page-transition"
 
 const archivo = Archivo({
@@ -90,8 +91,6 @@ export const metadata: Metadata = {
     },
   },
 }
-
-import Footer from "@/components/footer"
 
 export default function RootLayout({
   children,

@@ -8,6 +8,7 @@
   width: 100%;
   padding: 0;
   overflow: visible;
+  contain: layout style;
 }
 
 .gooey-nav-container nav {
@@ -39,11 +40,12 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border-radius: 9999px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   text-decoration: none;
   color: #9ca3af;
   font-family: var(--font-label);
   cursor: pointer;
+  will-change: color;
 }
 
 .gooey-nav-container a:hover {
@@ -59,11 +61,13 @@
   z-index: 1;
   pointer-events: none;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .gooey-nav-container .effect.filter {
   filter: url(#gooey);
   background: transparent;
+  contain: layout paint;
 }
 
 .gooey-nav-container .effect.text {
@@ -96,6 +100,7 @@
   pointer-events: none;
   opacity: 0;
   transform: translate(-50%, -50%);
+  will-change: transform, opacity;
 }
 
 .gooey-nav-container .effect.active .particle {
@@ -127,13 +132,4 @@
   background: var(--color, #DC7026);
   box-shadow: 0 0 15px 3px var(--color, #DC7026), 0 0 30px 6px var(--color, #DC7026);
   will-change: transform, opacity;
-}
-
-/* Add SVG filter for gooey effect */
-.gooey-nav-container::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
 }

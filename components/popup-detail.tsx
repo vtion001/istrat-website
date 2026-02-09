@@ -21,7 +21,7 @@ export default function PopupDetail({
   summary,
   points,
   ctaLabel = "Contact Us",
-  ctaHref = "/connect-with-us",
+  ctaHref = "/contact-us",
   metrics,
 }: PopupDetailProps) {
   return (
