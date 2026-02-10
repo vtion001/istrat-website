@@ -25,7 +25,7 @@ export default function WorkFilterNav({ activeFilter, onFilterChange }: WorkFilt
                         onClick={() => onFilterChange(key)}
                         className={`px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 ${isActive
                                 ? "bg-[#DC7026] text-white shadow-[0_0_30px_rgba(220,112,38,0.4)]"
-                                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
                             }`}
                     >
                         {category.label}

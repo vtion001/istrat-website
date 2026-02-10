@@ -1,6 +1,7 @@
 /**
  * Home Vision Section
  * Section 3: The Vision with image
+ * Updated: Standardized to 2 font sizes (text-2xl headings, text-base body)
  */
 
 import Image from "next/image"
@@ -19,14 +20,14 @@ export default function HomeVision() {
                             {vision.label}
                         </h3>
 
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <h2 className="text-2xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                             {vision.heading}
                             <span className="hidden sm:inline"><br /></span>
                             <span className="inline sm:hidden"> </span>
                             <span className="text-[#DC7026]">{vision.highlight}</span>
                         </h2>
 
-                        <div className="space-y-4 sm:space-y-6 text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed">
+                        <div className="space-y-4 sm:space-y-6 text-gray-300 text-base leading-relaxed">
                             <p>{vision.description}</p>
                         </div>
                     </div>

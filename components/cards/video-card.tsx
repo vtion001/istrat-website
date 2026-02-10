@@ -71,7 +71,7 @@ export default function VideoCard({ name, className, video }: VideoCardProps) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative rounded-[32px] overflow-hidden bg-black border border-white/5 flex flex-col h-[400px] hover:border-[#DC7026]/30 transition-all duration-300 transform-gpu ${className || ""}`}
+            className={`group relative rounded-[32px] overflow-hidden bg-black flex flex-col h-[400px] transition-all duration-300 transform-gpu ${className || ""}`}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -84,13 +84,13 @@ export default function VideoCard({ name, className, video }: VideoCardProps) {
                     {/* Background Image (Rotated) */}
                     <div className="absolute bottom-4 right-4 w-4/5 h-3/5 opacity-20 translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-700">
                         {isVideo ? (
-                            <video src={videoData?.src} className="object-cover w-full h-full rounded-2xl border border-white/10 shadow-2xl grayscale" muted />
+                            <video src={videoData?.src} className="object-cover w-full h-full rounded-2xl shadow-2xl grayscale" muted />
                         ) : (
-                            <Image src={poster || "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"} alt="" fill className="object-cover rounded-2xl border border-white/10 shadow-2xl grayscale" />
+                            <Image src={poster || "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"} alt="" fill className="object-cover rounded-2xl shadow-2xl grayscale" />
                         )}
                     </div>
                     {/* Foreground Image (Rotated) */}
-                    <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-60 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+                    <div className="absolute bottom-0 right-0 w-4/5 h-3/5 opacity-60 translate-x-0 translate-y-0 rotate-3 group-hover:rotate-6 transition-transform duration-700 overflow-hidden rounded-2xl shadow-2xl">
                         {isVideo ? (
                             <video
                                 src={videoData?.src}
@@ -123,14 +123,14 @@ export default function VideoCard({ name, className, video }: VideoCardProps) {
                             {isVideo ? "VIDEO" : "YOUTUBE"}
                         </span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4 tracking-tight text-white leading-[1.2]">{name}</h3>
-                    <p className="text-sm text-gray-400 leading-relaxed line-clamp-3">
+                    <h3 className="text-2xl font-semibold mb-4 tracking-tight text-white leading-[1.2]">{name}</h3>
+                    <p className="text-base text-gray-400 leading-relaxed line-clamp-3">
                         {desc || "Event highlight and production excellence."}
                     </p>
                 </div>
 
                 <div className="flex items-center gap-3 mt-8">
-                    <span className="px-6 py-2.5 rounded-full border border-white/15 text-[10px] font-bold text-white uppercase group-hover:bg-[#DC7026] group-hover:text-black group-hover:border-[#DC7026] transition-all duration-300">
+                    <span className="px-6 py-2.5 rounded-full text-[10px] font-bold text-white uppercase group-hover:bg-[#DC7026] group-hover:text-black transition-all duration-300">
                         View Project
                     </span>
                 </div>

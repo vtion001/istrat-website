@@ -1,6 +1,7 @@
 /**
  * Home Mission Section
  * Section 4: Our Mission with image
+ * Updated: Standardized to 2 font sizes (text-2xl headings, text-base body)
  */
 
 import Image from "next/image"
@@ -30,11 +31,11 @@ export default function HomeMission() {
                             {mission.label}
                         </h3>
 
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <h2 className="text-2xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                             To help brands <span className="text-[#DC7026]">LIVE</span> with authenticity, <span className="text-[#DC7026]">INFLUENCE</span> with intention, and <span className="text-[#DC7026]">WIN</span> through trust and relevance.
                         </h2>
 
-                        <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed">
+                        <p className="text-gray-300 text-base leading-relaxed">
                             {mission.description}
                         </p>
                     </div>
