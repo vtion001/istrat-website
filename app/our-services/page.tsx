@@ -37,9 +37,12 @@ export default function OurServicesPage() {
       {/* Section 3: Clients Only - Partner Carousel */}
       <section id="section3" className="min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 w-full">
-          <h3 className="text-3xl md:text-4xl font-semibold tracking-widest mb-6 text-[#DC7026]" style={{ fontFamily: 'var(--font-label)' }}>
-            Clients Only
-          </h3>
+          <p className="text-[#DC7026] text-[10px] font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em]">
+            Trusted By Global Brands
+          </p>
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8" style={{ fontFamily: 'var(--font-display)' }}>
+            <span className="block text-white">Clients Only</span>
+          </h2>
           <PartnerCarousel />
 
           <div className="w-full mt-12">

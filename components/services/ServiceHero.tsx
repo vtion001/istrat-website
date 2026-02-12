@@ -10,7 +10,6 @@ export default function ServiceHero() {
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full py-16 sm:py-0">
                 <div className="text-left max-w-5xl">
-                    <p className="text-[#DC7026] text-[10px] font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em]">How We Help You Win</p>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
                         <span className="block text-white">
                             We Don't Follow Conversations.

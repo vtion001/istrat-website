@@ -13,11 +13,11 @@ export default function CaseStudyMaersk() {
         <div id="top" />
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div className="mb-4">
-            <Link href="/" className="text-xs uppercase tracking-widest text-[#a0a0a0] hover:text-white">← Back to Home</Link>
+            <Link href="/" className="text-[10px] uppercase tracking-[0.3em] text-[#a0a0a0] hover:text-white">← Back to Home</Link>
           </div>
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#DC7026] mb-4">Case Study • Event Management</p>
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6 brand-gradient-text bg-clip-text text-transparent">MNL GSC Pride Fiesta</h1>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-12">A full-spectrum execution integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.</p>
+          <p className="text-[#DC7026] text-[10px] font-bold mb-4 uppercase tracking-[0.3em]">Case Study • Event Management</p>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 brand-gradient-text bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-display)' }}>MNL GSC Pride Fiesta</h1>
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mb-12">A full-spectrum execution integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.</p>
 
           <div className="relative w-full aspect-video border border-white/5 bg-black rounded-[32px] overflow-hidden mb-12">
             <video

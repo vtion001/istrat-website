@@ -27,17 +27,16 @@ export default function HomeMission() {
 
                     {/* Text on Right */}
                     <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
-                        <h3 className="text-[#DC7026] text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em]">
+                        <h3 className="text-white text-sm font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em]">
                             {mission.label}
                         </h3>
 
-                        <h2 className="text-2xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
-                            To help brands <span className="text-[#DC7026]">LIVE</span> with authenticity, <span className="text-[#DC7026]">INFLUENCE</span> with intention, and <span className="text-[#DC7026]">WIN</span> through trust and relevance.
+                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+                            <span className="block text-white">TO HELP BRANDS <span className="text-[#DC7026]">LIVE</span> WITH AUTHENTICITY,</span>
+                            <span className="block text-white mt-3 sm:mt-4"><span className="text-white">INFLUENCE</span> WITH INTENTION,</span>
+                            <span className="block text-white mt-3 sm:mt-4">AND <span className="text-[#DC7026]">WIN</span></span>
+                            <span className="block text-white mt-3 sm:mt-4">THROUGH TRUST AND RELEVANCE.</span>
                         </h2>
-
-                        <p className="text-gray-300 text-base leading-relaxed">
-                            {mission.description}
-                        </p>
                     </div>
                 </div>
             </div>

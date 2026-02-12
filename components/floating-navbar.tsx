@@ -7,8 +7,8 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { label: "Our Vision", href: "/" },
-  { label: "Who We Are", href: "/about-us" },
+  { label: "Our Story", href: "/" },
+  { label: "Our Organization", href: "/about-us" },
   { label: "Our Services", href: "/our-services" },
   { label: "Our Work", href: "/our-work" },
   { label: "Contact Us", href: "/contact-us" },

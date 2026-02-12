@@ -12,7 +12,7 @@ export default function Footer() {
 
           {/* Left Column - CTA & Brand */}
           <div className="md:col-span-2 flex flex-col">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[0.9]" style={{ fontFamily: 'var(--font-display)' }}>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[0.75]" style={{ fontFamily: 'var(--font-display)' }}>
               LET'S WORK <br /> TOGETHER
             </h2>
 
@@ -35,8 +35,7 @@ export default function Footer() {
           {/* Right Columns - Details */}
           <div className="flex flex-col gap-12 md:gap-20">
             <div>
-              <h4 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.4em] mb-6">Main Office</h4>
-              <p className="text-white text-base md:text-lg leading-relaxed font-medium">
+              <p className="text-white text-base md:text-lg leading-relaxed font-bold uppercase" style={{ fontFamily: 'var(--font-display)' }}>
                 161 Kamias Road, <br />
                 Sikatuna Village, <br />
                 Quezon City, PH 1101
@@ -64,11 +63,10 @@ export default function Footer() {
 
           <div className="flex flex-col gap-12 md:gap-20">
             <div>
-              <h4 className="text-[#DC7026] text-[10px] font-black uppercase tracking-[0.4em] mb-6">Drop a Line</h4>
-              <a href="mailto:info@istratmc.com" className="block text-white text-base md:text-lg hover:text-[#DC7026] transition-colors font-medium underline underline-offset-8 decoration-white/10 hover:decoration-[#DC7026]">
+              <a href="mailto:info@istratmc.com" className="block text-white text-base md:text-lg hover:text-[#DC7026] transition-colors font-bold underline underline-offset-8 decoration-white/10 hover:decoration-[#DC7026] uppercase" style={{ fontFamily: 'var(--font-display)' }}>
                 info@istratmc.com
               </a>
-              <a href="tel:+63271194130" className="block text-white text-base md:text-lg mt-4 hover:text-[#DC7026] transition-colors font-medium">
+              <a href="tel:+63271194130" className="block text-white text-base md:text-lg mt-4 hover:text-[#DC7026] transition-colors font-bold uppercase" style={{ fontFamily: 'var(--font-display)' }}>
                 (02) 7119 4130
               </a>
             </div>
