@@ -16,20 +16,7 @@ export default function HomeCoreValues() {
 
     return (
         <section id="section5" className="relative overflow-hidden">
-            {/* Intro Section - Normal Flow */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24">
-                <div className="text-center mb-16 sm:mb-20 md:mb-24">
-                    <h3 className="text-[#DC7026] text-[10px] font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em] mb-6 sm:mb-8">
-                        {coreValuesIntro.label}
-                    </h3>
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4 sm:mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-                        <span className="block text-white">{coreValuesIntro.heading}</span>
-                    </h2>
-                    <p className="text-gray-400 text-lg md:text-xl leading-relaxed tracking-tight max-w-3xl mx-auto">
-                        {coreValuesIntro.subheading}
-                    </p>
-                </div>
-            </div>
+            {/* Intro Section - Normal Flow - REMOVED per user request */}
 
             {/* Horizontal Scroll Section */}
             <div ref={containerRef} className="relative h-screen overflow-hidden">
@@ -61,7 +48,7 @@ export default function HomeCoreValues() {
 
                                             {/* SVG Container: Absolute Center & Massive */}
                                             {value.svgUrl ? (
-                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] sm:h-[600px] md:h-[800px] lg:h-[900px] pointer-events-none">
+                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[60vh] sm:h-[70vh] md:h-[800px] lg:h-[900px] pointer-events-none z-0">
                                                     <Image
                                                         src={value.svgUrl}
                                                         alt={value.title}
@@ -78,13 +65,19 @@ export default function HomeCoreValues() {
 
                                             {/* Text Container: Pinned to Bottom */}
                                             <div className="space-y-4 max-w-4xl mx-auto relative z-20 mt-auto">
-                                                {/* Subtitle: text-2xl */}
-                                                <p className={`text-xl sm:text-2xl ${subtitleColor} leading-relaxed font-semibold`}>
+                                                {/* Subtitle: Styled like info@istratmc.com */}
+                                                <p
+                                                    className="text-white text-base md:text-lg font-bold uppercase leading-relaxed"
+                                                    style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
+                                                >
                                                     {value.subtitle}
                                                 </p>
 
-                                                {/* Description: text-base */}
-                                                <p className={`text-base sm:text-lg ${descColor} leading-relaxed`}>
+                                                {/* Description: Styled like info@istratmc.com */}
+                                                <p
+                                                    className="text-white text-base md:text-lg font-bold uppercase leading-relaxed"
+                                                    style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
+                                                >
                                                     {value.description}
                                                 </p>
                                             </div>
@@ -96,7 +89,7 @@ export default function HomeCoreValues() {
                                         className={`absolute -bottom-8 sm:-bottom-12 md:-bottom-16 -right-4 sm:-right-8 md:-right-12 text-[120px] sm:text-[160px] md:text-[200px] lg:text-[240px] xl:text-[280px] font-bold ${watermarkOpacity} leading-none pointer-events-none select-none uppercase opacity-50`}
                                         style={{ fontFamily: 'var(--font-display)' }}
                                     >
-                                        {value.title.split(' ')[0]}
+                                        {value.watermark || value.title.split(' ')[0]}
                                     </div>
                                 </div>
                             </div>

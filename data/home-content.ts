@@ -9,6 +9,7 @@ export interface CoreValue {
     subtitle: string
     description: string
     svgUrl?: string
+    watermark?: string
 }
 
 export const homeContent = {
@@ -45,23 +46,26 @@ export const homeContent = {
 export const coreValues: CoreValue[] = [
     {
         number: "01",
-        title: "LIVE AUTHENTICALLY",
-        subtitle: "We believe real influence starts with truth.",
-        description: "Every message we build is grounded in clarity, purpose, and credibility.",
-        svgUrl: "https://res.cloudinary.com/dbviya1rj/image/upload/v1770925072/zyrrsqimiygkquy4hsnu.svg"
+        title: "INFLUENCE WITH INTENT",
+        subtitle: "Success isn't just visibility—it's impact.",
+        description: "We measure our work by the trust we build, the narratives we shift, and the outcomes we deliver.",
+        svgUrl: "https://res.cloudinary.com/dbviya1rj/image/upload/v1770925071/m4aklmmln97nwkcgfxei.svg",
+        watermark: "WIN"
     },
     {
         number: "02",
-        title: "INFLUENCE WITH INTENT",
+        title: "WIN WITH MEANING",
         subtitle: "We don't chase attention—we earn it.",
         description: "Through strategic storytelling, earned media, and disciplined execution, we shape conversations that matter.",
-        svgUrl: "https://res.cloudinary.com/dbviya1rj/image/upload/v1770925071/m4aklmmln97nwkcgfxei.svg"
+        svgUrl: "https://res.cloudinary.com/dbviya1rj/image/upload/v1770925072/vm0ig522jg33k44smbik.svg",
+        watermark: "INFLUENCE"
     },
     {
         number: "03",
-        title: "WIN WITH MEANING",
-        subtitle: "Success isn't just visibility—it's impact.",
-        description: "We measure our work by the trust we build, the narratives we shift, and the outcomes we deliver.",
-        svgUrl: "https://res.cloudinary.com/dbviya1rj/image/upload/v1770925072/vm0ig522jg33k44smbik.svg"
+        title: "LIVE AUTHENTICALLY",
+        subtitle: "We believe real influence starts with truth.",
+        description: "Every message we build is grounded in clarity, purpose, and credibility.",
+        svgUrl: "https://res.cloudinary.com/dbviya1rj/image/upload/v1770925072/zyrrsqimiygkquy4hsnu.svg",
+        watermark: "LIVE"
     }
 ]

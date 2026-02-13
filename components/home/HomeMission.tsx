@@ -27,7 +27,7 @@ export default function HomeMission() {
 
                     {/* Text on Right */}
                     <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
-                        <h3 className="text-white text-sm font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em]">
+                        <h3 className="text-white text-base md:text-lg font-bold mb-6 sm:mb-8 uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                             {mission.label}
                         </h3>
 

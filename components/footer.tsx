@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Right Columns - Details */}
           <div className="flex flex-col gap-12 md:gap-20">
             <div>
-              <p className="text-white text-base md:text-lg leading-relaxed font-bold uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+              <p className="text-white text-base md:text-lg leading-relaxed font-bold uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                 161 Kamias Road, <br />
                 Sikatuna Village, <br />
                 Quezon City, PH 1101
@@ -63,10 +63,10 @@ export default function Footer() {
 
           <div className="flex flex-col gap-12 md:gap-20">
             <div>
-              <a href="mailto:info@istratmc.com" className="block text-white text-base md:text-lg hover:text-[#DC7026] transition-colors font-bold underline underline-offset-8 decoration-white/10 hover:decoration-[#DC7026] uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+              <a href="mailto:info@istratmc.com" className="block text-white text-base md:text-lg hover:text-[#DC7026] transition-colors font-bold underline underline-offset-8 decoration-white/10 hover:decoration-[#DC7026] uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                 info@istratmc.com
               </a>
-              <a href="tel:+63271194130" className="block text-white text-base md:text-lg mt-4 hover:text-[#DC7026] transition-colors font-bold uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+              <a href="tel:+63271194130" className="block text-white text-base md:text-lg mt-4 hover:text-[#DC7026] transition-colors font-bold uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                 (02) 7119 4130
               </a>
             </div>

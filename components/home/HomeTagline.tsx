@@ -10,7 +10,7 @@ export default function HomeTagline() {
     const { tagline } = homeContent
 
     return (
-        <section id="section2" className="flex items-center justify-center relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full py-16 md:py-24">
+        <section id="section2" className="flex items-center justify-center relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full pt-16 pb-8 md:pt-24 md:pb-12">
             <div className="text-center max-w-5xl mx-auto">
                 <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-white" style={{ fontFamily: 'var(--font-display)' }}>
                     <span className="block">{tagline.heading}</span>

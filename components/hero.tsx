@@ -34,8 +34,8 @@ export default function Hero() {
   }, [])
   return (
     <div className="relative w-full h-[100dvh] overflow-hidden bg-black">
-      {/* Logo - Responsive sizing with better mobile positioning */}
-      <a href="/" className="absolute top-4 sm:top-2 md:-top-8 w-full z-30 flex items-start justify-center px-4" aria-label="Go to Home">
+      {/* Logo - Responsive sizing with better mobile positioning (Below Navbar) */}
+      <a href="/" className="absolute top-6 sm:top-8 md:top-12 w-full z-30 flex items-start justify-center px-4 pointer-events-none sm:pointer-events-auto" aria-label="Go to Home">
         <motion.div
           animate={{
             scale: [1, 1.15, 1.15],
@@ -83,7 +83,7 @@ export default function Hero() {
 
       {/* Content Container */}
       <motion.div
-        className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6"
+        className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6 pt-32 pb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
