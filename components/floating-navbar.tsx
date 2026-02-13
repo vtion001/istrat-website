@@ -51,7 +51,7 @@ export default function FloatingNavbar() {
       </AnimatePresence>
 
       <motion.nav
-        className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[95vw] md:max-w-fit"
+        className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[95vw] md:w-auto md:max-w-full lg:max-w-fit"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
@@ -66,7 +66,7 @@ export default function FloatingNavbar() {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  className={`relative px-4 py-2 text-sm uppercase tracking-widest transition-colors flex-shrink-0 rounded-full ${isActive ? "text-[#DC7026]" : "text-white/80 hover:text-[#DC7026]"
+                  className={`relative px-3 md:px-3 lg:px-4 py-2 text-xs md:text-xs lg:text-sm uppercase tracking-wide md:tracking-wide lg:tracking-widest transition-colors flex-shrink-0 rounded-full ${isActive ? "text-[#DC7026]" : "text-white/80 hover:text-[#DC7026]"
                     }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

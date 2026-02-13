@@ -42,7 +42,7 @@ export default function HomeCoreValues() {
                                 {/* Full-Width Section Container */}
                                 <div className="max-w-7xl w-full h-[80vh] relative">
                                     {/* Content Card */}
-                                    <div className="h-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 flex flex-col items-center relative text-center">
+                                    <div className="h-full pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 flex flex-col items-center relative text-center">
                                         {/* Content Wrapper */}
                                         <div className="relative w-full h-full flex flex-col items-center">
 
