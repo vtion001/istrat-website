@@ -12,20 +12,21 @@ export default function Footer() {
 
           {/* Left Column - CTA & Brand */}
           <div className="md:col-span-2 flex flex-col">
+            <a href="/" aria-label="Go to Home" className="inline-block mb-6 group">
+              <Image
+                src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770978180/klgt4e6hrzpcmsdtmu5o.png"
+                alt="iStrat Comms Logo"
+                width={140}
+                height={56}
+                className="h-11 w-auto opacity-100 mix-blend-screen group-hover:scale-105 transition-transform"
+              />
+            </a>
+            
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[0.75]" style={{ fontFamily: 'var(--font-display)' }}>
               LET'S WORK <br /> TOGETHER
             </h2>
 
             <div className="mt-auto">
-              <a href="/" aria-label="Go to Home" className="inline-block mb-6 group">
-                <Image
-                  src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
-                  alt="iStrat Comms Logo"
-                  width={200}
-                  height={80}
-                  className="h-16 w-auto opacity-100 mix-blend-screen group-hover:scale-105 transition-transform"
-                />
-              </a>
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">
                 © 2011 — 2025 ISTRAT COMMS INC. ALL RIGHTS RESERVED.
               </p>

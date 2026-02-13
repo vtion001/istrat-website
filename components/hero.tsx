@@ -35,7 +35,7 @@ export default function Hero() {
   return (
     <div className="relative w-full h-[100dvh] overflow-hidden bg-black">
       {/* Logo - Responsive sizing with better mobile positioning (Below Navbar) */}
-      <a href="/" className="absolute top-6 sm:top-8 md:top-12 w-full z-30 flex items-start justify-center px-4 pointer-events-none sm:pointer-events-auto" aria-label="Go to Home">
+      <a href="/" className="absolute top-24 sm:top-32 md:top-48 w-full z-30 flex items-start justify-center px-4 pointer-events-none sm:pointer-events-auto" aria-label="Go to Home">
         <motion.div
           animate={{
             scale: [1, 1.15, 1.15],
@@ -48,11 +48,11 @@ export default function Hero() {
           }}
         >
           <Image
-            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1766595309/nufdx6xpymsgxwth91zh.png"
+            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770978180/klgt4e6hrzpcmsdtmu5o.png"
             alt="iStrat Comms Logo"
             width={1200}
             height={480}
-            className="h-[80px] sm:h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] w-auto opacity-100 object-contain object-top mix-blend-screen"
+            className="h-[24px] sm:h-[32px] md:h-[48px] lg:h-[60px] xl:h-[72px] w-auto opacity-100 object-contain object-top mix-blend-screen"
             priority
           />
         </motion.div>
