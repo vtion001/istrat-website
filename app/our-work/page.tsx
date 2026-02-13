@@ -24,14 +24,14 @@ export default function OurWorksPage() {
       <section className="min-h-screen py-20 sm:py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-16 sm:mb-20 md:mb-24">
-            <p className="text-[#DC7026] text-[10px] font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em]">
-              Success Stories
+            <p className="text-white text-[10px] font-bold mb-6 sm:mb-8 uppercase tracking-[0.3em]" style={{ fontFamily: 'var(--font-display)' }}>
+              SUCCESS STORIES
             </p>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 sm:mb-8" style={{ fontFamily: 'var(--font-display)' }}>
-              Our Work
+              OUR WORK
             </h2>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              32 years of strategic communications that shape narratives and drive results
+            <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+              32 YEARS OF STRATEGIC COMMUNICATIONS THAT SHAPE NARRATIVES AND DRIVE RESULTS
             </p>
           </div>
 

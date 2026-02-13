@@ -15,12 +15,12 @@ interface WorkHeroProps {
 
 export default function WorkHero({ heroVideo, isOpen, onClose }: WorkHeroProps) {
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        <>
             <VideoModal
                 video={{ src: heroVideo }}
                 isOpen={isOpen}
                 onClose={onClose}
             />
-        </section>
+        </>
     )
 }

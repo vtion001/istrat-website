@@ -5,22 +5,27 @@
 
 export default function ServiceHero() {
     return (
-        <section id="section1" className="relative min-h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] flex items-center overflow-hidden bg-black">
+        <section id="section1" className="relative min-h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] flex items-center overflow-hidden bg-black pt-24 sm:pt-0">
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full py-16 sm:py-0">
-                <div className="text-left max-w-5xl">
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
-                        <span className="block text-white">
-                            We Don't Follow Conversations.
-                        </span>
-                        <span className="block text-[#DC7026] mt-3 sm:mt-4">
-                            We Shape Them.
-                        </span>
-                    </h1>
-                    <p className="text-gray-400 text-lg md:text-xl mt-6 sm:mt-8 max-w-3xl leading-relaxed">
-                        For 32 years, we've delivered strategic communications that build influence, shape narratives, and drive measurable results for government and corporate leaders.
-                    </p>
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full py-16 sm:py-0 mt-12">
+                <div className="text-center max-w-5xl mx-auto">
+                    {/* 1. Top Section - White Label */}
+                    <h3 className="text-white text-2xl md:text-4xl font-bold uppercase tracking-wide mb-6 sm:mb-8" style={{ fontFamily: 'var(--font-display)' }}>
+                        HOW WE HELP YOU WIN
+                    </h3>
+
+                    {/* 2. Middle Section - Orange Heading */}
+                    <h2 className="text-[#DC7026] text-3xl md:text-5xl font-black uppercase tracking-tight leading-[1.1] mb-8 sm:mb-12" style={{ fontFamily: 'var(--font-display)' }}>
+                        <span className="block">WE SHAPE NARRATIVES.</span>
+                        <span className="block">WE BUILD INFLUENCE.</span>
+                        <span className="block">WE DELIVER RESULTS.</span>
+                    </h2>
+
+                    {/* 3. Bottom Section - White Big Text (Description) */}
+                    <h2 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+                        32 YEARS OF STRATEGIC COMMUNICATIONS EXCELLENCE
+                    </h2>
                 </div>
             </div>
         </section>

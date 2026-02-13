@@ -95,6 +95,26 @@ export default function FloatingNavbar() {
           </button>
         </div>
       </motion.nav>
+
+      {/* Fixed Logo - Top Left (Outside Navigation Bar) */}
+      {pathname !== '/' && (
+        <motion.div
+          className="fixed top-8 left-8 z-50 hidden md:block"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <a href="/" aria-label="Go to Home" className="block group">
+            <Image
+              src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770978180/klgt4e6hrzpcmsdtmu5o.png"
+              alt="iStrat Comms Logo"
+              width={200}
+              height={80}
+              className="h-10 w-auto opacity-100 mix-blend-screen group-hover:scale-105 transition-transform"
+            />
+          </a>
+        </motion.div>
+      )}
     </>
   )
 }

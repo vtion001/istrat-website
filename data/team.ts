@@ -57,7 +57,7 @@ export const team: TeamMember[] = [
         image: "/images/team/ferdie_aboga_bw.png",
         department: "Content & Creative",
         linkedin: "https://linkedin.com",
-        level: 2,
+        level: 3,
     },
     {
         name: "Ela Marie Teodosio",

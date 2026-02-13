@@ -67,7 +67,7 @@ export default function HomeCoreValues() {
                                             <div className="space-y-4 max-w-4xl mx-auto relative z-20 mt-auto">
                                                 {/* Subtitle: Styled like info@istratmc.com */}
                                                 <p
-                                                    className="text-white text-base md:text-lg font-bold uppercase leading-relaxed"
+                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-base md:text-lg font-bold uppercase leading-relaxed`}
                                                     style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                                                 >
                                                     {value.subtitle}
@@ -75,7 +75,7 @@ export default function HomeCoreValues() {
 
                                                 {/* Description: Styled like info@istratmc.com */}
                                                 <p
-                                                    className="text-white text-base md:text-lg font-bold uppercase leading-relaxed"
+                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-base md:text-lg font-bold uppercase leading-relaxed`}
                                                     style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                                                 >
                                                     {value.description}

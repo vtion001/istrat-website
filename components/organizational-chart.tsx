@@ -63,29 +63,17 @@ export default function OrganizationalChart({ team }: OrgChartProps) {
                                 <OrgChartCard key={idx} member={member} />
                             ))}
                         </div>
-                        {/* Connector Line Down */}
-                        {level2.length > 0 && (
-                            <div className="absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-16 sm:h-20 md:h-24 bg-gradient-to-b from-[#DC7026] to-transparent" />
-                        )}
+
                     </div>
                 )}
 
                 {/* Level 2: C-Suite / Senior Leadership */}
                 {level2.length > 0 && (
                     <div className="relative w-full">
-                        {/* Horizontal Connector Line */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl h-0.5 bg-gradient-to-r from-transparent via-[#DC7026] to-transparent -translate-y-16 sm:-translate-y-20 md:-translate-y-24" />
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 justify-items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center">
                             {level2.map((member, idx) => (
                                 <div key={idx} className="relative w-full">
-                                    {/* Connector Line Up */}
-                                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full w-0.5 h-16 sm:h-20 md:h-24 bg-gradient-to-t from-[#DC7026] to-transparent" />
                                     <OrgChartCard member={member} />
-                                    {/* Connector Line Down */}
-                                    {level3.length > 0 && (
-                                        <div className="absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-16 sm:h-20 md:h-24 bg-gradient-to-b from-[#DC7026] to-transparent" />
-                                    )}
                                 </div>
                             ))}
                         </div>
@@ -95,14 +83,9 @@ export default function OrganizationalChart({ team }: OrgChartProps) {
                 {/* Level 3: Department Heads / Managers */}
                 {level3.length > 0 && (
                     <div className="relative w-full">
-                        {/* Horizontal Connector Line */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] max-w-4xl h-0.5 bg-gradient-to-r from-transparent via-[#DC7026] to-transparent -translate-y-16 sm:-translate-y-20 md:-translate-y-24" />
-
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center">
                             {level3.map((member, idx) => (
                                 <div key={idx} className="relative w-full">
-                                    {/* Connector Line Up */}
-                                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full w-0.5 h-16 sm:h-20 md:h-24 bg-gradient-to-t from-[#DC7026] to-transparent" />
                                     <OrgChartCard member={member} />
                                 </div>
                             ))}
