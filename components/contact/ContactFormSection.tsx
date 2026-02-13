@@ -35,15 +35,15 @@ export default function ContactFormSection({ form, errors, sent, onChange, onSub
                     LET'S BUILD TOGETHER
                 </h3>
                 <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold mb-4 tracking-tight" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
-                    Our core and soul. YOU! We take your wisdom seriously even as we learn to innovate. Your being is the cornerstone of our inspiration in giving life to every idea.
+                    OUR CORE AND SOUL. YOU! WE TAKE YOUR WISDOM SERIOUSLY EVEN AS WE LEARN TO INNOVATE. YOUR BEING IS THE CORNERSTONE OF OUR INSPIRATION IN GIVING LIFE TO EVERY IDEA.
                 </p>
 
                 <div className="flex flex-col gap-4">
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
-                        <span className="block">Ready to Start</span>
-                        <span className="block">Your Journey?</span>
+                        <span className="block">READY TO START</span>
+                        <span className="block">YOUR JOURNEY?</span>
                     </h2>
-                    <p className="text-white leading-relaxed max-w-lg text-sm md:text-base uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+                    <p className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold tracking-tight uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                         WHETHER YOU HAVE A SPECIFIC PROJECT IN MIND OR JUST WANT TO EXPLORE POSSIBILITIES, OUR TEAM IS READY TO LISTEN AND INNOVATE.
                     </p>
 
@@ -53,7 +53,7 @@ export default function ContactFormSection({ form, errors, sent, onChange, onSub
                                 <div className="mt-1 w-5 h-5 rounded-full bg-[#DC7026]/20 flex items-center justify-center text-[#DC7026] border border-[#DC7026]/20">
                                     <Check size={12} strokeWidth={4} />
                                 </div>
-                                <span className="text-white font-bold text-sm tracking-tight uppercase" style={{ fontFamily: 'var(--font-display)' }}>{text}</span>
+                                <span className="text-gray-100 text-xl md:text-2xl leading-[1.4] font-semibold tracking-tight uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>{text}</span>
                             </li>
                         ))}
                     </ul>

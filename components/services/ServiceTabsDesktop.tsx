@@ -118,12 +118,12 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                             {/* Bullet Points */}
                             <div className="space-y-6 md:space-y-8 w-full max-w-3xl mx-auto">
                                 {details?.points.map((point, i) => (
-                                    <div key={i} className="flex items-center justify-center gap-4 group">
+                                    <div key={i} className="flex items-start justify-start gap-4 group">
                                         <span className={`
-                                            w-3 h-3 rounded-full flex-shrink-0 transition-transform group-hover:scale-125
+                                            mt-2 w-3 h-3 rounded-full flex-shrink-0 transition-transform group-hover:scale-125
                                             ${isEven ? "bg-[#DC7026]" : "bg-white"}
                                         `}></span>
-                                        <p className="text-white font-bold uppercase text-2xl md:text-4xl tracking-wide leading-snug text-center" style={{ fontFamily: 'var(--font-display)' }}>
+                                        <p className="text-white font-bold uppercase text-2xl md:text-4xl tracking-wide leading-snug text-left" style={{ fontFamily: 'var(--font-display)' }}>
                                             {point}
                                         </p>
                                     </div>

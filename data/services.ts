@@ -115,18 +115,11 @@ export const ourServices: Service[] = [
         height: "h-[550px]",
     },
     {
-        title: "Brand Strategy & Positioning",
-        category: "Brand Development",
-        description: "From identity creation to market positioning—we build brands that command attention, earn trust, and deliver sustainable competitive advantage across all touchpoints.",
+        title: "Brand Strategy & Integrated Marketing",
+        category: "Full-Spectrum Strategy",
+        description: "From identity creation to unified campaigns—we orchestrate brand positioning and multi-channel execution that commands attention and drives sustainable growth.",
         image: "/images/services/design.svg",
         height: "h-[480px]",
-    },
-    {
-        title: "Integrated Marketing Communications",
-        category: "Full-Spectrum Marketing",
-        description: "Unified campaigns that convert attention into results. We orchestrate paid, owned, and earned channels to deliver cohesive brand experiences that drive growth.",
-        image: "/images/services/digital.svg",
-        height: "h-[450px]",
     },
     {
         title: "Advocacy & Stakeholder Engagement",
@@ -179,37 +172,32 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     },
     "Strategic Communications & Advisory": {
         summary: "We architect communication strategies that shape narratives and influence outcomes. Our strategic counsel has guided government agencies, Fortune 500 companies, and advocacy organizations through transformation, crisis, and growth.",
-        points: ["Executive positioning", "Narrative architecture", "Stakeholder mapping", "Crisis preparedness"],
+        points: ["Executive positioning & leadership messaging", "Crisis & Reputation Management", "Corporate Narrative Development"],
         metrics: "32 years advising public and private sector leaders"
     },
     "Public Relations & Media Influence": {
         summary: "We build credibility proactively and protect reputation decisively. Our media relationships span national broadcast, digital, and print—earning coverage that shapes perception and drives outcomes.",
-        points: ["Media relations strategy", "Press office operations", "Crisis communication", "Reputation management"],
+        points: ["Media relations & Press strategy", "Thought Leadership Placements", "Executive Media Training"],
         metrics: "86K+ followers on managed advocacy channels"
     },
-    "Brand Strategy & Positioning": {
-        summary: "From naming to visual identity to market positioning—we build brands that command attention and deliver sustainable competitive advantage. Our strategic approach ensures every touchpoint reinforces your brand promise.",
-        points: ["Brand architecture", "Visual identity systems", "Positioning strategy", "Brand guidelines"],
-        metrics: "Award-winning brand campaigns for government and corporate clients"
-    },
-    "Integrated Marketing Communications": {
-        summary: "Unified campaigns that convert attention into results. We orchestrate paid, owned, and earned channels to deliver cohesive brand experiences across digital, broadcast, print, and live events.",
-        points: ["Campaign strategy", "Channel orchestration", "Creative execution", "Performance optimization"],
-        metrics: "1M+ followers on managed government social media accounts"
+    "Brand Strategy & Integrated Marketing": {
+        summary: "We unify brand positioning with powerful execution. By integrating message architecture, creative storytelling, and campaign planning, we ensure your brand resonates across every channel and touchpoint.",
+        points: ["Brand Positioning & Message Architecture", "Integrated Campaign Planning", "Content & Storytelling Strategy"],
+        metrics: "Award-winning campaigns driving measurable growth"
     },
     "Advocacy & Stakeholder Engagement": {
         summary: "Trusted by government agencies and advocacy organizations to build coalitions, influence policy dialogue, and engage communities for social impact. We turn stakeholders into advocates.",
-        points: ["Government relations", "Coalition building", "Community engagement", "Policy communication"],
+        points: ["STAKEHOLDER MAPPING & ENGAGEMENT", "GOVERNMENT & POLICY STRATEGY", "COALITION & COMMUNITY RELATIONS"],
         metrics: "Trusted partner for Quezon City government advocacy initiatives"
     },
     "Measurement, Analytics & Insights": {
         summary: "Our proprietary DataFusion360 platform and analytics expertise turn campaign performance into strategic intelligence. Real-time insights that inform decisions, optimize spend, and prove ROI.",
-        points: ["Campaign analytics", "Social listening", "Sentiment analysis", "ROI measurement"],
+        points: ["MEDIA & SENTIMENT MONITORING", "CAMPAIGN PERFORMANCE TRACKING", "STRATEGIC REPORTING & INSIGHTS"],
         metrics: "Real-time analytics powering data-driven decisions"
     },
     "Corporate & Brand Events Management": {
         summary: "Award-winning event production using state-of-the-art AV technology. From intimate executive briefings to large-scale public events—we create brand moments that resonate and deliver measurable impact.",
-        points: ["Event strategy & design", "AV production", "Logistics management", "Post-event analysis"],
+        points: ["STRATEGIC EVENT CONCEPTUALIZATION", "LEADERSHIP FORUMS & LAUNCHES"],
         metrics: "PTAA Travel Tour Expo, SGV Got Talent, 18th Gawad Parangal QC"
     },
 }
