@@ -5,7 +5,7 @@
 
 export default function ServiceHero() {
     return (
-        <section id="section1" className="relative min-h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] flex items-center overflow-hidden bg-black pt-24 sm:pt-0">
+        <section id="section1" className="relative min-h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] flex items-center overflow-hidden bg-black pt-32 sm:pt-8">
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80"></div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full py-16 sm:py-0 mt-12">

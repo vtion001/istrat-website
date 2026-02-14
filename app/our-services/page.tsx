@@ -16,8 +16,9 @@ export default function OurServicesPage() {
       <ServiceHero />
 
       {/* Section 2: Services Tabs/Accordion */}
-      <section id="section2" className="min-h-screen flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-20 sm:py-24 md:py-32">
-        {/* Desktop Tabs */}
+      {/* Section 2: Services Tabs/Accordion */}
+      <section id="section2" className="min-h-screen flex flex-col w-full">
+        {/* Desktop Tabs (Handles its own layout/widths) */}
         <ServiceTabsDesktop
           services={ourServices}
           serviceDetails={serviceDetails}
@@ -25,13 +26,15 @@ export default function OurServicesPage() {
           onTabChange={setActiveTab}
         />
 
-        {/* Mobile Accordion */}
-        <ServiceAccordionMobile
-          services={ourServices}
-          serviceDetails={serviceDetails}
-          openAccordion={openAccordion}
-          onToggle={toggleAccordion}
-        />
+        {/* Mobile Accordion (Needs specific constraints) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
+          <ServiceAccordionMobile
+            services={ourServices}
+            serviceDetails={serviceDetails}
+            openAccordion={openAccordion}
+            onToggle={toggleAccordion}
+          />
+        </div>
       </section>
 
       {/* Section 3: Clients Only - Partner Carousel */}
