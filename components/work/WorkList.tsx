@@ -31,7 +31,7 @@ export default function WorkList({ videos, onVideoClick }: WorkListProps) {
                         {/* Text Content */}
                         <div className={`space-y-6 sm:space-y-8 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                             <h3
-                                className="text-[#DC7026] text-base md:text-lg font-bold mb-6 sm:mb-8 uppercase tracking-widest"
+                                className="text-white text-base md:text-lg font-bold mb-6 sm:mb-8 uppercase tracking-widest"
                                 style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                             >
                                 FEATURED PROJECT
@@ -42,13 +42,16 @@ export default function WorkList({ videos, onVideoClick }: WorkListProps) {
                             >
                                 {video.title}
                             </h2>
-                            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">
+                            <p
+                                className="text-white text-lg md:text-xl leading-relaxed max-w-xl uppercase"
+                                style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
+                            >
                                 {video.desc}
                             </p>
 
                             <button
                                 onClick={() => onVideoClick(video.key)}
-                                className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#DC7026]/30 text-[#DC7026] text-sm font-bold uppercase tracking-wider hover:bg-[#DC7026] hover:text-white transition-all duration-300"
+                                className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
                             >
                                 Watch Video
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-play w-4 h-4"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>

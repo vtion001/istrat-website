@@ -27,7 +27,7 @@ export default function AboutUsPage() {
             <h3 className="text-white text-base md:text-lg font-bold mb-6 sm:mb-8 uppercase leading-relaxed" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
               OUR TEAM
             </h3>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4 sm:mb-6" style={{ fontFamily: 'var(--font-display)' }}>Who We Are</h2>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4 sm:mb-6 uppercase" style={{ fontFamily: 'var(--font-display)' }}>Who We Are</h2>
             <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>THE TEAM THAT DRIVES STRATEGIC INFLUENCE</p>
           </div>
 
