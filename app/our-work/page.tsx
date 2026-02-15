@@ -1,15 +1,22 @@
 "use client"
 
 import WorkHero from "@/components/work/WorkHero"
-import WorkFilterNav from "@/components/work/WorkFilterNav"
-import WorkGrid from "@/components/work/WorkGrid"
+import WorkList from "@/components/work/WorkList"
 import { VIDEOS, HERO_VIDEO } from "@/data"
 import { useVideoModal } from "@/hooks/useVideoModal"
-import { useVideoFilter } from "@/hooks/useVideoFilter"
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function OurWorksPage() {
   const { selectedVideo, openVideo, closeVideo, isOpen } = useVideoModal()
-  const { activeFilter, setActiveFilter, filteredVideos, gridRef } = useVideoFilter(VIDEOS)
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  // Convert VIDEOS object to array
+  const allVideos = Object.entries(VIDEOS).map(([key, data]) => ({
+    key,
+    ...data
+  }))
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
@@ -20,7 +27,7 @@ export default function OurWorksPage() {
         onClose={closeVideo}
       />
 
-      {/* Portfolio Grid Section */}
+      {/* Portfolio List Section */}
       <section className="min-h-screen pt-32 sm:pt-40 pb-20 sm:pb-24 md:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-16 sm:mb-20 md:mb-24">
@@ -33,33 +40,48 @@ export default function OurWorksPage() {
               <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                 OUR WORK COMBINES DISCIPLINED ANALYTICS, STRATEGIC COMMUNICATIONS, AND STAKEHOLDER INFLUENCE TO TURN REPUTATION INTO REVENUE AND AUTHORITY INTO MARKET DOMINANCE.
               </p>
-              <div className="flex flex-col items-center justify-center gap-4">
+
+              {/* Collapsible Trigger */}
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="flex flex-col items-center justify-center gap-4 group cursor-pointer hover:opacity-80 transition-opacity mx-auto"
+              >
                 <span className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>SEE HOW WE DELIVER RESULTS</span>
-                <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-4 transform -rotate-2">
-                  <path
-                    d="M10 25 C 60 20, 120 20, 170 25 M 170 25 L 155 15 M 170 25 L 158 35"
-                    stroke="#DC7026"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+                <motion.div
+                  animate={{ rotate: isExpanded ? 90 : -2 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                  <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-4">
+                    <path
+                      d="M10 25 C 60 20, 120 20, 170 25 M 170 25 L 155 15 M 170 25 L 158 35"
+                      stroke="#DC7026"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </motion.div>
+              </button>
             </div>
           </div>
 
-          {/* Filter Navigation */}
-          <WorkFilterNav
-            activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
-          />
-
-          {/* Video Grid */}
-          <WorkGrid
-            videos={filteredVideos}
-            gridRef={gridRef}
-            onVideoClick={openVideo}
-          />
+          {/* Collapsible Content */}
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <WorkList
+                  videos={allVideos}
+                  onVideoClick={openVideo}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
     </main>
