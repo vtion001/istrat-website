@@ -48,7 +48,7 @@ export default function HomeCoreValues() {
 
                                             {/* SVG Container: Absolute Center & Massive */}
                                             {value.svgUrl ? (
-                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[60vh] sm:h-[70vh] md:h-[800px] lg:h-[900px] pointer-events-none z-0">
+                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[120vh] sm:h-[130vh] md:h-[1400px] lg:h-[1600px] pointer-events-none z-0">
                                                     <Image
                                                         src={value.svgUrl}
                                                         alt={value.title}
@@ -58,7 +58,7 @@ export default function HomeCoreValues() {
                                                     />
                                                 </div>
                                             ) : (
-                                                <h2 className={`text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] ${textColor} mb-auto mt-auto`} style={{ fontFamily: 'var(--font-display)' }}>
+                                                <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] ${textColor} mb-auto mt-auto`} style={{ fontFamily: 'var(--font-display)' }}>
                                                     {value.title}
                                                 </h2>
                                             )}
@@ -67,7 +67,7 @@ export default function HomeCoreValues() {
                                             <div className="space-y-4 max-w-4xl mx-auto relative z-20 mt-auto">
                                                 {/* Subtitle: Styled like info@istratmc.com */}
                                                 <p
-                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-base md:text-lg font-bold uppercase leading-relaxed`}
+                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-2xl md:text-3xl font-bold uppercase leading-relaxed`}
                                                     style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                                                 >
                                                     {value.subtitle}
@@ -75,7 +75,7 @@ export default function HomeCoreValues() {
 
                                                 {/* Description: Styled like info@istratmc.com */}
                                                 <p
-                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-base md:text-lg font-bold uppercase leading-relaxed`}
+                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-2xl md:text-3xl font-bold uppercase leading-relaxed`}
                                                     style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                                                 >
                                                     {value.description}

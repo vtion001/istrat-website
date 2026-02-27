@@ -50,16 +50,34 @@ export default function FloatingNavbar() {
         )}
       </AnimatePresence>
 
-      <motion.nav
-        className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[95vw] md:w-auto md:max-w-full lg:max-w-fit"
+      {/* Full-width Navigation Bar */}
+      <motion.header
+        className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="px-4 py-3 bg-black/80 backdrop-blur-2xl rounded-full shadow-lg flex items-center justify-between md:justify-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+          
+          {/* Logo - Left */}
+          <motion.a
+            href="/"
+            className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <Image
+              src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770978180/klgt4e6hrzpcmsdtmu5o.png"
+              alt="iStrat Comms Logo"
+              width={200}
+              height={80}
+              className="h-10 w-auto"
+            />
+          </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop Navigation - Center */}
+          <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
@@ -83,9 +101,9 @@ export default function FloatingNavbar() {
                 </motion.a>
               )
             })}
-          </div>
+          </nav>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle - Right */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-[#DC7026] bg-[#DC7026]/10 rounded-full border border-[#DC7026]/20 hover:bg-[#DC7026]/20 transition-colors"
@@ -94,25 +112,10 @@ export default function FloatingNavbar() {
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </motion.nav>
+      </motion.header>
 
-      {/* Fixed Logo - Top Left (Outside Navigation Bar) */}
-      <motion.div
-        className="fixed top-8 left-8 z-50 hidden md:block"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        <a href="/" aria-label="Go to Home" className="block group">
-          <Image
-            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770978180/klgt4e6hrzpcmsdtmu5o.png"
-            alt="iStrat Comms Logo"
-            width={200}
-            height={80}
-            className="h-10 w-auto opacity-100 mix-blend-screen group-hover:scale-105 transition-transform"
-          />
-        </a>
-      </motion.div>
+      {/* Spacer for fixed header */}
+      <div className="h-20" />
     </>
   )
 }

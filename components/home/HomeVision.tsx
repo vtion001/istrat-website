@@ -16,11 +16,11 @@ export default function HomeVision() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
                     {/* Text on Left */}
                     <div className="space-y-6 sm:space-y-8">
-                        <h3 className="text-white text-base md:text-lg font-bold mb-6 sm:mb-8 uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                             {vision.label}
                         </h3>
 
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
                             <span className="block text-white">{vision.heading}</span>
                             <span className="block mt-3 sm:mt-4"><span className="text-white">THEY </span><span className="text-[#DC7026]">LEAD.</span></span>
                         </h2>

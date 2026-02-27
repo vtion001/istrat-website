@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
         name: "Erwyn Claudio",
         role: "PR Consultant",
         bio: "Award-winning communications specialist with Anvil and IABC Quill Awards for global automotive brands.",
-        image: "/images/team/erwyn_claudio_bw.png",
+        image: "https://res.cloudinary.com/dbviya1rj/image/upload/v1771187179/bvre4bqg9jce22ijg2ov.png",
         department: "Public Relations",
         linkedin: "https://linkedin.com",
         level: 2,

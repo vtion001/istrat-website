@@ -12,7 +12,7 @@ export default function HomeTagline() {
     return (
         <section id="section2" className="flex items-center justify-center relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full pt-16 pb-8 md:pt-24 md:pb-12">
             <div className="text-center max-w-5xl mx-auto">
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.05] text-white" style={{ fontFamily: 'var(--font-display)' }}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] text-white" style={{ fontFamily: 'var(--font-display)' }}>
                     <span className="block">{tagline.heading}</span>
                     <span className="block mt-3 sm:mt-4">{tagline.subheading}</span>
                 </h1>

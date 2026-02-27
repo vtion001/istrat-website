@@ -21,16 +21,12 @@ export function OrgChartCard({ member }: OrgChartCardProps) {
             </div>
 
             {/* Content */}
-            <div className="flex-grow p-6 flex flex-col">
-                <h4 className="text-white text-lg sm:text-xl font-semibold tracking-tight mb-2 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+            <div className="flex-grow p-6 flex flex-col items-center text-center">
+                <h4 className="text-white text-lg sm:text-xl font-bold tracking-tight mb-1 uppercase" style={{ fontFamily: 'var(--font-ibm-plex)' }}>
                     {member.name}
                 </h4>
-                <p className="text-gray-500 text-[11px] sm:text-xs font-light tracking-wide mb-3 sm:mb-4">
+                <p className="text-white/50 text-[11px] sm:text-xs font-bold uppercase tracking-wide" style={{ fontFamily: 'var(--font-ibm-plex)' }}>
                     {member.role}
-                </p>
-                <div className="h-[1px] w-10 sm:w-12 bg-white/10 mb-3 sm:mb-4"></div>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                    {member.bio}
                 </p>
             </div>
 

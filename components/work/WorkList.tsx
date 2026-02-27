@@ -31,13 +31,13 @@ export default function WorkList({ videos, onVideoClick }: WorkListProps) {
                         {/* Text Content */}
                         <div className={`space-y-6 sm:space-y-8 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                             <h3
-                                className="text-white text-base md:text-lg font-bold mb-6 sm:mb-8 uppercase tracking-widest"
+                                className="text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-widest"
                                 style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                             >
                                 FEATURED PROJECT
                             </h3>
                             <h2
-                                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white"
                                 style={{ fontFamily: 'var(--font-display)' }}
                             >
                                 {video.title}
