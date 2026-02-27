@@ -31,13 +31,13 @@ export default function OurWorksPage() {
       <section className="min-h-screen pt-32 sm:pt-40 pb-20 sm:pb-24 md:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-16 sm:mb-20 md:mb-24">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 sm:mb-8" style={{ fontFamily: 'var(--font-display)' }}>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 sm:mb-8" style={{ fontFamily: 'var(--font-display)' }}>
               <span className="block text-white">WHERE DATA MEETS INFLUENCE</span>
               <span className="block text-white">— AND <span className="text-[#DC7026]">INFLUENCE</span> WINS</span>
               <span className="block text-white">MARKETS</span>
             </h2>
             <div className="space-y-8">
-              <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
+              <p className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                 OUR WORK COMBINES DISCIPLINED ANALYTICS, STRATEGIC COMMUNICATIONS, AND STAKEHOLDER INFLUENCE TO TURN REPUTATION INTO REVENUE AND AUTHORITY INTO MARKET DOMINANCE.
               </p>
 
@@ -46,7 +46,7 @@ export default function OurWorksPage() {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="flex flex-col items-center justify-center gap-4 group cursor-pointer hover:opacity-80 transition-opacity mx-auto"
               >
-                <span className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>SEE HOW WE DELIVER RESULTS</span>
+                <span className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>SEE HOW WE DELIVER RESULTS</span>
                 <motion.div
                   animate={{ rotate: isExpanded ? 90 : -2 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}

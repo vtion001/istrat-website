@@ -56,12 +56,12 @@ export default function HeroSection({
                     transition={{ duration: 0.8 }}
                     className="text-left max-w-5xl"
                 >
-                    <p className="text-[#DC7026] text-xs md:text-sm tracking-[0.3em] font-bold mb-8 uppercase">
+                    <p className="text-[#DC7026] text-sm md:text-base tracking-[0.3em] font-bold mb-8 uppercase">
                         {formattedBreadcrumb}
                     </p>
                     <h1
                         id={`${title.toLowerCase().replace(/\s+/g, '-')}-heading`}
-                        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05]"
                         style={{ fontFamily: 'var(--font-display)' }}
                     >
                         {words.map((word, i) => (
