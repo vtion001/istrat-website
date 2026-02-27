@@ -17,7 +17,7 @@ export default function ClientTicker() {
           const color = "#DC7026"
           return (
             <div key={`${client}-${index}`} className="flex items-center gap-12 flex-shrink-0">
-              <span className="text-2xl font-display font-bold text-[#DC7026] tracking-widest">{client}</span>
+              <span className="text-2xl font-bold text-[#DC7026] tracking-widest" style={{ fontFamily: 'var(--font-display)' }}>{client}</span>
               <Star className="w-4 h-4" style={{ color, fill: color }} />
             </div>
           )

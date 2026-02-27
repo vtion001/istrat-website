@@ -16,7 +16,7 @@ export default function CaseStudyMaersk() {
             <Link href="/" className="text-[10px] uppercase tracking-[0.3em] text-[#a0a0a0] hover:text-white">← Back to Home</Link>
           </div>
           <p className="text-[#DC7026] text-[10px] font-bold mb-4 uppercase tracking-[0.3em]">Case Study • Event Management</p>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 brand-gradient-text bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-display)' }}>MNL GSC Pride Fiesta</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 brand-gradient-text bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-display)' }}>MNL GSC Pride Fiesta</h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mb-12">A full-spectrum execution integrating stage, live visuals, audio, and on-site experience design to celebrate inclusion with global brand standards.</p>
 
           <div className="relative w-full aspect-video border border-white/5 bg-black rounded-[32px] overflow-hidden mb-12">
@@ -72,22 +72,22 @@ export default function CaseStudyMaersk() {
           ].map((kpi) => (
             <div key={kpi.label} className="p-8 border border-white/5 bg-black rounded-[32px]">
               <p className="text-xs uppercase tracking-widest text-[#DC7026] mb-2">{kpi.label}</p>
-              <p className="text-3xl font-display text-white">{kpi.value}</p>
+              <p className="text-3xl text-white" style={{ fontFamily: 'var(--font-display)' }}>{kpi.value}</p>
             </div>
           ))}
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <h2 className="text-2xl font-display text-[#DC7026]">Objectives</h2>
+            <h2 className="text-2xl text-[#DC7026]" style={{ fontFamily: 'var(--font-display)' }}>Objectives</h2>
             <p className="text-gray-300">Deliver an inclusive, high-energy brand event that aligns with global guidelines while resonating locally. Ensure seamless stage management, AV integration, and on-ground experience.</p>
           </div>
           <div className="space-y-6">
-            <h2 className="text-2xl font-display text-[#DC7026]">Approach</h2>
+            <h2 className="text-2xl text-[#DC7026]" style={{ fontFamily: 'var(--font-display)' }}>Approach</h2>
             <p className="text-gray-300">We orchestrated end-to-end management: stage and set design, lighting, sound engineering, motion graphics, and live content operations. The team coordinated talent flow and audience engagement.</p>
           </div>
           <div className="space-y-6">
-            <h2 className="text-2xl font-display text-[#DC7026]">Impact</h2>
+            <h2 className="text-2xl text-[#DC7026]" style={{ fontFamily: 'var(--font-display)' }}>Impact</h2>
             <p className="text-gray-300">Elevated brand perception with measurable engagement uplift and outstanding satisfaction scores. The event delivered a premium experience consistent with global luxury standards.</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
