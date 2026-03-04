@@ -66,7 +66,7 @@ export default function OrganizationalChart({ team }: OrgChartProps) {
                 {/* Level 2: C-Suite / Senior Leadership */}
                 {level2.length > 0 && (
                     <div className="relative w-full">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center max-w-5xl mx-auto">
                             {level2.map((member, idx) => (
                                 <div key={idx} className="relative w-full">
                                     <OrgChartCard member={member} />
@@ -79,7 +79,7 @@ export default function OrganizationalChart({ team }: OrgChartProps) {
                 {/* Level 3: Department Heads / Managers */}
                 {level3.length > 0 && (
                     <div className="relative w-full">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 justify-items-center max-w-5xl mx-auto">
                             {level3.map((member, idx) => (
                                 <div key={idx} className="relative w-full">
                                     <OrgChartCard member={member} />

@@ -34,8 +34,10 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
         <div className="hidden lg:block relative w-full">
             {/* Navigation Grid (Sticky) */}
             <div className="sticky top-0 z-30 bg-black/90 backdrop-blur-xl py-8 border-b border-white/5 w-full">
-                <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {services.map((service, index) => {
+                <div className="max-w-7xl mx-auto px-4">
+                    {/* First 3 items grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:max-w-6xl mx-auto mb-4">
+                    {services.slice(0, 3).map((service, index) => {
                         const isEven = index % 2 === 0
                         const isActive = activeTab === index
 
@@ -45,16 +47,18 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                             "35% 65% 65% 35% / 45% 55% 30% 70%",
                             "65% 35% 35% 65% / 60% 30% 60% 40%",
                             "40% 60% 55% 45% / 50% 45% 45% 55%",
-                            "48% 52% 30% 70% / 55% 45% 35% 65%",
-                            "35% 65% 65% 35% / 45% 55% 30% 70%"
+                            "48% 52% 30% 70% / 55% 45% 35% 65%"
                         ];
                         const shapeIndex = index % borderRadii.length;
-                        const customRadius = borderRadii[shapeIndex];
+                        // const customRadius = borderRadii[shapeIndex];
 
                         // Button Colors: Match Pill Colors (0=Orange, 1=White)
-                        // Even (0) -> Orange Button
+                        // Even (0) -> Orange Button, except index 4 (Event Management) which is white
                         // Odd (1) -> White Button
-                        const btnClass = isEven
+                        const isEventManagement = false;
+                        const btnClass = isEventManagement
+                            ? "bg-white text-[#DC7026] border-white hover:bg-gray-50"
+                            : isEven
                             ? "bg-[#DC7026] text-white border-[#DC7026] hover:bg-[#DC7026]/90"
                             : "bg-white text-[#DC7026] border-white hover:bg-gray-50";
 
@@ -63,18 +67,70 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 key={index}
                                 onClick={() => scrollToSection(index, service.title)}
                                 className={`
-                                    relative w-full py-8 md:py-10 flex items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 min-h-[140px] md:min-h-[160px]
+                                    relative w-full h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
                                     ${btnClass}
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
-                                style={{ borderRadius: customRadius }}
                             >
+                                {service.icon && (
+                                    <img src={service.icon} alt={service.title} className="w-35      h-25 mb-3" />
+                                )}
                                 <span className="font-display font-black uppercase tracking-wide text-xs md:text-sm leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                                     {service.title}
                                 </span>
                             </button>
                         )
                     })}
+                    </div>
+
+                    {/* Last 2 items grid - centered */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:max-w-2xl mx-auto lg:justify-center">
+                    {services.slice(3).map((service, index) => {
+                        const globalIndex = index + 3;
+                        const isEven = globalIndex % 2 === 0
+                        const isActive = activeTab === globalIndex
+
+                        // Organic Border Radius Variations
+                        const borderRadii = [
+                            "48% 52% 30% 70% / 55% 45% 35% 65%",
+                            "35% 65% 65% 35% / 45% 55% 30% 70%",
+                            "65% 35% 35% 65% / 60% 30% 60% 40%",
+                            "40% 60% 55% 45% / 50% 45% 45% 55%",
+                            "48% 52% 30% 70% / 55% 45% 35% 65%"
+                        ];
+                        const shapeIndex = globalIndex % borderRadii.length;
+                        // const customRadius = borderRadii[shapeIndex];
+
+                        // Button Colors: Match Pill Colors (0=Orange, 1=White)
+                        // Even (0) -> Orange Button, except index 4 (Event Management) which is white
+                        // Odd (1) -> White Button
+                        const isEventManagement = globalIndex === 4;
+                        const btnClass = isEventManagement
+                            ? "bg-white text-[#DC7026] border-white hover:bg-gray-50"
+                            : isEven
+                            ? "bg-[#DC7026] text-white border-[#DC7026] hover:bg-[#DC7026]/90"
+                            : "bg-white text-[#DC7026] border-white hover:bg-gray-50";
+
+                        return (
+                            <button
+                                key={globalIndex}
+                                onClick={() => scrollToSection(globalIndex, service.title)}
+                                className={`
+                                    relative w-full h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
+                                    ${btnClass}
+                                    ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
+                                `}
+                            >
+                                {service.icon && (
+                                    <img src={service.icon} alt={service.title} className="w-35 h-25 mb-3" />
+                                )}
+                                <span className="font-display font-black uppercase tracking-wide text-xs md:text-sm leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                                    {service.title}
+                                </span>
+                            </button>
+                        )
+                    })}
+                    </div>
                 </div>
             </div>
 
@@ -103,8 +159,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                         "35% 65% 65% 35% / 45% 55% 30% 70%",
                         "65% 35% 35% 65% / 60% 30% 60% 40%",
                         "40% 60% 55% 45% / 50% 45% 45% 55%",
-                        "48% 52% 30% 70% / 55% 45% 35% 65%",
-                        "35% 65% 65% 35% / 45% 55% 30% 70%"
+                        "48% 52% 30% 70% / 55% 45% 35% 65%"
                     ];
                     const shapeIndex = index % borderRadii.length;
                     const customRadius = borderRadii[shapeIndex];
