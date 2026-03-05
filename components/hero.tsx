@@ -35,7 +35,7 @@ export default function Hero() {
   return (
     <div className="relative w-full h-[100dvh] overflow-hidden bg-black">
       {/* Logo - Responsive sizing with better mobile positioning (Below Navbar) */}
-      <a href="/" className="absolute top-24 sm:top-32 md:top-48 w-full z-30 flex items-start justify-center px-4 pointer-events-none sm:pointer-events-auto" aria-label="Go to Home">
+      <a href="/" className="absolute top-20 sm:top-24 md:top-32 lg:top-48 w-full z-30 flex items-start justify-center px-3 sm:px-4 pointer-events-none sm:pointer-events-auto" aria-label="Go to Home">
         <motion.div
           animate={{
             scale: [1, 1.15, 1.15],
@@ -52,7 +52,7 @@ export default function Hero() {
             alt="iStrat Comms Logo"
             width={1200}
             height={480}
-            className="h-[24px] sm:h-[32px] md:h-[48px] lg:h-[60px] xl:h-[72px] w-auto opacity-100 object-contain object-top mix-blend-screen"
+            className="h-[20px] sm:h-[24px] md:h-[32px] lg:h-[48px] xl:h-[60px] 2xl:h-[72px] w-auto opacity-100 object-contain object-top mix-blend-screen"
             priority
           />
         </motion.div>
@@ -91,14 +91,14 @@ export default function Hero() {
         {/* Main Headline - Replaced with SVG - Better responsive sizing */}
         <div
           ref={wrapperRef}
-          className="text-center w-full max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-[75vw] flex items-center justify-center"
+          className="text-center w-[85vw] sm:w-[80vw] md:w-[75vw] lg:w-[70vw] xl:w-[65vw] max-w-4xl flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770678528/om7nj41oyi2dtgaixo71.svg"
             alt="Lead. Influence. Win."
             width={1200}
             height={200}
-            className="w-full h-auto"
+            className="w-full h-auto max-h-[120px] sm:max-h-[140px] md:max-h-[160px] lg:max-h-[200px] xl:max-h-[240px]"
             priority
           />
         </div>

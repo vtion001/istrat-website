@@ -73,9 +73,9 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 `}
                             >
                                 {service.icon && (
-                                    <img src={service.icon} alt={service.title} className="w-35      h-25 mb-3" />
+                                    <img src={service.icon} alt={service.title} className="h-16 sm:h-20 md:h-24 lg:h-25 w-auto mb-2 sm:mb-3 object-contain" />
                                 )}
-                                <span className="font-display font-black uppercase tracking-wide text-xs md:text-sm leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                                <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight sm:leading-snug px-2" style={{ fontFamily: 'var(--font-display)' }}>
                                     {service.title}
                                 </span>
                             </button>
@@ -122,9 +122,9 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 `}
                             >
                                 {service.icon && (
-                                    <img src={service.icon} alt={service.title} className="w-35 h-25 mb-3" />
+                                    <img src={service.icon} alt={service.title} className="h-16 sm:h-20 md:h-24 lg:h-25 w-auto mb-2 sm:mb-3 object-contain" />
                                 )}
-                                <span className="font-display font-black uppercase tracking-wide text-xs md:text-sm leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                                <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight sm:leading-snug px-2" style={{ fontFamily: 'var(--font-display)' }}>
                                     {service.title}
                                 </span>
                             </button>
@@ -184,9 +184,9 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                     `}
                                 >
                                     {service.icon && (
-                                        <img src={service.icon} alt={service.title} className="h-25 w-auto mb-3 object-contain" />
+                                        <img src={service.icon} alt={service.title} className="h-20 sm:h-22 md:h-24 lg:h-25 w-auto mb-3 object-contain" />
                                     )}
-                                    <h2 className="font-display font-black uppercase text-xs md:text-sm tracking-tight leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                                    <h2 className="font-display font-black uppercase text-xs sm:text-sm md:text-base lg:text-lg tracking-tight leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                                         {service.title}
                                     </h2>
                                 </div>

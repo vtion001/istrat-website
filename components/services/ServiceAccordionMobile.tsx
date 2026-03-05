@@ -29,11 +29,11 @@ export default function ServiceAccordionMobile({ services, serviceDetails, openA
                     {/* Accordion Header */}
                     <button
                         onClick={() => onToggle(index)}
-                        className="w-full flex items-center justify-between p-6 text-left bg-black/20 hover:bg-black/40 transition-colors"
+                        className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left bg-black/20 hover:bg-black/40 transition-colors"
                     >
-                        <div className="flex-1">
-                            <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-[#DC7026] mb-2" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
-                            <h3 className="text-lg font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
+                        <div className="flex-1 min-w-0">
+                            <p className="text-[11px] sm:text-[12px] md:text-[13px] uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-[#DC7026] mb-1 sm:mb-2" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
+                            <h3 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight break-words" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
                         </div>
                         <ChevronRight
                             size={20}

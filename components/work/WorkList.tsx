@@ -31,19 +31,19 @@ export default function WorkList({ videos, onVideoClick }: WorkListProps) {
                         {/* Text Content */}
                         <div className={`space-y-6 sm:space-y-8 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                             <h3
-                                className="text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-widest"
+                                className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-widest"
                                 style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                             >
                                 FEATURED PROJECT
                             </h3>
                             <h2
-                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white"
+                                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-white"
                                 style={{ fontFamily: 'var(--font-display)' }}
                             >
                                 {video.title}
                             </h2>
                             <p
-                                className="text-white text-lg md:text-xl leading-relaxed max-w-xl uppercase"
+                                className="text-white text-base sm:text-lg md:text-xl leading-relaxed max-w-xl uppercase"
                                 style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                             >
                                 {video.desc}
@@ -51,7 +51,7 @@ export default function WorkList({ videos, onVideoClick }: WorkListProps) {
 
                             <button
                                 onClick={() => onVideoClick(video.key)}
-                                className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+                                className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/30 text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
                             >
                                 Watch Video
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-play w-4 h-4"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>

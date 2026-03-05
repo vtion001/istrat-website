@@ -15,10 +15,10 @@ export default function ServiceModalContent({ service, details }: ServiceModalCo
 
     return (
         <>
-            <h4 className="text-3xl md:text-4xl text-white font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+            <h4 className="text-2xl sm:text-3xl md:text-4xl text-white font-bold mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 {service.title}
             </h4>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
                 {details.summary}
             </p>
             <div className="space-y-4 mb-8">
