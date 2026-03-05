@@ -91,14 +91,14 @@ export default function Hero() {
         {/* Main Headline - Replaced with SVG - Better responsive sizing */}
         <div
           ref={wrapperRef}
-          className="text-center w-[85vw] sm:w-[80vw] md:w-[75vw] lg:w-[70vw] xl:w-[65vw] max-w-4xl flex items-center justify-center"
+          className="text-center w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-5xl flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770678528/om7nj41oyi2dtgaixo71.svg"
             alt="Lead. Influence. Win."
             width={1200}
             height={200}
-            className="w-full h-auto max-h-[120px] sm:max-h-[140px] md:max-h-[160px] lg:max-h-[200px] xl:max-h-[240px]"
+            className="w-full h-auto max-h-[200px] sm:max-h-[240px] md:max-h-[280px] lg:max-h-[340px] xl:max-h-[400px]"
             priority
           />
         </div>
