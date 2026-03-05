@@ -89,16 +89,17 @@ export default function Hero() {
         animate="visible"
       >
         {/* Main Headline - Replaced with SVG - Better responsive sizing */}
+        {/* make SVG span entire hero and overflow edges */}
         <div
           ref={wrapperRef}
-          className="text-center w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-5xl flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
         >
           <Image
             src="https://res.cloudinary.com/dbviya1rj/image/upload/v1770678528/om7nj41oyi2dtgaixo71.svg"
             alt="Lead. Influence. Win."
             width={1200}
             height={200}
-            className="w-full h-auto max-h-[200px] sm:max-h-[240px] md:max-h-[280px] lg:max-h-[340px] xl:max-h-[400px]"
+            className="w-[120vw] sm:w-[110vw] md:w-[100vw] lg:w-[90vw] xl:w-[80vw] h-auto max-h-[90vh]"
             priority
           />
         </div>
