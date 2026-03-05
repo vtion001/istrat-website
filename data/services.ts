@@ -171,24 +171,24 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     },
     "Integrated Marketing Communications": {
         summary: "Unified brand identity across channels with cohesive strategy, content, and performance optimization.",
-        points: ["Message architecture", "Campaign planning", "Content strategy", "Performance optimization"],
+        points: ["Advertising and Public Relations", "Sales Promotion and Direct Marketing", "Personal Selling and Interactive Media"],
     },
     "Brand Building & Management": {
         summary: "End-to-end brand development from concept to nationwide recognition and market presence.",
-        points: ["Brand identity design", "Visual system development", "Brand guidelines", "Market positioning"],
+        points: ["Brand Strategy and Positioning", "Brand Identity and Experience", "Brand Governance and Measurement"],
     },
     "Measurement, Analytics & Insights": {
         summary: "Our proprietary DataFusion360 platform and analytics expertise turn campaign performance into strategic intelligence. Real-time insights that inform decisions, optimize spend, and prove ROI.",
-        points: ["MEDIA & SENTIMENT MONITORING", "CAMPAIGN PERFORMANCE TRACKING", "STRATEGIC REPORTING & INSIGHTS"],
+        points: ["Data Management and Governance", "Analytics, Modelling, and Insight Generation", "Visualization, Analysis and Recommendations"],
         metrics: "Real-time analytics powering data-driven decisions"
     },
     "Advocacy & Stakeholder Engagement": {
         summary: "Trusted by government agencies and advocacy organizations to build coalitions, influence policy dialogue, and engage communities for social impact. We turn stakeholders into advocates.",
-        points: ["STAKEHOLDER MAPPING & ENGAGEMENT", "GOVERNMENT & POLICY STRATEGY", "COALITION & COMMUNITY RELATIONS"],
+        points: ["Stakeholder Identification and Mapping", "Strategic Communication and Engagement Planning", "Relationship Management and Accountability"],
         metrics: "Trusted partner for Quezon City government advocacy initiatives"
     },
     "Event Management": {
         summary: "Award-winning events from intimate corporate gatherings to national campaigns.",
-        points: ["Event design", "Logistics", "Production", "Post-event analytics"],
+        points: ["Planning, Logistics & Technicals", "Concept development, Design, Program, and Messaging", "Execution, Risk, and Evaluation"],
     },
 }

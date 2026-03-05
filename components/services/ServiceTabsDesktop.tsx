@@ -150,7 +150,11 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                     // Pill/Header Colors: Contrast with Section
                     // Even (0) [White BG] -> Orange Pill
                     // Odd (1) [Black BG] -> White Pill (Requested)
-                    const pillClass = isEven
+                    // Event Management -> White background
+                    const isEventManagement = service.title === "Event Management";
+                    const pillClass = isEventManagement
+                        ? "bg-white text-[#DC7026]"
+                        : isEven
                         ? "bg-[#DC7026] text-white"
                         : "bg-white text-[#DC7026]";
 
@@ -174,13 +178,15 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 {/* Card / Pill Title */}
                                 <div
                                     className={`
-                                        relative w-full max-w-4xl py-12 px-8 md:px-16 text-center mb-16 shadow-2xl
-                                        flex items-center justify-center min-h-[200px] transition-all duration-500 hover:scale-[1.02]
+                                        relative w-max px-8 md:px-16 h-[140px] text-center mb-16 shadow-lg
+                                        flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl rounded-2xl
                                         ${pillClass}
                                     `}
-                                    style={{ borderRadius: customRadius }}
                                 >
-                                    <h2 className="font-display font-black uppercase text-3xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
+                                    {service.icon && (
+                                        <img src={service.icon} alt={service.title} className="h-25 w-auto mb-3 object-contain" />
+                                    )}
+                                    <h2 className="font-display font-black uppercase text-xs md:text-sm tracking-tight leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                                         {service.title}
                                     </h2>
                                 </div>
