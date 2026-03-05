@@ -20,7 +20,7 @@ export default function HomeMission() {
                             src="https://res.cloudinary.com/dbviya1rj/image/upload/v1769735836/wegddz1xfc1kdwbjbm0e.webp"
                             alt="Mission"
                             fill
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
+                            className="object-cover transition-all duration-1000 scale-100 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     </div>
@@ -31,7 +31,7 @@ export default function HomeMission() {
                             {mission.label}
                         </h3>
 
-                        <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <h2 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
                             <span className="block text-white">TO HELP BRANDS <span className="text-[#DC7026]">LIVE</span> WITH AUTHENTICITY,</span>
                             <span className="block text-white mt-3 sm:mt-4"><span className="text-white">INFLUENCE</span> WITH INTENTION,</span>
                             <span className="block text-white mt-3 sm:mt-4">AND <span className="text-[#DC7026]">WIN</span></span>

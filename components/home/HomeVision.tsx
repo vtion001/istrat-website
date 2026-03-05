@@ -20,7 +20,7 @@ export default function HomeVision() {
                             {vision.label}
                         </h3>
 
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <h2 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
                             <span className="block text-white">{vision.heading}</span>
                             <span className="block mt-3 sm:mt-4"><span className="text-white">THEY </span><span className="text-[#DC7026]">LEAD.</span></span>
                         </h2>
@@ -32,7 +32,7 @@ export default function HomeVision() {
                             src="https://res.cloudinary.com/dbviya1rj/image/upload/v1769735836/wegddz1xfc1kdwbjbm0e.webp"
                             alt="Vision"
                             fill
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
+                            className="object-cover transition-all duration-1000 scale-100 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     </div>

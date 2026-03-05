@@ -52,7 +52,7 @@ export default function Hero() {
             alt="iStrat Comms Logo"
             width={1200}
             height={480}
-            className="h-[20px] sm:h-[24px] md:h-[32px] lg:h-[48px] xl:h-[60px] 2xl:h-[72px] w-auto opacity-100 object-contain object-top mix-blend-screen"
+            className="h-[48px] sm:h-[56px] md:h-[64px] lg:h-[72px] xl:h-[80px] 2xl:h-[96px] w-auto opacity-100 object-contain object-top mix-blend-screen"
             priority
           />
         </motion.div>

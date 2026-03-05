@@ -16,13 +16,18 @@ interface VideoModalProps {
 function toYouTubeEmbed(url: string): string {
     try {
         const youtubeUrl = new URL(url)
-        if (youtubeUrl.hostname.includes("youtube.com") && youtubeUrl.pathname === "/watch") {
-            const id = youtubeUrl.searchParams.get("v")
-            return id ? `https://www.youtube.com/embed/${id}` : url
+        let videoId = ""
+
+        if (youtubeUrl.hostname.includes("youtube.com")) {
+            videoId = youtubeUrl.searchParams.get("v") || ""
+        } else if (youtubeUrl.hostname === "youtu.be") {
+            videoId = youtubeUrl.pathname.slice(1)
         }
-        if (youtubeUrl.hostname === "youtu.be") {
-            const id = youtubeUrl.pathname.slice(1)
-            return id ? `https://www.youtube.com/embed/${id}` : url
+
+        if (videoId) {
+            // Remove any trailing parameters from the ID if they were accidentally included in the pathname slice
+            videoId = videoId.split("&")[0].split("?")[0]
+            return `https://www.youtube.com/embed/${videoId}?autoplay=1`
         }
     } catch { }
     return url

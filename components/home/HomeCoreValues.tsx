@@ -19,7 +19,7 @@ export default function HomeCoreValues() {
             {/* Intro Section - Normal Flow - REMOVED per user request */}
 
             {/* Horizontal Scroll Section */}
-            <div ref={containerRef} className="relative h-screen overflow-hidden">
+            <div ref={containerRef} className="relative h-[100dvh] overflow-hidden">
                 <div
                     ref={scrollRef}
                     className="absolute top-0 left-0 h-full flex items-center"
@@ -28,32 +28,30 @@ export default function HomeCoreValues() {
                         // Alternating backgrounds: Black → Orange → Black
                         const isOrange = index === 1
                         const bgColor = isOrange ? 'bg-[#DC7026]' : 'bg-black'
-                        const textColor = isOrange ? 'text-white' : 'text-white'
-                        const subtitleColor = isOrange ? 'text-white/90' : 'text-gray-300'
-                        const descColor = isOrange ? 'text-white/80' : 'text-gray-400'
+                        const textColor = 'text-white'
                         const watermarkOpacity = isOrange ? 'text-white/[0.08]' : 'text-white/[0.03]'
 
                         return (
                             <div
                                 key={index}
                                 data-scroll-section
-                                className={`flex-shrink-0 w-screen h-full flex items-center justify-center px-4 sm:px-6 md:px-8 ${bgColor} transition-colors duration-700`}
+                                className={`flex-shrink-0 w-screen h-full flex items-center justify-center px-4 sm:px-6 md:px-8 ${bgColor} transition-colors duration-700 overflow-hidden`}
                             >
                                 {/* Full-Width Section Container */}
-                                <div className="max-w-7xl w-full h-[80vh] relative">
+                                <div className="max-w-7xl w-full h-[90dvh] md:h-[80vh] relative">
                                     {/* Content Card */}
-                                    <div className="h-full pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 flex flex-col items-center relative text-center">
-                                        {/* Content Wrapper */}
+                                    <div className="h-full pt-8 sm:pt-6 md:pt-8 pb-12 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 flex flex-col items-center relative text-center">
+                                        {/* Content Wrapper - Using flex-col for mobile separation to avoid overlap */}
                                         <div className="relative w-full h-full flex flex-col items-center">
 
-                                            {/* SVG Container: Absolute Center & Massive */}
+                                            {/* SVG Container: Positioned higher on mobile to avoid text overlap */}
                                             {value.svgUrl ? (
-                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[120vh] sm:h-[130vh] md:h-[1400px] lg:h-[1600px] pointer-events-none z-0">
+                                                <div className="absolute top-[35%] md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[25vh] sm:w-[150%] sm:h-[50vh] md:w-[200%] md:h-[1400px] lg:h-[1600px] pointer-events-none z-0">
                                                     <Image
                                                         src={value.svgUrl}
                                                         alt={value.title}
                                                         fill
-                                                        className="object-contain object-center"
+                                                        className="object-contain object-center opacity-30 md:opacity-80"
                                                         priority={index === 0}
                                                     />
                                                 </div>
@@ -63,19 +61,19 @@ export default function HomeCoreValues() {
                                                 </h2>
                                             )}
 
-                                            {/* Text Container: Pinned to Bottom */}
-                                            <div className="space-y-4 max-w-4xl mx-auto relative z-20 mt-auto">
-                                                {/* Subtitle: Styled like info@istratmc.com */}
+                                            {/* Text Container: Pushed to the bottom area on mobile for clear legibility */}
+                                            <div className="mt-auto mb-[15%] md:mb-0 space-y-4 max-w-4xl mx-auto relative z-20 md:mt-auto">
+                                                {/* Subtitle */}
                                                 <p
-                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-2xl md:text-3xl font-bold uppercase leading-relaxed`}
+                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase leading-tight md:leading-relaxed`}
                                                     style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                                                 >
                                                     {value.subtitle}
                                                 </p>
 
-                                                {/* Description: Styled like info@istratmc.com */}
+                                                {/* Description */}
                                                 <p
-                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-2xl md:text-3xl font-bold uppercase leading-relaxed`}
+                                                    className={`${index === 1 ? 'text-black' : 'text-white'} text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase leading-tight md:leading-relaxed`}
                                                     style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}
                                                 >
                                                     {value.description}
@@ -84,9 +82,9 @@ export default function HomeCoreValues() {
                                         </div>
                                     </div>
 
-                                    {/* Large Background Text Watermark */}
+                                    {/* Large Background Text Watermark - Positioned to avoid footer/text collision */}
                                     <div
-                                        className={`absolute -bottom-2 sm:-bottom-6 md:-bottom-12 lg:-bottom-16 -right-2 sm:-right-4 md:-right-8 lg:-right-12 text-[40px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[240px] font-bold ${watermarkOpacity} leading-none pointer-events-none select-none uppercase opacity-50`}
+                                        className={`absolute bottom-4 sm:-bottom-6 md:-bottom-12 lg:-bottom-16 right-0 text-[60px] sm:text-[100px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[240px] font-bold ${watermarkOpacity} leading-none pointer-events-none select-none uppercase opacity-50`}
                                         style={{ fontFamily: 'var(--font-display)' }}
                                     >
                                         {value.watermark || value.title.split(' ')[0]}

@@ -12,7 +12,7 @@ export default function AboutUsPage() {
       <section id="section1" className="min-h-[50vh] flex items-center md:min-h-[60vh]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 w-full">
           <div className="text-center">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+            <h2 className="text-6xl sm:text-6xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
               <span className="block text-white">MEET THE MINDS</span>
               <span className="block text-white">BEHIND THE WORK.</span>
             </h2>
@@ -27,7 +27,7 @@ export default function AboutUsPage() {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase leading-relaxed" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
               OUR TEAM
             </h3>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-4 sm:mb-6 uppercase" style={{ fontFamily: 'var(--font-display)' }}>Who We Are</h2>
+            <h2 className="text-6xl sm:text-6xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-4 sm:mb-6 uppercase" style={{ fontFamily: 'var(--font-display)' }}>Who We Are</h2>
             <p className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>THE TEAM THAT DRIVES STRATEGIC INFLUENCE</p>
           </div>
 
