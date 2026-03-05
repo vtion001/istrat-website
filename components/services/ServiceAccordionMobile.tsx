@@ -29,15 +29,25 @@ export default function ServiceAccordionMobile({ services, serviceDetails, openA
                     {/* Accordion Header */}
                     <button
                         onClick={() => onToggle(index)}
-                        className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left bg-black/20 hover:bg-black/40 transition-colors"
+                        className={`w-full h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 rounded-2xl
+                            ${(() => {
+                                const isEven = index % 2 === 0;
+                                const isEventManagement = service.title === 'Event Management';
+                                if (isEventManagement) return 'bg-white text-[#DC7026] border-white hover:bg-gray-50';
+                                return isEven ? 'bg-[#DC7026] text-white border-[#DC7026] hover:bg-[#DC7026]/90' : 'bg-white text-[#DC7026] border-white hover:bg-gray-50';
+                            })()}
+                            ${openAccordion === index ? 'ring-4 ' + ((index % 2 === 0) ? 'ring-[#DC7026]/30' : 'ring-white/30') : 'opacity-90 hover:opacity-100'}
+                        `}
                     >
-                        <div className="flex-1 min-w-0">
-                            <p className="text-[11px] sm:text-[12px] md:text-[13px] uppercase font-bold tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-[#DC7026] mb-1 sm:mb-2" style={{ fontFamily: 'var(--font-label)' }}>{service.category}</p>
-                            <h3 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight break-words" style={{ fontFamily: 'var(--font-display)' }}>{service.title}</h3>
-                        </div>
+                        {service.icon && (
+                            <img src={service.icon} alt={service.title} className="h-16 sm:h-20 md:h-24 lg:h-25 w-auto mb-2 sm:mb-3 object-contain" />
+                        )}
+                        <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight sm:leading-snug px-2" style={{ fontFamily: 'var(--font-display)' }}>
+                            {service.title}
+                        </span>
                         <ChevronRight
                             size={20}
-                            className={`text-[#DC7026] transition-transform duration-300 flex-shrink-0 ml-4 ${openAccordion === index ? 'rotate-90' : ''}`}
+                            className={`text-[#DC7026] transition-transform duration-300 flex-shrink-0 mt-2 ${openAccordion === index ? 'rotate-90' : ''}`}
                         />
                     </button>
 
