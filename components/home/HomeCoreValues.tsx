@@ -86,7 +86,7 @@ export default function HomeCoreValues() {
 
                                     {/* Large Background Text Watermark */}
                                     <div
-                                        className={`absolute -bottom-8 sm:-bottom-12 md:-bottom-16 -right-4 sm:-right-8 md:-right-12 text-[120px] sm:text-[160px] md:text-[200px] lg:text-[240px] xl:text-[280px] font-bold ${watermarkOpacity} leading-none pointer-events-none select-none uppercase opacity-50`}
+                                        className={`absolute -bottom-2 sm:-bottom-6 md:-bottom-12 lg:-bottom-16 -right-2 sm:-right-4 md:-right-8 lg:-right-12 text-[40px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[240px] font-bold ${watermarkOpacity} leading-none pointer-events-none select-none uppercase opacity-50`}
                                         style={{ fontFamily: 'var(--font-display)' }}
                                     >
                                         {value.watermark || value.title.split(' ')[0]}
