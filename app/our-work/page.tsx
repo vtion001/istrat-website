@@ -2,6 +2,7 @@
 
 import WorkHero from "@/components/work/WorkHero"
 import WorkList from "@/components/work/WorkList"
+import VideoModal from "@/components/ui/video-modal"
 import { VIDEOS, HERO_VIDEO } from "@/data"
 import { useVideoModal } from "@/hooks/useVideoModal"
 
@@ -17,6 +18,9 @@ export default function OurWorksPage() {
     key,
     ...data
   }))
+
+  // Get the full video object for the modal
+  const videoToDisplay = selectedVideo ? VIDEOS[selectedVideo] : null
 
   return (
     <main className="w-full overflow-x-hidden bg-black text-white">
@@ -84,6 +88,13 @@ export default function OurWorksPage() {
           </AnimatePresence>
         </div>
       </section>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isOpen}
+        onClose={closeVideo}
+        video={videoToDisplay}
+      />
     </main>
   )
 }

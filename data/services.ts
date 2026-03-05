@@ -153,10 +153,6 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         summary: "End-to-end creative execution from initial concept to nationwide recognition and market presence.",
         points: ["Brand identity", "Creative direction", "Market positioning", "Visual systems"],
     },
-    "Event Management": {
-        summary: "Award-winning events from intimate corporate gatherings to national campaigns.",
-        points: ["Event design", "Logistics", "Production", "Post-event analytics"],
-    },
     "Audio-Visual Production": {
         summary: "Broadcast-quality video content creation across traditional and digital platforms.",
         points: ["Video production", "Live streaming", "Motion graphics", "Post-production"],
