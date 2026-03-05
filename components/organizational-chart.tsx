@@ -16,7 +16,23 @@ export function OrgChartCard({ member }: OrgChartCardProps) {
                 <img
                     src={member.image || getTeamMemberAvatar(member.name)}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
+                    className={`w-full h-full object-cover transition-all duration-1000 grayscale-0 md:grayscale md:group-hover:grayscale-0 ${
+                        member.name.includes("Erwyn") || member.image?.includes("bvre4bqg9jce22ijg2ov")
+                        ? "scale-[1.0] group-hover:scale-[1.5] object-[75%_20%] -translate-y-[0%]" 
+                        : member.name === "Arnold Santos Argaño"
+                        ? "scale-100 group-hover:scale-105 object-center translate-y-0"
+                        : member.name === "Ric B. Lopez"
+                        ? "scale-100 group-hover:scale-105 object-center translate-y-5"
+                        : member.name === "Gabriel R. Dela Paz"
+                        ? "scale-100 group-hover:scale-105 object-center translate-y-5"
+                        : member.name === "Enrico Testa"
+                        ? "scale-100 group-hover:scale-105 object-center translate-y-5"
+                        : member.name === "Joey Campillo"
+                        ? "scale-100 group-hover:scale-105 object-center translate-y-5"
+                        : member.name === "Ela Marie Teodosio"
+                        ? "scale-90 group-hover:scale-105 object-center translate-y-5"
+                        : "scale-100 group-hover:scale-105 object-center translate-y-5"
+                    }`}
                 />
             </div>
 

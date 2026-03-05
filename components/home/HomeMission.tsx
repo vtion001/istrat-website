@@ -17,7 +17,7 @@ export default function HomeMission() {
                     {/* Image on Left */}
                     <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[48px] overflow-hidden border border-white/5 shadow-2xl order-2 lg:order-1">
                         <Image
-                            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1769735836/wegddz1xfc1kdwbjbm0e.webp"
+                            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1772164025/u41rmed3vpv7buixoiu5.png"
                             alt="Mission"
                             fill
                             className="object-cover transition-all duration-1000 scale-100 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
