@@ -46,7 +46,7 @@ export default function HomeCoreValues() {
 
                                             {/* SVG Container: Positioned higher on mobile to avoid text overlap */}
                                             {value.svgUrl ? (
-                                                <div className="absolute top-[35%] md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[25vh] sm:w-[150%] sm:h-[50vh] md:w-[200%] md:h-[1400px] lg:h-[1600px] pointer-events-none z-0">
+                                                <div className="absolute top-[35%] md:top-[42%] lg:top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[25vh] sm:w-[150%] sm:h-[50vh] md:w-[200%] md:h-[1400px] lg:h-[1600px] pointer-events-none z-0">
                                                     <Image
                                                         src={value.svgUrl}
                                                         alt={value.title}
