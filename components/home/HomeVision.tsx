@@ -11,8 +11,19 @@ export default function HomeVision() {
     const { vision } = homeContent
 
     return (
-        <section id="section3" className="min-h-screen flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 w-full">
+        <section id="section3" className="relative min-h-screen flex items-center overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0 bg-black">
+                <Image
+                    src="https://res.cloudinary.com/dbviya1rj/image/upload/v1773199890/gxj0tze2uu3cgy0lk0bf.png"
+                    alt="Vision Background"
+                    fill
+                    className="object-contain object-center"
+                    priority
+                />
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
                     {/* Text on Left */}
                     <div className="space-y-6 sm:space-y-8">
@@ -26,16 +37,7 @@ export default function HomeVision() {
                         </h2>
                     </div>
 
-                    {/* Image on Right */}
-                    <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[48px] overflow-hidden border border-white/5 shadow-2xl">
-                        <Image
-                            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1772164025/u41rmed3vpv7buixoiu5.png"
-                            alt="Vision"
-                            fill
-                            className="object-cover transition-all duration-1000 scale-100 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    </div>
+                    {/* Image placeholder removed */}
                 </div>
             </div>
         </section>

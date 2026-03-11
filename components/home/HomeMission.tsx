@@ -1,7 +1,7 @@
 /**
  * Home Mission Section
- * Section 4: Our Mission with image
- * Updated: Standardized to 2 font sizes (text-2xl headings, text-base body)
+ * Section 4: Our Mission with full-screen background
+ * Updated: Replaced image card with full-section background image
  */
 
 import Image from "next/image"
@@ -11,22 +11,21 @@ export default function HomeMission() {
     const { mission } = homeContent
 
     return (
-        <section id="section4" className="min-h-screen flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
-                    {/* Image on Left */}
-                    <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[48px] overflow-hidden border border-white/5 shadow-2xl order-2 lg:order-1">
-                        <Image
-                            src="https://res.cloudinary.com/dbviya1rj/image/upload/v1772164025/u41rmed3vpv7buixoiu5.png"
-                            alt="Mission"
-                            fill
-                            className="object-cover transition-all duration-1000 scale-100 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    </div>
+        <section id="section4" className="relative min-h-screen flex items-center overflow-hidden">
+            {/* Background Image - Shown in full (16:9) without any cropping */}
+            <div className="absolute inset-0 z-0 bg-black">
+                <Image
+                    src="https://res.cloudinary.com/dbviya1rj/image/upload/v1773199892/knnjd0bwftdiglc4c6xy.png"
+                    alt="Mission Background"
+                    fill
+                    className="object-contain object-center"
+                    priority
+                />
+            </div>
 
-                    {/* Text on Right */}
-                    <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 w-full">
+                <div className="max-w-4xl ml-auto text-right">
+                    <div className="space-y-6 sm:space-y-8">
                         <h3 className="text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                             {mission.label}
                         </h3>
