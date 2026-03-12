@@ -15,7 +15,7 @@ interface ServiceTabsDesktopProps {
     onTabChange: (index: number) => void
 }
 
-const slugify = (   text: string) => text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+const slugify = (text: string) => text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
 
 export default function ServiceTabsDesktop({ services, serviceDetails, activeTab, onTabChange }: ServiceTabsDesktopProps) {
 
@@ -24,7 +24,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
         const id = slugify(title);
         const element = document.getElementById(id);
         if (element) {
-            const yOffset = -150; // Offset for sticky nav/header
+            const yOffset = -150;
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: y, behavior: 'smooth' });
         }
@@ -41,24 +41,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                         const isEven = index % 2 === 0
                         const isActive = activeTab === index
 
-                        // Organic Border Radius Variations
-                        const borderRadii = [
-                            "48% 52% 30% 70% / 55% 45% 35% 65%",
-                            "35% 65% 65% 35% / 45% 55% 30% 70%",
-                            "65% 35% 35% 65% / 60% 30% 60% 40%",
-                            "40% 60% 55% 45% / 50% 45% 45% 55%",
-                            "48% 52% 30% 70% / 55% 45% 35% 65%"
-                        ];
-                        const shapeIndex = index % borderRadii.length;
-                        // const customRadius = borderRadii[shapeIndex];
-
-                        // Button Colors: Match Pill Colors (0=Orange, 1=White)
-                        // Even (0) -> Orange Button, except index 4 (Event Management) which is white
-                        // Odd (1) -> White Button
-                        const isEventManagement = false;
-                        const btnClass = isEventManagement
-                            ? "bg-white text-[#DC7026] border-white hover:bg-gray-50"
-                            : isEven
+                        const btnClass = isEven
                             ? "bg-[#DC7026] text-white border-[#DC7026] hover:bg-[#DC7026]/90"
                             : "bg-white text-[#DC7026] border-white hover:bg-gray-50";
 
@@ -67,15 +50,15 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 key={index}
                                 onClick={() => scrollToSection(index, service.title)}
                                 className={`
-                                    relative w-full h-[100px] sm:h-[120px] md:h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
+                                    relative w-full h-[100px] sm:h-[120px] md:h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl overflow-hidden
                                     ${btnClass}
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
                             >
                                 {service.icon && (
-                                    <img src={service.icon} alt={service.title} className="h-16 sm:h-20 md:h-24 lg:h-25 w-auto mb-2 sm:mb-3 object-contain" />
+                                    <img src={service.icon} alt={service.title} className="h-12 sm:h-14 md:h-16 w-auto mb-2 object-contain" />
                                 )}
-                                <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight sm:leading-snug px-2" style={{ fontFamily: 'var(--font-display)' }}>
+                                <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight px-3 line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
                                     {service.title}
                                 </span>
                             </button>
@@ -90,20 +73,6 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                         const isEven = globalIndex % 2 === 0
                         const isActive = activeTab === globalIndex
 
-                        // Organic Border Radius Variations
-                        const borderRadii = [
-                            "48% 52% 30% 70% / 55% 45% 35% 65%",
-                            "35% 65% 65% 35% / 45% 55% 30% 70%",
-                            "65% 35% 35% 65% / 60% 30% 60% 40%",
-                            "40% 60% 55% 45% / 50% 45% 45% 55%",
-                            "48% 52% 30% 70% / 55% 45% 35% 65%"
-                        ];
-                        const shapeIndex = globalIndex % borderRadii.length;
-                        // const customRadius = borderRadii[shapeIndex];
-
-                        // Button Colors: Match Pill Colors (0=Orange, 1=White)
-                        // Even (0) -> Orange Button, except index 4 (Event Management) which is white
-                        // Odd (1) -> White Button
                         const isEventManagement = globalIndex === 4;
                         const btnClass = isEventManagement
                             ? "bg-white text-[#DC7026] border-white hover:bg-gray-50"
@@ -116,15 +85,15 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 key={globalIndex}
                                 onClick={() => scrollToSection(globalIndex, service.title)}
                                 className={`
-                                    relative w-full h-[100px] sm:h-[120px] md:h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
+                                    relative w-full h-[100px] sm:h-[120px] md:h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl overflow-hidden
                                     ${btnClass}
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
                             >
                                 {service.icon && (
-                                    <img src={service.icon} alt={service.title} className="h-16 sm:h-20 md:h-24 lg:h-25 w-auto mb-2 sm:mb-3 object-contain" />
+                                    <img src={service.icon} alt={service.title} className="h-12 sm:h-14 md:h-16 w-auto mb-2 object-contain" />
                                 )}
-                                <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight sm:leading-snug px-2" style={{ fontFamily: 'var(--font-display)' }}>
+                                <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight px-3 line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
                                     {service.title}
                                 </span>
                             </button>
@@ -140,33 +109,16 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                     const details = serviceDetails[service.title];
                     const isEven = index % 2 === 0;
 
-                    // Section Colors:
-                    // Even (0) -> White Background
-                    // Odd (1) -> Black Background
                     const sectionBg = isEven ? "bg-white" : "bg-black";
                     const textColor = isEven ? "text-black" : "text-white";
-                    const bulletColor = isEven ? "bg-black" : "bg-white"; // Dot color
+                    const bulletColor = isEven ? "bg-black" : "bg-white";
 
-                    // Pill/Header Colors: Contrast with Section
-                    // Even (0) [White BG] -> Orange Pill
-                    // Odd (1) [Black BG] -> White Pill (Requested)
-                    // Event Management -> White background
                     const isEventManagement = service.title === "Event Management";
                     const pillClass = isEventManagement
                         ? "bg-white text-[#DC7026]"
                         : isEven
                         ? "bg-[#DC7026] text-white"
                         : "bg-white text-[#DC7026]";
-
-                    const borderRadii = [
-                        "48% 52% 30% 70% / 55% 45% 35% 65%",
-                        "35% 65% 65% 35% / 45% 55% 30% 70%",
-                        "65% 35% 35% 65% / 60% 30% 60% 40%",
-                        "40% 60% 55% 45% / 50% 45% 45% 55%",
-                        "48% 52% 30% 70% / 55% 45% 35% 65%"
-                    ];
-                    const shapeIndex = index % borderRadii.length;
-                    const customRadius = borderRadii[shapeIndex];
 
                     return (
                         <section
@@ -179,12 +131,12 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 <div
                                     className={`
                                         relative w-max px-6 sm:px-8 md:px-16 h-[100px] sm:h-[120px] md:h-[140px] text-center mb-12 sm:mb-16 shadow-lg
-                                        flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl rounded-2xl
+                                        flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl rounded-2xl overflow-hidden
                                         ${pillClass}
                                     `}
                                 >
                                     {service.icon && (
-                                        <img src={service.icon} alt={service.title} className="h-20 sm:h-22 md:h-24 lg:h-25 w-auto mb-3 object-contain" />
+                                        <img src={service.icon} alt={service.title} className="h-14 sm:h-16 md:h-20 w-auto mb-2 object-contain" />
                                     )}
                                     <h2 className="font-display font-black uppercase text-xs sm:text-sm md:text-base lg:text-lg tracking-tight leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                                         {service.title}
