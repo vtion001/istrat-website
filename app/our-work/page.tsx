@@ -55,7 +55,7 @@ export default function OurWorksPage() {
                   animate={{ rotate: isExpanded ? 90 : -2 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-4">
+                  <svg width="120" height="28" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-4 sm:w-[150px] sm:h-[34px] md:w-[180px] md:h-[40px]">
                     <path
                       d="M10 25 C 60 20, 120 20, 170 25 M 170 25 L 155 15 M 170 25 L 158 35"
                       stroke="#DC7026"

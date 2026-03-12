@@ -67,7 +67,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 key={index}
                                 onClick={() => scrollToSection(index, service.title)}
                                 className={`
-                                    relative w-full h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
+                                    relative w-full h-[100px] sm:h-[120px] md:h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
                                     ${btnClass}
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
@@ -116,7 +116,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 key={globalIndex}
                                 onClick={() => scrollToSection(globalIndex, service.title)}
                                 className={`
-                                    relative w-full h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
+                                    relative w-full h-[100px] sm:h-[120px] md:h-[140px] flex flex-col items-center justify-center text-center transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-2xl
                                     ${btnClass}
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
@@ -178,7 +178,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 {/* Card / Pill Title */}
                                 <div
                                     className={`
-                                        relative w-max px-8 md:px-16 h-[140px] text-center mb-16 shadow-lg
+                                        relative w-max px-6 sm:px-8 md:px-16 h-[100px] sm:h-[120px] md:h-[140px] text-center mb-12 sm:mb-16 shadow-lg
                                         flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl rounded-2xl
                                         ${pillClass}
                                     `}

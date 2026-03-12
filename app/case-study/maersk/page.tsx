@@ -70,7 +70,7 @@ export default function CaseStudyMaersk() {
             { label: "Engagement", value: "+38%" },
             { label: "Satisfaction", value: "97%" },
           ].map((kpi) => (
-            <div key={kpi.label} className="p-8 border border-white/5 bg-black rounded-[32px]">
+            <div key={kpi.label} className="p-4 sm:p-6 md:p-8 border border-white/5 bg-black rounded-[24px] sm:rounded-[32px]">
               <p className="text-xs uppercase tracking-widest text-[#DC7026] mb-2">{kpi.label}</p>
               <p className="text-3xl text-white" style={{ fontFamily: 'var(--font-display)' }}>{kpi.value}</p>
             </div>
@@ -100,11 +100,11 @@ export default function CaseStudyMaersk() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mt-16 flex items-center gap-4">
-          <a href="mailto:info@istratmc.com" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-[#DC7026]/30 backdrop-blur-xl text-white hover:text-white hover:bg-[#DC7026] transition-colors">Discuss a project<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-          <Link href="/#highlights" className="inline-flex items-center gap-3 px-6 py-4 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Back to Highlights</Link>
+        <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mt-16 flex flex-wrap items-center gap-4">
+          <a href="mailto:info@istratmc.com" className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base border border-white/10 bg-[#DC7026]/30 backdrop-blur-xl text-white hover:text-white hover:bg-[#DC7026] transition-colors">Discuss a project<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4 sm:w-5 sm:h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <Link href="/#highlights" className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Back to Highlights</Link>
         </motion.div>
-        <Link href="#top" className="fixed bottom-6 right-6 px-4 py-3 border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors">Back to Top</Link>
+        <Link href="#top" className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-white/10 bg-white/5 backdrop-blur-xl text-white hover:text-[#0a0a0a] hover:bg-white/80 transition-colors z-50">Back to Top</Link>
       </section>
     </main>
   )

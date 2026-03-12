@@ -38,7 +38,7 @@ export default function HomeCoreValues() {
                                 className={`flex-shrink-0 w-screen h-full flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 ${bgColor} transition-colors duration-700 overflow-hidden`}
                             >
                                 {/* Full-Width Section Container */}
-                                <div className="max-w-7xl w-full h-[85dvh] md:h-[80vh] lg:h-[80vh] relative">
+                                <div className="max-w-7xl w-full h-[90dvh] sm:h-[85dvh] md:h-[80vh] lg:h-[80vh] relative">
                                     {/* Content Card */}
                                     <div className="h-full pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-14 lg:pb-16 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center relative text-center">
                                         {/* Content Wrapper */}
@@ -62,7 +62,7 @@ export default function HomeCoreValues() {
                                             )}
 
                                             {/* Text Container: Better mobile spacing */}
-                                            <div className="mt-auto mb-[12%] sm:mb-[14%] md:mb-[18%] lg:mb-0 space-y-3 sm:space-y-4 max-w-3xl sm:max-w-4xl mx-auto relative z-20 md:mt-auto">
+                                            <div className="mt-auto mb-[8%] sm:mb-[12%] md:mb-[14%] lg:mb-0 space-y-3 sm:space-y-4 max-w-3xl sm:max-w-4xl mx-auto relative z-20 md:mt-auto">
                                                 {/* Subtitle */}
                                                 <p
                                                     className={`${index === 1 ? 'text-black' : 'text-white'} text-base sm:text-lg md:text-xl lg:text-2xl font-bold uppercase leading-tight md:leading-relaxed px-2 sm:px-0`}

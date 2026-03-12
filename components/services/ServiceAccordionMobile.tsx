@@ -50,7 +50,7 @@ export default function ServiceAccordionMobile({ services, serviceDetails, openA
                                 key={index}
                                 onClick={() => scrollToSection(index, service.title)}
                                 className={`
-                                    relative w-full h-[110px] flex flex-col items-center justify-center text-center transition-all duration-300 border shadow-md rounded-xl
+                                    relative w-full h-[90px] sm:h-[100px] md:h-[110px] flex flex-col items-center justify-center text-center transition-all duration-300 border shadow-md rounded-xl
                                     ${btnClass}
                                     ${isActive ? "scale-105 z-10 ring-2 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90"}
                                 `}
@@ -94,7 +94,7 @@ export default function ServiceAccordionMobile({ services, serviceDetails, openA
                                 {/* Card / Pill Title */}
                                 <div
                                     className={`
-                                        relative w-full max-w-[280px] h-[120px] text-center mb-12 shadow-lg
+                                        relative w-full max-w-[280px] h-[100px] sm:h-[110px] md:h-[120px] text-center mb-8 sm:mb-12 shadow-lg
                                         flex flex-col items-center justify-center transition-all duration-300 rounded-2xl
                                         ${pillClass}
                                     `}
