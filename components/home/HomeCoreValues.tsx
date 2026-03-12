@@ -44,14 +44,14 @@ export default function HomeCoreValues() {
                                         {/* Content Wrapper */}
                                         <div className="relative w-full h-full flex flex-col items-center">
 
-                                            {/* SVG Container: Adjusted for mobile */}
+                                            {/* SVG Container: Responsive sizing, constrained to section */}
                                             {value.svgUrl ? (
-                                                <div className="absolute top-[28%] sm:top-[32%] md:top-[38%] lg:top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[18vh] sm:w-[120%] sm:h-[38vh] md:w-[160%] md:h-[1000px] lg:w-[180%] lg:h-[1200px] pointer-events-none z-0">
+                                                <div className="absolute top-[30%] sm:top-[32%] md:top-[38%] lg:top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] sm:w-[100%] md:w-[100%] lg:w-[100%] max-w-[1200px] h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[55vh] pointer-events-none z-0">
                                                     <Image
                                                         src={value.svgUrl}
                                                         alt={value.title}
                                                         fill
-                                                        className="object-contain object-center opacity-25 sm:opacity-30 md:opacity-50 lg:opacity-70"
+                                                        className="object-contain object-center opacity-100"
                                                         priority={index === 0}
                                                     />
                                                 </div>
