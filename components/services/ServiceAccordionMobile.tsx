@@ -110,15 +110,15 @@ export default function ServiceAccordionMobile({ services, serviceDetails, openA
                                 {/* Bullet Points */}
                                 <div className="space-y-6 w-full">
                                     {details?.points.map((point, i) => (
-                                        <div key={i} className="flex items-start justify-start gap-4">
-                                            <span className={`
-                                                mt-2 w-2.5 h-2.5 rounded-full flex-shrink-0
-                                                ${bulletColor}
-                                            `}></span>
-                                            <p className={`${textColor} font-black uppercase text-2xl sm:text-3xl tracking-tight leading-tight text-left`} style={{ fontFamily: 'var(--font-display)' }}>
-                                                {point}
-                                            </p>
-                                        </div>
+                                <div key={i} className="flex items-center justify-start gap-3 sm:gap-4">
+                                    <span className={`
+                                        w-2.5 h-2.5 sm:w-3 md:w-3 rounded-full flex-shrink-0 transition-transform group-hover:scale-125
+                                        ${bulletColor}
+                                    `}></span>
+                                    <p className={`${textColor} font-black uppercase text-base sm:text-lg md:text-xl tracking-tight leading-tight text-left`} style={{ fontFamily: 'var(--font-display)' }}>
+                                        {point}
+                                    </p>
+                                </div>
                                     ))}
                                 </div>
                             </div>
