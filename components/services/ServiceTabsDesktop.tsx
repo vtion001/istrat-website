@@ -196,7 +196,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                     {details?.points.map((point, i) => (
                                         <div key={i} className="flex items-start justify-start gap-3 group">
                                             <span className={`
-                                                mt-1.5 sm:mt-2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full flex-shrink-0 transition-transform group-hover:scale-125
+                                                -mt-0.5 sm:mt-0 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full flex-shrink-0 transition-transform group-hover:scale-125
                                                 ${bulletColor}
                                             `}></span>
                                             <p className={`${textColor} font-bold uppercase text-lg md:text-2xl lg:text-3xl tracking-wide leading-tight text-left`} style={{ fontFamily: 'var(--font-display)' }}>
