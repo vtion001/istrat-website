@@ -1,7 +1,7 @@
 /**
  * Home Vision Section
  * Section 3: The Vision with image
- * Updated: Standardized to 2 font sizes (text-2xl headings, text-base body)
+ * Updated: Fixed responsive text sizing
  */
 
 import Image from "next/image"
@@ -18,26 +18,24 @@ export default function HomeVision() {
                     src="https://res.cloudinary.com/dbviya1rj/image/upload/v1773199890/gxj0tze2uu3cgy0lk0bf.png"
                     alt="Vision Background"
                     fill
-                    className="object-contain object-center"
+                    className="object-cover object-center"
                     priority
                 />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                     {/* Text on Left */}
-                    <div className="space-y-6 sm:space-y-8">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-6 sm:mb-8 uppercase" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
+                    <div className="space-y-4 sm:space-y-6">
+                        <h3 className="text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider" style={{ fontFamily: 'var(--font-ibm-plex)', fontWeight: 700 }}>
                             {vision.label}
                         </h3>
 
-                        <h2 className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]" style={{ fontFamily: 'var(--font-display)' }}>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]" style={{ fontFamily: 'var(--font-display)' }}>
                             <span className="block text-white">{vision.heading}</span>
-                            <span className="block mt-3 sm:mt-4"><span className="text-white">THEY </span><span className="text-[#DC7026]">LEAD.</span></span>
+                            <span className="block mt-2 sm:mt-3"><span className="text-white">THEY </span><span className="text-[#DC7026]">LEAD.</span></span>
                         </h2>
                     </div>
-
-                    {/* Image placeholder removed */}
                 </div>
             </div>
         </section>
