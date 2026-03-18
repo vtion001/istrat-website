@@ -50,7 +50,7 @@ export default function PartnerCarousel() {
                         }}
                     >
                         {[...row1, ...row1, ...row1].map((partner, i) => (
-                            <div key={`${partner.name}-${i}`} className="relative h-16 w-32 md:h-20 md:w-40 flex-shrink-0 flex items-center justify-center transition-all duration-700 grayscale-0 opacity-100 md:grayscale md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100">
+                            <div key={`${partner.name}-${i}`} className="relative h-[19px] w-[37px] md:h-[23px] md:w-[46px] flex-shrink-0 flex items-center justify-center transition-all duration-700 grayscale-0 opacity-100 md:grayscale md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100">
                                 <Image
                                     src={partner.image || "/placeholder.svg"}
                                     alt={partner.name}
@@ -76,7 +76,7 @@ export default function PartnerCarousel() {
                         }}
                     >
                         {[...row2, ...row2, ...row2].map((partner, i) => (
-                            <div key={`${partner.name}-${i}`} className="relative h-16 w-32 md:h-20 md:w-40 flex-shrink-0 flex items-center justify-center transition-all duration-700 grayscale-0 opacity-100 md:grayscale md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100">
+                            <div key={`${partner.name}-${i}`} className="relative h-[19px] w-[37px] md:h-[23px] md:w-[46px] flex-shrink-0 flex items-center justify-center transition-all duration-700 grayscale-0 opacity-100 md:grayscale md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100">
                                 <Image
                                     src={partner.image || "/placeholder.svg"}
                                     alt={partner.name}
