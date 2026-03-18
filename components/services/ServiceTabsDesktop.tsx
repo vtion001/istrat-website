@@ -132,22 +132,15 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                             >
                                 <div className="max-w-6xl mx-auto w-full">
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-                                        {/* Left side - Image/Card */}
+                                        {/* Left side - Image only */}
                                         <div className="flex justify-start">
-                                            <div
-                                                className={`
-                                                    relative w-full max-w-md px-8 sm:px-10 md:px-14 py-12 sm:py-14 md:py-16 text-center shadow-lg
-                                                    flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl rounded-2xl overflow-hidden
-                                                    ${pillClass}
-                                                `}
-                                            >
-                                                {service.icon && (
-                                                    <img src={service.icon} alt={service.title} className="h-32 sm:h-36 md:h-40 w-auto mb-6 object-contain" />
-                                                )}
-                                                <h2 className="font-display font-black uppercase text-base sm:text-lg md:text-xl lg:text-2xl tracking-tight leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
-                                                    {service.title}
-                                                </h2>
-                                            </div>
+                                            {service.icon && (
+                                                <img 
+                                                    src={service.icon} 
+                                                    alt={service.title} 
+                                                    className="w-full h-auto max-w-lg object-contain"
+                                                />
+                                            )}
                                         </div>
 
                                         {/* Right side - Bullet Points */}
