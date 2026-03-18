@@ -114,12 +114,63 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                     const bulletColor = isEven ? "bg-black" : "bg-white";
 
                     const isEventManagement = service.title === "Event Management";
+                    const isSideLayout = ["Integrated Marketing Communications", "Brand Building & Management", "Measurement, Analytics & Insights", "Advocacy & Stakeholder Engagement", "Event Management"].includes(service.title);
+                    
                     const pillClass = isEventManagement
                         ? "bg-white text-[#DC7026]"
                         : isEven
                         ? "bg-[#DC7026] text-white"
                         : "bg-white text-[#DC7026]";
 
+                    // Side-by-side layout (image left, text right)
+                    if (isSideLayout) {
+                        return (
+                            <section
+                                id={slugify(service.title)}
+                                key={index}
+                                className={`scroll-mt-48 flex flex-col items-center justify-center w-full py-32 px-4 ${sectionBg}`}
+                            >
+                                <div className="max-w-6xl mx-auto w-full">
+                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                                        {/* Left side - Image/Card */}
+                                        <div className="flex justify-start">
+                                            <div
+                                                className={`
+                                                    relative w-full max-w-md px-8 sm:px-10 md:px-14 py-12 sm:py-14 md:py-16 text-center shadow-lg
+                                                    flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl rounded-2xl overflow-hidden
+                                                    ${pillClass}
+                                                `}
+                                            >
+                                                {service.icon && (
+                                                    <img src={service.icon} alt={service.title} className="h-32 sm:h-36 md:h-40 w-auto mb-6 object-contain" />
+                                                )}
+                                                <h2 className="font-display font-black uppercase text-base sm:text-lg md:text-xl lg:text-2xl tracking-tight leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+                                                    {service.title}
+                                                </h2>
+                                            </div>
+                                        </div>
+
+                                        {/* Right side - Bullet Points */}
+                                        <div className="space-y-6 md:space-y-8 w-full">
+                                            {details?.points.map((point, i) => (
+                                                <div key={i} className="flex items-center justify-start gap-4 group">
+                                                    <span className={`
+                                                        w-3 h-3 sm:w-4 sm:h-4 rounded-full flex-shrink-0 transition-transform group-hover:scale-125
+                                                        ${bulletColor}
+                                                    `}></span>
+                                                    <p className={`${textColor} font-bold uppercase text-xl md:text-2xl lg:text-3xl tracking-wide leading-tight text-left`} style={{ fontFamily: 'var(--font-display)' }}>
+                                                        {point}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        )
+                    }
+
+                    // Default stacked layout
                     return (
                         <section
                             id={slugify(service.title)}
