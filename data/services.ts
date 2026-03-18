@@ -117,7 +117,7 @@ export const ourServices: Service[] = [
         description: "End-to-end brand development from concept to nationwide recognition and market presence.",
         image: "/images/services/brand.svg",
         icon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1773791837/ohygizgrazjzfheabiz5.png",
-        navIcon: "/images/services/brand.svg",
+        navIcon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1772594369/bqgpbcldhnkzs5crovtw.png",
         height: "h-[650px]",
     },
     {
@@ -126,7 +126,7 @@ export const ourServices: Service[] = [
         description: "DataFusion360 and proprietary analytics turn campaign performance into strategic intelligence. Real-time insights that inform decisions and optimize ROI.",
         image: "/images/services/analytics.svg",
         icon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1773791856/lywshtcisr8yqrxqiqjl.png",
-        navIcon: "/images/services/analytics.svg",
+        navIcon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1772594367/nklij77hksfqjozso2ku.png",
         height: "h-[650px]",
     },
     {
@@ -135,7 +135,7 @@ export const ourServices: Service[] = [
         description: "Trusted by government and advocacy organizations to build coalitions, influence policy dialogue, and engage communities for meaningful social impact.",
         image: "/images/services/advocacy.svg",
         icon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1773791858/e1bqmppi7wpgny0pcxua.png",
-        navIcon: "/images/services/advocacy.svg",
+        navIcon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1772594368/kcnti9bt6vwf2oyr9hkb.png",
         height: "h-[650px]",
     },
     {
@@ -144,7 +144,7 @@ export const ourServices: Service[] = [
         description: "Award-winning events from intimate corporate gatherings to national campaigns.",
         image: "/images/services/events.svg",
         icon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1773791846/jytuvjhjmfdinjhwpn1a.png",
-        navIcon: "/images/services/events.svg",
+        navIcon: "https://res.cloudinary.com/dbviya1rj/image/upload/v1772594368/ku2htjdze2w7qoimbadr.png",
         height: "h-[650px]",
     },
 ]
