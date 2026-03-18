@@ -55,9 +55,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
                             >
-                                {service.navIcon ? (
-                                    <img src={service.navIcon} alt={service.title} className="h-12 sm:h-14 md:h-16 w-auto mb-2 object-contain" />
-                                ) : service.icon && (
+                                {service.icon && (
                                     <img src={service.icon} alt={service.title} className="h-12 sm:h-14 md:h-16 w-auto mb-2 object-contain" />
                                 )}
                                 <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight px-3 line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
@@ -92,9 +90,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                     ${isActive ? "scale-105 z-10 ring-4 " + (isEven ? "ring-[#DC7026]/30" : "ring-white/30") : "opacity-90 hover:opacity-100"}
                                 `}
                             >
-                                {service.navIcon ? (
-                                    <img src={service.navIcon} alt={service.title} className="h-12 sm:h-14 md:h-16 w-auto mb-2 object-contain" />
-                                ) : service.icon && (
+                                {service.icon && (
                                     <img src={service.icon} alt={service.title} className="h-12 sm:h-14 md:h-16 w-auto mb-2 object-contain" />
                                 )}
                                 <span className="font-display font-black uppercase tracking-wide text-xs sm:text-sm md:text-base leading-tight px-3 line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
