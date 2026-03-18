@@ -142,7 +142,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                                 <img 
                                                     src={service.icon} 
                                                     alt={service.title} 
-                                                    className="w-full h-auto max-w-lg object-contain"
+                                                    className="w-full h-auto max-w-2xl object-contain"
                                                 />
                                             )}
                                         </div>
