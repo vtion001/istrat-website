@@ -135,7 +135,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                 className={`scroll-mt-48 flex flex-col items-center justify-center w-full py-32 px-4 ${sectionBg}`}
                             >
                                 <div className="max-w-6xl mx-auto w-full">
-                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                                         {/* Left side - Image only */}
                                         <div className="flex justify-start">
                                             {service.icon && (
@@ -148,7 +148,7 @@ export default function ServiceTabsDesktop({ services, serviceDetails, activeTab
                                         </div>
 
                                         {/* Right side - Bullet Points */}
-                                        <div className="space-y-6 md:space-y-8 w-full">
+                                        <div className="space-y-6 md:space-y-8 w-full lg:pt-8">
                                             {details?.points.map((point, i) => (
                                                 <div key={i} className="flex items-center justify-start gap-4 group">
                                                     <span className={`
